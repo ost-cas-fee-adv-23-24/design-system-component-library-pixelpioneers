@@ -15,6 +15,16 @@ const config: StorybookConfig = {
     name: "@storybook/nextjs",
     options: {},
   },
+  typescript: {
+    reactDocgen: 'react-docgen-typescript',
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+      propFilter: () => true,
+    },
+  },
   docs: {
     autodocs: "tag",
   },
