@@ -1,20 +1,20 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "./Button";
 
 // Button
 const meta: Meta<typeof Button> = {
-  title: 'Example/Button',
+  title: "Example/Button",
   component: Button,
   parameters: {
-    layout: 'centered',
+    layout: "centered",
   },
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    backgroundColor: { control: 'color' },
+    backgroundColor: { control: "color" },
   },
   args: {
-    label: 'Button',
-  }
+    label: "Button",
+  },
 };
 
 export default meta;
@@ -26,18 +26,16 @@ export const Primary: Story = {
   },
 };
 
-export const Secondary: Story = {
-};
+export const Secondary: Story = {};
 
 export const Large: Story = {
   args: {
-    size: 'large',
+    size: "large",
   },
 };
 
 export const Small: Story = {
   args: {
-    size: 'small',
+    size: "small",
   },
 };
-
