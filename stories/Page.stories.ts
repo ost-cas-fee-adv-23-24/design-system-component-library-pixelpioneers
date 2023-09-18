@@ -1,19 +1,18 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, userEvent } from '@storybook/testing-library';
-
 import { Page } from './Page';
 
-const meta = {
+const meta: Meta<typeof Page> = {
   title: 'Example/Page',
   component: Page,
   parameters: {
-    // More on how to position stories at: https://storybook.js.org/docs/react/configure/story-layout
     layout: 'fullscreen',
   },
-} satisfies Meta<typeof Page>;
+  tags: ['autodocs'],
+};
 
 export default meta;
-type Story = StoryObj<typeof meta>;
+type Story = StoryObj<typeof Page>;
 
 export const LoggedOut: Story = {};
 
