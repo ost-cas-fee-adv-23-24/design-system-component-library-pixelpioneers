@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Button } from './Button';
 import './header.css';
 
@@ -33,7 +34,7 @@ export const Header = ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps
             />
           </g>
         </svg>
-        <h1>PixelPioneers</h1>
+        <h1>Acme</h1>
       </div>
       <div>
         {user ? (
