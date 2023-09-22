@@ -92,5 +92,10 @@
         "tailwindcss": "^3.3.3",
         "typescript": "^5.2.2",
         "webpack": "^5.88.2"
+    },
+    "overrides": {
+        "react-scripts": {
+            "typescript": ">3.2.1"
+        }
     }
 }
