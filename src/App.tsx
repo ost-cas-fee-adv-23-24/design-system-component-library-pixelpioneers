@@ -5,7 +5,7 @@ import './App.css';
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
+            <header className="App-header dark:bg-slate-800 dark:text-white">
                 <img src={logo} className="App-logo" alt="logo" />
                 <p className="text-3xl font-bold underline bg-amber-800">
                     Edit <code>src/App.tsx</code> and save to reload.
