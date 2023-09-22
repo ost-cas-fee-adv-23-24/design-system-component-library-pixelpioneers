@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Button } from '../button/Button';
 import './header.css';
 
@@ -44,7 +43,7 @@ export const Header = ({
                         />
                     </g>
                 </svg>
-                <h1>Acme</h1>
+                <h1>PixelPioneers</h1>
             </div>
             <div>
                 {user ? (
