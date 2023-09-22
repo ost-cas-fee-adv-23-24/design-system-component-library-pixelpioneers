@@ -1,40 +1,22 @@
-import type { StorybookConfig } from "@storybook/nextjs";
+import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
-  stories: [
-    "../stories/**/*.mdx",
-    "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
-  ],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-onboarding",
-    "@storybook/addon-interactions",
-    {
-      name: "@storybook/addon-postcss",
-      options: {
-        postcssLoaderOptions: {
-          implementation: require("postcss"),
-        },
-      },
+    stories: ['../src/**/*.mdx', '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'],
+    addons: [
+        '@storybook/addon-links',
+        '@storybook/addon-essentials',
+        '@storybook/preset-create-react-app',
+        '@storybook/addon-onboarding',
+        '@storybook/addon-interactions',
+        '@storybook/addon-styling',
+    ],
+    framework: {
+        name: '@storybook/react-webpack5',
+        options: {},
     },
-  ],
-  framework: {
-    name: "@storybook/nextjs",
-    options: {},
-  },
-  typescript: {
-    reactDocgen: "react-docgen-typescript",
-    reactDocgenTypescriptOptions: {
-      compilerOptions: {
-        allowSyntheticDefaultImports: false,
-        esModuleInterop: false,
-      },
-      propFilter: () => true,
+    docs: {
+        autodocs: 'tag',
     },
-  },
-  docs: {
-    autodocs: "tag",
-  },
+    staticDirs: ['../public'],
 };
 export default config;
