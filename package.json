@@ -1,17 +1,35 @@
 {
-  "name": "my-app",
+  "name": "design-system-pixelpioneers",
+  "type": "module",
+  "main": "./lib/esm/index.js",
+  "types": "./lib/esm/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/types/index.d.ts",
+        "default": "./lib/esm/index.js"
+      },
+      "require": {
+        "types": "./lib/cjs/types/index.d.ts",
+        "default": "./lib/cjs/index.cjs"
+      }
+    }
+  },
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
+    "clean": "rm -rf ./lib",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "build:esm": "tsc -p ./tsconfig.esm.json",
+    "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "prepare": "husky install",
     "prettier": "prettier --log-level warn --write \"stories/**/*.{tsx,ts}\""
   },
+  "files": [
+    "lib/**/*"
+  ],
   "dependencies": {
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",
@@ -23,8 +41,7 @@
     "postcss": "^8.4.29",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "tailwindcss": "3.3.3",
-    "typescript": "5.2.2"
+    "tailwindcss": "3.3.3"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^7.4.1",
@@ -38,11 +55,12 @@
     "@storybook/react": "^7.4.1",
     "@storybook/testing-library": "^0.2.0",
     "eslint-plugin-storybook": "^0.6.13",
-    "storybook": "^7.4.1",
-    "tailwindcss": "^3.3.3",
     "husky": "^8.0.3",
     "lint-staged": "^14.0.1",
-    "prettier": "3.0.3"
+    "prettier": "3.0.3",
+    "storybook": "^7.4.1",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
   },
   "lint-staged": {
     "*": "prettier --write --ignore-unknown"
