@@ -1,6 +1,24 @@
 {
-    "name": "new",
+    "name": "design-system-pixelpioneers",
     "version": "0.1.0",
+    "type": "module",
+    "main": "./lib/esm/index.js",
+    "types": "./lib/esm/types/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./lib/esm/types/index.d.ts",
+                "default": "./lib/esm/index.js"
+            },
+            "require": {
+                "types": "./lib/cjs/types/index.d.ts",
+                "default": "./lib/cjs/index.cjs"
+            }
+        }
+    },
+    "files": [
+        "lib/**/*"
+    ],
     "private": true,
     "dependencies": {
         "@testing-library/jest-dom": "^5.17.0",
@@ -13,19 +31,21 @@
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
         "react-scripts": "5.0.1",
-        "typescript": "^4.9.5",
         "web-vitals": "^2.1.4"
     },
     "scripts": {
         "start": "react-scripts start",
-        "build": "react-scripts build",
         "test": "react-scripts test",
         "eject": "react-scripts eject",
         "storybook": "storybook dev -p 6006",
         "build-storybook": "storybook build",
         "prettier": "prettier --log-level warn --write \"src/**/*.{tsx,ts}\"",
         "prettier-check": "prettier --log-level warn --check \"src/**/*.{tsx,ts}\"",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "clean": "rm -rf ./lib",
+        "build": "npm run clean && npm run build:esm && npm run build:cjs",
+        "build:esm": "tsc -p ./tsconfig.esm.json",
+        "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
@@ -70,6 +90,7 @@
         "prop-types": "^15.8.1",
         "storybook": "^7.4.3",
         "tailwindcss": "^3.3.3",
+        "typescript": "^5.2.2",
         "webpack": "^5.88.2"
     }
 }
