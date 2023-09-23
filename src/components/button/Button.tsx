@@ -23,6 +23,8 @@ export const Button = ({
         <button
             type="button"
             className={[mode, 'p-10 bg-amber-800'].join(' ')}
+            // TODO: Fix it later / size behaviour
+            //  className={[mode, `storybook-button--${size}`,  'p-10 bg-amber-800'].join(' ')}
             style={{ backgroundColor }}
             {...props}
         >
