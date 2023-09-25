@@ -1,15 +1,60 @@
 # Design System - PixelPioneers
 
+## Support
+
+-   Nico Lutz - [Write to: Nico](mailto:nico.lutz@ost.ch)
+-   André Ceres - [Write to: André](mailto:andre.ceres@ost.ch)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-TODO: details about:
+
+## Bootstrapped with following steps:
+
+TODO: More Details and correction:
+
+-   React
+
+Create React App with TypeScript Template [Link](https://create-react-app.dev/docs/getting-started)
+
+`npx create-react-app my-app --template typescript`
+
+-   Storybook
+
+Install and integrate StoryBook.
+
+`npx storybook@latest init`
 
 -   Tailwind
--   Storybook
--   React
--   Typescript
+
+Get started with Tailwind.
+
+`npm install -D tailwindcss postcss autoprefixer`
+`npx tailwindcss init`
+
+Important:
+📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with react-scripts@2.0.0, then leave the options object empty.
+[Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
+
+Tailwind CSS as a PostCSS installation and configuration [Link](https://tailwindcss.com/docs/installation/using-postcss)
+
+Also see [How to setup Tailwind and StoryBook](https://storybook.js.org/recipes/tailwindcss)
+
+-   TypeScript
+
+Check and configure TypeScript [Link](https://storybook.js.org/docs/react/configure/typescript)
+Later be aware to re-write stories in TypeScript.
+
 -   Prettier
--   Husky/git hooks
--   override ts@5
+
+`npm install --save-dev --save-exact prettier`
+
+[Link](https://prettier.io/docs/en/install)
+
+-   Husky / Git hooks
+
+[Link](https://prettier.io/docs/en/install)
+
+-   Override TypeScript@5 [Workaround](https://github.com/facebook/create-react-app/issues/13080)
+-   We need TS@5 to bundle CJS and ESM
 
 ## Available Scripts
 
@@ -17,7 +62,7 @@ In the project directory, you can run:
 
 ### `npm run storybook`
 
-Runs the storybook locally on port 6006.
+Runs the storybook locally on port [http://localhost:6006](http://localhost:6006).
 
 ### `npm run build`
 

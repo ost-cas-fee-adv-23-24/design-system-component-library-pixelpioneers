@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { Header } from '../header/Header';
 import './page.css';
 
@@ -14,9 +13,9 @@ export const Page: React.FC = () => {
         <article>
             <Header
                 user={user}
-                onLogin={() => setUser({ name: 'Jane Doe' })}
+                onLogin={() => setUser({ name: 'Michael Jackson' })}
                 onLogout={() => setUser(undefined)}
-                onCreateAccount={() => setUser({ name: 'Jane Doe' })}
+                onCreateAccount={() => setUser({ name: 'Michael Jackson' })}
             />
 
             <section className="storybook-page">
