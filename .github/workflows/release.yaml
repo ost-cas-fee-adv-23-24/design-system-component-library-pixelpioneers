@@ -2,8 +2,6 @@ name: Release NPM package
 on:
   push:
     branches: [ 'main' ]
-  pull_request:
-    branches: [ 'main' ]
 
 jobs:
   release:
@@ -19,5 +17,5 @@ jobs:
       - name: semantic release
         uses: cycjimmy/semantic-release-action@v3
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
