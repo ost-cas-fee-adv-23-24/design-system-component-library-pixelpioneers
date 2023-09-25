@@ -30,7 +30,13 @@ Get started with Tailwind.
 `npm install -D tailwindcss postcss autoprefixer`
 `npx tailwindcss init`
 
+Important:
+📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with react-scripts@2.0.0, then leave the options object empty.
+[Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
+
 Tailwind CSS as a PostCSS installation and configuration [Link](https://tailwindcss.com/docs/installation/using-postcss)
+
+Also see [How to setup Tailwind and StoryBook](https://storybook.js.org/recipes/tailwindcss)
 
 -   TypeScript
 
