@@ -1,7 +1,4 @@
-'use client';
-
 import React from 'react';
-import './button.css';
 
 interface ButtonProps {
     primary?: boolean;
@@ -19,12 +16,12 @@ export const Button = ({
     ...props
 }: ButtonProps) => {
     const mode = primary
-        ? 'storybook-button--primary'
-        : 'storybook-button--secondary';
+        ? 'bg-red-300 hover:bg-red-500'
+        : 'bg-amber-300 hover:bg-amber-500';
     return (
         <button
             type="button"
-            className={[mode, 'p-10 bg-amber-800'].join(' ')}
+            className={['text-white py-2 px-4 rounded', mode].join(' ')}
             // TODO: Fix it later / size behaviour
             //  className={[mode, `storybook-button--${size}`,  'p-10 bg-amber-800'].join(' ')}
             style={{ backgroundColor }}
