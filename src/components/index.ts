@@ -1,1 +1,3 @@
-export { Button } from './button';
+'use client';
+
+export * from './button';
