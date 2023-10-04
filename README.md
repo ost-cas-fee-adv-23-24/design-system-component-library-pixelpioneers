@@ -1,5 +1,13 @@
 # Design System - PixelPioneers
 
+<section align="center">
+  <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
+    <img src="src/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
+  </a>
+ </section>
+
+[Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers)
+
 ## Support
 
 -   Nico Lutz - [Write to: Nico](mailto:nico.lutz@ost.ch)
