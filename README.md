@@ -4,9 +4,15 @@
   <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
     <img src="src/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
   </a>
- </section>
+</section>
 
 [Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers)
+
+## Project Info
+
+![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/storybook.yml?label=github%20pages)
+![](https://img.shields.io/github/license/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
+![](https://img.shields.io/github/contributors/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 
 ## Support
 
