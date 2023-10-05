@@ -27,8 +27,8 @@
                 "default": "./lib/cjs/index.cjs"
             }
         },
-        "./index.css": "./dist/index.css",
-        "./tailwind.config.ts": "./dist/tailwind.config.js"
+        "./index.css": "./lib/index.css",
+        "./tailwind.config.ts": "./lib/tailwind.config.js"
     },
     "files": [
         "lib/**/*",
@@ -53,7 +53,7 @@
         "build": "npm run clean && npm run build:esm && npm run build:cjs",
         "build:esm": "tsc -p ./tsconfig.esm.json && npm run build:tailwind",
         "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs && npm run build:tailwind",
-        "build:tailwind": "tailwindcss -i ./src/index.css -o ./dist/index.css --minify && cp ./tailwind.config.js ./dist"
+        "build:tailwind": "tailwindcss -i ./src/index.css -o ./lib/index.css --minify && cp ./tailwind.config.js ./dist"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
