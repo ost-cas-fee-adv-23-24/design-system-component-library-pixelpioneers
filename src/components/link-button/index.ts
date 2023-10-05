@@ -1,1 +1,3 @@
-export { LinkButton } from './LinkButton';
+'use client';
+
+export * from './LinkButton';
