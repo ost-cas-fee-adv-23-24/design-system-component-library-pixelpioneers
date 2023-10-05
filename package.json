@@ -31,8 +31,7 @@
         "./tailwind.config.ts": "./lib/tailwind.config.js"
     },
     "files": [
-        "lib/**/*",
-        "tailwind.config.js"
+        "lib/**/*"
     ],
     "dependencies": {
         "react": "^18.2.0",
