@@ -1,8 +1,10 @@
 {
     "name": "@ost-cas-fee-adv-23-24/design-system-pixelpioneers",
-    "version": "0.1.0",
+    "version": "0.0.0-development",
+    "description": "Design System Component Library PixelPioneers",
     "type": "module",
     "license": "MIT",
+    "author": "Fachhochschule OST - CAS Frontend Advanced - Team PixelPioneers",
     "private": false,
     "contributors": [
         {
@@ -14,8 +16,6 @@
             "email": "nico.lutz@ost.ch"
         }
     ],
-    "main": "./lib/esm/index.js",
-    "types": "./lib/esm/types/index.d.ts",
     "exports": {
         ".": {
             "import": {
@@ -27,12 +27,13 @@
                 "default": "./lib/cjs/index.cjs"
             }
         },
-        "./index.css": "./index.css",
-        "./tailwind.config.ts": "./tailwind.config.js"
+        "./lib/index.css": "./index.css",
+        "./lib/tailwind.config.ts": "./tailwind.config.js"
     },
+    "main": "./lib/esm/index.js",
+    "types": "./lib/esm/types/index.d.ts",
     "files": [
-        "lib",
-        "tailwind.config.js"
+        "./lib/**/*"
     ],
     "dependencies": {
         "react": "^18.2.0",
@@ -53,7 +54,7 @@
         "build": "npm run clean && npm run build:esm && npm run build:cjs",
         "build:esm": "tsc -p ./tsconfig.esm.json && npm run build:tailwind",
         "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs && npm run build:tailwind",
-        "build:tailwind": "npx tailwindcss -i ./src/index.css -o ./lib/index.css --minify"
+        "build:tailwind": "npx tailwindcss -i ./src/index.css -o ./lib/index.css --minify && cp ./tailwind.config.js ./lib"
     },
     "lint-staged": {
         "**/*": "prettier --write --ignore-unknown"
