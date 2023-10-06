@@ -4,17 +4,16 @@
   <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
     <img src="src/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
   </a>
+  [Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers)
 </section>
 
-[Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers)
-
-## Project Info
+## Project Health
 
 ![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/deploy-storybook.yaml?label=github%20pages)
 ![](https://img.shields.io/github/license/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 ![](https://img.shields.io/github/contributors/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 
-## Support
+## Support Contact
 
 -   Nico Lutz - [Write to: Nico](mailto:nico.lutz@ost.ch)
 -   André Ceres - [Write to: André](mailto:andre.ceres@ost.ch)
