@@ -4,15 +4,17 @@
   "private": false,
   "description": "Design System Component Library PixelPioneers",
   "license": "MIT",
-  "author": "Fachhochschule OST - CAS Frontend Advanced - Team PixelPioneers",
+  "author": "Fachhochschule OST - CAS Frontend Advanced - Team: PixelPioneers",
   "contributors": [
     {
       "name": "André Ceres",
-      "email": "andre.ceres@ost.ch"
+      "email": "andre.ceres@ost.ch",
+      "url": "https://github.com/aceres"
     },
     {
       "name": "Nico Lutz",
-      "email": "nico.lutz@ost.ch"
+      "email": "nico.lutz@ost.ch",
+      "url": "https://github.com/Nigothazine"
     }
   ],
   "type": "module",
@@ -37,9 +39,9 @@
   ],
   "scripts": {
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
-    "build-storybook": "storybook build",
     "build:cjs": "tsc -p ./tsconfig.cjs.json && mv lib/cjs/index.js lib/cjs/index.cjs && npm run build:tailwind",
     "build:esm": "tsc -p ./tsconfig.esm.json && npm run build:tailwind",
+    "build:storybook": "storybook build",
     "build:tailwind": "npx tailwindcss -i ./src/index.css -o ./lib/index.css --minify && cp ./tailwind.config.js ./lib",
     "clean": "rm -rf ./lib",
     "eject": "react-scripts eject",
@@ -47,7 +49,7 @@
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",
     "prettier": "prettier --log-level warn --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
-    "prettier-check": "prettier --log-level warn --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "prettier:check": "prettier --log-level warn --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "start": "react-scripts start",
     "storybook": "storybook dev -p 6006",
     "test": "react-scripts test"
