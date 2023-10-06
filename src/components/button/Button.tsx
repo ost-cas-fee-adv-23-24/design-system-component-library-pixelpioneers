@@ -1,4 +1,5 @@
 import React from 'react';
+import clsx from 'clsx';
 
 interface ButtonProps {
     primary?: boolean;
@@ -18,12 +19,17 @@ export const Button = ({
     const mode = primary
         ? 'bg-red-300 hover:bg-red-500'
         : 'bg-amber-300 hover:bg-amber-500';
+
+    const sizeClasses = {
+        small: 'px-2 py-1 text-sm',
+        medium: 'px-3 py-2 text-base',
+        large: 'px-4 py-3 text-lg',
+    }[size];
+
     return (
         <button
             type="button"
-            className={['text-white py-2 px-4 rounded', mode].join(' ')}
-            // TODO: Fix it later / size behaviour
-            //  className={[mode, `storybook-button--${size}`,  'p-10 bg-amber-800'].join(' ')}
+            className={clsx(sizeClasses, mode)}
             style={{ backgroundColor }}
             {...props}
         >
