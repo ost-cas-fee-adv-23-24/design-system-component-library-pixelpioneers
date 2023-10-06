@@ -13,7 +13,7 @@ export const pixelPioneersTheme = create({
         'https://w7.pngwing.com/pngs/440/309/png-transparent-official-united-states-non-profit-organisation-business-rubber-stamp-text-service-logo-thumbnail.png',
     brandTarget: '_blank',
 
-    //
+    // Color
     colorPrimary: '#3A10E5',
     colorSecondary: '#585C6D',
 
