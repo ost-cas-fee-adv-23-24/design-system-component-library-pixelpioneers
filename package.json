@@ -46,14 +46,19 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "prepare": "husky install",
-    "prettier": "prettier --log-level warn --write \"src/**/*.{tsx,ts}\"",
-    "prettier-check": "prettier --log-level warn --check \"src/**/*.{tsx,ts}\"",
+    "prettier": "prettier --log-level warn --write \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
+    "prettier-check": "prettier --log-level warn --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "start": "react-scripts start",
     "storybook": "storybook dev -p 6006",
     "test": "react-scripts test"
   },
   "lint-staged": {
-    "**/*": "prettier --write --ignore-unknown"
+    "*.{css,md,json}": [
+      "prettier --write --config ./.prettierrc.json"
+    ],
+    "src/**/*.{js,ts,jsx,tsx}": [
+      "eslint --config ./.eslintrc.json --max-warnings=0 --ext js --ext ts --ext jsx --ext tsx"
+    ]
   },
   "browserslist": {
     "production": [
