@@ -2,7 +2,8 @@
 
 ## Design System - PixelPioneers 🐥
 
-![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/deploy-storybook.yaml?label=github%20pages)
+![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/deploy-storybook.yaml?label=deploy%20storybook)
+![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/release.yaml?label=release%20system%20design%20library)
 ![](https://img.shields.io/github/license/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 ![](https://img.shields.io/github/contributors/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 
@@ -29,6 +30,7 @@
         <li><a href="#pre-requisites">Pre-requisites</a></li>
         <li><a href="#built-with">Built with</a></li>
         <li><a href="#bootstrapped-with">Bootstrapped with</a></li>
+        <li><a href="#usage">Usage</a></li>
         <li><a href="#available-scripts">Available scripts</a></li>
       </ul>
     </li>
@@ -38,6 +40,8 @@
 </details>
 
 ## Contact
+
+Maintaners:
 
 👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch)<br/>
 👋 André Ceres - [write an e-mail to André](mailto:andre.ceres@ost.ch)
@@ -69,6 +73,12 @@ npm install npm@latest -g
 [![HTML5][HTML5]][HTML5-url]
 [![JavaScript][JavaScript]][JavaScript-url]
 [![TypeScript][TypeScript]][TypeScript-url]
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Usage
+
+...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
