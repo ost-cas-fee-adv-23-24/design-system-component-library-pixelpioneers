@@ -29,8 +29,8 @@
         "default": "./lib/cjs/index.cjs"
       }
     },
-    "./lib/index.css": "./index.css",
-    "./lib/tailwind.config.ts": "./tailwind.config.js"
+    "./index.css": "./lib/index.css",
+    "./tailwind.config.js": "./lib/tailwind.config.js"
   },
   "main": "./lib/esm/index.js",
   "types": "./lib/esm/types/index.d.ts",

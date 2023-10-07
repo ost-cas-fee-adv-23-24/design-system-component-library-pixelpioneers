@@ -110,8 +110,7 @@ Get started with Tailwind.
 > Important
 > <br/>
 > 📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with react-scripts@2.0.0, then leave the options object empty.
-> <br/>
-> [Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
+> <br/> > [Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
 
 Tailwind CSS as a PostCSS installation and configuration, see
 [here](https://tailwindcss.com/docs/installation/using-postcss)
@@ -220,10 +219,11 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 ## Roadmap
 
 - [x] Clean up README.md
-- [ ] Define why to use any packages
+- [x] Define why to use any packages
 - [ ] Use TS for the file: `tailwind.config.js` instead
 - [ ] Test all run scripts
 - [ ] Add MDX for documentation
+- [ ] Visual process flow in picture
 - [ ] README.md - More details and corrections (after: Create React App with TypeScript Template)
 - [ ] Test to install this package in the Next.js application
 - [ ] Analyzing the Tailwind Export Module Issue
