@@ -78,7 +78,7 @@ npm install npm@latest -g
 
 ### Usage
 
-...
+TODO: ...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -88,7 +88,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### React
 
-Create React App with TypeScript Template
+Create React App with TypeScript Template.
 <br/>`npx create-react-app my-app --template typescript`
 <br/>
 [Link](https://create-react-app.dev/docs/getting-started)
@@ -107,11 +107,11 @@ Get started with Tailwind.
 <br/>
 `npx tailwindcss init`
 
-Important:
-<br/>
-📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with react-scripts@2.0.0, then leave the options object empty.
-<br/>
-[Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
+> Important
+> <br/>
+> 📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with react-scripts@2.0.0, then leave the options object empty.
+> <br/>
+> [Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
 
 Tailwind CSS as a PostCSS installation and configuration, see
 [here](https://tailwindcss.com/docs/installation/using-postcss)
@@ -125,25 +125,36 @@ see also [Configure Storybook with TypeScript](https://storybook.js.org/docs/rea
 <br/>
 Then re-write stories in TypeScript only.
 
-#### Prettier
+#### prettier
 
 `npm install --save-dev --save-exact prettier`
 <br/>
 [Link](https://prettier.io/docs/en/install)
 
-#### Husky / Git hooks
+#### postcss
 
-...
+PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more. Installing Tailwind CSS as a PostCSS plugin is the most seamless way to integrate it with build tools like webpack.
+It also supports Autoprefixer. See the part of Tailwind above.
+
+#### husky / Git hooks
+
+You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See here [husky](https://typicode.github.io/husky/) or [husky npm](https://www.npmjs.com/package/husky).
+
+#### lint-staged
+
+Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check there [lint-staged github](https://github.com/okonet/lint-staged) or [lint-staged npm](https://www.npmjs.com/package/lint-staged).
 
 #### ESLint
 
-...
+ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, see also [ESLint - npm](https://www.npmjs.com/package/eslint) or [Getting Started with ESLint](https://eslint.org/docs/latest/use/getting-started).
 
-#### CommitLint
+#### commitlint
 
-...
+commitlint checks if your commit messages meet the [conventional commit format](commitlint checks if your commit messages meet the conventional commit format). See also [commitlint - github](https://github.com/conventional-changelog/commitlint) or [commitlint](https://commitlint.js.org/#/).
 
 #### Workround
+
+A way of dealing with a problem or making something work despite the problem, without completely solving it.
 
 > Override TypeScript@5, see also there: [Workaround](https://github.com/facebook/create-react-app/issues/13080) > <br/>
 > (We need TS@5 to bundle CJS and ESM)
