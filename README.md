@@ -70,7 +70,7 @@ npm install npm@latest -g
 [![JavaScript][JavaScript]][JavaScript-url]
 [![TypeScript][TypeScript]][TypeScript-url]
 
-<p align="right">(<a href="#readme-top">Back to top</a>)</p>
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Bootstrapped with
 
@@ -135,8 +135,7 @@ Then re-write stories in TypeScript only.
 
 #### Workround
 
-> Override TypeScript@5, see also there: [Workaround](https://github.com/facebook/create-react-app/issues/13080)
-> <br/>
+> Override TypeScript@5, see also there: [Workaround](https://github.com/facebook/create-react-app/issues/13080) > <br/>
 > (We need TS@5 to bundle CJS and ESM)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -199,23 +198,15 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 
 ## Roadmap
 
-<input type="checkbox" disabled checked /> Clean up README.md
-<br/>
-<input type="checkbox" disabled checked /> Define why to use any packages
-<br/>
-<input type="checkbox" disabled unchecked /> Use TS for the file: `tailwind.config.js` instead
-<br/>
-<input type="checkbox" disabled unchecked /> Test all run scripts
-<br/>
-<input type="checkbox" disabled unchecked /> Add MDX for documentation
-<br/>
-<input type="checkbox" disabled unchecked /> README.md - More details and corrections (after: Create React App with TypeScript Template)
-<br/>
-<input type="checkbox" disabled unchecked /> Test to install this package in the Next.js application
-<br/>
-<input type="checkbox" disabled unchecked /> Analyzing the Tailwind Export Module Issue
-<br/>
-<input type="checkbox" disabled unchecked /> Check https://github.com/prettier/eslint-config-prettier
+- [x] Clean up README.md
+- [ ] Define why to use any packages
+- [ ] Use TS for the file: `tailwind.config.js` instead
+- [ ] Test all run scripts
+- [ ] Add MDX for documentation
+- [ ] README.md - More details and corrections (after: Create React App with TypeScript Template)
+- [ ] Test to install this package in the Next.js application
+- [ ] Analyzing the Tailwind Export Module Issue
+- [ ] Check https://github.com/prettier/eslint-config-prettier
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
