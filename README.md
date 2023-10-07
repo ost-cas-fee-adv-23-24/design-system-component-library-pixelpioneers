@@ -178,6 +178,10 @@ In the project directory, you can run:
 
 `npm run clean` removes the `lib` folder.
 
+`npm run lint` checks lint.
+
+`npm run lint:fix` fixes lint.
+
 `npm run prettier` runs prettier.
 
 `npm run prettier-check` check code-format with prettier and print out warnings if available.
