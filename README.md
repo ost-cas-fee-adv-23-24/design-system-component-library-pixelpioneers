@@ -34,8 +34,8 @@
         <li><a href="#available-scripts">Available scripts</a></li>
       </ul>
     </li>
+    <li><a href="#collaboration">Collaboration</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contribution">Contribution</a></li>
   </ol>
 </details>
 
@@ -76,15 +76,15 @@ npm install npm@latest -g
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Bootstrapped with
+
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 ### Usage
 
 TODO: ...
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-### Bootstrapped with
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 #### React
 
