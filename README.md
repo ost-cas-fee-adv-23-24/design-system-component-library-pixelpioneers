@@ -186,6 +186,8 @@ In the project directory, you can run:
 
 `npm run prettier-check` check code-format with prettier and print out warnings if available.
 
+`npm pack` creates a tarball from a package.
+
 `npm start` runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
