@@ -43,8 +43,8 @@
 
 Maintaners:
 
-👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch)<br/>
-👋 André Ceres - [write an e-mail to André](mailto:andre.ceres@ost.ch)
+👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch) 👨‍💻<br/>
+👋 André Ceres - [write an e-mail to André](mailto:andre.ceres@ost.ch) 👨‍💻
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -137,11 +137,11 @@ It also supports Autoprefixer. See the part of Tailwind above.
 
 #### husky / Git hooks
 
-You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See here [husky](https://typicode.github.io/husky/) or [husky npm](https://www.npmjs.com/package/husky).
+You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See here [husky - github](https://typicode.github.io/husky/) or [husky npm](https://www.npmjs.com/package/husky).
 
 #### lint-staged
 
-Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check there [lint-staged github](https://github.com/okonet/lint-staged) or [lint-staged npm](https://www.npmjs.com/package/lint-staged).
+Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check there [lint-staged - github](https://github.com/okonet/lint-staged) or [lint-staged - npm](https://www.npmjs.com/package/lint-staged).
 
 #### ESLint
 
@@ -150,6 +150,11 @@ ESLint is a tool for identifying and reporting on patterns found in ECMAScript/J
 #### commitlint
 
 commitlint checks if your commit messages meet the [conventional commit format](commitlint checks if your commit messages meet the conventional commit format). See also [commitlint - github](https://github.com/conventional-changelog/commitlint) or [commitlint](https://commitlint.js.org/#/).
+
+#### clsx
+
+A tiny (234B) utility for constructing className strings conditionally.
+Also serves as a faster & smaller drop-in replacement for the classnames module. More about it: [clsx - npm](https://www.npmjs.com/package/clsx)
 
 #### Workround
 
