@@ -228,11 +228,11 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 - [x] Define why to use any packages
 - [ ] Use TS for the file: `tailwind.config.js` instead
 - [ ] Test all run scripts
-- [ ] Add MDX for documentation
+- [x] Add MDX for documentation
 - [ ] Visual process flow in picture
 - [ ] README.md - More details and corrections (after: Create React App with TypeScript Template)
-- [ ] Test to install this package in the Next.js application
-- [ ] Analyzing the Tailwind Export Module Issue
+- [x] Test to install this package in the Next.js application
+- [x] Analyzing the Tailwind Export Module Issue
 - [ ] Check https://github.com/prettier/eslint-config-prettier
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
