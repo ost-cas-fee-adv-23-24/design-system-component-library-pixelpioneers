@@ -154,13 +154,13 @@ commitlint checks if your commit messages meet the [conventional commit format](
 #### clsx
 
 A tiny (234B) utility for constructing className strings conditionally.
-Also serves as a faster & smaller drop-in replacement for the classnames module. More about it: [clsx - npm](https://www.npmjs.com/package/clsx)
+Also serves as a faster & smaller drop-in replacement for the classnames module. More about it: [clsx - npm](https://www.npmjs.com/package/clsx).
 
 #### Workround
 
 A way of dealing with a problem or making something work despite the problem, without completely solving it.
 
-> Override TypeScript@5, see also there: [Workaround](https://github.com/facebook/create-react-app/issues/13080) > <br/>
+> Override TypeScript@5, see also there: [Workaround](https://github.com/facebook/create-react-app/issues/13080)<br/>
 > (We need TS@5 to bundle CJS and ESM)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
