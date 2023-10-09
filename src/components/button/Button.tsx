@@ -16,9 +16,7 @@ export const Button = ({
     label,
     ...props
 }: ButtonProps) => {
-    const mode = primary
-        ? 'bg-red-300 hover:bg-red-500'
-        : 'bg-amber-300 hover:bg-amber-500';
+    const mode = primary ? 'bg-red-300 hover:bg-red-500' : 'bg-amber-300 hover:bg-amber-500';
 
     const sizeClasses = {
         small: 'px-2 py-1 text-sm',

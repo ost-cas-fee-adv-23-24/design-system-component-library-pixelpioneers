@@ -10,7 +10,7 @@ export const pixelPioneersTheme = create({
     brandTitle: 'PixelPioneers Storybook',
     brandUrl: 'https://www.ost.ch',
     brandImage:
-        'https://w7.pngwing.com/pngs/440/309/png-transparent-official-united-states-non-profit-organisation-business-rubber-stamp-text-service-logo-thumbnail.png',
+        'https://raw.githubusercontent.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/b235727143d51be01dbcbfa84f2e17abf989801a/src/assets/pixelpioneers.png',
     brandTarget: '_blank',
 
     // Color
