@@ -31,6 +31,7 @@
         <li><a href="#built-with">Built with</a></li>
         <li><a href="#bootstrapped-with">Bootstrapped with</a></li>
         <li><a href="#usage">Usage</a></li>
+        <li><a href="#technology-stack">Technology Stack</a></li>
         <li><a href="#available-scripts">Available scripts</a></li>
       </ul>
     </li>
@@ -82,9 +83,38 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Usage
 
-TODO: ...
+#### How to setup Tailwind configuration in Next.js application
+
+Make your Next.js app active for using the Tailwind presets of this Design System Library. Make sure that the following code snippet is added in the tailwind.config.js.
+
+This loads design tokens as presets.
+
+```sh
+presets: [
+    require('@ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/tailwind-config')
+],
+```
+
+Check that this Component Library is also added in using the Tailwind CSS of the Next.js app. Please add the following code snippet in your tailwind.config.js.
+
+```sh
+content: [
+    ...
+    './node_modules/@ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/lib/esm/components/**/*.js'
+],
+```
+
+For having more information related this configuration, it can be found here: [Tailwind with Next.js](https://tailwindcss.com/docs/guides/nextjs).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+### Authenticating GitHub Registry
+
+TODO: ...
+
+### Technology Stack
+
+The tools and libraries those are included:
 
 #### React
 
