@@ -83,15 +83,17 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Usage
 
-#### How to setup Tailwind configuration in Next.js application
+#### How to setup Tailwind configuration in your Next.js application
 
 Make your Next.js app active for using the Tailwind presets of this Design System Library. Make sure that the following code snippet is added in the tailwind.config.js.
 
 This loads design tokens as presets.
 
+TODO: We also need to use this. This is still not in using in our Next.js app. It is just documented for the moment.
+
 ```sh
 presets: [
-    require('@ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/tailwind-config')
+    require('@ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/preset')
 ],
 ```
 
@@ -104,7 +106,7 @@ content: [
 ],
 ```
 
-For having more information related this configuration, it can be found here: [Tailwind with Next.js](https://tailwindcss.com/docs/guides/nextjs).
+For having more information related this configuration, it can be found here: [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
