@@ -55,11 +55,11 @@
     "test": "react-scripts test"
   },
   "lint-staged": {
-    "*.{css,md,json}": [
-      "prettier --write --config ./.prettierrc.json"
-    ],
     "src/**/*.{js,ts,jsx,tsx}": [
       "eslint --config ./.eslintrc.json --max-warnings=0 --ext js --ext ts --ext jsx --ext tsx"
+    ],
+    "*.{css,md,json,js,ts,jsx,tsx}": [
+      "prettier --write --config ./.prettierrc.json"
     ]
   },
   "browserslist": {
