@@ -2,8 +2,8 @@
 
 ## Design System - PixelPioneers 🐥
 
-![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/deploy-storybook.yaml?label=deploy%20storybook)
-![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/release.yaml?label=release%20system%20design%20library)
+![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/3-deploy-storybook.yaml?label=deploy%20storybook)
+![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/4-release.yaml?label=release%20system%20design%20library)
 ![](https://img.shields.io/github/license/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 ![](https://img.shields.io/github/contributors/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 
