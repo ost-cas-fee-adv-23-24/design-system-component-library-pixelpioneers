@@ -3,6 +3,13 @@
   "version": "0.0.0-development",
   "private": false,
   "description": "Design System Component Library PixelPioneers",
+  "keywords": [
+    "Frontend Engineering Advanced 2023 / 2024",
+    "Storybook",
+    "PixelPioneers",
+    "Frontend",
+    "TypeScript"
+  ],
   "license": "MIT",
   "author": "Fachhochschule OST - CAS Frontend Advanced - Team: PixelPioneers",
   "contributors": [

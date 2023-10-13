@@ -221,7 +221,7 @@ In the project directory, you can run:
 
 `npm run prettier` runs prettier.
 
-`npm run prettier-check` check code-format with prettier and print out warnings if available.
+`npm run prettier:check` check code-format with prettier and print out warnings if available.
 
 `npm pack` creates a tarball from a package.
 
@@ -261,16 +261,13 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 
 ## Roadmap
 
-- [x] Clean up README.md
-- [x] Define why to use any packages
 - [ ] Use TS for the file: `tailwind.config.js` instead
 - [ ] Test all run scripts
-- [x] Add MDX for documentation
 - [ ] Visual process flow in picture
 - [ ] README.md - More details and corrections (after: Create React App with TypeScript Template)
-- [x] Test to install this package in the Next.js application
 - [x] Analyzing the Tailwind Export Module Issue
 - [ ] Check https://github.com/prettier/eslint-config-prettier
+- [ ] Check TODOs
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -294,4 +291,4 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 [JavaScript]: https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E
 [JavaScript-url]: https://developer.mozilla.org/en-US/docs/Web/JavaScript
 [TypeScript]: https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white
-[TypeScript-url]: https://developer.mozilla.org/en-US/docs/Glossary/HTML5
+[TypeScript-url]: https://www.typescriptlang.org/
