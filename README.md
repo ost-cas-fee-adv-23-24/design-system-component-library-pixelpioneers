@@ -11,8 +11,9 @@
   <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
     <img src="src/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
   </a>
-  
-  [Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers) 📚
+
+[Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers) 📚
+
 </section>
 
 > Version: 0.0.0-development
@@ -51,7 +52,9 @@ Maintaners:
 
 ## Getting Started
 
-Design System PixelPioneers is a Storybook with Tailwind integrated based on React Component Library. This is the first part of the CAS Frontend Engineering Advanced course which expect the result that this library can be installed in the Next.js application. In the Next.js application we can reuse components from this library.
+Design System PixelPioneers is a Storybook with Tailwind integrated based on React Component Library. This is the first
+part of the CAS Frontend Engineering Advanced course which expect the result that this library can be installed in the
+Next.js application. In the Next.js application we can reuse components from this library.
 
 ### Pre-requisites
 
@@ -85,7 +88,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 #### How to setup Tailwind configuration in your Next.js application
 
-Make your Next.js app active for using the Tailwind presets of this Design System Library. Make sure that the following code snippet is added in the tailwind.config.js.
+Make your Next.js app active for using the Tailwind presets of this Design System Library. Make sure that the following
+code snippet is added in the tailwind.config.js.
 
 This loads design tokens as presets.
 
@@ -97,7 +101,8 @@ presets: [
 ],
 ```
 
-Check that this Component Library is also added in using the Tailwind CSS of the Next.js app. Please add the following code snippet in your tailwind.config.js.
+Check that this Component Library is also added in using the Tailwind CSS of the Next.js app. Please add the following
+code snippet in your tailwind.config.js.
 
 ```sh
 content: [
@@ -106,7 +111,8 @@ content: [
 ],
 ```
 
-For having more information related this configuration, it can be found here: [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs).
+For having more information related this configuration, it can be found
+here: [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -141,7 +147,8 @@ Get started with Tailwind.
 
 > Important
 > <br/>
-> 📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with react-scripts@2.0.0, then leave the options object empty.
+> 📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with
+> react-scripts@2.0.0, then leave the options object empty.
 > <br/> > [Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
 
 Tailwind CSS as a PostCSS installation and configuration, see
@@ -164,29 +171,41 @@ Then re-write stories in TypeScript only.
 
 #### postcss
 
-PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and mixins, transpile future CSS syntax, inline images, and more. Installing Tailwind CSS as a PostCSS plugin is the most seamless way to integrate it with build tools like webpack.
+PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and
+mixins, transpile future CSS syntax, inline images, and more. Installing Tailwind CSS as a PostCSS plugin is the most
+seamless way to integrate it with build tools like webpack.
 It also supports Autoprefixer. See the part of Tailwind above.
 
 #### husky / Git hooks
 
-You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See here [husky - github](https://typicode.github.io/husky/) or [husky npm](https://www.npmjs.com/package/husky).
+You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See
+here [husky - github](https://typicode.github.io/husky/) or [husky npm](https://www.npmjs.com/package/husky).
 
 #### lint-staged
 
-Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check there [lint-staged - github](https://github.com/okonet/lint-staged) or [lint-staged - npm](https://www.npmjs.com/package/lint-staged).
+Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before
+committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check
+there [lint-staged - github](https://github.com/okonet/lint-staged)
+or [lint-staged - npm](https://www.npmjs.com/package/lint-staged).
 
 #### ESLint
 
-ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, see also [ESLint - npm](https://www.npmjs.com/package/eslint) or [Getting Started with ESLint](https://eslint.org/docs/latest/use/getting-started).
+ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, see
+also [ESLint - npm](https://www.npmjs.com/package/eslint)
+or [Getting Started with ESLint](https://eslint.org/docs/latest/use/getting-started).
 
 #### commitlint
 
-commitlint checks if your commit messages meet the [conventional commit format](commitlint checks if your commit messages meet the conventional commit format). See also [commitlint - github](https://github.com/conventional-changelog/commitlint) or [commitlint](https://commitlint.js.org/#/).
+commitlint checks if your commit messages meet
+the [conventional commit format](commitlint checks if your commit messages meet the conventional commit format). See
+also [commitlint - github](https://github.com/conventional-changelog/commitlint)
+or [commitlint](https://commitlint.js.org/#/).
 
 #### clsx
 
 A tiny (234B) utility for constructing className strings conditionally.
-Also serves as a faster & smaller drop-in replacement for the classnames module. More about it: [clsx - npm](https://www.npmjs.com/package/clsx).
+Also serves as a faster & smaller drop-in replacement for the classnames module. More about
+it: [clsx - npm](https://www.npmjs.com/package/clsx).
 
 #### Workround
 
@@ -242,13 +261,16 @@ Development Agreement
 
 #### Conventional Commits
 
-> A specification for adding human and machine readable meaning to commit messages, see also [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
+> A specification for adding human and machine readable meaning to commit messages, see
+> also [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
 #### Contribution
 
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
+contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag name: **enhancement**.
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also
+simply open an issue with the tag name: **enhancement**.
 Don't forget to give the project a star! ⭐️ Thanks! 🙏
 
 1. Fork the Project
@@ -268,6 +290,7 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 - [x] Analyzing the Tailwind Export Module Issue
 - [ ] Check https://github.com/prettier/eslint-config-prettier
 - [ ] Check TODOs
+- [ ] Which NODE Version should we use
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
