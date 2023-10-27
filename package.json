@@ -59,7 +59,9 @@
     "prettier:check": "prettier --log-level warn --check \"src/**/*.{js,jsx,ts,tsx,css,md,json}\"",
     "start": "react-scripts start",
     "storybook": "storybook dev -p 6006",
-    "test": "react-scripts test"
+    "test": "react-scripts test",
+    "test:snapshot": "npx playwright test",
+    "test:snapshot:update": "npm run test:snapshot -- --update-snapshots"
   },
   "lint-staged": {
     "src/**/*.{js,ts,jsx,tsx}": [
@@ -104,6 +106,7 @@
     "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@storybook/addon-docs": "^7.5.2",
+    "@playwright/test": "^1.39.0",
     "@storybook/addon-essentials": "^7.4.3",
     "@storybook/addon-interactions": "^7.4.3",
     "@storybook/addon-links": "^7.4.3",

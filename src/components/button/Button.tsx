@@ -26,6 +26,7 @@ export const Button = ({
 
     return (
         <button
+            id="button"
             type="button"
             className={clsx(sizeClasses, mode)}
             style={{ backgroundColor }}
