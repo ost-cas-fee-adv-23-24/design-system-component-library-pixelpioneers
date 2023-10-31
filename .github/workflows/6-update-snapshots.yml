@@ -11,9 +11,7 @@ jobs:
         with:
           node-version: 18
       - name: Install dependencies
-        run: npm ci
-      - name: Use Docker to generate / update screenshots
-        run: docker run --rm --network host -v $(pwd):/work/ -w /work/ -it mcr.microsoft.com/playwright:v1.39.0-jammy /bin/bash  
+        run: npm ci 
       - name: Install Playwright Browsers
         run: npx playwright install --with-deps
       - name: Run Playwright tests
