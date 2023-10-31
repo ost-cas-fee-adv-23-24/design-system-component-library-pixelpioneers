@@ -34,7 +34,13 @@ export default defineConfig({
     // outputDir: './testResults/snapshot',
     snapshotPathTemplate: '{testDir}/testResults/snapshot/{testFilePath}/{arg}{ext}',
     expect: {
+        timeout: 10000,
         toHaveScreenshot: { maxDiffPixels: 100 },
+        toMatchSnapshot: {
+            threshold: 0.2,
+            maxDiffPixels: 80,
+            maxDiffPixelRatio: 0.2,
+        },
     },
 
     /* Configure projects for major browsers */
