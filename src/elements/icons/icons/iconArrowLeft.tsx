@@ -17,7 +17,7 @@ export const IconArrowLeft: FC<IconProps> = ({ title, className }) => {
             {title && <title>{title}</title>}
             <g clipPath="url(#a)">
                 <path
-                    fill="#475569"
+                    fill="currentColor"
                     d="M15 7H7V4a1 1 0 0 0-1.625-.781l-5 4a1 1 0 0 0 0 1.562l5 4A1 1 0 0 0 7 12V9h8a1 1 0 0 0 0-2Z"
                 />
             </g>

@@ -35,15 +35,19 @@ export const IconStory: StoryObj<typeof Icons.IconMumble> = (args: IconProps) =>
 IconStory.storyName = 'All Icons';
 IconStory.args = {
     className:
-        'w-8 h-8 shrink-0 bg-neutral-on-default p-1.5 mt-1.5 text-primary-default hover:text-primary-bold2',
+        'w-8 h-8 shrink-0 bg-neutral-on-default p-1.5 mt-1.5 text-blue-700 hover:text-blue-950',
 };
 
-const render: Story['render'] = (args) => <Icons.IconMumble {...args} />;
+const render: Story['render'] = (args) => (
+    <div className="group/icon">
+        <Icons.IconMumble {...args} />
+    </div>
+);
 
 export const SingleIconStory: Story = {
     args: {
         title: 'That is an Mumble Icon',
-        className: 'w-8 h-8 text-primary-default',
+        className: 'w-8 h-8 text-blue-700 hover:text-blue-950',
     },
     render,
 };
