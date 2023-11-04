@@ -1,0 +1,30 @@
+import { ArgTypes, Canvas } from '@storybook/addon-docs';
+import { IconStory, SingleIconStory } from './icons.stories';
+
+# Icons
+
+To add an icon, see [STYLING](/docs/)
+
+## All Icons
+
+An icon list for all icons with icon name
+
+<Canvas of={IconStory} />
+
+## Single Icon (Mumble Icon)
+
+Mumble icon as an example.
+
+<Canvas of={SingleIconStory} />
+
+### Configuration
+
+<ArgTypes of={SingleIconStory} />
+
+### Implementation example
+
+To implement an icon you can use following example:
+
+```html
+<IconMumble className="h-8 w-8 text-interaction" />
+```
