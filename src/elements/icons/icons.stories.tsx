@@ -1,13 +1,19 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import type { FC } from 'react';
 import { createElement } from 'react';
-import type { IconProps } from '.';
+import { IconProps, IconSize } from '.';
 import * as Icons from './icons';
 
 type Story = StoryObj<typeof Icons.IconMumble>;
 
 export default {
     title: 'Elements/Icons',
+    argTypes: {
+        size: {
+            options: IconSize,
+            control: { type: 'radio' },
+        },
+    },
     parameters: {
         layout: 'padded',
     },
@@ -16,11 +22,11 @@ export default {
 export const IconStory: StoryObj<typeof Icons.IconMumble> = (args: IconProps) => {
     const IconList = Object.values(Icons);
     return (
-        <ul className="from-primary-default to-primary-bold2 flex flex-1 flex-row flex-wrap justify-center bg-gradient-to-tr">
+        <ul className="flex flex-1 flex-row flex-wrap justify-center bg-gradient-to-tr">
             {IconList.map((icon: FC<IconProps>) => (
                 <li
                     key={icon.name}
-                    className="bg-neutral-on-default m-1.5 flex h-20 w-16 flex-col items-center rounded-lg p-2 drop-shadow-lg md:w-20"
+                    className="m-1.5 flex w-8 flex-col items-center rounded-lg p-2 drop-shadow-lg"
                 >
                     {createElement(icon, args)}
                     <p className="text-150 md:text-200 w-full break-words pt-2 text-center">
@@ -34,8 +40,8 @@ export const IconStory: StoryObj<typeof Icons.IconMumble> = (args: IconProps) =>
 
 IconStory.storyName = 'All Icons';
 IconStory.args = {
-    className:
-        'w-8 h-8 shrink-0 bg-neutral-on-default p-1.5 mt-1.5 text-blue-700 hover:text-blue-950',
+    size: IconSize.MD,
+    className: 'text-blue-700 hover:text-blue-950',
 };
 
 const render: Story['render'] = (args) => (
@@ -47,7 +53,8 @@ const render: Story['render'] = (args) => (
 export const SingleIconStory: Story = {
     args: {
         title: 'That is an Mumble Icon',
-        className: 'w-8 h-8 text-blue-700 hover:text-blue-950',
+        className: 'text-blue-700 hover:text-blue-950',
+        size: IconSize.MD,
     },
     render,
 };
