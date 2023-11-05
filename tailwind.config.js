@@ -4,6 +4,43 @@ module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
     darkMode: ['class', '[data-mode="dark"]'],
     theme: {
+        fontFamily: {
+            poppins: ['Poppins', 'sans-serif'],
+        },
+        fontSize: {
+            xs: '0.875rem', // 14px
+            sm: '1rem', // 16px
+            base: '1.125rem', // 18px
+            lg: '1.25rem', // 20px
+            xl: '1.5rem', // 24px
+            '2xl': '2rem', // 32px
+            '3xl': '2.5rem', // 40px
+            '4xl': '3rem', // 48px
+        },
+        lineHeight: {
+            none: '1',
+            s: '1.25',
+        },
+        fontWeight: {
+            medium: '500',
+            semibold: '600',
+            bold: '700',
+        },
+        spacing: {
+            '2xs': '0.25rem', // 4px
+            xs: '0.5rem', // 8px
+            s: '1rem', // 16px
+            m: '1.5rem', // 24px
+            l: '2rem', // 32px
+            xl: '3rem', // 48px
+            '2xl': '4rem', // 64px
+        },
+        borderRadius: {
+            none: '0',
+            s: '0.5rem', // 8px
+            m: '1rem', // 16px
+            full: '100%',
+        },
         colors: {
             black: '#000',
             white: '#fff',
