@@ -2,9 +2,10 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
     stories: [
-        '../src/**/*.(mdx)',
         '../docs/*.(mdx)',
-        '../src/**/*.stories.@(js|jsx|mjs|ts|tsx)'
+        '../*.mdx',
+        '../src/**/*.(mdx)',
+        '../src/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)',
     ],
     addons: [
         '@storybook/addon-links',
@@ -17,6 +18,9 @@ const config: StorybookConfig = {
             options: {},
         },
     ],
+    core: {
+        disableTelemetry: true,
+    },
     framework: {
         name: '@storybook/react-webpack5',
         options: {},
