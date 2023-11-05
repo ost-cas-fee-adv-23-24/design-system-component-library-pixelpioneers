@@ -1,35 +1,46 @@
 import React from 'react';
 import clsx from 'clsx';
 
-interface ButtonProps {
-    primary?: boolean;
-    backgroundColor?: string;
-    size?: 'small' | 'medium' | 'large';
+interface Props {
+    color?: ButtonColor;
+    size?: ButtonSize;
     label: string;
     onClick?: () => void;
 }
 
+enum ButtonColor {
+    SLATE = 'slate',
+    VIOLET = 'violet',
+    GRADIENT = 'gradient',
+}
+
+enum ButtonSize {
+    MEDIUM = 'medium',
+    LARGE = 'large',
+}
+
 export const Button = ({
-    primary = false,
-    size = 'medium',
-    backgroundColor,
+    color = ButtonColor.SLATE,
+    size = ButtonSize.MEDIUM,
     label,
     ...props
-}: ButtonProps) => {
-    const mode = primary
-        ? 'bg-gradient-to-r from-pink-500 to-violet-500 hover:bg-gradient-to-r hover:from-pink-200 hover:to-violet-200'
-        : 'bg-pink-500 hover:bg-pink-600';
+}: Props) => {
+    const colorClasses = {
+        slate: 'bg-slate-600 hover:bg-slate-700',
+        violet: 'bg-violet-600 hover:bg-violet-700',
+        gradient:
+            'bg-gradient-to-r from-pink-500 to-violet-500 hover:bg-gradient-to-r hover:from-pink-200 hover:to-violet-200',
+    }[color];
 
     const sizeClasses = {
-        small: 'px-2 py-1 text-sm',
-        medium: 'px-3 py-2 text-base',
-        large: 'px-4 py-3 text-lg',
+        medium: 'p-[12px] text-base',
+        large: 'p-s text-lg',
     }[size];
 
     return (
         <button
             type="button"
-            className={clsx(sizeClasses, mode, backgroundColor, 'text-white')}
+            className={clsx(sizeClasses, colorClasses, 'rounded-s font-poppins text-white')}
             {...props}
         >
             {label}
