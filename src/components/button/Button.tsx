@@ -16,7 +16,9 @@ export const Button = ({
     label,
     ...props
 }: ButtonProps) => {
-    const mode = primary ? 'bg-red-300 hover:bg-red-500' : 'bg-amber-300 hover:bg-amber-500';
+    const mode = primary
+        ? 'bg-gradient-to-r from-pink-500 to-violet-500 hover:bg-gradient-to-r hover:from-pink-200 hover:to-violet-200'
+        : 'bg-pink-500 hover:bg-pink-600';
 
     const sizeClasses = {
         small: 'px-2 py-1 text-sm',
@@ -27,8 +29,7 @@ export const Button = ({
     return (
         <button
             type="button"
-            className={clsx(sizeClasses, mode)}
-            style={{ backgroundColor }}
+            className={clsx(sizeClasses, mode, backgroundColor, 'text-white')}
             {...props}
         >
             {label}
