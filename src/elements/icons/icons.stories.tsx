@@ -45,7 +45,7 @@ IconStory.args = {
 };
 
 const render: Story['render'] = (args) => (
-    <div className="group/icon">
+    <div className="group">
         <Icons.IconMumble {...args} />
     </div>
 );
