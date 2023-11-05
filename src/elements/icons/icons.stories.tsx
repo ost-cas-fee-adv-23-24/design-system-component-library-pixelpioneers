@@ -6,7 +6,7 @@ import * as Icons from './icons';
 
 type Story = StoryObj<typeof Icons.IconMumble>;
 
-export default {
+const meta: Meta<typeof Icons.IconMumble> = {
     title: 'Elements/Icons',
     argTypes: {
         size: {
@@ -17,7 +17,9 @@ export default {
     parameters: {
         layout: 'padded',
     },
-} as Meta<typeof Icons.IconMumble>;
+};
+
+export default meta;
 
 export const IconStory: StoryObj<typeof Icons.IconMumble> = (args: IconProps) => {
     const IconList = Object.values(Icons);
