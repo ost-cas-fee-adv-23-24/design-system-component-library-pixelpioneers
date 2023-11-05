@@ -10,7 +10,7 @@ export default {
     title: 'Elements/Icons',
     argTypes: {
         size: {
-            options: IconSize,
+            options: Object.values(IconSize),
             control: { type: 'radio' },
         },
     },
@@ -26,7 +26,7 @@ export const IconStory: StoryObj<typeof Icons.IconMumble> = (args: IconProps) =>
             {IconList.map((icon: FC<IconProps>) => (
                 <li
                     key={icon.name}
-                    className="m-1.5 flex w-8 flex-col items-center rounded-lg p-2 drop-shadow-lg"
+                    className="w-18 m-1.5 flex flex-col items-center rounded-lg p-2 drop-shadow-lg"
                 >
                     {createElement(icon, args)}
                     <p className="text-150 md:text-200 w-full break-words pt-2 text-center">
