@@ -20,6 +20,8 @@ module.exports = {
         lineHeight: {
             none: '1',
             s: '1.25',
+            m: '1.4',
+            l: '1.45',
         },
         fontWeight: {
             medium: '500',
