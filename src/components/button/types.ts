@@ -1,14 +1,17 @@
+import { ComponentType } from 'react';
+import { IconProps } from '../../elements';
+
 export interface ButtonProps {
-    color?: ButtonColor;
-    size?: 'm' | 'l';
-    label: string;
+    Icon: ComponentType<IconProps>;
+    variant?: ButtonVariant;
     onClick?: () => void;
-    icon?: string;
     disabled?: boolean;
+    size: 'm' | 'l';
+    label?: string;
 }
 
-export enum ButtonColor {
-    SLATE = 'slate',
-    VIOLET = 'violet',
-    GRADIENT = 'gradient',
+export enum ButtonVariant {
+    PRIMARY = 'primary',
+    SECONDARY = 'secondary',
+    TERTIARY = 'tertiary',
 }

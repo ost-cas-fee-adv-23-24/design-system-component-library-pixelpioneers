@@ -1,11 +1,12 @@
-/** @type {import("tailwindcss").Config} */
+import colors from 'tailwindcss/colors';
 
+/** @type {import("tailwindcss").Config} */
 module.exports = {
     content: ['./src/**/*.{js,jsx,ts,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
     darkMode: ['class', '[data-mode="dark"]'],
     theme: {
         fontFamily: {
-            poppins: ['Poppins', 'sans-serif'],
+            default: ['Poppins', 'sans-serif'],
         },
         fontSize: {
             xs: '0.875rem', // 14px
@@ -42,6 +43,12 @@ module.exports = {
             s: '0.5rem', // 8px
             m: '1rem', // 16px
             full: '100%',
+        },
+        ringWidth: {
+            2: '2px',
+            3: '3px',
+            4: '4px',
+            6: '6px',
         },
         colors: {
             black: '#000',
@@ -82,6 +89,9 @@ module.exports = {
                 800: '#1E293B',
                 900: '#0F172A',
             },
+            primary: colors.violet,
+            secondary: colors.slate,
+            tertiary: colors.pink,
             extend: {
                 backgroundImage: {
                     'gradient-50-50':
