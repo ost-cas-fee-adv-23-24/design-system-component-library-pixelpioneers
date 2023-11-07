@@ -1,37 +1,34 @@
 import React from 'react';
 import clsx from 'clsx';
-
-interface ButtonProps {
-    primary?: boolean;
-    backgroundColor?: string;
-    size?: 'small' | 'medium' | 'large';
-    label: string;
-    onClick?: () => void;
-}
+import { ButtonColor, ButtonProps } from './types';
+import { Label } from '../typography';
 
 export const Button = ({
-    primary = false,
-    size = 'medium',
-    backgroundColor,
+    color = ButtonColor.SLATE,
+    size = 'm',
     label,
-    ...props
+    icon,
+    disabled = false,
 }: ButtonProps) => {
-    const mode = primary ? 'bg-red-300 hover:bg-red-500' : 'bg-amber-300 hover:bg-amber-500';
+    const colorClasses = {
+        slate: 'bg-slate-600 hover:bg-slate-700',
+        violet: 'bg-violet-600 hover:bg-violet-700',
+        gradient: 'bg-gradient-to-r from-pink-500 to-violet-500',
+    }[color];
 
     const sizeClasses = {
-        small: 'px-2 py-1 text-sm',
-        medium: 'px-3 py-2 text-base',
-        large: 'px-4 py-3 text-lg',
+        m: 'p-[12px] gap-s',
+        l: 'p-s gap-[12px]',
     }[size];
 
     return (
         <button
             type="button"
-            className={clsx(sizeClasses, mode)}
-            style={{ backgroundColor }}
-            {...props}
+            className={clsx(sizeClasses, colorClasses, 'flex rounded-s')}
+            disabled={disabled}
         >
-            {label}
+            {label && <Label text={label} size="m" color="text-white" />}
+            {icon && <span>{icon}</span>}
         </button>
     );
 };
