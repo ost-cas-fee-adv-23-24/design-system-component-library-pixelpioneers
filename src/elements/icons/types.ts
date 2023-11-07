@@ -8,4 +8,5 @@ export type IconProps = {
     title?: string | null;
     className?: string;
     size?: IconSize;
+    color?: string | null;
 };
