@@ -1,30 +1,15 @@
 import React from 'react';
 import clsx from 'clsx';
-
-interface Props {
-    color?: ButtonColor;
-    size?: ButtonSize;
-    label: string;
-    onClick?: () => void;
-}
-
-enum ButtonColor {
-    SLATE = 'slate',
-    VIOLET = 'violet',
-    GRADIENT = 'gradient',
-}
-
-enum ButtonSize {
-    MEDIUM = 'medium',
-    LARGE = 'large',
-}
+import { Label } from '../../elements/typography/label/label';
+import { ButtonColor, ButtonProps } from './types';
 
 export const Button = ({
     color = ButtonColor.SLATE,
-    size = ButtonSize.MEDIUM,
+    size = 'm',
     label,
-    ...props
-}: Props) => {
+    icon,
+    disabled = false,
+}: ButtonProps) => {
     const colorClasses = {
         slate: 'bg-slate-600 hover:bg-slate-700',
         violet: 'bg-violet-600 hover:bg-violet-700',
@@ -33,17 +18,18 @@ export const Button = ({
     }[color];
 
     const sizeClasses = {
-        medium: 'p-[12px] text-base',
-        large: 'p-s text-lg',
+        m: 'p-[12px] gap-s',
+        l: 'p-s gap-[12px]',
     }[size];
 
     return (
         <button
             type="button"
-            className={clsx(sizeClasses, colorClasses, 'rounded-s font-poppins text-white')}
-            {...props}
+            className={clsx(sizeClasses, colorClasses, 'flex rounded-s')}
+            disabled={disabled}
         >
-            {label}
+            {label && <Label text={label} size="m" color="text-white" />}
+            {icon && <span>{icon}</span>}
         </button>
     );
 };
