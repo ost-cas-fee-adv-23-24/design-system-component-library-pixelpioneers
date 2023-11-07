@@ -13,7 +13,6 @@ const meta: Meta<typeof Button> = {
     argTypes: {
         size: ['m', 'l'],
         variant: ButtonVariant,
-        Icon: IconMumble,
     },
     args: {
         label: 'Button',

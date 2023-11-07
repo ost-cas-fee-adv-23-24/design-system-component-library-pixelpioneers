@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import type { FC } from 'react';
 import { IconSize, type IconProps } from '../types';
 
-export const IconArrowUp: FC<IconProps> = ({ title, className, size = IconSize.MD }) => {
+export const IconArrowUp: FC<IconProps> = ({ title, className, size = IconSize.M }) => {
     const iconClasses = clsx(className);
 
     return (
