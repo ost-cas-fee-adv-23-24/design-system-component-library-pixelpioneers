@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
-import { Label } from '../../elements/typography/label/label';
 import { ButtonColor, ButtonProps } from './types';
+import { Label } from '../typography';
 
 export const Button = ({
     color = ButtonColor.SLATE,

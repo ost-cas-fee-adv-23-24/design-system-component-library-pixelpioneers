@@ -1,4 +1,4 @@
 'use client';
 
-export { Button } from './button';
-export { LinkButton } from './link-button';
+export * from './button';
+export * from './typography';
