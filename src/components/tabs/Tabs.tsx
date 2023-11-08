@@ -13,7 +13,7 @@ export const Tabs = ({ listTabs = [], onClick }: TabsProps) => {
     const styleTabList =
         'flex flex-row justify-between items-center bg-slate-200 py-[4px] px-[5px] rounded-s';
     const styleTabItem =
-        'w-full rounded-s py-2.5 text-sm font-medium leading-5 ring-white ring-offset-3 ring-offset-white focus:outline-none focus:ring-3 border-none outline-none transition-all ease-in-out duration-400';
+        'w-full rounded-s whitespace-nowrap px-[20px] py-2.5 text-sm font-medium leading-5 ring-white ring-offset-3 ring-offset-white focus:outline-none focus:ring-3 border-none outline-none transition-all ease-in-out duration-400';
 
     return (
         <div className="w-full">

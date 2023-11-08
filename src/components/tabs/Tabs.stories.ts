@@ -17,6 +17,6 @@ type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
     args: {
-        listTabs: ['Tab 1', 'Tab 2'],
+        listTabs: ['Tab 1', 'Tab 2', 'More Tabs'],
     },
 };
