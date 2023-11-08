@@ -14,6 +14,7 @@ export const Button = ({
     fill = false,
 }: ButtonProps) => {
     const buttonClasses = `flex hover:ring-3 active:ring-4 justify-center ${fill && 'w-full'}`;
+    const transitionClasses = 'transition-all duration-350 active:duration-300 ease-in-out';
     const variantClasses = {
         primary: `bg-primary-600 hover:bg-primary-700 hover:ring-primary-100 active:bg-primary-700 active:ring-primary-200`,
         secondary: `bg-secondary-600 hover:bg-secondary-700 hover:ring-secondary-100 active:bg-secondary-700 active:ring-secondary-200`,
@@ -29,7 +30,7 @@ export const Button = ({
     return (
         <button
             type="button"
-            className={clsx(buttonClasses, sizeClasses, variantClasses)}
+            className={clsx(buttonClasses, transitionClasses, sizeClasses, variantClasses)}
             disabled={disabled}
             onClick={onClick}
         >
