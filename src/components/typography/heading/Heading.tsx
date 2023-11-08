@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { HeadlineProps } from './types';
 
 export const Heading = ({ text, size, color }: HeadlineProps) => {
-    const fontClasses = 'font-poppins';
+    const fontClasses = 'font-default';
     switch (size) {
         case 'h1':
             return <h1 className={clsx(fontClasses, '', color)}>{text}</h1>;

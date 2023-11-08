@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
-import { ButtonColor } from './types';
+import { ButtonVariant } from './types';
+import { IconMumble } from '../../elements';
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -11,20 +12,36 @@ const meta: Meta<typeof Button> = {
     tags: ['autodocs'],
     argTypes: {
         size: ['m', 'l'],
-        color: ButtonColor,
+        variant: ButtonVariant,
+        onClick: { action: 'clicked' },
     },
     args: {
         label: 'Button',
-        color: ButtonColor.VIOLET,
+        variant: ButtonVariant.PRIMARY,
         size: 'm',
+        Icon: IconMumble,
+        fill: false,
+        disabled: false,
     },
 };
 
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-export const Default: Story = {
+export const Primary: Story = {
     args: {
-        color: ButtonColor.GRADIENT,
+        variant: ButtonVariant.PRIMARY,
+    },
+};
+
+export const Secondary: Story = {
+    args: {
+        variant: ButtonVariant.SECONDARY,
+    },
+};
+
+export const Tertiary: Story = {
+    args: {
+        variant: ButtonVariant.TERTIARY,
     },
 };
