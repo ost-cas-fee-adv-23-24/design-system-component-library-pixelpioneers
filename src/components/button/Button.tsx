@@ -1,7 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
 import { ButtonProps, ButtonVariant } from './types';
-import { Label } from '../typography';
+import { Label, LabelSize } from '../typography';
 import { IconSize } from '../../elements';
 
 export const Button = ({
@@ -34,7 +34,7 @@ export const Button = ({
             disabled={disabled}
             onClick={onClick}
         >
-            {label && <Label text={label} size="m" color="text-white" />}
+            {label && <Label text={label} size={LabelSize.M} className="text-white" />}
             <Icon size={IconSize.M} className={iconClasses} />
         </button>
     );

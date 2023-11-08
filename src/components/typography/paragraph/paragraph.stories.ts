@@ -1,0 +1,35 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { ParagraphSize } from './types';
+import { Paragraph } from './Paragraph';
+
+const meta: Meta<typeof Paragraph> = {
+    title: 'Components/Typography/Paragraph',
+    component: Paragraph,
+    parameters: {
+        layout: 'centered',
+    },
+    tags: ['autodocs'],
+    argTypes: {
+        size: ParagraphSize,
+    },
+    args: {
+        className: 'text-secondary-600',
+    },
+};
+
+export default meta;
+type Story = StoryObj<typeof Paragraph>;
+
+export const ParagraphL: Story = {
+    args: {
+        size: ParagraphSize.L,
+        text: 'Paragraph L – Quia aut et aut. Sunt et eligendi similique enim qui quo minus. Aut aut error velit voluptatum optio sed quis cumque error magni.',
+    },
+};
+
+export const ParagraphM: Story = {
+    args: {
+        size: ParagraphSize.M,
+        text: 'Paragraph M – Quia aut et aut. Sunt et eligendi similique enim qui quo minus. Aut aut error velit voluptatum optio sed quis cumque error magni. Deserunt pariatur molestiae incidunt. Omnis deserunt ratione et recusandae quos excepturi ut deleniti ut repellat magni.',
+    },
+};

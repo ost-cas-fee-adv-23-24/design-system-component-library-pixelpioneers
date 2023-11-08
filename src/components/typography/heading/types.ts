@@ -1,5 +1,12 @@
-export interface HeadlineProps {
+export interface HeadingProps {
     text: string;
-    size: 'h1' | 'h2' | 'h3' | 'h4';
-    color: string;
+    size: HeadingSize;
+    className?: string;
+}
+
+export enum HeadingSize {
+    H1 = 'h1',
+    H2 = 'h2',
+    H3 = 'h3',
+    H4 = 'h4',
 }

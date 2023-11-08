@@ -2,9 +2,9 @@ import type { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
     stories: [
-        '../docs/*.(mdx)',
+        '../docs/*.mdx',
         '../*.mdx',
-        '../src/**/*.(mdx)',
+        '../src/**/*.mdx',
         '../src/**/*.stories.@(js|jsx|mjs|ts|tsx|mdx)',
     ],
     addons: [
@@ -12,6 +12,7 @@ const config: StorybookConfig = {
         '@storybook/addon-essentials',
         '@storybook/preset-create-react-app',
         '@storybook/addon-interactions',
+        '@storybook/addon-docs',
         {
             name: '@storybook/addon-styling',
             options: {},
