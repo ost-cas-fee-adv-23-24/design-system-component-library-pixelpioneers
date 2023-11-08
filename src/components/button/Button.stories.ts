@@ -13,12 +13,15 @@ const meta: Meta<typeof Button> = {
     argTypes: {
         size: ['m', 'l'],
         variant: ButtonVariant,
+        onClick: { action: 'clicked' },
     },
     args: {
         label: 'Button',
         variant: ButtonVariant.PRIMARY,
         size: 'm',
         Icon: IconMumble,
+        fill: false,
+        disabled: false,
     },
 };
 

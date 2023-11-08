@@ -8,6 +8,13 @@ export interface ButtonProps {
     disabled?: boolean;
     size: 'm' | 'l';
     label?: string;
+    fill?: boolean;
+}
+
+export interface IconButtonProps {
+    Icon: ComponentType<IconProps>;
+    onClick?: () => void;
+    disabled?: boolean;
 }
 
 export enum ButtonVariant {
