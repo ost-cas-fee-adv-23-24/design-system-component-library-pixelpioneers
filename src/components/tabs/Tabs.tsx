@@ -4,6 +4,7 @@ import { TabsProps } from './types';
 import { useState } from 'react';
 import { classNames } from './utils';
 import { Label } from '../typography/label/Label';
+import { LabelSize } from '../typography/label';
 
 export const Tabs = ({ listTabs = [], isActive = 0, onTabSwitch }: TabsProps) => {
     const [list] = useState(listTabs);
@@ -34,8 +35,8 @@ export const Tabs = ({ listTabs = [], isActive = 0, onTabSwitch }: TabsProps) =>
                         >
                             <Label
                                 text={category}
-                                size="l"
-                                color={
+                                size={LabelSize.L}
+                                className={
                                     selectedIndex === index
                                         ? 'text-violet-600'
                                         : 'text-slate-600 hover:text-slate-800'
