@@ -1,5 +1,4 @@
 export interface TabsProps {
     listTabs: Array<string>;
-    onClick: () => void;
-    selected?: boolean;
+    onClick: (index: number) => void;
 }
