@@ -3,35 +3,44 @@ import { Tab } from '@headlessui/react';
 import { TabsProps } from './types';
 import { useState } from 'react';
 import { classNames } from './utils';
+import { Label } from '../typography/label/Label';
 
-export const Tabs = ({ listTabs = [], onClick }: TabsProps) => {
-    console.log('listTab', listTabs);
-    console.log(onClick);
-
+export const Tabs = ({ listTabs = [], isActive = 0, onTabSwitch }: TabsProps) => {
     const [list] = useState(listTabs);
+    const [selectedIndex, setSelectedIndex] = useState(isActive);
+
+    onTabSwitch(selectedIndex);
 
     const styleTabList =
         'flex flex-row justify-between items-center bg-slate-200 py-[4px] px-[5px] rounded-s';
     const styleTabItem =
-        'w-full rounded-s whitespace-nowrap px-[20px] py-2.5 text-sm font-medium leading-5 ring-white ring-offset-3 ring-offset-white focus:outline-none focus:ring-3 border-none outline-none transition-all ease-in-out duration-400';
+        'w-full cursor-pointer rounded-s whitespace-nowrap px-[20px] py-2.5 focus:outline-none  border-none outline-none transition-all ease-in-out duration-400';
 
     return (
         <div className="w-full">
-            <Tab.Group>
+            <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                 <Tab.List className={styleTabList}>
-                    {list.map((category, i) => (
+                    {list.map((category, index) => (
                         <Tab
-                            key={`${category}+${i}`}
-                            className={({ selected }) =>
+                            key={`${category}+${index}`}
+                            className={() =>
                                 classNames(
                                     styleTabItem,
-                                    selected
-                                        ? 'bg-white text-violet-600'
+                                    selectedIndex === index
+                                        ? 'bg-white'
                                         : 'text-slate-600 hover:text-slate-800',
                                 )
                             }
                         >
-                            {category}
+                            <Label
+                                text={category}
+                                size="l"
+                                color={
+                                    selectedIndex === index
+                                        ? 'text-violet-600'
+                                        : 'text-slate-600 hover:text-slate-800'
+                                }
+                            />
                         </Tab>
                     ))}
                 </Tab.List>
