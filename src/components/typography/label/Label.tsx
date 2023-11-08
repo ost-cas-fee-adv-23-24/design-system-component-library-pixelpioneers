@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 import { LabelProps } from './types';
 
-export const Label = ({ text, size, color }: LabelProps) => {
+export const Label = ({ text, size, className = 'text-secondary-600' }: LabelProps) => {
     const fontClasses = 'font-default font-semibold';
     const sizeClasses = {
         s: 'text-xs',
@@ -10,5 +10,5 @@ export const Label = ({ text, size, color }: LabelProps) => {
         xl: 'text-xl',
     }[size];
 
-    return <span className={clsx(fontClasses, sizeClasses, color)}>{text}</span>;
+    return <span className={clsx(fontClasses, sizeClasses, className)}>{text}</span>;
 };

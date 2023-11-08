@@ -6,7 +6,7 @@ export interface ButtonProps {
     variant?: ButtonVariant;
     onClick?: () => void;
     disabled?: boolean;
-    size: 'm' | 'l';
+    size: ButtonSize;
     label?: string;
     fill?: boolean;
 }
@@ -21,4 +21,9 @@ export enum ButtonVariant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
     TERTIARY = 'tertiary',
+}
+
+export enum ButtonSize {
+    M = 'm',
+    L = 'l',
 }

@@ -1,5 +1,12 @@
 export interface LabelProps {
     text: string;
-    size: 's' | 'm' | 'l' | 'xl';
-    color: string;
+    size: LabelSize;
+    className?: string;
+}
+
+export enum LabelSize {
+    S = 's',
+    M = 'm',
+    L = 'l',
+    XL = 'xl',
 }
