@@ -12,9 +12,9 @@ export const Tabs = ({ listTabs = [], isActive = 0, onTabSwitch }: TabsProps) =>
     onTabSwitch(selectedIndex);
 
     const styleTabList =
-        'flex flex-row justify-between items-center bg-slate-200 py-[4px] px-[5px] rounded-s';
+        'flex flex-row justify-between items-center bg-slate-200 py-2xs px-xs rounded-s';
     const styleTabItem =
-        'w-full cursor-pointer rounded-s whitespace-nowrap px-[20px] py-2.5 focus:outline-none  border-none outline-none transition-all ease-in-out duration-400';
+        'w-full cursor-pointer rounded-s whitespace-nowrap px-[20px] py-2xs focus:outline-none border-none outline-none transition-all ease-in-out duration-400';
 
     return (
         <div className="w-full">
