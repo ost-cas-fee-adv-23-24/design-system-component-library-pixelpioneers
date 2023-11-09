@@ -14,27 +14,27 @@ export const pixelPioneersTheme = create({
     brandTarget: '_blank',
 
     // Color
-    colorPrimary: '#3A10E5',
-    colorSecondary: '#585C6D',
+    colorPrimary: '#7C3AED',
+    colorSecondary: '#475569',
 
     // UI
-    appBg: '#ffffff',
-    appContentBg: '#ffffff',
-    appBorderColor: '#585C6D',
-    appBorderRadius: 4,
+    appBg: '#DDD6FE',
+    appContentBg: '#FFFFFF',
+    appBorderColor: '#7C3AED',
+    appBorderRadius: 2,
 
     // Text colors
-    textColor: '#10162F',
-    textInverseColor: '#ffffff',
+    textColor: '#7C3AED',
+    textInverseColor: '#FFFFFF',
 
     // Toolbar default and active colors
-    barTextColor: '#9E9E9E',
-    barSelectedColor: '#585C6D',
-    barBg: '#ffffff',
+    barBg: '#C4B5FD',
+    barTextColor: '#7C3AED',
+    barSelectedColor: '#7C3AED',
 
     // Form colors
-    inputBg: '#ffffff',
-    inputBorder: '#10162F',
-    inputTextColor: '#10162F',
-    inputBorderRadius: 2,
+    inputBg: '#FFFFFF',
+    inputBorder: '#7C3AED',
+    inputTextColor: '#7C3AED',
+    inputBorderRadius: 1,
 });
