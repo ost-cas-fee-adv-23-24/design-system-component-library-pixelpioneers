@@ -1,7 +1,7 @@
 import { FC, useState } from 'react';
 import { InputProps, InputTypeProps } from './types';
 import { LabelSize } from '../../typography/label/types';
-import { Label } from '../../typography/label/Label';
+import { Label } from '../../typography/label/label';
 import { IconSize } from '../../../elements';
 
 export const Input: FC<InputProps> = ({
