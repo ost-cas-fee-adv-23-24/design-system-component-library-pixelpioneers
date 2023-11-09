@@ -60,6 +60,7 @@ module.exports = {
         colors: {
             black: '#000',
             white: '#fff',
+            error: '#DC2626',
             violet: {
                 50: '#F5F3FF',
                 100: '#EDE9FE',
