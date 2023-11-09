@@ -27,7 +27,9 @@ export const LikeButton: FC<LikeButtonProps> = ({
     const LikeButtonClasses = clsx(
         'hover:bg-tertiary-50 hover:fill-tertiary-600 hover:text-tertiary-600',
         hasAnyLike
-            ? 'fill-tertiary-600 text-tertiary-900 duration-300 ease-out'
+            ? `fill-tertiary-600 text-tertiary-900 duration-300 ${
+                  justLiked ? 'ease-out' : 'ease-in-out'
+              }`
             : 'fill-secondary-600 text-secondary-600 duration-350 ease-in-out',
     );
     return (
