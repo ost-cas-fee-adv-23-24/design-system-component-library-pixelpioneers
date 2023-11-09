@@ -23,7 +23,7 @@ export const InteractiveButton: FC<InteractiveButtonProps> = ({
             aria-label={name}
         >
             {Icon && <Icon size={IconSize.M} className={iconClasses} />}
-            <Label text={label} size={LabelSize.M} />
+            {label && <Label text={label} size={LabelSize.M} />}
         </button>
     );
 };
