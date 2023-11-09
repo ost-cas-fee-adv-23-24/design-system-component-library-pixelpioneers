@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { LabelSize } from './types';
-import { Label } from './Label';
+import { Label } from './label';
 
 const meta: Meta<typeof Label> = {
     title: 'Components/Typography/Label',

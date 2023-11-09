@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './Button';
-import { ButtonSize, ButtonVariant } from './types';
+import { Button } from './button';
+import { ButtonSize } from './types';
 import { IconMumble } from '../../elements';
+import { Variant } from '../../utlis';
 
 const meta: Meta<typeof Button> = {
     title: 'Components/Button',
@@ -12,16 +13,17 @@ const meta: Meta<typeof Button> = {
     tags: ['autodocs'],
     argTypes: {
         size: ButtonSize,
-        variant: ButtonVariant,
+        variant: Variant,
         onClick: { action: 'clicked' },
     },
     args: {
         label: 'Button',
-        variant: ButtonVariant.PRIMARY,
+        variant: Variant.PRIMARY,
         size: ButtonSize.M,
         Icon: IconMumble,
         fill: false,
         disabled: false,
+        name: 'button',
     },
 };
 
@@ -30,39 +32,39 @@ type Story = StoryObj<typeof Button>;
 
 export const PrimaryM: Story = {
     args: {
-        variant: ButtonVariant.PRIMARY,
+        variant: Variant.PRIMARY,
     },
 };
 
 export const SecondaryM: Story = {
     args: {
-        variant: ButtonVariant.SECONDARY,
+        variant: Variant.SECONDARY,
     },
 };
 
 export const TertiaryM: Story = {
     args: {
-        variant: ButtonVariant.TERTIARY,
+        variant: Variant.TERTIARY,
     },
 };
 
 export const PrimaryL: Story = {
     args: {
-        variant: ButtonVariant.PRIMARY,
+        variant: Variant.PRIMARY,
         size: ButtonSize.L,
     },
 };
 
 export const SecondaryL: Story = {
     args: {
-        variant: ButtonVariant.SECONDARY,
+        variant: Variant.SECONDARY,
         size: ButtonSize.L,
     },
 };
 
 export const TertiaryL: Story = {
     args: {
-        variant: ButtonVariant.TERTIARY,
+        variant: Variant.TERTIARY,
         size: ButtonSize.L,
     },
 };

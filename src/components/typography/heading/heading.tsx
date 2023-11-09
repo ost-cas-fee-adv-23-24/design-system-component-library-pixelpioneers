@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import { HeadingProps, HeadingSize } from './types';
+import { FC } from 'react';
 
-export const Heading = ({ text, size, className = 'text-secondary-600' }: HeadingProps) => {
+export const Heading: FC<HeadingProps> = ({ text, size, className = 'text-inherit' }) => {
     const fontClasses = 'font-default leading-s';
     switch (size) {
         case HeadingSize.H1:
