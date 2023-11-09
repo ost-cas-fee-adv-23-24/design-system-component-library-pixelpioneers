@@ -24,9 +24,9 @@ export const ShareButton: FC<ShareButtonProps> = ({
         setIsCopied(true);
     };
     const shareButtonClasses = clsx(
-        `fill-secondary-600 text-secondary-600`,
-        `hover:bg-secondary-100 hover:fill-secondary-700 hover:text-secondary-700`,
-        `duration-350 ease-in-out`,
+        'fill-secondary-600 text-secondary-600',
+        'hover:bg-secondary-100 hover:fill-secondary-700 hover:text-secondary-700',
+        'duration-350 ease-in-out',
     );
     return (
         <InteractiveButton

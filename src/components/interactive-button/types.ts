@@ -1,43 +1,52 @@
 import { ComponentType } from 'react';
 import { IconProps } from '../../elements';
+import { Wording, WordingExtended } from '../../utlis';
 
-export interface InteractiveButtonProps {
-    label: string;
+export interface InteractiveBaseProps {
     onClick: () => void;
-    Icon?: ComponentType<IconProps>;
-    isActive?: boolean;
+    label?: string;
     disabled?: boolean;
     name?: string;
+}
+
+export interface InteractiveButtonProps extends InteractiveBaseProps {
+    Icon?: ComponentType<IconProps>;
     className?: string;
 }
 
-export interface ShareButtonProps {
+export type ShareButtonProps = InteractiveBaseProps & {
     /**
      * Link to share / copy to clipboard
      */
     link: string;
-    disabled?: boolean;
-    name?: string;
-    label?: string;
     /**
      * Label when link is copied to clipboard
      */
     labelShared?: string;
-}
+};
 
-export interface CommentButtonProps {
-    onClick: () => void;
+export type CommentButtonProps = Omit<InteractiveBaseProps, 'label'> & {
     /**
      * Amount of comments
      */
     amount?: number;
-    disabled?: boolean;
-    name?: string;
+    /**
+     * Label consists of word/sentence in multiple forms
+     */
     label?: Wording;
-}
+};
 
-export interface Wording {
-    zero: string;
-    singular: string;
-    plural: string;
-}
+export type LikeButtonProps = Omit<InteractiveBaseProps, 'label'> & {
+    /**
+     * Is picture liked by user
+     */
+    isLiked: boolean;
+    /**
+     * Amount of likes
+     */
+    amount?: number;
+    /**
+     * Label consists of word/sentence in multiple forms
+     */
+    label?: WordingExtended;
+};

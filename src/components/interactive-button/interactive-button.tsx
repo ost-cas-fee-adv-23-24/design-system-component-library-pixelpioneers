@@ -12,32 +12,17 @@ export const InteractiveButton: FC<InteractiveButtonProps> = ({
     name = 'interactive-button',
     className = '',
 }) => {
-    const buttonClasses = clsx(
-        'flex justify-center gap-xs rounded-m px-base py-xs',
-        /*{
-tertiary: `hover:bg-tertiary-50 hover:fill-tertiary-600 hover:text-tertiary-600 ${
-active
-? 'fill-tertiary-600 text-tertiary-900'
-: 'fill-secondary-600 text-secondary-600'
-}`,
-}[variant],*/
-    );
-    const transitionClasses = clsx(
-        'transition-all',
-        /*{
-tertiary: `${active ? 'duration-300 ease-out' : 'duration-350 ease-in-out'}`,
-}[variant],*/
-    );
+    const buttonClasses = 'flex justify-center gap-xs rounded-m px-base py-xs transition-all';
     const iconClasses = 'self-center';
     return (
         <button
-            className={clsx(buttonClasses, transitionClasses, className)}
+            className={clsx(buttonClasses, className)}
             onClick={onClick}
             disabled={disabled}
             name={name}
             aria-label={name}
         >
-            {Icon && <Icon size={IconSize.M} className={clsx(iconClasses)} />}
+            {Icon && <Icon size={IconSize.M} className={iconClasses} />}
             <Label text={label} size={LabelSize.M} />
         </button>
     );

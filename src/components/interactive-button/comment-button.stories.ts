@@ -11,14 +11,13 @@ const meta: Meta<typeof CommentButton> = {
     args: {
         disabled: false,
         name: 'comment-button',
-        label: { zero: 'Kommentieren', singular: 'Kommentar', plural: 'Kommentare' },
     },
 };
 
 export default meta;
 type Story = StoryObj<typeof CommentButton>;
 
-export const NoComment: Story = {
+export const NoComments: Story = {
     args: {
         amount: 0,
     },
