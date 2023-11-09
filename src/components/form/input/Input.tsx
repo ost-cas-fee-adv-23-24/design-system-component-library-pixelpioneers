@@ -23,8 +23,8 @@ export const Input: FC<InputProps> = ({
         <div className={inputWrapperClasses}>
             <Label text={label} size={LabelSize.M} className="text-secondary-700" />
             <div
-                className={`flex items-center justify-end rounded-s border border-secondary-200 hover:border-primary-600 ${
-                    isValid && 'border-error'
+                className={`flex items-center justify-end rounded-s border transition-all duration-300 ease-in-out hover:border-primary-600 ${
+                    isValid ? 'border-error' : 'border-secondary-200'
                 }`}
             >
                 <input
