@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconMumble } from '../../elements';
-import { IconButton } from './IconButton';
+import { IconButton } from './icon-button';
 
 const meta: Meta<typeof IconButton> = {
     title: 'Components/Button/IconButton',
@@ -15,6 +15,7 @@ const meta: Meta<typeof IconButton> = {
     args: {
         Icon: IconMumble,
         disabled: false,
+        name: 'icon-button',
     },
 };
 

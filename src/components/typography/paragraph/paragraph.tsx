@@ -1,7 +1,8 @@
 import clsx from 'clsx';
 import { ParagraphProps } from './types';
+import { FC } from 'react';
 
-export const Paragraph = ({ text, size, className = 'text-secondary-600' }: ParagraphProps) => {
+export const Paragraph: FC<ParagraphProps> = ({ text, size, className = 'text-inherit' }) => {
     const fontClasses = 'font-default font-medium';
     const sizeClasses = {
         m: 'text-base leading-m',
