@@ -24,7 +24,7 @@ export const Input: FC<InputProps> = ({
             <Label text={label} size={LabelSize.M} className="text-secondary-700" />
             <div
                 className={`flex items-center justify-end rounded-s border border-secondary-200 hover:border-primary-600 ${
-                    !!isValid && 'border-error'
+                    isValid && 'border-error'
                 }`}
             >
                 <input
@@ -41,12 +41,13 @@ export const Input: FC<InputProps> = ({
                         aria-label={isPrivacy ? 'Hide password' : 'Show password'}
                         onClick={() => setIsPrivacy(!isPrivacy)}
                     >
-                        {Icon && isPrivacy ? (
+                        {Icon && type === InputTypeProps.password && isPrivacy && !isValid ? (
                             <Icon size={IconSize.M} className="fill-primary-600" />
-                        ) : (
+                        ) : !isValid ? (
                             <Icon size={IconSize.M} className="fill-secondary-600" />
+                        ) : (
+                            <Icon size={IconSize.M} className="fill-error" />
                         )}
-                        {Icon && !!isValid && <Icon size={IconSize.M} className="fill-error" />}
                     </button>
                 )}
             </div>
