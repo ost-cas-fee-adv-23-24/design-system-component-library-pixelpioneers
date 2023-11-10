@@ -6,11 +6,11 @@ We use [tailwindCSS](https://tailwindcss.com/) - a **utility-first CSS framework
 
 ## Base Styling
 
-Styling that is not specific to a component or layout is stored in the `styles` folder. Tailwind has a layer system that is designed after [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/#what-is-itcss). We already added a `config` folder. If you need more folders, name it according to ITCSS.
+Tailwind has a layer system that is designed after [ITCSS](https://www.xfive.co/blog/itcss-scalable-maintainable-css-architecture/#what-is-itcss).
 
 ## How to generate icons
 
-1. Find your icon in [Figma - Design System - Icons](https://www.figma.com/file/9pAIuEXG73C6U9qGXQU25a/L---Migros-Corporate?node-id=1%3A7) (Generally: 20x20)
+1. Find your icon in [Figma - Design System - Icons](https://www.figma.com/file/nsXR2h0KwciWpuwKRD58FX/Mumble?type=design&node-id=407-101&mode=design&t=n3s826L1tz6QinwZ-0) (Generally: 16x16)
 2. Mark the current **variant of the icon component** and **export it as vector (SVG)**
 3. Open the site [SVG-OMG](https://jakearchibald.github.io/svgomg/) and put the vector code there
 4. Please disable on the website SVG-OMG following setting: "Remove viewBox" - so the viewBox is still in the output
@@ -26,7 +26,7 @@ Styling that is not specific to a component or layout is stored in the `styles` 
       className={className}
     >
       {title && <title>{title}</title>}
-      <path fill="currentColor" d="M2.71 2v2h11.58L2 16.29l1.41 1.42 12.3-12.3V17h2V2h-15Z" />
+      <path d="M2.71 2v2h11.58L2 16.29l1.41 1.42 12.3-12.3V17h2V2h-15Z" />
     </svg>
 
    ```
