@@ -1,8 +1,8 @@
 # Styling
 
-We use [tailwindCSS](https://tailwindcss.com/) - a **utility-first CSS framework**. To add styling you can use primitive utilities such as p-6, mx-auto, text-fg. You can find more information about configuring and using tailwind in the [documentation](https://tailwindcss.com/docs).
+We use [TailwindCSS](https://tailwindcss.com/) - a **utility-first CSS framework**. To add styling you can use primitive utilities such as p-6, mx-auto, text-fg. You can find more information about configuring and using tailwind in the [documentation](https://tailwindcss.com/docs).
 
-**Important: To add styling we do not use [the CSS Modules setup of next.js](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css) or sass, less, stylus.**
+**Important: To add styling we do not use [the CSS Modules setup of Next.js](https://nextjs.org/docs/basic-features/built-in-css-support#adding-component-level-css) or sass, less, stylus.**
 
 ## Base Styling
 
