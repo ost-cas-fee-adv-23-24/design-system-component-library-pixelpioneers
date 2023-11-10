@@ -4,8 +4,8 @@ import { Variant } from '../../utlis';
 
 export interface ButtonProps {
     Icon: ComponentType<IconProps>;
+    onClick: () => void;
     variant?: Variant;
-    onClick?: () => void;
     disabled?: boolean;
     size: ButtonSize;
     label?: string;
@@ -13,12 +13,7 @@ export interface ButtonProps {
     name?: string;
 }
 
-export interface IconButtonProps {
-    Icon: ComponentType<IconProps>;
-    onClick?: () => void;
-    disabled?: boolean;
-    name?: string;
-}
+export type IconButtonProps = Omit<ButtonProps, 'variant' | 'label' | 'fill'>;
 
 export enum ButtonSize {
     M = 'm',
