@@ -11,6 +11,7 @@ export * from './icon-heart';
 export * from './icon-heart-filled';
 export * from './icon-location';
 export * from './icon-logout';
+export * from './icon-logout-animated';
 export * from './icon-mumble';
 export * from './icon-profile';
 export * from './icon-reply';
