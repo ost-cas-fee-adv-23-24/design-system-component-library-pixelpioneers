@@ -94,9 +94,9 @@ export const SingleIconAnimateSpingLStory: Story = {
 };
 
 export const SingleIconAnimatePulseLStory: Story = {
-    name: '⭐️ Spin Animated Icon',
+    name: '⭐️ Pulse Animated Icon',
     args: {
-        title: '⭐️ Spin Animated Icon',
+        title: '⭐️ Pulse Animated Icon',
         className: 'fill-primary-700 hover:fill-secondary-700 animate-pulse',
         size: IconSize.L,
     },
