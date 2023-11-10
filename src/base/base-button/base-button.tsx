@@ -12,7 +12,12 @@ export const BaseButton: FC<BaseButtonProps> = ({
     children,
 }) => (
     <button
-        className={clsx('flex justify-center', fill && 'w-full', className)}
+        className={clsx(
+            'flex justify-center',
+            fill && 'w-full',
+            className,
+            disabled && 'cursor-not-allowed',
+        )}
         onClick={onClick}
         disabled={disabled}
         name={name}

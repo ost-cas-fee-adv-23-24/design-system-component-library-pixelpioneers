@@ -13,8 +13,6 @@ export interface ButtonProps {
     name?: string;
 }
 
-export type IconButtonProps = Omit<ButtonProps, 'variant' | 'label' | 'fill'>;
-
 export enum ButtonSize {
     M = 'm',
     L = 'l',

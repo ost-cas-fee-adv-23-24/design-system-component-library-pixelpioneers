@@ -1,7 +1,7 @@
-import { ButtonSize, IconButtonProps } from './types';
-import { Button } from './button';
+import { Button, ButtonSize } from '../button';
 import { Variant } from '../../utlis';
 import { FC } from 'react';
+import { IconButtonProps } from './types';
 
 export const IconButton: FC<IconButtonProps> = ({
     Icon,

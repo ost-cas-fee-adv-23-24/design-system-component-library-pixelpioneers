@@ -3,7 +3,7 @@ import { IconMumble } from '../../elements';
 import { IconButton } from './icon-button';
 
 const meta: Meta<typeof IconButton> = {
-    title: 'Components/Button/IconButton',
+    title: 'Components/Icon Button',
     component: IconButton,
     parameters: {
         layout: 'centered',
