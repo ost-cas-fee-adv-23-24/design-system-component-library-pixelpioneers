@@ -8,6 +8,5 @@ export interface IconLinkProps {
     onClick: () => void;
     disabled?: boolean;
     name?: string;
-    className?: string;
     variant?: Variant;
 }

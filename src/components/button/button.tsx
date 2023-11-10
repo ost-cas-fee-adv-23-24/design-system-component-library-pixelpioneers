@@ -17,7 +17,7 @@ export const Button: FC<ButtonProps> = ({
     name = 'button',
 }) => {
     const buttonClasses = clsx(
-        `hover:ring-3 active:ring-4`,
+        `fill-white text-white hover:ring-3 active:ring-4`,
         {
             primary: `bg-primary-600 hover:bg-primary-700 hover:ring-primary-100 active:bg-primary-700 active:ring-primary-200`,
             secondary: `bg-secondary-600 hover:bg-secondary-700 hover:ring-secondary-100 active:bg-secondary-700 active:ring-secondary-200`,
@@ -39,8 +39,8 @@ export const Button: FC<ButtonProps> = ({
             fill={fill}
             name={name}
         >
-            {label && <Label text={label} size={LabelSize.M} className={'text-white'} />}
-            <Icon size={IconSize.M} className={'self-center fill-white'} />
+            {label && <Label text={label} size={LabelSize.M} />}
+            <Icon size={IconSize.M} className={'self-center'} />
         </BaseButton>
     );
 };
