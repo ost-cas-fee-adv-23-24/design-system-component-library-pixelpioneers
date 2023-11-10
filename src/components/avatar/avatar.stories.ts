@@ -56,6 +56,7 @@ export const ImageSizeM: Story = {
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         editMode: false,
         className: 'bg-primary-600 w-xl h-xl',
+        ringVariant: 'outline outline-secondary-100 outline-6',
         imageSize: ImageSize.M,
     },
 };
@@ -67,6 +68,7 @@ export const ImageSizeL: Story = {
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         editMode: false,
         className: 'bg-primary-600 w-[100px] h-[100px]',
+        ringVariant: 'outline outline-secondary-100 outline-6',
         imageSize: ImageSize.L,
     },
 };
@@ -78,6 +80,7 @@ export const ImageSizeXL: Story = {
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         editMode: false,
         className: 'bg-primary-600 w-[100px] h-[100px]',
+        ringVariant: 'outline outline-secondary-100 outline-2xs',
         imageSize: ImageSize.XL,
     },
 };

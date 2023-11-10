@@ -7,6 +7,7 @@ export interface AvatarProps {
     imageSize: ImageSize;
     editMode: boolean;
     sizes: IconSize;
+    ringVariant: string;
     onClick?: () => void;
 }
 

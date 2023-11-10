@@ -10,10 +10,12 @@ export const Avatar: FC<AvatarProps> = ({
     alt,
     sizes,
     imageSize,
+    ringVariant,
     editMode = false,
 }) => {
     // TODO: Need to clarify why here is not working with h-14 and w-15 or we can use new measurements from Tailwind Config
     const avatarBorder = 'flex items-center justify-center rounded-s relative';
+    const ringClasses = ringVariant;
     const avatarClasses =
         'flex items-center justify-center rounded-full bg-primary-200 overflow-hidden';
 
@@ -22,7 +24,12 @@ export const Avatar: FC<AvatarProps> = ({
     return (
         <div className={clsx(avatarBorder, className)}>
             <div className={clsx(avatarClasses, imageSize)}>
-                <img src={src} alt={alt} sizes={sizes} className="h-full w-full object-cover" />
+                <img
+                    src={src}
+                    alt={alt}
+                    sizes={sizes}
+                    className={clsx('h-full w-full object-cover', ringClasses)}
+                />
                 {editMode && (
                     <div className="absolute bottom-[5px] right-[5px]">
                         <IconEdit
