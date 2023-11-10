@@ -4,6 +4,7 @@ import { InteractiveButton } from './interactive-button';
 import { IconHeart, IconHeartFilled } from '../../elements';
 import clsx from 'clsx';
 import { generateLabel } from '../../utlis/helpers';
+import { defaultLikeContext } from '../../utlis/context';
 
 export const LikeButton: FC<LikeButtonProps> = ({
     onClick,
@@ -18,9 +19,10 @@ export const LikeButton: FC<LikeButtonProps> = ({
     },
     disabled = false,
 }) => {
-    const [actualAmount, setActualAmount] = useState(amount);
-    const [isLikedNow, setIsLikedNow] = useState(isLiked);
-    const [justLiked, setJustLiked] = useState(false);
+    const [{ actualAmount, isLikedNow, justLiked }, setState] = useState(
+        defaultLikeContext(amount, isLiked),
+    );
+
     const hasAnyLike = actualAmount > 0;
     const computedLabel = justLiked ? label.pastParticiple : generateLabel(actualAmount, label);
 
@@ -39,16 +41,16 @@ export const LikeButton: FC<LikeButtonProps> = ({
             onClick={() => {
                 onClick();
                 if (!isLikedNow) {
-                    setIsLikedNow(true);
-                    setActualAmount(actualAmount + 1);
-
-                    setJustLiked(true);
+                    setState({ isLikedNow: true, actualAmount: actualAmount + 1, justLiked: true });
                     setTimeout(() => {
-                        setJustLiked(false);
+                        setState((prevState) => ({ ...prevState, justLiked: false }));
                     }, 2000);
                 } else {
-                    setIsLikedNow(false);
-                    setActualAmount(actualAmount - 1);
+                    setState((prevState) => ({
+                        ...prevState,
+                        isLikedNow: false,
+                        actualAmount: actualAmount - 1,
+                    }));
                 }
             }}
             name={name}

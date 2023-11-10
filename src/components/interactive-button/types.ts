@@ -50,3 +50,9 @@ export type LikeButtonProps = Omit<InteractiveBaseProps, 'label'> & {
      */
     label?: WordingExtended;
 };
+
+export interface LikeContext {
+    actualAmount: number;
+    isLikedNow: boolean;
+    justLiked: boolean;
+}
