@@ -1,0 +1,80 @@
+import { Meta, Unstyled } from '@storybook/blocks';
+
+<Meta title="Documentation/Borders" />
+
+# Border Width
+
+<Unstyled>
+	<div className="flex flex-wrap gap-m">
+		<div>
+			<div className="border h-2xl w-2xl border-0 bg-primary-200"></div>
+			<div>no border [no border added]</div>
+		</div>
+        <div>
+			<div className="border h-2xl w-2xl border-1 bg-primary-200"></div>
+			<div>1px</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl border-2 bg-primary-200"></div>
+			<div>2px</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl border-4 bg-primary-200"></div>
+			<div>4px</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl border-8 bg-primary-200"></div>
+			<div>8px</div>
+		</div>
+	</div>
+</Unstyled>
+
+# Border Radius
+
+<Unstyled>
+	<div className="flex flex-col gap-m">
+		<div>
+			<div className="border h-2xl w-2xl rounded-none bg-primary-200"></div>
+			<div>no rounded [no border-radius avtivated]</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl rounded-s border-3 border-base-100 bg-primary-200"></div>
+			<div>rounded-s</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl rounded-m border-3 border-base-100 bg-primary-200"></div>
+			<div>rounded-m</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl rounded-full border-3 border-base-100 bg-primary-200"></div>
+			<div>rounded-full</div>
+		</div>
+	</div>
+</Unstyled>
+
+# Ring Width
+
+<Unstyled>
+	<div className="flex flex-col gap-m">
+		<div>
+			<div className="border h-2xl w-2xl bg-primary-200"></div>
+			<div>no ring [no ring added]</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl ring-2 bg-primary-200"></div>
+			<div>ring-2</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl ring-3 bg-primary-200"></div>
+			<div>ring-3</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl ring-4 bg-primary-200"></div>
+			<div>ring-4</div>
+		</div>
+		<div>
+			<div className="border h-2xl w-2xl ring-6 bg-primary-200"></div>
+			<div>ring-6</div>
+		</div>
+	</div>
+</Unstyled>
