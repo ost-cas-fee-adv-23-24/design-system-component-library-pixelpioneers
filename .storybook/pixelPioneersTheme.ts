@@ -1,4 +1,5 @@
 import { create } from '@storybook/theming/create';
+import logoUrl from '../public/logo.svg';
 
 export const pixelPioneersTheme = create({
     base: 'light',
@@ -9,8 +10,7 @@ export const pixelPioneersTheme = create({
     // Brand
     brandTitle: 'PixelPioneers Storybook',
     brandUrl: 'https://www.ost.ch',
-    brandImage:
-        'https://raw.githubusercontent.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/b235727143d51be01dbcbfa84f2e17abf989801a/src/assets/pixelpioneers.png',
+    brandImage: logoUrl,
     brandTarget: '_blank',
 
     // Color
