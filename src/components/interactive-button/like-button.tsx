@@ -41,11 +41,15 @@ export const LikeButton: FC<LikeButtonProps> = ({
             onClick={() => {
                 onClick();
                 if (!isLikedNow) {
+                    /** if object is not liked, like it */
                     setState({ isLikedNow: true, actualAmount: actualAmount + 1, justLiked: true });
+
+                    /** wait 2 seconds and then revert the justLiked flag */
                     setTimeout(() => {
                         setState((prevState) => ({ ...prevState, justLiked: false }));
                     }, 2000);
                 } else {
+                    /** if object is liked, remove like */
                     setState((prevState) => ({
                         ...prevState,
                         isLikedNow: false,
