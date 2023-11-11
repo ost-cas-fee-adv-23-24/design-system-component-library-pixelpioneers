@@ -22,7 +22,7 @@ export default meta;
 type Story = StoryObj<typeof MenuBar>;
 
 export const DefaultMenuBar: Story = {
-    name: 'Menu Bar',
+    name: 'MenuBar',
     args: {
         navBgColor: 'bg-primary-700',
         alignment: Alignment.LEFT,
@@ -32,7 +32,7 @@ export const DefaultMenuBar: Story = {
 };
 
 export const MenuBarRightAlignment: Story = {
-    name: 'Menu Bar - Right Alignment',
+    name: 'MenuBar - Right Alignment',
     args: {
         navBgColor: 'bg-primary-700',
         alignment: Alignment.RIGHT,
@@ -42,7 +42,7 @@ export const MenuBarRightAlignment: Story = {
 };
 
 export const MenuBarBorderIconDeactive: Story = {
-    name: 'Menu Bar - Right Alignment',
+    name: 'MenuBar - Without Border of Icon',
     args: {
         navBgColor: 'bg-primary-700',
         alignment: Alignment.RIGHT,
