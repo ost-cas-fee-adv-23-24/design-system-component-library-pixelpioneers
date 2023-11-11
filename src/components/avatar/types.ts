@@ -3,17 +3,17 @@ import { type IconSize } from '../../elements/icons/types';
 export interface AvatarProps {
     src: string;
     alt: string;
-    className: string;
+    className?: string;
     imageSize: ImageSize;
-    editMode: boolean;
-    sizes: IconSize;
-    ringVariant: string;
+    editMode?: boolean;
+    iconEditModeSize: IconSize;
+    ringVariant?: string;
     onClick?: () => void;
 }
 
 export enum ImageSize {
-    S = 'h-m w-m',
-    M = 'h-l w-l',
-    L = 'h-xl w-xl',
-    XL = 'h-2xl w-2xl',
+    S = 'h-2l w-2l',
+    M = 'h-3xl w-3xl',
+    L = 'h-7xl w-7xl',
+    XL = 'h-15xl w-15xl',
 }
