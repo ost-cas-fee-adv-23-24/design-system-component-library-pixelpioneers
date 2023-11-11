@@ -24,15 +24,28 @@ type Story = StoryObj<typeof MenuBar>;
 export const DefaultMenuBar: Story = {
     name: 'Menu Bar',
     args: {
-        bgColor: 'bg-primary-700',
+        navBgColor: 'bg-primary-700',
         alignment: Alignment.LEFT,
+        className: 'bg-primary-600',
+        borderActive: true,
     },
 };
 
 export const MenuBarRightAlignment: Story = {
     name: 'Menu Bar - Right Alignment',
     args: {
-        bgColor: 'bg-primary-700',
+        navBgColor: 'bg-primary-700',
         alignment: Alignment.RIGHT,
+        className: 'bg-primary-600',
+        borderActive: true,
+    },
+};
+
+export const MenuBarBorderIconDeactive: Story = {
+    name: 'Menu Bar - Right Alignment',
+    args: {
+        navBgColor: 'bg-primary-700',
+        alignment: Alignment.RIGHT,
+        borderActive: false,
     },
 };

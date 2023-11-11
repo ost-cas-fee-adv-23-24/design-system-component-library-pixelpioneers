@@ -1,7 +1,9 @@
 export interface MenuBarProps {
-    bgColor?: string;
+    navBgColor?: string;
     alignment?: Alignment;
     onClick?: () => void;
+    className?: string;
+    borderActive?: boolean;
 }
 
 export enum Alignment {

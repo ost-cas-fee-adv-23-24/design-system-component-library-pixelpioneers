@@ -4,18 +4,25 @@ import clsx from 'clsx';
 import { IconSize } from '../../elements/icons/types';
 import { IconLogoutAnimated, IconSettings } from '../../elements';
 
-export const MenuBar: FC<MenuBarProps> = ({ bgColor, alignment, onClick }) => {
+export const MenuBar: FC<MenuBarProps> = ({
+    navBgColor,
+    alignment,
+    onClick,
+    className,
+    borderActive = false,
+}) => {
     const menuBarClasses = clsx(
-        `flex h-2xl w-full flex-row items-center gap-x-xs p-m ${bgColor && bgColor} ${
-            alignment && alignment
-        }`,
+        `flex h-2xl w-full flex-row items-center p-m ${borderActive && `gap-x-xs`} ${
+            navBgColor && navBgColor
+        } ${alignment && alignment}`,
     );
 
     const borderIconClasses = clsx(
         'flex flex-row items-center justify-center',
         'h-l w-l',
         'hover:cursor-pointer',
-        'group rounded-s bg-primary-600',
+        'group rounded-s',
+        className,
     );
 
     const animatedIconClasses = clsx(
