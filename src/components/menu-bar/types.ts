@@ -1,9 +1,10 @@
-import { ComponentType, ReactNode } from 'react';
-import { IconProps } from '../../elements/icons/types';
-
 export interface MenuBarProps {
-    children: ReactNode;
     bgColor?: string;
-    iconClasses?: string;
-    Icon: ComponentType<IconProps>;
+    alignment?: Alignment;
+    onClick?: () => void;
+}
+
+export enum Alignment {
+    LEFT = 'justify-start',
+    RIGHT = 'justify-end',
 }

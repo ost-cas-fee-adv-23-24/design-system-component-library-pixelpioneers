@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { MenuBar } from './menu-bar';
-import { IconLogoutAnimated, IconSettings } from '../../elements';
+import { Alignment } from './types';
 
 const meta: Meta<typeof MenuBar> = {
     title: 'Components/MenuBar',
@@ -9,29 +9,30 @@ const meta: Meta<typeof MenuBar> = {
         layout: 'padded',
     },
     tags: ['autodocs'],
-    argTypes: {},
-    args: {},
+    argTypes: {
+        alignment: Alignment,
+        onClick: { action: 'clicked' },
+    },
+    args: {
+        alignment: Alignment.LEFT,
+    },
 };
 
 export default meta;
 type Story = StoryObj<typeof MenuBar>;
 
-export const DefaultSettings: Story = {
-    name: 'Menu Bar - Settings Icon',
+export const DefaultMenuBar: Story = {
+    name: 'Menu Bar',
     args: {
-        bgColor: 'bg-violet-700',
-        Icon: IconSettings,
-        iconClasses:
-            'hover:cursor-pointer fill-white group-hover:rotate-180 transition duration-1000 transform-none h-s w-s',
+        bgColor: 'bg-primary-700',
+        alignment: Alignment.LEFT,
     },
 };
 
-export const DefaultLogout: Story = {
-    name: 'Menu Bar - Logout Icon',
+export const MenuBarRightAlignment: Story = {
+    name: 'Menu Bar - Right Alignment',
     args: {
-        bgColor: 'bg-violet-700',
-        Icon: IconLogoutAnimated,
-        iconClasses:
-            'hover:cursor-pointer fill-white transition duration-1000 transform-none h-s w-s',
+        bgColor: 'bg-primary-700',
+        alignment: Alignment.RIGHT,
     },
 };
