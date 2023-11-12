@@ -20,9 +20,6 @@ export const FileUpload: FC<FileUploadProps> = ({
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
     const [dragIsOver, setDragIsOver] = useState(false);
-    const [files, setFiles] = useState<File[]>([]);
-
-    console.log('viaDropFile ', files);
 
     const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
@@ -37,43 +34,39 @@ export const FileUpload: FC<FileUploadProps> = ({
     const handleDrop = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
 
-        // Here we'll handle the dropped files
-        console.log('dropped');
+        // Here we'll handle the dropped file
         setDragIsOver(false);
 
-        // Fetch the files
-        const droppedFiles = Array.from(event.dataTransfer.files);
-        setFiles(droppedFiles);
+        // Fetch the file
+        const droppedFile = event.dataTransfer.files[0];
+        console.log('Drop ', droppedFile);
+        onLoadFile && onLoadFile(droppedFile);
 
         // Use FileReader to read file content
-        droppedFiles.forEach((file) => {
-            const reader = new FileReader();
+        const reader = new FileReader();
 
-            reader.onloadend = () => {
-                console.log(reader.result);
-            };
+        reader.onloadend = () => {
+            console.log(reader.result);
+        };
 
-            reader.onerror = () => {
-                console.error('There was an issue reading the file.');
-            };
+        reader.onerror = () => {
+            console.error('There was an issue reading the file.');
+        };
 
-            reader.readAsDataURL(file);
-            return reader;
-        });
+        reader.readAsDataURL(droppedFile);
+        console.log('reader', reader);
     };
 
     // Fire the input when the Button is pushed
     const onClick = () => {
-        console.log('FileUpload Button is clicked!');
         inputReference.current?.click();
     };
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
-        console.log('files ', files);
         if (event.target.files && event.target.files[0]) {
-            setFiles([]);
-            onLoadFile(event.target.files[0]);
+            console.log('Click ', event.target.files[0]);
+            onLoadFile && onLoadFile(event.target.files[0]);
         }
     };
 
