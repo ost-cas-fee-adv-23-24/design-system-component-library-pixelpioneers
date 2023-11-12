@@ -20,6 +20,8 @@ export const FileUpload: FC<FileUploadProps> = ({
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
     const [dragIsOver, setDragIsOver] = useState(false);
+    const [isValidFileType, setIsValidFileType] = useState(true);
+    const [isValidFileSize, setIsValidFileSize] = useState(true);
 
     const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
@@ -33,8 +35,6 @@ export const FileUpload: FC<FileUploadProps> = ({
 
     const handleDrop = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-
-        // Here we'll handle the dropped file
         setDragIsOver(false);
 
         // Fetch the file
@@ -57,17 +57,35 @@ export const FileUpload: FC<FileUploadProps> = ({
         console.log('reader', reader);
     };
 
-    // Fire the input when the Button is pushed
-    const onClick = () => {
+    // Fire the input when the Button is clicked
+    const onFileUpload = () => {
         inputReference.current?.click();
     };
 
     const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
         event.preventDefault();
-        if (event.target.files && event.target.files[0]) {
-            console.log('Click ', event.target.files[0]);
+
+        event.target.files && checkFileType(event.target.files[0].type);
+        event.target.files && checkFileSize(event.target.files[0].size);
+
+        if (event.target.files && event.target.files[0] && isValidFileType && isValidFileSize) {
             onLoadFile && onLoadFile(event.target.files[0]);
         }
+    };
+
+    const checkFileType = (type: string): void => {
+        if (type === 'image/png') {
+            setIsValidFileType(true);
+        } else if (type === 'image/jpeg') {
+            setIsValidFileType(true);
+        } else {
+            setIsValidFileType(false);
+        }
+    };
+
+    const checkFileSize = (size: number): void => {
+        // File Size must be less than 5 MB
+        return size <= 52428800 ? setIsValidFileSize(true) : setIsValidFileSize(false);
     };
 
     return (
@@ -90,9 +108,26 @@ export const FileUpload: FC<FileUploadProps> = ({
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
             >
-                <IconUpload size={IconSize.L} className="mb-xs fill-secondary-500" />
-                <Label text={label} size={LabelSize.L} className="mb-xs text-secondary-500" />
-                <Label text={labelFileSize} size={LabelSize.M} className="text-secondary-500" />
+                <IconUpload
+                    size={IconSize.L}
+                    className={`mb-xs ${
+                        isValidFileType && isValidFileSize ? 'fill-secondary-500' : 'fill-error'
+                    }`}
+                />
+                <Label
+                    text={label}
+                    size={LabelSize.L}
+                    className={`mb-xs ${
+                        isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
+                    }`}
+                />
+                <Label
+                    text={labelFileSize}
+                    size={LabelSize.M}
+                    className={`mb-xs ${
+                        isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
+                    }`}
+                />
             </section>
             <input
                 className="hidden"
@@ -107,7 +142,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     <Button
                         size={ButtonSize.M}
                         variant={Variant.SECONDARY}
-                        onClick={onClick}
+                        onClick={onFileUpload}
                         label={labelButton}
                         Icon={Icon}
                     />
@@ -118,7 +153,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     <Button
                         size={ButtonSize.M}
                         variant={Variant.SECONDARY}
-                        onClick={onClick}
+                        onClick={() => {}}
                         label="Abbrechen"
                         Icon={IconActionLeft}
                     />
@@ -126,9 +161,10 @@ export const FileUpload: FC<FileUploadProps> = ({
                 <div>
                     <Button
                         size={ButtonSize.M}
-                        onClick={onClick}
+                        onClick={() => {}}
                         label="Speichern"
                         Icon={IconActionRight}
+                        disabled={!isValidFileType && !isValidFileSize}
                     />
                 </div>
             </section>
