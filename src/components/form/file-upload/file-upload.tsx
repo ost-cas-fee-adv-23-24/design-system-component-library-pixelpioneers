@@ -39,7 +39,6 @@ export const FileUpload: FC<FileUploadProps> = ({
 
         // Fetch the file
         const droppedFile = event.dataTransfer.files[0];
-        console.log('Drop ', droppedFile);
         onLoadFile && onLoadFile(droppedFile);
 
         // Use FileReader to read file content
