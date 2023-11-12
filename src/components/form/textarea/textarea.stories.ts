@@ -32,7 +32,7 @@ export const DefaultInitialTextValue: Story = {
 };
 
 export const TextareaWithoutLabel: Story = {
-    name: 'Textarea with any value',
+    name: 'Textarea without label',
     args: {
         value: '',
     },
