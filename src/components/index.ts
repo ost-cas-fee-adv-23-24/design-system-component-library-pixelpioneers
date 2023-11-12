@@ -7,3 +7,5 @@ export * from './icon-link';
 export * from './avatar';
 export * from './text-link';
 export * from './navi-button';
+export * from './form/input';
+export * from './form/textarea';
