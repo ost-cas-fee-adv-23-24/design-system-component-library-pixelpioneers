@@ -7,7 +7,7 @@ export interface TextareaProps {
     id: string;
     ariaLabel: string;
     value: string;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
+    onChange: (event: ChangeEvent<HTMLTextAreaElement>) => void;
     isValid?: string;
     errorMessage?: string;
     required?: string;
