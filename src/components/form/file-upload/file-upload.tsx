@@ -37,9 +37,14 @@ export const FileUpload: FC<FileUploadProps> = ({
         event.preventDefault();
         setDragIsOver(false);
 
-        // Fetch the file
+        // Fetch the file and check the validation
         const droppedFile = event.dataTransfer.files[0];
-        onLoadFile && onLoadFile(droppedFile);
+        droppedFile && checkFileType(droppedFile.type);
+        droppedFile && checkFileSize(droppedFile.size);
+
+        if (droppedFile && isValidFileType && isValidFileSize) {
+            onLoadFile && onLoadFile(droppedFile);
+        }
 
         // Use FileReader to read file content
         const reader = new FileReader();
