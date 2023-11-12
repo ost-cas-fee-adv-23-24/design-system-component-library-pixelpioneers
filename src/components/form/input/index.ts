@@ -1,2 +1,2 @@
-export * from './input';
+export * from './Snput';
 export * from './types';
