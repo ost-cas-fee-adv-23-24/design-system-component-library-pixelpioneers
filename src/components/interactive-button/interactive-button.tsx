@@ -1,8 +1,9 @@
-import React, { FC } from 'react';
+import { FC } from 'react';
 import { InteractiveButtonProps } from './types';
 import clsx from 'clsx';
 import { Label, LabelSize } from '../typography';
 import { IconSize } from '../../elements';
+import { BaseButton } from '../../base/base-button/base-button';
 
 export const InteractiveButton: FC<InteractiveButtonProps> = ({
     label,
@@ -11,19 +12,14 @@ export const InteractiveButton: FC<InteractiveButtonProps> = ({
     disabled = false,
     name = 'interactive-button',
     className = '',
-}) => {
-    const buttonClasses = 'flex justify-center gap-xs rounded-m px-base py-xs transition-all';
-    const iconClasses = 'self-center';
-    return (
-        <button
-            className={clsx(buttonClasses, className)}
-            onClick={onClick}
-            disabled={disabled}
-            name={name}
-            aria-label={name}
-        >
-            {Icon && <Icon size={IconSize.M} className={iconClasses} />}
-            {label && <Label text={label} size={LabelSize.M} />}
-        </button>
-    );
-};
+}) => (
+    <BaseButton
+        className={clsx('gap-xs rounded-m px-base py-xs transition-all', className)}
+        onClick={onClick}
+        disabled={disabled}
+        name={name}
+    >
+        {Icon && <Icon size={IconSize.M} className="self-center" />}
+        {label && <Label text={label} size={LabelSize.M} />}
+    </BaseButton>
+);

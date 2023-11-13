@@ -5,7 +5,7 @@ import { IconMumble } from '../../elements';
 import { Variant } from '../../utlis';
 
 const meta: Meta<typeof Button> = {
-    title: 'Components/Button/Default',
+    title: 'Components/Button',
     component: Button,
     parameters: {
         layout: 'centered',
