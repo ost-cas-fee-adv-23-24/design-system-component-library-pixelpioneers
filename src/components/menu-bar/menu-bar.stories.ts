@@ -25,7 +25,6 @@ export const DefaultMenuBar: Story = {
     name: 'MenuBar',
     args: {
         navBgColor: 'bg-primary-700',
-        alignment: Alignment.LEFT,
         className: 'bg-primary-600',
         borderActive: true,
     },

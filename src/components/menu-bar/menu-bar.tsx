@@ -11,10 +11,18 @@ export const MenuBar: FC<MenuBarProps> = ({
     className,
     borderActive = false,
 }) => {
+    const alignmentClasses =
+        alignment &&
+        {
+            left: 'justify-start',
+            right: 'justify-end',
+        }[alignment];
+
     const menuBarClasses = clsx(
         `flex h-2xl w-full flex-row items-center p-m ${borderActive && `gap-x-xs`} ${
             navBgColor && navBgColor
-        } ${alignment && alignment}`,
+        }`,
+        alignmentClasses,
     );
 
     const borderIconClasses = clsx(
@@ -22,7 +30,7 @@ export const MenuBar: FC<MenuBarProps> = ({
         'h-l w-l',
         'hover:cursor-pointer',
         'group rounded-s',
-        className,
+        borderActive && className,
     );
 
     const animatedIconClasses = clsx(
@@ -39,6 +47,7 @@ export const MenuBar: FC<MenuBarProps> = ({
                     className={clsx(animatedIconClasses, 'group-hover:rotate-180')}
                 />
             </section>
+
             <section onClick={onClick} className={borderIconClasses}>
                 <IconLogoutAnimated size={IconSize.M} className={animatedIconClasses} />
             </section>

@@ -7,6 +7,6 @@ export interface MenuBarProps {
 }
 
 export enum Alignment {
-    LEFT = 'justify-start',
-    RIGHT = 'justify-end',
+    LEFT = 'left',
+    RIGHT = 'right',
 }
