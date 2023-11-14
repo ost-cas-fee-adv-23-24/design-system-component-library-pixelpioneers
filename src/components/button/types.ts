@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { IconProps } from '../../elements';
+import { IconProps, IconSize } from '../../elements';
 import { Variant } from '../../utlis';
 
 export interface ButtonProps {
@@ -7,7 +7,7 @@ export interface ButtonProps {
     onClick: () => void;
     variant?: Variant;
     disabled?: boolean;
-    size: ButtonSize;
+    size: ButtonSize | IconSize;
     label?: string;
     fill?: boolean;
     name?: string;

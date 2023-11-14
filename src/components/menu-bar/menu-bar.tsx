@@ -3,6 +3,7 @@ import { MenuBarProps } from './types';
 import clsx from 'clsx';
 import { IconSize } from '../../elements/icons/types';
 import { IconLogoutAnimated, IconSettings } from '../../elements';
+import { IconButton } from '../icon-button';
 
 export const MenuBar: FC<MenuBarProps> = ({
     navBgColor,
@@ -33,23 +34,32 @@ export const MenuBar: FC<MenuBarProps> = ({
         borderActive && className,
     );
 
-    const animatedIconClasses = clsx(
-        'transform-none transition duration-1000',
-        'h-s w-s',
-        'fill-white',
-    );
+    const animatedIconClasses = clsx('transform-none transition duration-1000', 'fill-white');
 
     return (
         <nav className={menuBarClasses}>
-            <section onClick={onClick} className={clsx(borderIconClasses)}>
-                <IconSettings
-                    size={IconSize.M}
-                    className={clsx(animatedIconClasses, 'group-hover:rotate-180')}
-                />
+            <section className={clsx(borderIconClasses)}>
+                {onClick && (
+                    <div className={clsx(animatedIconClasses, 'group-hover:rotate-180')}>
+                        <IconButton
+                            isolateIconColor={true}
+                            Icon={IconSettings}
+                            size={IconSize.M}
+                            onClick={onClick}
+                        />
+                    </div>
+                )}
             </section>
 
-            <section onClick={onClick} className={borderIconClasses}>
-                <IconLogoutAnimated size={IconSize.M} className={animatedIconClasses} />
+            <section className={clsx(borderIconClasses, animatedIconClasses)}>
+                {onClick && (
+                    <IconButton
+                        isolateIconColor={true}
+                        Icon={IconLogoutAnimated}
+                        size={IconSize.M}
+                        onClick={onClick}
+                    />
+                )}
             </section>
         </nav>
     );
