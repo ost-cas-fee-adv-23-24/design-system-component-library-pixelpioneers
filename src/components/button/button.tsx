@@ -14,7 +14,6 @@ export const Button: FC<ButtonProps> = ({
     onClick,
     disabled = false,
     fill = false,
-    isolateIconColor = false,
     name = 'button',
     className,
 }) => {
@@ -37,10 +36,7 @@ export const Button: FC<ButtonProps> = ({
     return (
         <BaseButton
             onClick={onClick}
-            className={clsx(
-                !isolateIconColor && buttonClasses,
-                !isolateIconColor && transitionClasses,
-            )}
+            className={clsx(buttonClasses, transitionClasses)}
             disabled={disabled}
             fill={fill}
             name={name}
