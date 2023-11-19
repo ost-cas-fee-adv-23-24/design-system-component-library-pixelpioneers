@@ -7,6 +7,7 @@ import { IconSize, IconUpload } from '../../../elements/icons';
 import { Button } from '../../button/button';
 import { ButtonSize } from '../../button/types';
 import { Variant } from '../../../utlis/types';
+import { defaultObserveFileUploadContext } from '../../../utlis/context';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -22,23 +23,24 @@ export const FileUpload: FC<FileUploadProps> = ({
 }) => {
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
-    const [dragIsOver, setDragIsOver] = useState(false);
-    const [isValidFileType, setIsValidFileType] = useState(true);
-    const [isValidFileSize, setIsValidFileSize] = useState(true);
+
+    const [{ isDragIsOver, isValidFileSize, isValidFileType }, setState] = useState(
+        defaultObserveFileUploadContext(),
+    );
 
     const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        setDragIsOver(true);
+        setState((prevState) => ({ ...prevState, isDragIsOver: true }));
     };
 
     const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        setDragIsOver(false);
+        setState((prevState) => ({ ...prevState, isDragIsOver: false }));
     };
 
     const handleDrop = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        setDragIsOver(false);
+        setState((prevState) => ({ ...prevState, isDragIsOver: false }));
 
         // Fetch the file and check the validation
         const droppedFile = event.dataTransfer.files[0];
@@ -82,19 +84,19 @@ export const FileUpload: FC<FileUploadProps> = ({
 
     const checkFileType = (type: string): void => {
         if (type === 'image/png') {
-            setIsValidFileType(true);
+            setState((prevState) => ({ ...prevState, isValidFileType: true }));
         } else if (type === 'image/jpeg') {
-            setIsValidFileType(true);
+            setState((prevState) => ({ ...prevState, isValidFileType: true }));
         } else {
-            setIsValidFileType(false);
+            setState((prevState) => ({ ...prevState, isValidFileType: false }));
         }
     };
 
     const checkFileSize = (size: number): void => {
         // File Size must be less than 5 MB
         return size <= maxFileSizeUpload && maxFileSizeUpload
-            ? setIsValidFileSize(true)
-            : setIsValidFileSize(false);
+            ? setState((prevState) => ({ ...prevState, isValidFileSize: true }))
+            : setState((prevState) => ({ ...prevState, isValidFileSize: false }));
     };
 
     return (
@@ -111,7 +113,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'text-white',
                     'rounded-s',
                     'border-2 border-secondary-200',
-                    dragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
+                    isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}

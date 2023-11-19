@@ -13,3 +13,9 @@ export interface FileUploadProps {
     labelSaveButton?: string;
     maxFileSizeUpload: number;
 }
+
+export interface FileUploadContext {
+    isDragIsOver: boolean;
+    isValidFileSize: boolean;
+    isValidFileType: boolean;
+}
