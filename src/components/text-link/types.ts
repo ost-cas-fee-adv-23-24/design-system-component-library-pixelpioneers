@@ -1,6 +1,5 @@
 export interface TextLinkProps {
     label: string;
-    onClick: () => void;
-    disabled?: boolean;
+    link: string;
     name?: string;
 }

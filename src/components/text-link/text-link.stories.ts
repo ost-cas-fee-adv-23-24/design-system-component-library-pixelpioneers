@@ -8,13 +8,10 @@ const meta: Meta<typeof TextLink> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        onClick: { action: 'clicked' },
-    },
     args: {
         label: 'Link Label',
-        disabled: false,
         name: 'text-link',
+        link: 'https://www.migros.ch',
     },
 };
 
