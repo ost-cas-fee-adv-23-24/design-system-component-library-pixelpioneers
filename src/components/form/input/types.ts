@@ -4,6 +4,7 @@ import { IconProps } from '../../../elements';
 export interface InputProps {
     placeholder: string;
     label: string;
+    name: string;
     value: string;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     type: InputTypeProps;
@@ -11,7 +12,7 @@ export interface InputProps {
     isOnChangeValid?: string | null;
     hintText?: string;
     errorText?: string | null;
-    id?: number;
+    hintName?: string;
 }
 
 export enum InputTypeProps {

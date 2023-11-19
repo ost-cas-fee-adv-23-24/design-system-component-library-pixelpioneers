@@ -8,6 +8,7 @@ import { FieldHint } from '../field-hint';
 export const Input: FC<InputProps> = ({
     placeholder,
     label,
+    name,
     value,
     onChange,
     type,
@@ -15,7 +16,7 @@ export const Input: FC<InputProps> = ({
     isOnChangeValid = null,
     hintText,
     errorText,
-    id,
+    hintName,
 }) => {
     const [isPrivacy, setIsPrivacy] = useState(false);
     const inputWrapperClasses = 'relative';
@@ -32,6 +33,7 @@ export const Input: FC<InputProps> = ({
                 }`}
             >
                 <input
+                    name={name}
                     className={inputClasses}
                     type={isPrivacy ? InputTypeProps.text : type}
                     placeholder={placeholder}
@@ -58,8 +60,8 @@ export const Input: FC<InputProps> = ({
                     </button>
                 )}
             </div>
-            {id && (hintText || errorText) && (
-                <FieldHint id={id} errorText={errorText} hintText={hintText} />
+            {hintName && (hintText || errorText) && (
+                <FieldHint hintName={hintName} errorText={errorText} hintText={hintText} />
             )}
         </div>
     );

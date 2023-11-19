@@ -24,74 +24,80 @@ export const DefaultText: Story = {
     args: {
         type: InputTypeProps.text,
         value: 'Nico Lutz',
+        name: 'name',
         placeholder: 'Please insert',
         label: 'Name',
         hintText: 'Bitte geben Sie Ihre Vorname ein',
         errorText: null,
-        id: 12,
+        hintName: 'name',
     },
 };
 
 export const DefaultTextWithHint: Story = {
     name: 'Type Text',
     args: {
+        label: 'Name',
         type: InputTypeProps.text,
+        name: 'name',
         value: 'Nico Lutz',
         placeholder: 'Please insert',
-        label: 'Name',
-        errorText: null,
+        hintName: 'name',
         hintText: undefined,
-        id: 2,
+        errorText: null,
     },
 };
 
 export const DefaultTextInvalid: Story = {
     name: 'Type Invalid',
     args: {
+        label: 'Invalid Name',
         type: InputTypeProps.text,
+        name: 'name',
         value: 'Nico',
         placeholder: 'Please insert',
         Icon: IconCancel,
         isOnChangeValid: 'Nico not allowed here',
-        label: 'Invalid Name',
-        errorText: 'Wrong text from server',
-        id: 234,
+        hintName: 'name',
         hintText: 'Bitte geben Sie Ihre Vornamen ein',
+        errorText: 'Wrong text from server',
     },
 };
 
 export const DefaultTextValid: Story = {
     name: 'Type Valid',
     args: {
+        label: 'Valid Name',
         type: InputTypeProps.text,
+        name: 'name',
         value: 'Nico',
         placeholder: 'Please insert',
         Icon: IconCancel,
         isOnChangeValid: null,
-        label: 'Valid Name',
-        errorText: null,
-        id: 234,
+        hintName: 'name',
         hintText: 'Bitte geben Sie hier Ihren Vornamen ein',
+        errorText: null,
     },
 };
 
 export const DefaultPassword: Story = {
     name: 'Type Password',
     args: {
+        label: 'Password',
         type: InputTypeProps.password,
+        name: 'password',
         value: 'secret 🤐 🤫',
         Icon: IconEye,
         placeholder: 'Password is needed',
-        label: 'Password',
     },
 };
 
 export const DefaultEmail: Story = {
     name: 'Type Email',
     args: {
+        label: 'E-Mail',
         type: InputTypeProps.email,
+        name: 'email',
         value: 'nico.lutz@ost.ch',
         placeholder: 'Please insert',
-        label: 'E-Mail',
     },
 };
