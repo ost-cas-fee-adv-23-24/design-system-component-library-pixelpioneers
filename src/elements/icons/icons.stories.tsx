@@ -25,7 +25,7 @@ export default meta;
 export const IconStory: StoryObj<typeof Icons.IconMumble> = (args: IconProps) => {
     const IconList = Object.values(Icons);
     return (
-        <ul className="grid grid-flow-col grid-rows-4 gap-xl bg-gradient-to-tr">
+        <ul className="grid grid-flow-col grid-rows-4 gap-xl">
             {IconList.map((icon: FC<IconProps>) => (
                 <li
                     key={icon.displayName}

@@ -24,7 +24,6 @@ export const DefaultText: Story = {
     name: 'Type Text with hint',
     args: {
         type: InputType.TEXT,
-        value: 'Nico Lutz',
         name: 'name',
         placeholder: 'Please insert',
         label: 'Name',
@@ -41,7 +40,6 @@ export const DefaultTextWithHint: Story = {
         label: 'Name',
         type: InputType.TEXT,
         name: 'name',
-        value: 'Nico Lutz',
         placeholder: 'Please insert',
         hintName: 'name',
         hintText: undefined,
