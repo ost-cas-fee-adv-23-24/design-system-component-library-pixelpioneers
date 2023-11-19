@@ -19,7 +19,7 @@ export const Avatar: FC<AvatarProps> = ({ src, className, alt, variant, onClick 
         'overflow-hidden rounded-full bg-primary-200',
         {
             s: 'h-2l w-2l',
-            m: `h-3xl w-3xl ${outlineClasses}`,
+            m: `h-2xl w-2xl ${outlineClasses}`,
             l: `h-7xl w-7xl ${outlineClasses}`,
             xl: xlClasses,
             edit: xlClasses,
