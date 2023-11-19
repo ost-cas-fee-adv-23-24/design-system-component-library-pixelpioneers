@@ -22,7 +22,7 @@ export const Input: FC<InputProps> = ({
     const [isPrivacy, setIsPrivacy] = useState(false);
     const inputWrapperClasses = 'relative';
     const inputClasses =
-        'h-12 w-full text-secondary-700 pr-10 py-s px-s rounded-s placeholder-secondary-300 focus:outline-primary-600 focus:outline-2';
+        'h-xl w-full text-secondary-700 pr-10 py-s px-s rounded-s placeholder-secondary-300 focus:outline-primary-600 focus:outline-2';
     const iconClasses = 'cursor-pointer absolute flex items-center right-s top-0 h-full';
 
     return (
