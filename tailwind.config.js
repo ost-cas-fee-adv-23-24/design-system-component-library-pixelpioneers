@@ -30,6 +30,7 @@ module.exports = {
             bold: '700',
         },
         spacing: {
+            0: 0,
             '2xs': '0.25rem', // 4px
             xs: '0.5rem', // 8px
             base: '0.75rem', // 12px

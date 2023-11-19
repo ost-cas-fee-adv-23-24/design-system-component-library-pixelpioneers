@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './avatar';
-import { ImageSize } from './types';
-import { IconSize } from '../../elements';
+import { AvatarVariant } from './types';
 
 const meta: Meta<typeof Avatar> = {
     title: 'Components/Avatar',
@@ -12,10 +11,10 @@ const meta: Meta<typeof Avatar> = {
     tags: ['autodocs'],
     argTypes: {
         onClick: { action: 'clicked' },
-        imageSize: ImageSize,
+        variant: AvatarVariant,
     },
     args: {
-        imageSize: ImageSize.S,
+        variant: AvatarVariant.S,
     },
 };
 
@@ -27,9 +26,7 @@ export const Default: Story = {
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        editMode: false,
-        className: 'bg-primary-600 hover:bg-primary-700 w-2xl h-2xl',
-        imageSize: ImageSize.S,
+        variant: AvatarVariant.S,
     },
 };
 
@@ -38,9 +35,7 @@ export const ImageSizeS: Story = {
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        editMode: false,
-        className: '',
-        imageSize: ImageSize.S,
+        variant: AvatarVariant.S,
     },
 };
 
@@ -49,10 +44,7 @@ export const ImageSizeM: Story = {
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        editMode: false,
-        className: '',
-        ringVariant: 'outline outline-secondary-100 outline-6',
-        imageSize: ImageSize.M,
+        variant: AvatarVariant.M,
     },
 };
 
@@ -61,10 +53,7 @@ export const ImageSizeL: Story = {
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        editMode: false,
-        className: '',
-        ringVariant: 'outline outline-secondary-100 outline-6',
-        imageSize: ImageSize.L,
+        variant: AvatarVariant.L,
     },
 };
 
@@ -73,10 +62,7 @@ export const ImageSizeXL: Story = {
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        editMode: false,
-        className: '',
-        ringVariant: 'outline outline-secondary-100 outline-6',
-        imageSize: ImageSize.XL,
+        variant: AvatarVariant.XL,
     },
 };
 
@@ -85,19 +71,13 @@ export const EditMode: Story = {
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        editMode: true,
-        className: '',
-        ringVariant: 'outline outline-secondary-100 outline-6',
-        imageSize: ImageSize.XL,
-        iconEditModeSize: IconSize.M,
+        variant: AvatarVariant.EDIT,
     },
 };
 
 export const NoImage: Story = {
     name: 'No image available - in M mode',
     args: {
-        editMode: false,
-        ringVariant: 'outline outline-secondary-100 outline-6',
-        imageSize: ImageSize.M,
+        variant: AvatarVariant.M,
     },
 };
