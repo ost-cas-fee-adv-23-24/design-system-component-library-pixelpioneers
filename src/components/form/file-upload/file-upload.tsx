@@ -16,6 +16,9 @@ export const FileUpload: FC<FileUploadProps> = ({
     IconActionLeft,
     IconActionRight,
     onLoadFile,
+    labelCancelButton = '',
+    labelSaveButton = '',
+    maxFileSizeUpload,
 }) => {
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
@@ -89,7 +92,9 @@ export const FileUpload: FC<FileUploadProps> = ({
 
     const checkFileSize = (size: number): void => {
         // File Size must be less than 5 MB
-        return size <= 52428800 ? setIsValidFileSize(true) : setIsValidFileSize(false);
+        return size <= maxFileSizeUpload && maxFileSizeUpload
+            ? setIsValidFileSize(true)
+            : setIsValidFileSize(false);
     };
 
     return (
@@ -158,7 +163,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                         size={ButtonSize.M}
                         variant={Variant.SECONDARY}
                         onClick={() => {}}
-                        label="Abbrechen"
+                        label={labelCancelButton}
                         Icon={IconActionLeft}
                     />
                 </div>
@@ -166,7 +171,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     <Button
                         size={ButtonSize.M}
                         onClick={() => {}}
-                        label="Speichern"
+                        label={labelSaveButton}
                         Icon={IconActionRight}
                         disabled={!isValidFileType && !isValidFileSize}
                     />

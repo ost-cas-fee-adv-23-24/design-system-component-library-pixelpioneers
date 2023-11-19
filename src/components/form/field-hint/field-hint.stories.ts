@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FieldHint } from './field-hint';
+import { TextStatusVariant } from './types';
 
 const meta: Meta<typeof FieldHint> = {
     title: 'Components/Form/FieldHint',
@@ -19,12 +20,14 @@ export const DefaultText: Story = {
     name: 'Hint Text',
     args: {
         hintText: 'This is an hint',
+        status: TextStatusVariant.HINT,
     },
 };
 
 export const DefaultError: Story = {
-    name: 'Error  Hint Text',
+    name: 'Error Text',
     args: {
-        errorText: 'This is an error or warn text',
+        errorText: 'This is an error or warn',
+        status: TextStatusVariant.ERROR,
     },
 };

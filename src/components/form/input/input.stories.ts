@@ -1,7 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './input';
-import { InputTypeProps } from './types';
+import { InputType } from './types';
 import { IconCancel, IconEye } from '../../../elements';
+import { TextStatusVariant } from '../field-hint';
 
 const meta: Meta<typeof Input> = {
     title: 'Components/Form/Input',
@@ -11,7 +12,7 @@ const meta: Meta<typeof Input> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        type: InputTypeProps,
+        type: InputType,
     },
     args: {},
 };
@@ -22,13 +23,14 @@ type Story = StoryObj<typeof Input>;
 export const DefaultText: Story = {
     name: 'Type Text with hint',
     args: {
-        type: InputTypeProps.text,
+        type: InputType.TEXT,
         value: 'Nico Lutz',
         name: 'name',
         placeholder: 'Please insert',
         label: 'Name',
         hintText: 'Bitte geben Sie Ihre Vorname ein',
         errorText: null,
+        status: TextStatusVariant.HINT,
         hintName: 'name',
     },
 };
@@ -37,13 +39,14 @@ export const DefaultTextWithHint: Story = {
     name: 'Type Text',
     args: {
         label: 'Name',
-        type: InputTypeProps.text,
+        type: InputType.TEXT,
         name: 'name',
         value: 'Nico Lutz',
         placeholder: 'Please insert',
         hintName: 'name',
         hintText: undefined,
         errorText: null,
+        status: TextStatusVariant.HINT,
     },
 };
 
@@ -51,7 +54,7 @@ export const DefaultTextInvalid: Story = {
     name: 'Type Invalid',
     args: {
         label: 'Invalid Name',
-        type: InputTypeProps.text,
+        type: InputType.TEXT,
         name: 'name',
         value: 'Nico',
         placeholder: 'Please insert',
@@ -60,6 +63,7 @@ export const DefaultTextInvalid: Story = {
         hintName: 'name',
         hintText: 'Bitte geben Sie Ihre Vornamen ein',
         errorText: 'Wrong text from server',
+        status: TextStatusVariant.ERROR,
     },
 };
 
@@ -67,7 +71,7 @@ export const DefaultTextValid: Story = {
     name: 'Type Valid',
     args: {
         label: 'Valid Name',
-        type: InputTypeProps.text,
+        type: InputType.TEXT,
         name: 'name',
         value: 'Nico',
         placeholder: 'Please insert',
@@ -76,6 +80,7 @@ export const DefaultTextValid: Story = {
         hintName: 'name',
         hintText: 'Bitte geben Sie hier Ihren Vornamen ein',
         errorText: null,
+        status: TextStatusVariant.HINT,
     },
 };
 
@@ -83,7 +88,7 @@ export const DefaultPassword: Story = {
     name: 'Type Password',
     args: {
         label: 'Password',
-        type: InputTypeProps.password,
+        type: InputType.PASSWORD,
         name: 'password',
         value: 'secret 🤐 🤫',
         Icon: IconEye,
@@ -95,7 +100,7 @@ export const DefaultEmail: Story = {
     name: 'Type Email',
     args: {
         label: 'E-Mail',
-        type: InputTypeProps.email,
+        type: InputType.EMAIL,
         name: 'email',
         value: 'nico.lutz@ost.ch',
         placeholder: 'Please insert',

@@ -9,4 +9,7 @@ export interface FileUploadProps {
     Icon: ComponentType<IconProps>;
     IconActionLeft: ComponentType<IconProps>;
     IconActionRight: ComponentType<IconProps>;
+    labelCancelButton?: string;
+    labelSaveButton?: string;
+    maxFileSizeUpload: number;
 }

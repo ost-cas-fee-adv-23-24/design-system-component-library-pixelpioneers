@@ -25,5 +25,8 @@ export const DefaultFileUpload: Story = {
         Icon: IconUpload,
         IconActionLeft: IconCancel,
         IconActionRight: IconCheckmark,
+        labelCancelButton: 'Abbrechen',
+        labelSaveButton: 'Speichern',
+        maxFileSizeUpload: 52428800,
     },
 };

@@ -1,5 +1,5 @@
 import { FC, useState } from 'react';
-import { InputProps, InputTypeProps } from './types';
+import { InputProps, InputType } from './types';
 import { LabelSize } from '../../typography/label/types';
 import { Label } from '../../typography/label/label';
 import { IconSize } from '../../../elements';
@@ -17,6 +17,7 @@ export const Input: FC<InputProps> = ({
     hintText,
     errorText,
     hintName,
+    status,
 }) => {
     const [isPrivacy, setIsPrivacy] = useState(false);
     const inputWrapperClasses = 'relative';
@@ -35,11 +36,11 @@ export const Input: FC<InputProps> = ({
                 <input
                     name={name}
                     className={inputClasses}
-                    type={isPrivacy ? InputTypeProps.text : type}
+                    type={isPrivacy ? InputType.TEXT : type}
                     placeholder={placeholder}
                     onChange={onChange}
                     value={value}
-                    spellCheck={type === InputTypeProps.password ? 'false' : 'true'}
+                    spellCheck={type === InputType.PASSWORD ? 'false' : 'true'}
                 />
                 {Icon && (
                     <button
@@ -47,10 +48,7 @@ export const Input: FC<InputProps> = ({
                         aria-label={isPrivacy ? 'Hide password' : 'Show password'}
                         onClick={() => setIsPrivacy(!isPrivacy)}
                     >
-                        {Icon &&
-                        type === InputTypeProps.password &&
-                        isPrivacy &&
-                        !isOnChangeValid ? (
+                        {Icon && type === InputType.PASSWORD && isPrivacy && !isOnChangeValid ? (
                             <Icon size={IconSize.M} className="fill-primary-600" />
                         ) : !isOnChangeValid ? (
                             <Icon size={IconSize.M} className="fill-secondary-600" />
@@ -60,8 +58,13 @@ export const Input: FC<InputProps> = ({
                     </button>
                 )}
             </div>
-            {hintName && (hintText || errorText) && (
-                <FieldHint hintName={hintName} errorText={errorText} hintText={hintText} />
+            {hintName && status && (hintText || errorText) && (
+                <FieldHint
+                    status={status}
+                    hintName={hintName}
+                    errorText={errorText}
+                    hintText={hintText}
+                />
             )}
         </div>
     );

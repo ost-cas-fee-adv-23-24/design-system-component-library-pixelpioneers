@@ -1,5 +1,6 @@
 import { ChangeEvent, ComponentType } from 'react';
 import { IconProps } from '../../../elements';
+import { TextStatusVariant } from '../field-hint';
 
 export interface InputProps {
     placeholder: string;
@@ -7,16 +8,17 @@ export interface InputProps {
     name: string;
     value: string;
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
-    type: InputTypeProps;
+    type: InputType;
     Icon?: ComponentType<IconProps>;
     isOnChangeValid?: string | null;
     hintText?: string;
     errorText?: string | null;
     hintName?: string;
+    status?: TextStatusVariant;
 }
 
-export enum InputTypeProps {
-    text = 'text',
-    password = 'password',
-    email = 'email',
+export enum InputType {
+    TEXT = 'text',
+    PASSWORD = 'password',
+    EMAIL = 'email',
 }
