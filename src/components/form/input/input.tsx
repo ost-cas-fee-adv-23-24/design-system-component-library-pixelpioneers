@@ -3,6 +3,7 @@ import { InputProps, InputTypeProps } from './types';
 import { LabelSize } from '../../typography/label/types';
 import { Label } from '../../typography/label/label';
 import { IconSize } from '../../../elements';
+import { FieldHint } from '../field-hint';
 
 export const Input: FC<InputProps> = ({
     placeholder,
@@ -11,7 +12,10 @@ export const Input: FC<InputProps> = ({
     onChange,
     type,
     Icon,
-    isValid = null,
+    isOnChangeValid = null,
+    hintText,
+    errorText,
+    id,
 }) => {
     const [isPrivacy, setIsPrivacy] = useState(false);
     const inputWrapperClasses = 'relative';
@@ -24,7 +28,7 @@ export const Input: FC<InputProps> = ({
             <Label text={label} size={LabelSize.M} className="text-secondary-700" />
             <div
                 className={`flex items-center justify-end rounded-s border transition-all duration-300 ease-in-out hover:border-primary-600 ${
-                    isValid ? 'border-error' : 'border-secondary-200'
+                    isOnChangeValid ? 'border-2 border-error' : 'border-secondary-200'
                 }`}
             >
                 <input
@@ -41,9 +45,12 @@ export const Input: FC<InputProps> = ({
                         aria-label={isPrivacy ? 'Hide password' : 'Show password'}
                         onClick={() => setIsPrivacy(!isPrivacy)}
                     >
-                        {Icon && type === InputTypeProps.password && isPrivacy && !isValid ? (
+                        {Icon &&
+                        type === InputTypeProps.password &&
+                        isPrivacy &&
+                        !isOnChangeValid ? (
                             <Icon size={IconSize.M} className="fill-primary-600" />
-                        ) : !isValid ? (
+                        ) : !isOnChangeValid ? (
                             <Icon size={IconSize.M} className="fill-secondary-600" />
                         ) : (
                             <Icon size={IconSize.M} className="fill-error" />
@@ -51,6 +58,9 @@ export const Input: FC<InputProps> = ({
                     </button>
                 )}
             </div>
+            {id && (hintText || errorText) && (
+                <FieldHint id={id} errorText={errorText} hintText={hintText} />
+            )}
         </div>
     );
 };

@@ -20,12 +20,28 @@ export default meta;
 type Story = StoryObj<typeof Input>;
 
 export const DefaultText: Story = {
+    name: 'Type Text with hint',
+    args: {
+        type: InputTypeProps.text,
+        value: 'Nico Lutz',
+        placeholder: 'Please insert',
+        label: 'Name',
+        hintText: 'Bitte geben Sie Ihre Vorname ein',
+        errorText: null,
+        id: 12,
+    },
+};
+
+export const DefaultTextWithHint: Story = {
     name: 'Type Text',
     args: {
         type: InputTypeProps.text,
         value: 'Nico Lutz',
         placeholder: 'Please insert',
         label: 'Name',
+        errorText: null,
+        hintText: undefined,
+        id: 2,
     },
 };
 
@@ -36,8 +52,26 @@ export const DefaultTextInvalid: Story = {
         value: 'Nico',
         placeholder: 'Please insert',
         Icon: IconCancel,
-        isValid: 'Nico not allowed here',
+        isOnChangeValid: 'Nico not allowed here',
         label: 'Invalid Name',
+        errorText: 'Wrong text from server',
+        id: 234,
+        hintText: 'Bitte geben Sie Ihre Vornamen ein',
+    },
+};
+
+export const DefaultTextValid: Story = {
+    name: 'Type Valid',
+    args: {
+        type: InputTypeProps.text,
+        value: 'Nico',
+        placeholder: 'Please insert',
+        Icon: IconCancel,
+        isOnChangeValid: null,
+        label: 'Valid Name',
+        errorText: null,
+        id: 234,
+        hintText: 'Bitte geben Sie hier Ihren Vornamen ein',
     },
 };
 

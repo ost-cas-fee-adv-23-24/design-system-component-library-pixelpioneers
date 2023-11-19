@@ -8,7 +8,10 @@ export interface InputProps {
     onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     type: InputTypeProps;
     Icon?: ComponentType<IconProps>;
-    isValid?: string;
+    isOnChangeValid?: string | null;
+    hintText?: string;
+    errorText?: string | null;
+    id?: number;
 }
 
 export enum InputTypeProps {
