@@ -1,8 +1,12 @@
 import clsx from 'clsx';
-import { PlaceholderProps } from './types';
+import { PlaceholderProps, PlaceholderSize } from './types';
 import { FC } from 'react';
 
-export const Placeholder: FC<PlaceholderProps> = ({ text, size, className = 'text-inherit' }) => {
+export const Placeholder: FC<PlaceholderProps> = ({
+    text,
+    size = PlaceholderSize.M,
+    className = 'text-inherit',
+}) => {
     const fontClasses = 'font-default font-semibold leading-none';
     const sizeClasses = {
         s: 'text-xs',
