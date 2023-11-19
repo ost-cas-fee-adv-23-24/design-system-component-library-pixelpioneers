@@ -11,6 +11,7 @@ export interface ButtonProps {
     label?: string;
     fill?: boolean;
     name?: string;
+    className?: string;
 }
 
 export enum ButtonSize {

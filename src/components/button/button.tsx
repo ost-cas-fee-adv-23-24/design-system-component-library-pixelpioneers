@@ -15,6 +15,7 @@ export const Button: FC<ButtonProps> = ({
     disabled = false,
     fill = false,
     name = 'button',
+    className,
 }) => {
     const buttonClasses = clsx(
         `fill-white text-white hover:ring-3 active:ring-4`,
@@ -28,6 +29,7 @@ export const Button: FC<ButtonProps> = ({
             m: 'gap-xs rounded-s p-base',
             l: `${label ? 'rounded-s px-m py-s' : 'rounded-full p-s'} gap-base`,
         }[size],
+        className,
     );
     const transitionClasses = 'transition-all duration-350 active:duration-300 ease-in-out';
 

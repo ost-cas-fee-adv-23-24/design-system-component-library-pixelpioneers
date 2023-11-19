@@ -3,19 +3,14 @@ import { Variant } from '../../utlis';
 import { FC } from 'react';
 import { IconButtonProps } from './types';
 
-export const IconButton: FC<IconButtonProps> = ({
-    Icon,
-    onClick,
-    disabled,
-    name,
-    size = ButtonSize.L,
-}) => (
+export const IconButton: FC<IconButtonProps> = ({ Icon, onClick, disabled, name, className }) => (
     <Button
         Icon={Icon}
-        size={size}
+        size={ButtonSize.L}
         disabled={disabled}
         onClick={onClick}
         variant={Variant.SECONDARY}
         name={name}
+        className={className}
     />
 );

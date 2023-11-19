@@ -30,14 +30,19 @@ module.exports = {
             bold: '700',
         },
         spacing: {
+            0: 0,
             '2xs': '0.25rem', // 4px
             xs: '0.5rem', // 8px
             base: '0.75rem', // 12px
             s: '1rem', // 16px
             m: '1.5rem', // 24px
             l: '2rem', // 32px
+            '2l': '2.5rem', // 40px;
             xl: '3rem', // 48px
-            '2xl': '4rem', // 64px
+            '2xl': '3.5rem', // 56px
+            '3xl': '4rem', // 64px
+            '7xl': '6rem', // 96px
+            '15xl': '10rem', // 160px
         },
         borderRadius: {
             none: '0',
