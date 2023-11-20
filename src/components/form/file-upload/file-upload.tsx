@@ -8,6 +8,7 @@ import { Button } from '../../button/button';
 import { ButtonSize } from '../../button/types';
 import { Variant } from '../../../utlis/types';
 import { defaultObserveFileUploadContext } from '../../../utlis/context';
+import { Paragraph, ParagraphSize } from '../../typography/paragraph';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -127,15 +128,15 @@ export const FileUpload: FC<FileUploadProps> = ({
                 />
                 <Label
                     text={label}
-                    size={LabelSize.L}
+                    size={LabelSize.XL}
                     className={`mb-xs ${
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }`}
                 />
-                <Label
+                <Paragraph
                     text={labelFileSize}
-                    size={LabelSize.M}
-                    className={`mb-xs ${
+                    size={ParagraphSize.M}
+                    className={`${
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }`}
                 />
@@ -148,36 +149,35 @@ export const FileUpload: FC<FileUploadProps> = ({
                 multiple={false}
                 onChange={handleChange}
             />
-            <section className="my-xs">
+            <section className="mb-xl mt-s">
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
-                        variant={Variant.SECONDARY}
+                        variant={Variant.SPECIAL}
                         onClick={onFileUpload}
                         label={labelButton}
                         Icon={Icon}
+                        className="w-full"
                     />
                 )}
             </section>
-            <section className="flex w-full justify-between">
-                <div>
-                    <Button
-                        size={ButtonSize.M}
-                        variant={Variant.SECONDARY}
-                        onClick={() => {}}
-                        label={labelCancelButton}
-                        Icon={IconActionLeft}
-                    />
-                </div>
-                <div>
-                    <Button
-                        size={ButtonSize.M}
-                        onClick={() => {}}
-                        label={labelSaveButton}
-                        Icon={IconActionRight}
-                        disabled={!isValidFileType && !isValidFileSize}
-                    />
-                </div>
+            <section className="flex w-full flex-row justify-between gap-x-s">
+                <Button
+                    size={ButtonSize.M}
+                    variant={Variant.SECONDARY}
+                    onClick={() => {}}
+                    label={labelCancelButton}
+                    Icon={IconActionLeft}
+                    className="basis-1/2"
+                />
+                <Button
+                    size={ButtonSize.M}
+                    onClick={() => {}}
+                    label={labelSaveButton}
+                    Icon={IconActionRight}
+                    disabled={!isValidFileType && !isValidFileSize}
+                    className="basis-1/2"
+                />
             </section>
         </div>
     );

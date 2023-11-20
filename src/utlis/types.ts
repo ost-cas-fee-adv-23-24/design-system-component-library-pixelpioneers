@@ -2,6 +2,7 @@ export enum Variant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
     TERTIARY = 'tertiary',
+    SPECIAL = 'special',
 }
 
 export interface Wording {
