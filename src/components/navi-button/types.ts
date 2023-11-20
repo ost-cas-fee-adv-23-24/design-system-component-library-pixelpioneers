@@ -5,4 +5,5 @@ export type NaviButtonProps = NaviButtonExtendProps &
 
 export type NaviButtonExtendProps = {
     className?: string;
+    name?: string;
 };

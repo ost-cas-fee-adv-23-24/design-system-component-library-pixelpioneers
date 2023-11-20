@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NaviButton } from './navi-button';
-import { IconLogoutAnimated, IconSettings } from '../../elements/icons/icons';
+import { IconLogoutAnimated, IconSettingsAnimated } from '../../elements/icons/icons';
 
 const meta: Meta<typeof NaviButton> = {
     title: 'Components/NaviButton',
@@ -41,6 +41,6 @@ export const DefaultNaviButtonSettings: Story = {
     args: {
         className: 'bg-primary-600 hover:bg-primary-700 text-white',
         label: 'Label',
-        Icon: IconSettings,
+        Icon: IconSettingsAnimated,
     },
 };

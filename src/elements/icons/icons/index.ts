@@ -19,6 +19,7 @@ export * from './icon-reply-filled';
 export * from './icon-repost';
 export * from './icon-send';
 export * from './icon-settings';
+export * from './icon-settings-animated';
 export * from './icon-share';
 export * from './icon-time';
 export * from './icon-upload';
