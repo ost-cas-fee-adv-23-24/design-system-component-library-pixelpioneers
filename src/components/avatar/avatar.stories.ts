@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Avatar } from './avatar';
-import { AvatarVariant } from './types';
+import { AvatarSize } from './types';
 
 const meta: Meta<typeof Avatar> = {
     title: 'Components/Avatar',
@@ -10,74 +10,64 @@ const meta: Meta<typeof Avatar> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        onClick: { action: 'clicked' },
-        variant: AvatarVariant,
+        size: AvatarSize,
     },
     args: {
-        variant: AvatarVariant.S,
+        size: AvatarSize.S,
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof Avatar>;
+type AvatarStory = StoryObj<typeof Avatar>;
 
-export const Default: Story = {
+export const Default: AvatarStory = {
     name: 'Avatar Default',
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        variant: AvatarVariant.S,
+        size: AvatarSize.S,
     },
 };
 
-export const ImageSizeS: Story = {
+export const ImageSizeS: AvatarStory = {
     name: 'Image S',
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        variant: AvatarVariant.S,
+        size: AvatarSize.S,
     },
 };
 
-export const ImageSizeM: Story = {
+export const ImageSizeM: AvatarStory = {
     name: 'Image M',
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        variant: AvatarVariant.M,
+        size: AvatarSize.M,
     },
 };
 
-export const ImageSizeL: Story = {
+export const ImageSizeL: AvatarStory = {
     name: 'Image L',
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        variant: AvatarVariant.L,
+        size: AvatarSize.L,
     },
 };
 
-export const ImageSizeXL: Story = {
+export const ImageSizeXL: AvatarStory = {
     name: 'Image XL',
     args: {
         alt: 'It is me',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        variant: AvatarVariant.XL,
+        size: AvatarSize.XL,
     },
 };
 
-export const EditMode: Story = {
-    name: 'Edit Mode',
-    args: {
-        alt: 'It is me',
-        src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
-        variant: AvatarVariant.EDIT,
-    },
-};
-
-export const NoImage: Story = {
+export const NoImage: AvatarStory = {
     name: 'No image available - in M mode',
     args: {
-        variant: AvatarVariant.M,
+        size: AvatarSize.M,
     },
 };

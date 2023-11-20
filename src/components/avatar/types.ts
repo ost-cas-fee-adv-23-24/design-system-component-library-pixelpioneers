@@ -1,15 +1,15 @@
 export interface AvatarProps {
-    src: string;
-    alt: string;
+    src?: string;
+    alt?: string;
     className?: string;
-    variant: AvatarVariant;
-    onClick: () => void;
+    size: AvatarSize;
 }
 
-export enum AvatarVariant {
+export type EditAvatarProps = Omit<AvatarProps, 'size'> & { onEdit: () => void };
+
+export enum AvatarSize {
     S = 's',
     M = 'm',
     L = 'l',
     XL = 'xl',
-    EDIT = 'edit',
 }

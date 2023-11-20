@@ -1,10 +1,8 @@
 import clsx from 'clsx';
 import { FC } from 'react';
-import { AvatarProps, AvatarVariant } from './types';
-import { IconEdit } from '../../elements';
-import { IconButton } from '../icon-button';
+import { AvatarProps, AvatarSize } from './types';
 
-export const Avatar: FC<AvatarProps> = ({ src, className, alt, variant, onClick }) => {
+export const Avatar: FC<AvatarProps> = ({ src, className, alt, size }) => {
     const avatarBorderClasses = clsx(
         'flex items-center justify-center',
         'relative',
@@ -13,7 +11,6 @@ export const Avatar: FC<AvatarProps> = ({ src, className, alt, variant, onClick 
         className,
     );
     const outlineClasses = 'outline outline-secondary-100 outline-[6px]';
-    const xlClasses = `h-15xl w-15xl ${outlineClasses}`;
     const avatarClasses = clsx(
         'flex items-center justify-center',
         'overflow-hidden rounded-full bg-primary-200',
@@ -21,37 +18,26 @@ export const Avatar: FC<AvatarProps> = ({ src, className, alt, variant, onClick 
             s: 'h-2l w-2l',
             m: `h-2xl w-2xl ${outlineClasses}`,
             l: `h-7xl w-7xl ${outlineClasses}`,
-            xl: xlClasses,
-            edit: xlClasses,
-        }[variant],
+            xl: `h-15xl w-15xl ${outlineClasses}`,
+        }[size],
     );
 
     return (
-        <div className="relative">
-            <div className={avatarBorderClasses}>
-                <div className={avatarClasses}>
-                    {src && (
-                        <img
-                            src={src}
-                            title={alt}
-                            alt={alt}
-                            className={clsx(
-                                'h-full w-full object-cover',
-                                variant !== AvatarVariant.EDIT &&
-                                    'duration-300 ease-in-out group-hover:scale-125',
-                            )}
-                        />
-                    )}
-                </div>
+        <div className={avatarBorderClasses}>
+            <div className={avatarClasses}>
+                {src && (
+                    <img
+                        src={src}
+                        title={alt}
+                        alt={alt}
+                        className={clsx(
+                            'h-full w-full object-cover',
+                            size !== AvatarSize.XL &&
+                                'duration-300 ease-in-out group-hover:scale-125',
+                        )}
+                    />
+                )}
             </div>
-            {variant === AvatarVariant.EDIT && (
-                <IconButton
-                    name="edit-avatar"
-                    Icon={IconEdit}
-                    onClick={onClick}
-                    className={'absolute bottom-0 right-0'}
-                />
-            )}
         </div>
     );
 };

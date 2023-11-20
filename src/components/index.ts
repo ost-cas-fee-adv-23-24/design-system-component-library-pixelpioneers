@@ -10,3 +10,4 @@ export * from './navi-button';
 export * from './form/input';
 export * from './form/textarea';
 export * from './form/file-upload';
+export * from './navi-user';
