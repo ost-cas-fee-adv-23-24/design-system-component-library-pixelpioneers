@@ -18,6 +18,8 @@ export const FileUpload: FC<FileUploadProps> = ({
     IconActionLeft,
     IconActionRight,
     onLoadFile,
+    onSave,
+    onCancel,
     labelCancelButton = '',
     labelSaveButton = '',
     maxFileSizeUpload,
@@ -94,8 +96,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     };
 
     const checkFileSize = (size: number): void => {
-        // File Size must be less than 5 MB
-        return size <= maxFileSizeUpload && maxFileSizeUpload
+        return size <= maxFileSizeUpload
             ? setState((prevState) => ({ ...prevState, isValidFileSize: true }))
             : setState((prevState) => ({ ...prevState, isValidFileSize: false }));
     };
@@ -136,9 +137,9 @@ export const FileUpload: FC<FileUploadProps> = ({
                 <Paragraph
                     text={labelFileSize}
                     size={ParagraphSize.M}
-                    className={`${
+                    className={
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
-                    }`}
+                    }
                 />
             </section>
             <input
@@ -153,7 +154,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
-                        variant={Variant.SPECIAL}
+                        variant={Variant.QUARTENARY}
                         onClick={onFileUpload}
                         label={labelButton}
                         Icon={Icon}
@@ -165,14 +166,14 @@ export const FileUpload: FC<FileUploadProps> = ({
                 <Button
                     size={ButtonSize.M}
                     variant={Variant.SECONDARY}
-                    onClick={() => {}}
+                    onClick={onSave}
                     label={labelCancelButton}
                     Icon={IconActionLeft}
                     className="basis-1/2"
                 />
                 <Button
                     size={ButtonSize.M}
-                    onClick={() => {}}
+                    onClick={onCancel}
                     label={labelSaveButton}
                     Icon={IconActionRight}
                     disabled={!isValidFileType && !isValidFileSize}
