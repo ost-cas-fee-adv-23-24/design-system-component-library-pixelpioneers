@@ -2,7 +2,6 @@ import { ChangeEvent } from 'react';
 
 export interface TextareaProps {
     placeholder: string;
-    label: string;
     name: string;
     id: string;
     ariaLabel: string;

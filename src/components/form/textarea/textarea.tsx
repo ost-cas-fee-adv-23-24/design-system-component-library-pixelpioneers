@@ -1,10 +1,8 @@
 import { FC } from 'react';
 import { TextareaProps } from './types';
-import { LabelSize } from '../../typography/label/types';
-import { Label } from '../../typography/label/label';
 import clsx from 'clsx';
 
-export const Textarea: FC<TextareaProps> = ({ placeholder, label, value, onChange }) => {
+export const Textarea: FC<TextareaProps> = ({ placeholder, value, onChange }) => {
     const textareaWrapperClasses = 'relative';
     const textareaClasses = clsx(
         'palceholder:text-secondary-500',
@@ -21,7 +19,6 @@ export const Textarea: FC<TextareaProps> = ({ placeholder, label, value, onChang
 
     return (
         <div className={textareaWrapperClasses}>
-            <Label text={label} size={LabelSize.M} className="text-secondary-700" />
             <textarea
                 className={textareaClasses}
                 placeholder={placeholder}

@@ -19,9 +19,7 @@ type Story = StoryObj<typeof Textarea>;
 
 export const DefaultText: Story = {
     name: 'Textarea Default',
-    args: {
-        label: 'Hey - what is up?',
-    },
+    args: {},
 };
 
 export const DefaultInitialTextValue: Story = {
