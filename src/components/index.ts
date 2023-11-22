@@ -6,3 +6,4 @@ export * from './interactive-button';
 export * from './icon-link';
 export * from './avatar';
 export * from './text-link';
+export * from './navi-button';

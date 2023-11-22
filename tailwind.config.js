@@ -39,10 +39,10 @@ module.exports = {
             l: '2rem', // 32px
             '2l': '2.5rem', // 40px;
             xl: '3rem', // 48px
-            '2xl': '3.5rem', // 56px
-            '3xl': '4rem', // 64px
+            '2xl': '4rem', // 64px
             '7xl': '6rem', // 96px
             '15xl': '10rem', // 160px
+            xxl: '3.5rem', // 56px
         },
         borderRadius: {
             none: '0',
