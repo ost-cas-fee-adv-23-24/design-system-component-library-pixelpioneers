@@ -8,9 +8,7 @@ const meta: Meta<typeof Tabs> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {
-        onTabSwitch: { action: 'Tab has been changed to another tab' },
-    },
+    argTypes: {},
     args: {},
 };
 
@@ -19,21 +17,52 @@ type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
     args: {
-        listTabs: ['🐼 Deine Mumbles', 'Deine Likes', 'More Tabs'],
+        listTabs: [
+            {
+                label: '🐼 Deine Mumbles',
+                onClick: () => {},
+            },
+            {
+                label: 'Deine Likes',
+                onClick: () => {},
+            },
+            {
+                label: 'More Tabs',
+                onClick: () => {},
+            },
+        ],
     },
 };
 
 export const TwoTabs: Story = {
     name: 'Two Tabs',
     args: {
-        listTabs: ['🐼 Deine Mumbles', 'Deine Likes'],
+        listTabs: [
+            {
+                label: '🐼 Deine Mumbles',
+                onClick: () => {},
+            },
+            {
+                label: 'Deine Likes',
+                onClick: () => {},
+            },
+        ],
     },
 };
 
 export const SecondTabsIsActive: Story = {
     name: '2nd Tab is active',
     args: {
-        listTabs: ['🐼 Deine Mumbles', 'Deine Likes'],
+        listTabs: [
+            {
+                label: '🐼 Deine Mumbles',
+                onClick: () => {},
+            },
+            {
+                label: 'Deine Likes',
+                onClick: () => {},
+            },
+        ],
         isActive: 1,
     },
 };
