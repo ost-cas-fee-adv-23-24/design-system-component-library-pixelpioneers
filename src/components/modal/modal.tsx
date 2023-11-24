@@ -5,7 +5,7 @@ import { Variant } from '../../utlis';
 import { Button, ButtonSize } from '../button';
 import { IconCancel, IconCheckmark, IconEye } from '../../elements';
 import { Label, LabelSize } from '../typography';
-import { Input, InputType, Textarea } from '../form';
+import { Input, InputType } from '../form';
 
 export const Modal: FC<ModalProps> = ({
     initialOpen = true,
@@ -79,11 +79,13 @@ export const Modal: FC<ModalProps> = ({
                                 type={InputType.PASSWORD}
                                 name="city"
                             />
-                            <Textarea
+
+                            <Input
                                 onChange={() => {}}
-                                id="textareaBiography"
                                 placeholder="Biografie"
                                 value=""
+                                label="Biografie"
+                                type={InputType.TEXT}
                                 name="biography"
                             />
 
