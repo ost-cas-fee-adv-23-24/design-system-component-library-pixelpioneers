@@ -1,5 +1,9 @@
 export interface TabsProps {
-    listTabs: Array<string>;
+    listTabs: ListTab[];
     isActive: number;
-    onTabSwitch: (index: number) => void;
 }
+
+export type ListTab = {
+    label: string;
+    onClick: () => void;
+};
