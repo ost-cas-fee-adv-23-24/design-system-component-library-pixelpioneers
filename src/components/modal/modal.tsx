@@ -26,9 +26,9 @@ export const Modal: FC<ModalProps> = ({
 
     const dialogPanelClasses = 'w-full max-w-sm rounded ';
     const dialogTitleClasses = 'w-full py-m px-l bg-primary-600 rounded-tl-s rounded-tr-s';
-    const mainClasses = 'flex w-full flex-row justify-between gap-l p-l bg-white';
-    const formClasses = '[& input]:pb-s';
-    const labelClasses = 'w-full inline-flex';
+    const mainClasses = 'flex w-full flex-row justify-between gap-l px-l pb-l bg-white';
+    const formClasses = '[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s';
+    const labelClasses = 'w-full inline-flex pt-l';
     const footerClasses =
         'flex w-full flex-row justify-between gap-l pt-xs p-l rounded-bl-s rounded-br-s bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
