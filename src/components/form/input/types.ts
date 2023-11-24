@@ -1,8 +1,9 @@
-import { ComponentType, InputHTMLAttributes } from 'react';
+import { ComponentType, InputHTMLAttributes, MutableRefObject } from 'react';
 import { IconProps } from '../../../elements';
 import { TextStatusVariant } from '../field-hint';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+    ref?: MutableRefObject<HTMLInputElement | null>;
     label: string;
     name: string;
     type: InputType;

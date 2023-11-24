@@ -33,9 +33,10 @@ export const DefaultInitialTextValue: Story = {
     },
 };
 
-export const TextareaWithoutLabel: Story = {
-    name: 'Textarea without label',
+export const TextareaWithLabel: Story = {
+    name: 'Textarea with label',
     args: {
+        label: 'Memo',
         value: '',
     },
 };

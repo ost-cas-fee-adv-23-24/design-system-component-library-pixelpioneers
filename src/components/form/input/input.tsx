@@ -6,6 +6,7 @@ import { FieldHint } from '../field-hint';
 import clsx from 'clsx';
 
 export const Input: FC<InputProps> = ({
+    ref,
     placeholder,
     label,
     name,
@@ -39,12 +40,13 @@ export const Input: FC<InputProps> = ({
                 {label}
             </Label>
             <div
-                className={`flex items-center justify-end rounded-s border transition-all duration-300 ease-in-out hover:border-primary-600 ${
+                className={`relative flex items-center justify-end rounded-s border transition-all duration-300 ease-in-out hover:border-primary-600 ${
                     isOnChangeValid ? 'border-2 border-error' : 'border-secondary-200'
                 }`}
             >
                 <input
                     // TODO: id={id}
+                    ref={ref}
                     name={name}
                     className={inputClasses}
                     type={isPrivacy ? InputType.TEXT : type}
