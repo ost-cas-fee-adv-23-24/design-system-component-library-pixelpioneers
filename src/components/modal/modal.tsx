@@ -1,4 +1,4 @@
-import { FC, Fragment, useRef, useState } from 'react';
+import { FC, Fragment, useRef } from 'react';
 import { ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
@@ -8,18 +8,13 @@ import { Heading, HeadingSize } from '../typography';
 import { MSettings } from './main/settings';
 
 export const Modal: FC<ModalProps> = ({
-    initialOpen = true,
+    isOpen = false,
     title,
     onActionPrimary,
     onActionSecondary,
     buttonLabelPrimary,
     buttonLabelSecondary,
 }) => {
-    const [isOpen, setIsOpen] = useState(initialOpen);
-
-    onActionSecondary = () => setIsOpen(false);
-    onActionPrimary = () => {};
-
     const initialFocusInputRef = useRef(null);
 
     const dialogPanelClasses = 'w-full max-w-sm rounded';
@@ -31,11 +26,7 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog
-                initialFocus={initialFocusInputRef}
-                open={isOpen}
-                onClose={() => setIsOpen(false)}
-            >
+            <Dialog initialFocus={initialFocusInputRef} onClose={onActionSecondary}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"

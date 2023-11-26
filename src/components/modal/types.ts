@@ -1,7 +1,7 @@
 import { ReactNode } from 'react';
 
 export interface ModalProps {
-    initialOpen: boolean;
+    isOpen: boolean;
     title: string | null;
     onActionPrimary: () => void;
     onActionSecondary: () => void;
