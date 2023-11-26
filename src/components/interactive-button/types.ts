@@ -1,7 +1,7 @@
 import { Wording, WordingExtended } from '../../utlis';
 import { BaseButtonProps } from '../../base/base-button/types';
 
-export type ShareButtonProps = Omit<BaseButtonProps, 'onClick'> & {
+export type ShareButtonProps = Omit<BaseButtonProps, 'onClick' | 'children'> & {
     label: string;
     /**
      * Link to share / copy to clipboard
@@ -13,7 +13,7 @@ export type ShareButtonProps = Omit<BaseButtonProps, 'onClick'> & {
     labelShared?: string;
 };
 
-export type CommentButtonProps = BaseButtonProps & {
+export type CommentButtonProps = Omit<BaseButtonProps, 'children'> & {
     /**
      * Amount of comments
      */
@@ -24,7 +24,7 @@ export type CommentButtonProps = BaseButtonProps & {
     label?: Wording;
 };
 
-export type LikeButtonProps = BaseButtonProps & {
+export type LikeButtonProps = Omit<BaseButtonProps, 'children'> & {
     /**
      * Is picture liked by user
      */
