@@ -43,6 +43,7 @@ export const Input: FC<InputProps> = ({
                     name={name}
                     className={inputClasses}
                     type={isPrivacy ? InputType.TEXT : type}
+                    // TODO: use Placeholder element
                     placeholder={placeholder}
                     onChange={onChange}
                     value={value}
