@@ -11,8 +11,7 @@ export const NaviUser: FC<NaviUserProps> = ({
     avatarSrc,
     avatarAlt,
 }) => {
-    // TODO: Group hover?
-    const buttonClasses = 'bg-primary-600 hover:bg-primary-700 rounded-s p-xs group-hover';
+    const buttonClasses = 'bg-primary-600 hover:bg-primary-700 rounded-s p-xs group group-hover';
     const transitionClasses = 'transition-all duration-300 ease-out';
     return (
         <BaseButton
