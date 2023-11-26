@@ -1,13 +1,10 @@
-import { ChangeEvent, ComponentType } from 'react';
+import { ComponentType, InputHTMLAttributes } from 'react';
 import { IconProps } from '../../../elements';
 import { TextStatusVariant } from '../field-hint';
 
-export interface InputProps {
-    placeholder: string;
+export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     label: string;
     name: string;
-    value: string;
-    onChange: (event: ChangeEvent<HTMLInputElement>) => void;
     type: InputType;
     Icon?: ComponentType<IconProps>;
     isOnChangeValid?: string | null;
@@ -15,7 +12,7 @@ export interface InputProps {
     errorText?: string | null;
     hintName?: string;
     status?: TextStatusVariant;
-}
+};
 
 export enum InputType {
     TEXT = 'text',

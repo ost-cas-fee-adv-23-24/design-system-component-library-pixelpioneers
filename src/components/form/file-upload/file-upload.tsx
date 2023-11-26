@@ -145,6 +145,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {labelFileSize}
                 </Paragraph>
             </section>
+            // TODO: use ours (if possible)
             <input
                 className="hidden"
                 type="file"

@@ -3,6 +3,7 @@ import { InputProps, InputType } from './types';
 import { Label, LabelSize } from '../../typography';
 import { IconSize } from '../../../elements';
 import { FieldHint } from '../field-hint';
+import clsx from 'clsx';
 
 export const Input: FC<InputProps> = ({
     placeholder,
@@ -17,11 +18,15 @@ export const Input: FC<InputProps> = ({
     errorText,
     hintName,
     status,
+    className,
+    ...props
 }) => {
     const [isPrivacy, setIsPrivacy] = useState(false);
     const inputWrapperClasses = 'relative';
-    const inputClasses =
-        'h-xl w-full text-secondary-700 pr-10 py-s px-s rounded-s placeholder-secondary-300 focus:outline-primary-600 focus:outline-2';
+    const inputClasses = clsx(
+        'pr-10 h-xl w-full rounded-s px-s py-s text-secondary-700 placeholder-secondary-300 focus:outline-2 focus:outline-primary-600',
+        className,
+    );
     const iconClasses = 'cursor-pointer absolute flex items-center right-s top-0 h-full';
 
     return (
@@ -48,6 +53,7 @@ export const Input: FC<InputProps> = ({
                     onChange={onChange}
                     value={value}
                     spellCheck={type === InputType.PASSWORD ? 'false' : 'true'}
+                    {...props}
                 />
                 {Icon && (
                     <button
