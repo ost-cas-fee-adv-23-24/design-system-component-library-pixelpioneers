@@ -1,10 +1,5 @@
-import { ReactNode } from 'react';
+import { ButtonHTMLAttributes } from 'react';
 
-export interface BaseButtonProps {
-    onClick: () => void;
-    children: ReactNode;
-    name: string;
-    className?: string;
+export interface BaseButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fill?: boolean;
-    disabled?: boolean;
 }

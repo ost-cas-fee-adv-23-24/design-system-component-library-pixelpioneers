@@ -1,20 +1,8 @@
-import { ComponentType } from 'react';
-import { IconProps } from '../../elements';
+import { ButtonHTMLAttributes } from 'react';
 import { Wording, WordingExtended } from '../../utlis';
 
-export interface InteractiveBaseProps {
-    onClick: () => void;
-    label?: string;
-    disabled?: boolean;
-    name?: string;
-}
-
-export interface InteractiveButtonProps extends InteractiveBaseProps {
-    Icon?: ComponentType<IconProps>;
-    className?: string;
-}
-
-export type ShareButtonProps = InteractiveBaseProps & {
+export type ShareButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> & {
+    label: string;
     /**
      * Link to share / copy to clipboard
      */
@@ -25,7 +13,7 @@ export type ShareButtonProps = InteractiveBaseProps & {
     labelShared?: string;
 };
 
-export type CommentButtonProps = Omit<InteractiveBaseProps, 'label'> & {
+export type CommentButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     /**
      * Amount of comments
      */
@@ -36,7 +24,7 @@ export type CommentButtonProps = Omit<InteractiveBaseProps, 'label'> & {
     label?: Wording;
 };
 
-export type LikeButtonProps = Omit<InteractiveBaseProps, 'label'> & {
+export type LikeButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     /**
      * Is picture liked by user
      */

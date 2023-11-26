@@ -1,17 +1,13 @@
-import { ComponentType } from 'react';
+import { ButtonHTMLAttributes, ComponentType } from 'react';
 import { IconProps } from '../../elements';
 import { Variant } from '../../utlis';
 
-export interface ButtonProps {
+export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     Icon: ComponentType<IconProps>;
-    onClick: () => void;
     variant?: Variant;
-    disabled?: boolean;
     size: ButtonSize;
     label?: string;
     fill?: boolean;
-    name?: string;
-    className?: string;
 }
 
 export enum ButtonSize {

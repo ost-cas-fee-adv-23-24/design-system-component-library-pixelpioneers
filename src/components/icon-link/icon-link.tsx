@@ -23,7 +23,7 @@ export const IconLink: FC<IconLinkProps> = ({
                 'fill-secondary-400 text-secondary-400 hover:fill-secondary-600 hover:text-secondary-600',
             tertiary:
                 'fill-tertiary-600 text-tertiary-600 hover:fill-tertiary-900 hover:text-tertiary-900',
-            quartenary:
+            quaternary:
                 'fill-secondary-500 text-secondary-500 hover:fill-secondary-700 hover:text-secondary-700',
         }[variant],
     );

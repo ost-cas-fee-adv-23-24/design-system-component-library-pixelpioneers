@@ -1,4 +1,4 @@
-import { FC, DragEvent, useState, useRef, useId, ChangeEvent } from 'react';
+import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { FileUploadProps } from './types';
 import { LabelSize } from '../../typography/label/types';
 import { Label } from '../../typography/label/label';
@@ -154,7 +154,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
-                        variant={Variant.QUARTENARY}
+                        variant={Variant.QUATERNARY}
                         onClick={onFileUpload}
                         label={labelButton}
                         Icon={Icon}
