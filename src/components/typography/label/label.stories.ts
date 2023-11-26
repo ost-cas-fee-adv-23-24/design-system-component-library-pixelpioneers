@@ -27,27 +27,27 @@ type Story = StoryObj<typeof Label>;
 export const LabelXL: Story = {
     args: {
         size: LabelSize.XL,
-        text: 'Label XL',
+        children: 'Label XL',
     },
 };
 
 export const LabelL: Story = {
     args: {
         size: LabelSize.L,
-        text: 'Label L',
+        children: 'Label L',
     },
 };
 
 export const LabelM: Story = {
     args: {
         size: LabelSize.M,
-        text: 'Label M',
+        children: 'Label M',
     },
 };
 
 export const LabelS: Story = {
     args: {
         size: LabelSize.S,
-        text: 'Label S',
+        children: 'Label S',
     },
 };

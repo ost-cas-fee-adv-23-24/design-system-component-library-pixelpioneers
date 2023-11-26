@@ -137,12 +137,13 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {label}
                 </Label>
                 <Paragraph
-                    text={labelFileSize}
                     size={ParagraphSize.M}
                     className={
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }
-                />
+                >
+                    {labelFileSize}
+                </Paragraph>
             </section>
             <input
                 className="hidden"
