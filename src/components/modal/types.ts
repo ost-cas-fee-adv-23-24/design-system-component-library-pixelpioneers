@@ -7,5 +7,5 @@ export interface ModalProps {
     onActionSecondary: () => void;
     buttonLabelPrimary: string;
     buttonLabelSecondary: string;
-    children: ReactNode; // Content
+    children: ReactNode;
 }

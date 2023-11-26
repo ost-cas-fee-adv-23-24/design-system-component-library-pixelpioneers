@@ -28,7 +28,6 @@ export enum LabelSize {
     M = 'm',
     L = 'l',
     XL = 'xl',
-    '2XL' = '2xl',
 }
 
 export enum LabelType {
