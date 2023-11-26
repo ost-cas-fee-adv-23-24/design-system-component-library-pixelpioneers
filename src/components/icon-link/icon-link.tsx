@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 import { IconLinkProps } from './types';
 import clsx from 'clsx';
 import { IconSize } from '../../elements';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
 import { Variant } from '../../utlis';
 
@@ -38,7 +38,9 @@ export const IconLink: FC<IconLinkProps> = ({
             {...props}
         >
             <Icon size={IconSize.S} className={'self-center'} />
-            <Label text={label} size={LabelSize.S} />
+            <Label type={LabelType.SPAN} size={LabelSize.S}>
+                {label}
+            </Label>
         </BaseButton>
     );
 };

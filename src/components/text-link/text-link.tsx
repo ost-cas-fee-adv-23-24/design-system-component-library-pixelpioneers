@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { TextLinkProps } from './types';
 import clsx from 'clsx';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 
 export const TextLink: FC<TextLinkProps> = ({ label, link, className, ...props }) => {
     // TODO: IMPROVE ANIMATION
@@ -12,10 +12,12 @@ export const TextLink: FC<TextLinkProps> = ({ label, link, className, ...props }
     return (
         <a className={linkClasses} href={link} {...props}>
             <Label
-                text={label}
+                type={LabelType.SPAN}
                 size={LabelSize.S}
                 className={clsx(labelClasses, transitionClasses)}
-            />
+            >
+                {label}
+            </Label>
         </a>
     );
 };

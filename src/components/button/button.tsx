@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import { ButtonProps } from './types';
 import { Variant } from '../../utlis';
 import { BaseButton } from '../../base/base-button/base-button';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import { IconSize } from '../../elements';
 
 export const Button: FC<ButtonProps> = ({
@@ -35,7 +35,11 @@ export const Button: FC<ButtonProps> = ({
 
     return (
         <BaseButton onClick={onClick} className={buttonClasses} {...props}>
-            {label && <Label text={label} size={LabelSize.M} />}
+            {label && (
+                <Label type={LabelType.SPAN} size={LabelSize.M}>
+                    {label}
+                </Label>
+            )}
             <Icon size={IconSize.M} className={'self-center'} />
         </BaseButton>
     );

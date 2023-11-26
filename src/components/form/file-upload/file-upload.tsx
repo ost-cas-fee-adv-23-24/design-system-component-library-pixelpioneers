@@ -128,12 +128,14 @@ export const FileUpload: FC<FileUploadProps> = ({
                     }`}
                 />
                 <Label
-                    text={label}
                     size={LabelSize.XL}
                     className={`mb-xs ${
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }`}
-                />
+                    // TODO: htmlFor
+                >
+                    {label}
+                </Label>
                 <Paragraph
                     text={labelFileSize}
                     size={ParagraphSize.M}

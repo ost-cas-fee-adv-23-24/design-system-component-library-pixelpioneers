@@ -3,7 +3,7 @@ import { ShareButtonProps } from './types';
 import { useCopyToClipboard } from 'react-use';
 import { IconShare, IconSize } from '../../elements';
 import clsx from 'clsx';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
 
 export const ShareButton: FC<ShareButtonProps> = ({
@@ -35,7 +35,9 @@ export const ShareButton: FC<ShareButtonProps> = ({
     return (
         <BaseButton className={shareButtonClasses} onClick={onClick} name={name} {...props}>
             <IconShare size={IconSize.M} className="self-center" />
-            <Label text={isCopied ? labelShared : label} size={LabelSize.M} />
+            <Label type={LabelType.SPAN} size={LabelSize.M}>
+                {isCopied ? labelShared : label}
+            </Label>
         </BaseButton>
     );
 };

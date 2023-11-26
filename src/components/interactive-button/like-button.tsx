@@ -4,7 +4,7 @@ import { IconHeart, IconHeartFilled, IconSize } from '../../elements';
 import clsx from 'clsx';
 import { generateLabel } from '../../utlis/helpers';
 import { defaultLikeContext } from '../../utlis/context';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
 
 export const LikeButton: FC<LikeButtonProps> = ({
@@ -73,7 +73,9 @@ export const LikeButton: FC<LikeButtonProps> = ({
             ) : (
                 <IconHeart size={IconSize.M} className={iconClasses} />
             )}
-            {label && <Label text={computedLabel} size={LabelSize.M} />}
+            <Label type={LabelType.SPAN} size={LabelSize.M}>
+                {computedLabel}
+            </Label>
         </BaseButton>
     );
 };

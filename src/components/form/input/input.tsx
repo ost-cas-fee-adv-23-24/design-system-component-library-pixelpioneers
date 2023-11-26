@@ -1,7 +1,6 @@
 import { FC, useState } from 'react';
 import { InputProps, InputType } from './types';
-import { LabelSize } from '../../typography/label/types';
-import { Label } from '../../typography/label/label';
+import { Label, LabelSize } from '../../typography';
 import { IconSize } from '../../../elements';
 import { FieldHint } from '../field-hint';
 
@@ -27,13 +26,20 @@ export const Input: FC<InputProps> = ({
 
     return (
         <div className={inputWrapperClasses}>
-            <Label text={label} size={LabelSize.M} className="text-secondary-700" />
+            <Label
+                size={LabelSize.M}
+                className="text-secondary-700"
+                // TODO: htmlFor={id}
+            >
+                {label}
+            </Label>
             <div
                 className={`flex items-center justify-end rounded-s border transition-all duration-300 ease-in-out hover:border-primary-600 ${
                     isOnChangeValid ? 'border-2 border-error' : 'border-secondary-200'
                 }`}
             >
                 <input
+                    // TODO: id={id}
                     name={name}
                     className={inputClasses}
                     type={isPrivacy ? InputType.TEXT : type}

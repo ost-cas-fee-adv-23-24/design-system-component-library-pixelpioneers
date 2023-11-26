@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { NaviButtonProps } from './types';
 import clsx from 'clsx';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
 import { IconSize } from '../../elements';
 
@@ -30,7 +30,11 @@ export const NaviButton: FC<NaviButtonProps> = ({
                     <Icon size={IconSize.M} className="self-center" />
                 </div>
             )}
-            {label && <Label text={label} className="pt-2xs" size={LabelSize.S} />}
+            {label && (
+                <Label type={LabelType.SPAN} className="pt-2xs" size={LabelSize.S}>
+                    {label}
+                </Label>
+            )}
         </BaseButton>
     );
 };

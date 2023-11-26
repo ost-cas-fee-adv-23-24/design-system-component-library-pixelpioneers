@@ -1,19 +1,36 @@
 import clsx from 'clsx';
-import { LabelProps } from './types';
+import { LabelProps, LabelSpanProps, LabelType } from './types';
 import { FC } from 'react';
 
-export const Label: FC<LabelProps> = ({ text, size, className = 'text-inherit', htmlFor }) => {
-    const fontClasses = 'font-default font-semibold leading-none';
-    const sizeClasses = {
-        s: 'text-xs',
-        m: 'text-sm',
-        l: 'text-lg',
-        xl: 'text-xl',
-    }[size];
-
-    return (
-        <label htmlFor={htmlFor} className={clsx(fontClasses, sizeClasses, className)}>
-            {text}
-        </label>
+export const Label: FC<LabelProps | LabelSpanProps> = ({
+    type = LabelType.LABEL,
+    children,
+    size,
+    className = 'text-inherit',
+    ...props
+}) => {
+    const labelClasses = clsx(
+        'font-default font-semibold leading-none',
+        {
+            s: 'text-xs',
+            m: 'text-sm',
+            l: 'text-lg',
+            xl: 'text-xl',
+        }[size],
+        className,
     );
+
+    if (type === LabelType.LABEL) {
+        return (
+            <label className={labelClasses} {...props}>
+                {children}
+            </label>
+        );
+    } else {
+        return (
+            <span className={labelClasses} {...props}>
+                {children}
+            </span>
+        );
+    }
 };

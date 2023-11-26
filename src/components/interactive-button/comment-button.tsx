@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { CommentButtonProps } from './types';
 import { IconReply, IconReplyFilled, IconSize } from '../../elements';
 import clsx from 'clsx';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
 
 export const CommentButton: FC<CommentButtonProps> = ({
@@ -36,7 +36,9 @@ export const CommentButton: FC<CommentButtonProps> = ({
             ) : (
                 <IconReply size={IconSize.M} className={iconClasses} />
             )}
-            <Label text={computedLabel} size={LabelSize.M} />
+            <Label type={LabelType.SPAN} size={LabelSize.M}>
+                {computedLabel}
+            </Label>
         </BaseButton>
     );
 };
