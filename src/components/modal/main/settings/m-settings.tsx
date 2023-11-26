@@ -3,6 +3,7 @@ import { MSettingsProps } from './types';
 import { Label, LabelSize } from '../../../typography';
 import { Input, InputType } from '../../../form';
 import { IconEye } from '../../../../elements';
+import clsx from 'clsx';
 
 export const MSettings: FC<MSettingsProps> = ({
     formClasses,
@@ -10,7 +11,7 @@ export const MSettings: FC<MSettingsProps> = ({
     initialFocusInputRef,
 }) => {
     return (
-        <form className={formClasses}>
+        <form className={clsx('w-full', formClasses)}>
             <Label size={LabelSize.XL} className={labelClasses}>
                 Persönliche Einstellungen
             </Label>

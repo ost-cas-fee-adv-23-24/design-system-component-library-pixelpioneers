@@ -5,6 +5,7 @@ import { Button } from '../button/button';
 import { ButtonSize } from '../button/types';
 import { Variant } from '../../utlis/types';
 import { IconMumble } from '../../elements';
+import { WidthModal } from './types';
 
 const meta: Meta<typeof Modal> = {
     title: 'Components/Modal',
@@ -13,11 +14,15 @@ const meta: Meta<typeof Modal> = {
         layout: 'centered',
     },
     tags: ['autodocs'],
-    argTypes: {},
+    argTypes: {
+        size: WidthModal,
+    },
     args: {
         buttonLabelPrimary: 'Save',
         buttonLabelSecondary: 'Cancel',
         isOpen: false,
+        size: WidthModal.MEDIUM,
+        title: 'Einstellungen',
     },
 };
 
@@ -44,7 +49,6 @@ const Template: Story['render'] = (args) => {
                 {...args}
                 onActionPrimary={() => setIsOpen(false)}
                 onActionSecondary={() => setIsOpen(false)}
-                title="Einstellungen"
                 isOpen={isOpen}
                 children={null}
             />
@@ -52,10 +56,20 @@ const Template: Story['render'] = (args) => {
     );
 };
 
-export const Default: Story = {
+export const DefaultModalSmall: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
+        size: WidthModal.SMALL,
+        children: <div>Modal Content</div>,
+    },
+};
+
+export const DefaultModalMedium: Story = {
+    render: Template,
+    args: {
+        title: 'Einstellungen',
+        size: WidthModal.MEDIUM,
         children: <div>Modal Content</div>,
     },
 };
