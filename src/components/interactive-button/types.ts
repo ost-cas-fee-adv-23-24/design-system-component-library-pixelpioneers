@@ -1,7 +1,7 @@
-import { ButtonHTMLAttributes } from 'react';
 import { Wording, WordingExtended } from '../../utlis';
+import { BaseButtonProps } from '../../base/base-button/types';
 
-export type ShareButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'onClick'> & {
+export type ShareButtonProps = Omit<BaseButtonProps, 'onClick'> & {
     label: string;
     /**
      * Link to share / copy to clipboard
@@ -13,7 +13,7 @@ export type ShareButtonProps = Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'on
     labelShared?: string;
 };
 
-export type CommentButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type CommentButtonProps = BaseButtonProps & {
     /**
      * Amount of comments
      */
@@ -24,7 +24,7 @@ export type CommentButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
     label?: Wording;
 };
 
-export type LikeButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+export type LikeButtonProps = BaseButtonProps & {
     /**
      * Is picture liked by user
      */

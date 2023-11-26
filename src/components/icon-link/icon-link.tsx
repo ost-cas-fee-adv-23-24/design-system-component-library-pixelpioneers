@@ -12,7 +12,8 @@ export const IconLink: FC<IconLinkProps> = ({
     variant = Variant.PRIMARY,
     onClick,
     name = 'icon-link',
-    disabled = false,
+    className,
+    ...props
 }) => {
     const buttonClasses = clsx(
         'gap-2xs',
@@ -26,6 +27,7 @@ export const IconLink: FC<IconLinkProps> = ({
             quaternary:
                 'fill-secondary-500 text-secondary-500 hover:fill-secondary-700 hover:text-secondary-700',
         }[variant],
+        className,
     );
     const transitionClasses = 'transition-all duration-350 ease-in-out';
     return (
@@ -33,7 +35,7 @@ export const IconLink: FC<IconLinkProps> = ({
             name={name}
             onClick={onClick}
             className={clsx(buttonClasses, transitionClasses)}
-            disabled={disabled}
+            {...props}
         >
             <Icon size={IconSize.S} className={'self-center'} />
             <Label text={label} size={LabelSize.S} />
