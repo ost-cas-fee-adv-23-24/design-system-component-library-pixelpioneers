@@ -51,3 +51,12 @@ export const Heading4: Story = {
         children: 'Heading 4',
     },
 };
+
+export const Heading1Crazy: Story = {
+    args: {
+        size: HeadingSize.H1,
+        text: 'Heading 1 Crazy',
+        className:
+            'bg-clip-text text-transparent bg-gradient-to-r from-tertiary-500 to-primary-500',
+    },
+};
