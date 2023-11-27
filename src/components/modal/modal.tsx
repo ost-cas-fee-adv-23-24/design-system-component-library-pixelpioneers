@@ -1,29 +1,34 @@
 import { FC, Fragment, useRef } from 'react';
-import { ModalProps, WidthModal } from './types';
+import { ContentVariant, ModalProps, WidthModal } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
 import { Button, ButtonSize } from '../button';
 import { IconCancel, IconCheckmark, IconSize } from '../../elements';
 import { Heading, HeadingSize } from '../typography';
-import { MSettings } from './main/settings';
 import clsx from 'clsx';
 
 export const Modal: FC<ModalProps> = ({
     isOpen = false,
     title,
+    children,
     size = WidthModal.MEDIUM,
+    contentVariant = ContentVariant.SETTINGS,
     onActionPrimary,
     onActionSecondary,
     buttonLabelPrimary,
     buttonLabelSecondary,
 }) => {
-    const initialFocusInputRef = useRef(null);
+    const initialFocusInputRef = useRef<HTMLInputElement>(null);
 
     const modalWidth = clsx('w-full', size && size);
 
     const dialogPanelClasses = 'w-full rounded';
     const headerClasses = 'py-m px-l bg-primary-600 rounded-tl-s rounded-tr-s flex';
-    const mainClasses = 'flex w-full flex-row justify-between gap-l px-l pb-l bg-white';
+    const mainClasses = clsx(
+        'w-full justify-between bg-white px-l pb-l',
+        ContentVariant.SETTINGS === 'settings' && 'w-full flex-row gap-l',
+        ContentVariant.FILE_UPLOAD === 'file_upload' && 'flex flex-col gap-s pb-s pt-l',
+    );
     const footerClasses =
         'flex w-full flex-row justify-between gap-l pt-xs p-l rounded-bl-s rounded-br-s bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
@@ -74,13 +79,11 @@ export const Modal: FC<ModalProps> = ({
                                     </header>
                                 )}
 
-                                <main className={mainClasses}>
-                                    <MSettings
-                                        formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
-                                        labelClasses="w-full inline-flex pt-l"
-                                        initialFocusInputRef={initialFocusInputRef}
-                                    />
-                                </main>
+                                {contentVariant === 'settings' ? (
+                                    <main className={mainClasses}>{children}</main>
+                                ) : contentVariant === 'file_upload' ? (
+                                    <main className={mainClasses}>{children}</main>
+                                ) : null}
 
                                 <footer className={footerClasses}>
                                     <Button

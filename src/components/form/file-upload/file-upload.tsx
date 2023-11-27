@@ -15,13 +15,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     labelFileSize = '',
     labelButton = '',
     Icon,
-    IconActionLeft,
-    IconActionRight,
     onLoadFile,
-    onSave,
-    onCancel,
-    labelCancelButton = '',
-    labelSaveButton = '',
     maxFileSizeUpload,
 }) => {
     const fileInputId = useId();
@@ -102,7 +96,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     };
 
     return (
-        <div>
+        <>
             <section
                 className={clsx(
                     'flex',
@@ -154,7 +148,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                 multiple={false}
                 onChange={handleChange}
             />
-            <section className="mb-xl mt-s">
+            <section className="mb-l mt-s">
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
@@ -166,24 +160,6 @@ export const FileUpload: FC<FileUploadProps> = ({
                     />
                 )}
             </section>
-            <section className="flex w-full flex-row justify-between gap-x-s">
-                <Button
-                    size={ButtonSize.M}
-                    variant={Variant.SECONDARY}
-                    onClick={onSave}
-                    label={labelCancelButton}
-                    Icon={IconActionLeft}
-                    className="basis-1/2"
-                />
-                <Button
-                    size={ButtonSize.M}
-                    onClick={onCancel}
-                    label={labelSaveButton}
-                    Icon={IconActionRight}
-                    disabled={!isValidFileType && !isValidFileSize}
-                    className="basis-1/2"
-                />
-            </section>
-        </div>
+        </>
     );
 };

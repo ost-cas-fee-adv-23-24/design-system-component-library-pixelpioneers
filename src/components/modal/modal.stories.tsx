@@ -4,8 +4,10 @@ import { useEffect, useState } from 'react';
 import { Button } from '../button/button';
 import { ButtonSize } from '../button/types';
 import { Variant } from '../../utlis/types';
-import { IconMumble } from '../../elements';
-import { WidthModal } from './types';
+import { IconMumble, IconUpload } from '../../elements';
+import { WidthModal, ContentVariant } from './types';
+import { MSettings } from './main/settings/m-settings';
+import { FileUpload } from '../form/file-upload/file-upload';
 
 const meta: Meta<typeof Modal> = {
     title: 'Components/Modal',
@@ -16,6 +18,7 @@ const meta: Meta<typeof Modal> = {
     tags: ['autodocs'],
     argTypes: {
         size: WidthModal,
+        contentVariant: ContentVariant,
     },
     args: {
         buttonLabelPrimary: 'Save',
@@ -50,10 +53,19 @@ const Template: Story['render'] = (args) => {
                 onActionPrimary={() => setIsOpen(false)}
                 onActionSecondary={() => setIsOpen(false)}
                 isOpen={isOpen}
-                children={null}
             />
         </>
     );
+};
+
+export const Default: Story = {
+    render: Template,
+    args: {
+        title: 'Einstellungen',
+        size: WidthModal.SMALL,
+        contentVariant: null,
+        children: <div>Modal Content</div>,
+    },
 };
 
 export const DefaultModalSmall: Story = {
@@ -61,7 +73,13 @@ export const DefaultModalSmall: Story = {
     args: {
         title: 'Einstellungen',
         size: WidthModal.SMALL,
-        children: <div>Modal Content</div>,
+        contentVariant: ContentVariant.SETTINGS,
+        children: (
+            <MSettings
+                formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
+                labelClasses="w-full inline-flex pt-l"
+            />
+        ),
     },
 };
 
@@ -70,7 +88,8 @@ export const DefaultModalMedium: Story = {
     args: {
         title: 'Einstellungen',
         size: WidthModal.MEDIUM,
-        children: <div>Modal Content</div>,
+        contentVariant: ContentVariant.SETTINGS,
+        children: null,
     },
 };
 
@@ -78,6 +97,16 @@ export const ModalFileUpload: Story = {
     render: Template,
     args: {
         title: 'Bild hochladen',
-        children: <div>Modal Content</div>,
+        size: WidthModal.MEDIUM,
+        contentVariant: ContentVariant.FILE_UPLOAD,
+        children: (
+            <FileUpload
+                label="Datei hierhin ziehen..."
+                labelFileSize="JPEG oder PNG, maximal 50 MB"
+                labelButton="... oder Datei auswählen"
+                Icon={IconUpload}
+                maxFileSizeUpload={2000}
+            />
+        ),
     },
 };
