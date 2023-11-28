@@ -1,22 +1,27 @@
 import { HTMLAttributes, LabelHTMLAttributes } from 'react';
 
-export type LabelTypeProps = LabelHTMLAttributes<HTMLLabelElement> & {
+type BaseLabelProps = {
+    /**
+     * Size of the label
+     */
+    size: LabelSize;
+};
+
+type LabelTypeProps = LabelHTMLAttributes<HTMLLabelElement> & {
     /**
      * Label used as actual HTML-label for forms
      */
     type?: LabelType.LABEL;
-    size: LabelSize;
 };
 
-export type SpanTypeProps = HTMLAttributes<HTMLSpanElement> & {
+type SpanTypeProps = HTMLAttributes<HTMLSpanElement> & {
     /**
      * Label used as HTML-span for buttons and more
      */
     type?: LabelType.SPAN;
-    size: LabelSize;
 };
 
-export type LabelProps = LabelTypeProps | SpanTypeProps;
+export type LabelProps = (LabelTypeProps | SpanTypeProps) & BaseLabelProps;
 
 export enum LabelSize {
     S = 's',
