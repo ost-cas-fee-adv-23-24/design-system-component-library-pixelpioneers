@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { IconProps } from '../../../elements/icons/types';
+import { IconProps } from '../../../elements';
 
 export type FileUploadProps = {
     label?: string;

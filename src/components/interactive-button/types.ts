@@ -1,8 +1,14 @@
 import { Wording, WordingExtended } from '../../utlis';
 import { BaseButtonProps } from '../../base/base-button/types';
 
-export type ShareButtonProps = Omit<BaseButtonProps, 'onClick' | 'children'> & {
-    label: string;
+export type InteractiveButtonProps<T> = Omit<BaseButtonProps, 'children'> & {
+    /**
+     * Label on Button
+     */
+    label: T;
+};
+
+export type ShareButtonProps = Omit<InteractiveButtonProps<string>, 'onClick'> & {
     /**
      * Link to share / copy to clipboard
      */
@@ -13,18 +19,14 @@ export type ShareButtonProps = Omit<BaseButtonProps, 'onClick' | 'children'> & {
     labelShared?: string;
 };
 
-export type CommentButtonProps = Omit<BaseButtonProps, 'children'> & {
+export type CommentButtonProps = Partial<InteractiveButtonProps<Wording>> & {
     /**
      * Amount of comments
      */
     amount?: number;
-    /**
-     * Label consists of word/sentence in multiple forms
-     */
-    label?: Wording;
 };
 
-export type LikeButtonProps = Omit<BaseButtonProps, 'children'> & {
+export type LikeButtonProps = Partial<InteractiveButtonProps<WordingExtended>> & {
     /**
      * Is picture liked by user
      */
@@ -33,10 +35,6 @@ export type LikeButtonProps = Omit<BaseButtonProps, 'children'> & {
      * Amount of likes
      */
     amount?: number;
-    /**
-     * Label consists of word/sentence in multiple forms
-     */
-    label?: WordingExtended;
 };
 
 export type LikeContext = {
