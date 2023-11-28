@@ -1,7 +1,7 @@
 import { ComponentType } from 'react';
 import { IconProps } from '../../../elements/icons/types';
 
-export interface FileUploadProps {
+export type FileUploadProps = {
     label?: string;
     labelFileSize?: string;
     labelButton?: string;
@@ -14,10 +14,10 @@ export interface FileUploadProps {
     labelCancelButton?: string;
     labelSaveButton?: string;
     maxFileSizeUpload: number;
-}
+};
 
-export interface FileUploadContext {
+export type FileUploadContext = {
     isDragIsOver: boolean;
     isValidFileSize: boolean;
     isValidFileType: boolean;
-}
+};

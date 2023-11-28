@@ -5,12 +5,12 @@ export enum Variant {
     QUATERNARY = 'quaternary',
 }
 
-export interface Wording {
+export type Wording = {
     zero: string;
     singular: string;
     plural: string;
-}
+};
 
-export interface WordingExtended extends Wording {
+export type WordingExtended = Wording & {
     pastParticiple: string;
-}
+};

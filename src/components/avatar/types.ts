@@ -1,9 +1,9 @@
-export interface AvatarProps {
+export type AvatarProps = {
     src?: string;
     alt?: string;
     className?: string;
     size: AvatarSize;
-}
+};
 
 export type EditAvatarProps = Omit<AvatarProps, 'size'> & { onEdit: () => void };
 

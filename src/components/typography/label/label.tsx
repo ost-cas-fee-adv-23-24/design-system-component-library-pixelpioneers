@@ -1,8 +1,8 @@
 import clsx from 'clsx';
-import { LabelProps, LabelSpanProps, LabelType } from './types';
+import { LabelProps, LabelType } from './types';
 import { FC } from 'react';
 
-export const Label: FC<LabelProps | LabelSpanProps> = ({
+export const Label: FC<LabelProps> = ({
     type = LabelType.LABEL,
     children,
     size,
