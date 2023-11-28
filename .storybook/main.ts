@@ -13,6 +13,7 @@ const config: StorybookConfig = {
         '@storybook/preset-create-react-app',
         '@storybook/addon-interactions',
         '@storybook/addon-docs',
+        '@storybook/addon-designs',
         {
             name: '@storybook/addon-styling',
             options: {},

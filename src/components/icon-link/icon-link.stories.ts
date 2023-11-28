@@ -8,6 +8,10 @@ const meta: Meta<typeof IconLink> = {
     component: IconLink,
     parameters: {
         layout: 'centered',
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/nsXR2h0KwciWpuwKRD58FX/Mumble?type=design&node-id=8862-2489&mode=design&t=72He1MwyRjB5KpiV-0',
+        },
     },
     tags: ['autodocs'],
     argTypes: {
