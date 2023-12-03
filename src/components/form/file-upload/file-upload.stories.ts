@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { FileUpload } from './file-upload';
-import { IconCancel, IconCheckmark, IconUpload } from '../../../elements';
+import { IconUpload } from '../../../elements';
 
 const meta: Meta<typeof FileUpload> = {
     title: 'Components/Form/FileUpload',
@@ -27,10 +27,6 @@ export const DefaultFileUpload: Story = {
         labelFileSize: 'JPEG oder PNG, maximal 50 MB',
         labelButton: '... oder Datei auswählen',
         Icon: IconUpload,
-        IconActionLeft: IconCancel,
-        IconActionRight: IconCheckmark,
-        labelCancelButton: 'Abbrechen',
-        labelSaveButton: 'Speichern',
         maxFileSizeUpload: 52428800,
     },
 };

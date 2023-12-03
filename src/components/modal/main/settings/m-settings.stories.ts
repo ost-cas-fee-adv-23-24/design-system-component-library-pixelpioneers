@@ -17,7 +17,4 @@ type Story = StoryObj<typeof MSettings>;
 
 export const Default: Story = {
     name: 'Einstellungen',
-    args: {
-        children: [],
-    },
 };

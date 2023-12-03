@@ -36,7 +36,6 @@ export const DefaultInitialTextValue: Story = {
 export const TextareaWithLabel: Story = {
     name: 'Textarea with label',
     args: {
-        label: 'Memo',
         value: '',
     },
 };
