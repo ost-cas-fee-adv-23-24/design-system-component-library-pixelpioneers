@@ -50,6 +50,17 @@ Next.js application. In the Next.js application we can reuse components from thi
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+### Folder Overview
+
+- [**docs**](docs): documentation for storybook
+- [**src**](src): components and utils
+- [**src/base/base-button**](src/base/base-button): base of button
+- [**src/docs**](src/docs): assets for documentation
+- [**src/elements**](src/elements): elements
+- [**src/utils**](src/utils): utils, context and helpers
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 ### Pre-requisites
 
 We need the [npm](https://www.npmjs.com/) package manager to install this library.
