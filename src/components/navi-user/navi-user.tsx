@@ -6,21 +6,22 @@ import clsx from 'clsx';
 
 export const NaviUser: FC<NaviUserProps> = ({
     onClick,
-    disabled = false,
     name = 'navi-user',
     avatarSrc,
     avatarAlt,
-}) => {
-    const buttonClasses = 'bg-primary-600 hover:bg-primary-700 rounded-s p-xs group group-hover';
-    const transitionClasses = 'transition-all duration-300 ease-out';
-    return (
-        <BaseButton
-            onClick={onClick}
-            name={name}
-            className={clsx(buttonClasses, transitionClasses)}
-            disabled={disabled}
-        >
-            <Avatar src={avatarSrc} alt={avatarAlt} size={AvatarSize.S} />
-        </BaseButton>
-    );
-};
+    className,
+    ...props
+}) => (
+    <BaseButton
+        onClick={onClick}
+        name={name}
+        className={clsx(
+            'group-hover group rounded-s bg-primary-600 p-xs hover:bg-primary-700',
+            'transition-all duration-300 ease-out',
+            className,
+        )}
+        {...props}
+    >
+        <Avatar src={avatarSrc} alt={avatarAlt} size={AvatarSize.S} />
+    </BaseButton>
+);

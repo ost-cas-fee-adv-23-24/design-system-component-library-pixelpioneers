@@ -1,20 +1,14 @@
-import { ComponentType } from 'react';
-import { IconProps } from '../../elements';
 import { Wording, WordingExtended } from '../../utlis';
+import { BaseButtonProps } from '../../base/base-button/types';
 
-export interface InteractiveBaseProps {
-    onClick: () => void;
-    label?: string;
-    disabled?: boolean;
-    name?: string;
-}
+type InteractiveButtonProps<T> = Omit<BaseButtonProps, 'children'> & {
+    /**
+     * Label on Button
+     */
+    label: T;
+};
 
-export interface InteractiveButtonProps extends InteractiveBaseProps {
-    Icon?: ComponentType<IconProps>;
-    className?: string;
-}
-
-export type ShareButtonProps = InteractiveBaseProps & {
+export type ShareButtonProps = Omit<InteractiveButtonProps<string>, 'onClick'> & {
     /**
      * Link to share / copy to clipboard
      */
@@ -25,18 +19,14 @@ export type ShareButtonProps = InteractiveBaseProps & {
     labelShared?: string;
 };
 
-export type CommentButtonProps = Omit<InteractiveBaseProps, 'label'> & {
+export type CommentButtonProps = Partial<InteractiveButtonProps<Wording>> & {
     /**
      * Amount of comments
      */
     amount?: number;
-    /**
-     * Label consists of word/sentence in multiple forms
-     */
-    label?: Wording;
 };
 
-export type LikeButtonProps = Omit<InteractiveBaseProps, 'label'> & {
+export type LikeButtonProps = Partial<InteractiveButtonProps<WordingExtended>> & {
     /**
      * Is picture liked by user
      */
@@ -45,14 +35,10 @@ export type LikeButtonProps = Omit<InteractiveBaseProps, 'label'> & {
      * Amount of likes
      */
     amount?: number;
-    /**
-     * Label consists of word/sentence in multiple forms
-     */
-    label?: WordingExtended;
 };
 
-export interface LikeContext {
+export type LikeContext = {
     actualAmount: number;
     isLikedNow: boolean;
     justLiked: boolean;
-}
+};

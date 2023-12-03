@@ -1,5 +1,5 @@
 export * from './button';
-export * from './icon-button';
+export * from './icon-only-button';
 export * from './tabs';
 export * from './typography';
 export * from './interactive-button';

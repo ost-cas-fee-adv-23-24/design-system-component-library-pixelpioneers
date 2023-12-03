@@ -1,8 +1,8 @@
-export interface PlaceholderProps {
-    text: string;
+import { HTMLAttributes } from 'react';
+
+export type PlaceholderProps = HTMLAttributes<HTMLSpanElement> & {
     size: PlaceholderSize;
-    className?: string;
-}
+};
 
 export enum PlaceholderSize {
     S = 's',

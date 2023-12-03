@@ -1,4 +1,4 @@
-import { FC, DragEvent, useState, useRef, useId, ChangeEvent } from 'react';
+import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { FileUploadProps } from './types';
 import { LabelSize } from '../../typography/label/types';
 import { Label } from '../../typography/label/label';
@@ -128,20 +128,24 @@ export const FileUpload: FC<FileUploadProps> = ({
                     }`}
                 />
                 <Label
-                    text={label}
                     size={LabelSize.XL}
                     className={`mb-xs ${
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }`}
-                />
+                    // TODO: htmlFor
+                >
+                    {label}
+                </Label>
                 <Paragraph
-                    text={labelFileSize}
                     size={ParagraphSize.M}
                     className={
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }
-                />
+                >
+                    {labelFileSize}
+                </Paragraph>
             </section>
+            // TODO: use ours (if possible)
             <input
                 className="hidden"
                 type="file"
@@ -154,7 +158,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
-                        variant={Variant.QUARTENARY}
+                        variant={Variant.QUATERNARY}
                         onClick={onFileUpload}
                         label={labelButton}
                         Icon={Icon}

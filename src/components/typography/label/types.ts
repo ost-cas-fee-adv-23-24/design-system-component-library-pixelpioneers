@@ -1,16 +1,36 @@
-export interface LabelProps {
-    text: string;
-    size: LabelSize;
-    className?: string;
+import { HTMLAttributes, LabelHTMLAttributes } from 'react';
+
+type BaseLabelProps = {
     /**
-     * htmlFor - input id, used to link with input field
+     * Size of the label
      */
-    htmlFor?: string;
-}
+    size: LabelSize;
+};
+
+type LabelTypeProps = LabelHTMLAttributes<HTMLLabelElement> & {
+    /**
+     * Label used as actual HTML-label for forms
+     */
+    type?: LabelType.LABEL;
+};
+
+type SpanTypeProps = HTMLAttributes<HTMLSpanElement> & {
+    /**
+     * Label used as HTML-span for buttons and more
+     */
+    type?: LabelType.SPAN;
+};
+
+export type LabelProps = (LabelTypeProps | SpanTypeProps) & BaseLabelProps;
 
 export enum LabelSize {
     S = 's',
     M = 'm',
     L = 'l',
     XL = 'xl',
+}
+
+export enum LabelType {
+    LABEL = 'label',
+    SPAN = 'span',
 }

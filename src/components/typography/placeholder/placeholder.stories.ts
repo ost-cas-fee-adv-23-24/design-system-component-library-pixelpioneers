@@ -27,27 +27,27 @@ type Story = StoryObj<typeof Placeholder>;
 export const PlaceholderXL: Story = {
     args: {
         size: PlaceholderSize.XL,
-        text: 'Placeholder XL',
+        children: 'Placeholder XL',
     },
 };
 
 export const PlaceholderL: Story = {
     args: {
         size: PlaceholderSize.L,
-        text: 'Placeholder L',
+        children: 'Placeholder L',
     },
 };
 
 export const PlaceholderM: Story = {
     args: {
         size: PlaceholderSize.M,
-        text: 'Placeholder M',
+        children: 'Placeholder M',
     },
 };
 
 export const PlaceholderS: Story = {
     args: {
         size: PlaceholderSize.S,
-        text: 'Placeholder S',
+        children: 'Placeholder S',
     },
 };

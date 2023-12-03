@@ -2,15 +2,21 @@ export enum Variant {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
     TERTIARY = 'tertiary',
-    QUARTENARY = 'quartenary',
+    QUATERNARY = 'quaternary',
 }
 
-export interface Wording {
+/**
+ * Multiple words for labelling content in singular, plural and none
+ */
+export type Wording = {
     zero: string;
     singular: string;
     plural: string;
-}
+};
 
-export interface WordingExtended extends Wording {
+/**
+ * Multiple words for labelling content in singular, plural, none and additional past participle
+ */
+export type WordingExtended = Wording & {
     pastParticiple: string;
-}
+};

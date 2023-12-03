@@ -1,8 +1,8 @@
-export interface HeadingProps {
-    text: string;
+import { HTMLAttributes } from 'react';
+
+export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
     size: HeadingSize;
-    className?: string;
-}
+};
 
 export enum HeadingSize {
     H1 = 'h1',

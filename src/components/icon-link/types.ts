@@ -1,12 +1,10 @@
 import { ComponentType } from 'react';
 import { IconProps } from '../../elements';
 import { Variant } from '../../utlis';
+import { BaseButtonProps } from '../../base/base-button/types';
 
-export interface IconLinkProps {
+export type IconLinkProps = Omit<BaseButtonProps, 'children'> & {
     label: string;
     Icon: ComponentType<IconProps>;
-    onClick: () => void;
-    disabled?: boolean;
-    name?: string;
     variant?: Variant;
-}
+};

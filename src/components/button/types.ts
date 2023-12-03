@@ -1,18 +1,14 @@
 import { ComponentType } from 'react';
 import { IconProps } from '../../elements';
 import { Variant } from '../../utlis';
+import { BaseButtonProps } from '../../base/base-button/types';
 
-export interface ButtonProps {
+export type ButtonProps = Omit<BaseButtonProps, 'children'> & {
     Icon: ComponentType<IconProps>;
-    onClick: () => void;
     variant?: Variant;
-    disabled?: boolean;
     size: ButtonSize;
     label?: string;
-    fill?: boolean;
-    name?: string;
-    className?: string;
-}
+};
 
 export enum ButtonSize {
     M = 'm',

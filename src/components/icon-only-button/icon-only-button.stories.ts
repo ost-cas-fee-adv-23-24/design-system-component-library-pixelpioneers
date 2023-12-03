@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { IconMumble } from '../../elements';
-import { IconButton } from './icon-button';
+import { IconOnlyButton } from './icon-only-button';
 
-const meta: Meta<typeof IconButton> = {
-    title: 'Components/Icon Button',
-    component: IconButton,
+const meta: Meta<typeof IconOnlyButton> = {
+    title: 'Components/Icon-Only Button',
+    component: IconOnlyButton,
     parameters: {
         layout: 'centered',
         design: {
@@ -19,15 +19,15 @@ const meta: Meta<typeof IconButton> = {
     args: {
         Icon: IconMumble,
         disabled: false,
-        name: 'icon-button',
+        name: 'icon-only-button',
     },
 };
 
 export default meta;
-type Story = StoryObj<typeof IconButton>;
+type Story = StoryObj<typeof IconOnlyButton>;
 
-export const Default: Story = {
-    name: 'Icon Button',
+export const IconOnly: Story = {
+    name: 'Icon-Only',
     args: {
         Icon: IconMumble,
     },

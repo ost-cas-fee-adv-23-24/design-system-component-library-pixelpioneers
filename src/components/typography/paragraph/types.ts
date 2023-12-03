@@ -1,8 +1,8 @@
-export interface ParagraphProps {
-    text: string;
+import { HTMLAttributes } from 'react';
+
+export type ParagraphProps = HTMLAttributes<HTMLParagraphElement> & {
     size: ParagraphSize;
-    className?: string;
-}
+};
 
 export enum ParagraphSize {
     M = 'm',

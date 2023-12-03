@@ -14,7 +14,6 @@ const meta: Meta<typeof TextLink> = {
     tags: ['autodocs'],
     args: {
         label: 'Link Label',
-        name: 'text-link',
         link: 'https://www.migros.ch',
     },
 };

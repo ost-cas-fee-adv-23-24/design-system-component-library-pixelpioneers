@@ -1,9 +1,9 @@
 import { FC, useState } from 'react';
 import { InputProps, InputType } from './types';
-import { LabelSize } from '../../typography/label/types';
-import { Label } from '../../typography/label/label';
+import { Label, LabelSize } from '../../typography';
 import { IconSize } from '../../../elements';
 import { FieldHint } from '../field-hint';
+import clsx from 'clsx';
 
 export const Input: FC<InputProps> = ({
     placeholder,
@@ -18,29 +18,42 @@ export const Input: FC<InputProps> = ({
     errorText,
     hintName,
     status,
+    className,
+    ...props
 }) => {
     const [isPrivacy, setIsPrivacy] = useState(false);
     const inputWrapperClasses = 'relative';
-    const inputClasses =
-        'h-xl w-full text-secondary-700 pr-10 py-s px-s rounded-s placeholder-secondary-300 focus:outline-primary-600 focus:outline-2';
+    const inputClasses = clsx(
+        'pr-10 h-xl w-full rounded-s px-s py-s text-secondary-700 placeholder-secondary-300 focus:outline-2 focus:outline-primary-600',
+        className,
+    );
     const iconClasses = 'cursor-pointer absolute flex items-center right-s top-0 h-full';
 
     return (
         <div className={inputWrapperClasses}>
-            <Label text={label} size={LabelSize.M} className="text-secondary-700" />
+            <Label
+                size={LabelSize.M}
+                className="text-secondary-700"
+                // TODO: htmlFor={id}
+            >
+                {label}
+            </Label>
             <div
                 className={`flex items-center justify-end rounded-s border transition-all duration-300 ease-in-out hover:border-primary-600 ${
                     isOnChangeValid ? 'border-2 border-error' : 'border-secondary-200'
                 }`}
             >
                 <input
+                    // TODO: id={id}
                     name={name}
                     className={inputClasses}
                     type={isPrivacy ? InputType.TEXT : type}
+                    // TODO: use Placeholder element
                     placeholder={placeholder}
                     onChange={onChange}
                     value={value}
                     spellCheck={type === InputType.PASSWORD ? 'false' : 'true'}
+                    {...props}
                 />
                 {Icon && (
                     <button

@@ -1,10 +1,11 @@
 import { FC, useState } from 'react';
 import { TabsProps } from './types';
 import { motion, useMotionValue, useSpring } from 'framer-motion';
-import { Label, LabelSize } from '../typography';
+import { Label, LabelSize, LabelType } from '../typography';
 import clsx from 'clsx';
 
 export const Tabs: FC<TabsProps> = ({ listTabs }) => {
+    // TODO: more accessibility in props
     const [activeItem, setActiveItem] = useState(0);
     const [hoverItem, setHoverItem] = useState<number | undefined>(undefined);
     const activeTabMotion = useMotionValue(0);
@@ -62,10 +63,12 @@ export const Tabs: FC<TabsProps> = ({ listTabs }) => {
                                     onHoverEnd={() => setHoverItem(undefined)}
                                 >
                                     <Label
-                                        text={listTab.label}
+                                        type={LabelType.SPAN}
                                         size={LabelSize.L}
                                         className={labelClasses(index)}
-                                    />
+                                    >
+                                        {listTab.label}
+                                    </Label>
                                 </motion.div>
                             </button>
                         </motion.li>
