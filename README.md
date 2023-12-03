@@ -129,26 +129,20 @@ TODO: ... (maybe a link to NPM docs)
 
 The tools and libraries those are included:
 
-#### React
-
 [Link](https://create-react-app.dev/docs/getting-started) Create React App with TypeScript Template.
 <br/>`npx create-react-app my-app --template typescript`
 
-#### Storybook
-
-Install and integrate StoryBook.
+[Link](https://www.npmjs.com/package/storybook) Install and integrate StoryBook.
 <br/>
 `npx storybook@latest init`
 
-#### Tailwind
-
-Get started with Tailwind.
+[Link](https://www.npmjs.com/package/tailwindcss) Get started with Tailwind.
 <br/>
 `npm install -D tailwindcss postcss autoprefixer`
 <br/>
 `npx tailwindcss init`
 
-> Important
+> Important!
 > <br/>
 > 📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with
 > react-scripts@2.0.0, then leave the options object empty.
@@ -159,58 +153,54 @@ Tailwind CSS as a PostCSS installation and configuration, see
 
 Also see here: [How to setup Tailwind and StoryBook](https://storybook.js.org/recipes/tailwindcss).
 
-#### TypeScript
-
-Check and configure TypeScript,
+[Link](https://storybook.js.org/docs/react/configure/typescript) TypeScript configuration,
 see also [Configure Storybook with TypeScript](https://storybook.js.org/docs/react/configure/typescript).
 <br/>
 Then re-write stories in TypeScript only.
 
-#### prettier
-
-`npm install --save-dev --save-exact prettier`
+[Link](https://prettier.io/docs/en/install) Prettier
 <br/>
-[Link](https://prettier.io/docs/en/install)
+`npm install --save-dev --save-exact prettier`
 
-#### postcss
-
+[Link](https://www.npmjs.com/package/postcss) postcss
+<br/>
 PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and
 mixins, transpile future CSS syntax, inline images, and more. Installing Tailwind CSS as a PostCSS plugin is the most
 seamless way to integrate it with build tools like webpack.
 It also supports Autoprefixer. See the part of Tailwind above.
 
-#### husky / Git hooks
-
+[Link](https://www.npmjs.com/package/husky) husky / Git hooks
+<br/>
 You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See
-here [husky - github](https://typicode.github.io/husky/) or [husky npm](https://www.npmjs.com/package/husky).
+here [husky - github](https://typicode.github.io/husky/).
 
-#### lint-staged
-
+[Link](https://www.npmjs.com/package/lint-staged) lint-staged
+<br/>
 Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before
 committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check
-there [lint-staged - github](https://github.com/okonet/lint-staged)
-or [lint-staged - npm](https://www.npmjs.com/package/lint-staged).
+there [lint-staged - github](https://github.com/okonet/lint-staged).
 
-#### ESLint
-
+[Link](https://eslint.org/docs/latest/use/getting-started) ESLint
+<br/>
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, see
-also [ESLint - npm](https://www.npmjs.com/package/eslint)
-or [Getting Started with ESLint](https://eslint.org/docs/latest/use/getting-started).
+also [ESLint - npm](https://www.npmjs.com/package/eslint).
 
-#### commitlint
-
+[Link](https://commitlint.js.org/#/) commitlint
+<br/>
 commitlint checks if your commit messages meet
 the [conventional commit format](commitlint checks if your commit messages meet the conventional commit format). See
-also [commitlint - github](https://github.com/conventional-changelog/commitlint)
-or [commitlint](https://commitlint.js.org/#/).
+also [commitlint - github](https://github.com/conventional-changelog/commitlint).
 
-#### clsx
-
+[Link](https://www.npmjs.com/package/clsx) clsx
+<br/>
 A tiny (234B) utility for constructing className strings conditionally.
-Also serves as a faster & smaller drop-in replacement for the classnames module. More about
-it: [clsx - npm](https://www.npmjs.com/package/clsx).
+Also serves as a faster & smaller drop-in replacement for the classnames module.
 
-#### Workround
+[Link](https://www.npmjs.com/package/framer-motion) framer-motion
+<br/>
+A simple and powerful JavaScript animation library.
+
+### Workround
 
 A way of dealing with a problem or making something work despite the problem, without completely solving it.
 
