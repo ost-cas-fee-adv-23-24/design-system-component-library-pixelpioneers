@@ -1,11 +1,11 @@
 import { FC } from 'react';
-import { MSettingsProps } from './types';
+import { ModalSettingsTemplateProps } from './types';
 import { Label, LabelSize } from '../../../typography';
 import { Input, InputType } from '../../../form';
 import { IconEye } from '../../../../elements';
 import clsx from 'clsx';
 
-export const MSettings: FC<MSettingsProps> = ({
+export const ModalSettingsTemplate: FC<ModalSettingsTemplateProps> = ({
     formClasses,
     labelClasses,
     initialFocusInputRef,

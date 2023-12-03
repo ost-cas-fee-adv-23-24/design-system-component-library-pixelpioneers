@@ -5,8 +5,8 @@ import { Button } from '../button/button';
 import { ButtonSize } from '../button/types';
 import { Variant } from '../../utlis/types';
 import { IconMumble, IconUpload } from '../../elements';
-import { WidthModal, ContentVariant } from './types';
-import { MSettings } from './main/settings/m-settings';
+import { WidthModal } from './types';
+import { ModalSettingsTemplate } from './main/settings/modal-settings-template';
 import { FileUpload } from '../form/file-upload/file-upload';
 
 const meta: Meta<typeof Modal> = {
@@ -18,13 +18,12 @@ const meta: Meta<typeof Modal> = {
     tags: ['autodocs'],
     argTypes: {
         size: WidthModal,
-        contentVariant: ContentVariant,
     },
     args: {
         buttonLabelPrimary: 'Save',
         buttonLabelSecondary: 'Cancel',
         isOpen: false,
-        size: WidthModal.MEDIUM,
+        size: WidthModal.M,
         title: 'Einstellungen',
     },
 };
@@ -62,8 +61,8 @@ export const Default: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
-        size: WidthModal.SMALL,
-        contentVariant: null,
+        size: WidthModal.S,
+        className: 'w-full flex-row gap-l',
         children: <div>Modal Content</div>,
     },
 };
@@ -72,10 +71,10 @@ export const DefaultModalSmall: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
-        size: WidthModal.SMALL,
-        contentVariant: ContentVariant.SETTINGS,
+        size: WidthModal.S,
+        className: 'w-full flex-row gap-l',
         children: (
-            <MSettings
+            <ModalSettingsTemplate
                 formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
                 labelClasses="w-full inline-flex pt-l"
             />
@@ -87,8 +86,8 @@ export const DefaultModalMedium: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
-        size: WidthModal.MEDIUM,
-        contentVariant: ContentVariant.SETTINGS,
+        size: WidthModal.M,
+        className: 'w-full flex-row gap-l',
         children: null,
     },
 };
@@ -97,8 +96,8 @@ export const ModalFileUpload: Story = {
     render: Template,
     args: {
         title: 'Bild hochladen',
-        size: WidthModal.MEDIUM,
-        contentVariant: ContentVariant.FILE_UPLOAD,
+        size: WidthModal.M,
+        className: 'flex flex-col gap-s pb-s pt-l',
         children: (
             <FileUpload
                 label="Datei hierhin ziehen..."

@@ -1,2 +1,2 @@
-export * from './m-settings';
+export * from './modal-settings-template';
 export * from './types';

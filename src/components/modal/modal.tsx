@@ -1,5 +1,5 @@
 import { FC, Fragment, useRef } from 'react';
-import { ContentVariant, ModalProps, WidthModal } from './types';
+import { ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
 import { Button, ButtonSize } from '../button';
@@ -11,24 +11,25 @@ export const Modal: FC<ModalProps> = ({
     isOpen = false,
     title,
     children,
-    size = WidthModal.MEDIUM,
-    contentVariant = ContentVariant.SETTINGS,
+    size,
     onActionPrimary,
     onActionSecondary,
     buttonLabelPrimary,
     buttonLabelSecondary,
+    className,
 }) => {
     const initialFocusInputRef = useRef<HTMLInputElement>(null);
 
-    const modalWidth = clsx('w-full', size && size);
-
+    const modalWidth = clsx(
+        'w-full',
+        {
+            s: 'md:max-w-[400px]',
+            m: 'md:max-w-[600px]',
+        }[size],
+    );
     const dialogPanelClasses = 'w-full rounded';
     const headerClasses = 'py-m px-l bg-primary-600 rounded-tl-s rounded-tr-s flex';
-    const mainClasses = clsx(
-        'w-full justify-between bg-white px-l pb-l',
-        ContentVariant.SETTINGS === 'settings' && 'w-full flex-row gap-l',
-        ContentVariant.FILE_UPLOAD === 'file_upload' && 'flex flex-col gap-s pb-s pt-l',
-    );
+    const mainClasses = clsx('w-full justify-between bg-white px-l pb-l', className);
     const footerClasses =
         'flex w-full flex-row justify-between gap-l pt-xs p-l rounded-bl-s rounded-br-s bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
@@ -79,11 +80,7 @@ export const Modal: FC<ModalProps> = ({
                                     </header>
                                 )}
 
-                                {contentVariant === 'settings' ? (
-                                    <main className={mainClasses}>{children}</main>
-                                ) : contentVariant === 'file_upload' ? (
-                                    <main className={mainClasses}>{children}</main>
-                                ) : null}
+                                <main className={mainClasses}>{children}</main>
 
                                 <footer className={footerClasses}>
                                     <Button
