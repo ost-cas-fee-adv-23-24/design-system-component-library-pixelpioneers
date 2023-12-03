@@ -1,30 +1,28 @@
 <a name="readme-top"></a>
 
-## Design System - PixelPioneers 🐥
+## Design System Component Library: PixelPioneers 🐥
 
 ![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/3-deploy-storybook.yaml?label=deploy%20storybook)
 ![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/4-release.yaml?label=release%20system%20design%20library)
+![](https://img.shields.io/github/issues-pr/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
+![](https://img.shields.io/github/discussions/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 ![](https://img.shields.io/github/license/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
+![](https://img.shields.io/github/issues/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 ![](https://img.shields.io/github/contributors/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers)
 
 <section align="center">
   <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
-    <img src="src/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
+    <img src="src/docs/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
   </a>
 
 [Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers) 📚
 
 </section>
 
-> Version: 0.0.0-development
-
-> Distributed under the MIT License. See `LICENSE` for more information.
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li><a href="#contact">Contact</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -36,25 +34,21 @@
         <li><a href="#available-scripts">Available scripts</a></li>
       </ul>
     </li>
+    <li><a href="#accessibility">Accessibility</a></li>
     <li><a href="#collaboration">Collaboration</a></li>
+    <li><a href="#developers">Developers</a></li>
+    <li><a href="#licence">Licence</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
   </ol>
 </details>
-
-## Contact
-
-Maintaners:
-
-👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch) 👨‍💻<br/>
-👋 André Ceres - [write an e-mail to André](mailto:andre.ceres@ost.ch) 👨‍💻
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Getting Started
 
 Design System PixelPioneers is a Storybook with Tailwind integrated based on React Component Library. This is the first
 part of the CAS Frontend Engineering Advanced course which expect the result that this library can be installed in the
 Next.js application. In the Next.js application we can reuse components from this library.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Pre-requisites
 
@@ -66,7 +60,7 @@ npm install npm@latest -g
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Built with
+## Built with
 
 [![React][React.js]][React-url]
 [![Google Chrome][Google Chrome]][Google Chrome-url]
@@ -84,9 +78,9 @@ npm install npm@latest -g
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Usage
+## Usage
 
-#### How to setup Tailwind configuration in your Next.js application
+### How to setup Tailwind configuration in your Next.js application
 
 Make your Next.js app active for using the Tailwind presets of this Design System Library. Make sure that the following
 code snippet is added in the tailwind.config.js.
@@ -118,18 +112,16 @@ here: [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/ne
 
 ### Authenticating GitHub Registry
 
-TODO: ...
+TODO: ... (maybe a link to NPM docs)
 
-### Technology Stack
+## Technology Stack
 
 The tools and libraries those are included:
 
 #### React
 
-Create React App with TypeScript Template.
+[Link](https://create-react-app.dev/docs/getting-started) Create React App with TypeScript Template.
 <br/>`npx create-react-app my-app --template typescript`
-<br/>
-[Link](https://create-react-app.dev/docs/getting-started)
 
 #### Storybook
 
@@ -216,9 +208,7 @@ A way of dealing with a problem or making something work despite the problem, wi
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Available scripts
-
-In the project directory, you can run:
+## Available scripts
 
 `npm run storybook` runs the storybook locally on port [http://localhost:6006](http://localhost:6006).
 
@@ -255,16 +245,20 @@ information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Accessibility
+
+TODO: ...
+
 ## Collaboration
 
-Development Agreement
+(Development Agreement)
 
-#### Conventional Commits
+### Conventional Commits
 
 > A specification for adding human and machine readable meaning to commit messages, see
 > also [Conventional Commits](https://www.conventionalcommits.org/en/v1.0.0/).
 
-#### Contribution
+### Contribution
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any
 contributions you make are **greatly appreciated**.
@@ -281,16 +275,23 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Developers
+
+👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch) 👨‍💻<br/>
+👋 André Ceres - [write an e-mail to André](mailto:andre.ceres@ost.ch) 👨‍💻
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+## Licence
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
 ## Roadmap
 
-- [ ] Use TS for the file: `tailwind.config.js` instead
-- [ ] Test all run scripts
-- [ ] Visual process flow in picture
-- [ ] README.md - More details and corrections (after: Create React App with TypeScript Template)
-- [x] Analyzing the Tailwind Export Module Issue
-- [ ] Check https://github.com/prettier/eslint-config-prettier
-- [ ] Check TODOs
-- [ ] Which NODE Version should we use
+- Use TS for the file config: `tailwind.config.js` instead
+- README.md - More details and corrections (after: Create React App with TypeScript Template)
+- https://github.com/prettier/eslint-config-prettier
+- Node.js 20
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
