@@ -284,6 +284,9 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch) 👨‍💻<br/>
 👋 André Ceres - [write an e-mail to André](mailto:andre.ceres@ost.ch) 👨‍💻
 
+<a href='https://github.com/Nigothazine' spellcheck='false'><img src="https://avatars.githubusercontent.com/u/29041124?v=4" width="50;" alt="Nico"/></a>
+<a href='https://github.com/aceres' spellcheck='false'><img src="https://avatars.githubusercontent.com/u/1326993?v=4" width="50;" alt="André"/></a>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Licence
