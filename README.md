@@ -31,7 +31,7 @@
         <li><a href="#bootstrapped-with">Bootstrapped with</a></li>
         <li><a href="#usage">Usage</a></li>
         <li><a href="#technology-stack">Technology Stack</a></li>
-        <li><a href="#available-scripts">Available scripts</a></li>
+        <li><a href="#available-scripts">Run scripts</a></li>
       </ul>
     </li>
     <li><a href="#accessibility">Accessibility</a></li>
@@ -46,18 +46,18 @@
 
 Design System PixelPioneers is a Storybook with Tailwind integrated based on React Component Library. This is the first
 part of the CAS Frontend Engineering Advanced course which expect the result that this library can be installed in the
-Next.js application. In the Next.js application we can reuse components from this library.
+Next.js application. In the Next.js application we can re-use components from this library.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Folder Overview
 
-- [**docs**](docs): documentation for storybook
-- [**src**](src): components and utils
-- [**src/base/base-button**](src/base/base-button): base of button
-- [**src/docs**](src/docs): assets for documentation
-- [**src/elements**](src/elements): elements
-- [**src/utils**](src/utils): utils, context and helpers
+- [**docs**](docs): Introduction and styling in our Design System Component Library
+- [**src**](src): Components and utils
+- [**src/base/base-button**](src/base/base-button): Base of buttons
+- [**src/docs**](src/docs): Assets for documentation, Borders, Colors and Spacing
+- [**src/elements**](src/elements): Elements
+- [**src/utils**](src/utils): Utils, context and helpers
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -91,14 +91,26 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Usage
 
-### How to setup Tailwind configuration in your Next.js application
+### How to install Library package and setup Tailwind configuration in your Next.js application
 
 Make your Next.js app active for using the Tailwind presets of this Design System Library. Make sure that the following
 code snippet is added in the tailwind.config.js.
 
-This loads design tokens as presets.
+The easiest way, install Design System Component Library in your Next.js app:
 
-TODO: We also need to use this. This is still not in using in our Next.js app. It is just documented for the moment.
+In System Design Component Library, create a package of it:
+
+```sh
+npm pack
+```
+
+In Next.js:
+
+```sh
+npm i -D @ost-cas-fee-adv-23-24/design-system-pixelpioneers@0.0.0-development
+```
+
+In Next.js, this loads design tokens as presets.
 
 ```sh
 presets: [
@@ -121,22 +133,16 @@ here: [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/ne
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Authenticating GitHub Registry
-
-TODO: ... (maybe a link to NPM docs)
-
 ## Technology Stack
 
-The tools and libraries those are included:
-
-[Link](https://create-react-app.dev/docs/getting-started) Create React App with TypeScript Template.
+📎 [Link](https://create-react-app.dev/docs/getting-started) Create React App with the TypeScript Template.
 <br/>`npx create-react-app my-app --template typescript`
 
-[Link](https://www.npmjs.com/package/storybook) Install and integrate StoryBook.
+📎 [Link](https://www.npmjs.com/package/storybook) Install and integrate Storybook.
 <br/>
 `npx storybook@latest init`
 
-[Link](https://www.npmjs.com/package/tailwindcss) Get started with Tailwind.
+📎 [Link](https://www.npmjs.com/package/tailwindcss) Get started with Tailwind.
 <br/>
 `npm install -D tailwindcss postcss autoprefixer`
 <br/>
@@ -145,58 +151,55 @@ The tools and libraries those are included:
 > Important!
 > <br/>
 > 📣 If you are using Vite, @storybook/nextjs, @storybook/angular, or @storybook/preset-create-react-app with
-> react-scripts@2.0.0, then leave the options object empty.
-> <br/> > [Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
+> react-scripts@2.0.0, then leave the options object empty, see [Reference](https://github.com/storybookjs/addon-styling/blob/main/docs/getting-started/tailwind.md)
 
 Tailwind CSS as a PostCSS installation and configuration, see
-[here](https://tailwindcss.com/docs/installation/using-postcss)
+[here](https://tailwindcss.com/docs/installation/using-postcss) and [How to setup Tailwind and StoryBook](https://storybook.js.org/recipes/tailwindcss).
 
-Also see here: [How to setup Tailwind and StoryBook](https://storybook.js.org/recipes/tailwindcss).
-
-[Link](https://storybook.js.org/docs/react/configure/typescript) TypeScript configuration,
+📎 [Link](https://storybook.js.org/docs/react/configure/typescript) TypeScript configuration,
 see also [Configure Storybook with TypeScript](https://storybook.js.org/docs/react/configure/typescript).
 <br/>
 Then re-write stories in TypeScript only.
 
-[Link](https://prettier.io/docs/en/install) Prettier
+📎 [Link](https://prettier.io/docs/en/install) Prettier
 <br/>
 `npm install --save-dev --save-exact prettier`
 
-[Link](https://www.npmjs.com/package/postcss) postcss
+📎 [Link](https://www.npmjs.com/package/postcss) postcss
 <br/>
 PostCSS is a tool for transforming styles with JS plugins. These plugins can lint your CSS, support variables and
 mixins, transpile future CSS syntax, inline images, and more. Installing Tailwind CSS as a PostCSS plugin is the most
 seamless way to integrate it with build tools like webpack.
 It also supports Autoprefixer. See the part of Tailwind above.
 
-[Link](https://www.npmjs.com/package/husky) husky / Git hooks
+📎 [Link](https://www.npmjs.com/package/husky) husky / Git hooks
 <br/>
 You can use it to lint your commit messages, run tests, lint code and many more when you commit or push. See
 here [husky - github](https://typicode.github.io/husky/).
 
-[Link](https://www.npmjs.com/package/lint-staged) lint-staged
+📎 [Link](https://www.npmjs.com/package/lint-staged) lint-staged
 <br/>
 Run linters against staged git files and don't let 💩 slip into your code base! Linting makes more sense when run before
 committing your code. By doing so you can ensure no errors go into the repository and enforce code style. Check
 there [lint-staged - github](https://github.com/okonet/lint-staged).
 
-[Link](https://eslint.org/docs/latest/use/getting-started) ESLint
+📎 [Link](https://eslint.org/docs/latest/use/getting-started) ESLint
 <br/>
 ESLint is a tool for identifying and reporting on patterns found in ECMAScript/JavaScript code, see
 also [ESLint - npm](https://www.npmjs.com/package/eslint).
 
-[Link](https://commitlint.js.org/#/) commitlint
+📎 [Link](https://commitlint.js.org/#/) commitlint
 <br/>
 commitlint checks if your commit messages meet
 the [conventional commit format](commitlint checks if your commit messages meet the conventional commit format). See
 also [commitlint - github](https://github.com/conventional-changelog/commitlint).
 
-[Link](https://www.npmjs.com/package/clsx) clsx
+📎 [Link](https://www.npmjs.com/package/clsx) clsx
 <br/>
 A tiny (234B) utility for constructing className strings conditionally.
 Also serves as a faster & smaller drop-in replacement for the classnames module.
 
-[Link](https://www.npmjs.com/package/framer-motion) framer-motion
+📎 [Link](https://www.npmjs.com/package/framer-motion) framer-motion
 <br/>
 A simple and powerful JavaScript animation library.
 
@@ -209,7 +212,7 @@ A way of dealing with a problem or making something work despite the problem, wi
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Available scripts
+## Run scripts
 
 `npm run storybook` runs the storybook locally on port [http://localhost:6006](http://localhost:6006).
 
@@ -252,7 +255,7 @@ TODO: ...
 
 ## Collaboration
 
-(Development Agreement)
+Development Agreement
 
 ### Conventional Commits
 
@@ -290,7 +293,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 ## Roadmap
 
 - Use TS for the file config: `tailwind.config.js` instead
-- README.md - More details and corrections (after: Create React App with TypeScript Template)
 - https://github.com/prettier/eslint-config-prettier
 - Node.js 20
 
