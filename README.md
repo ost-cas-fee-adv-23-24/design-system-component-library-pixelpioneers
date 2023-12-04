@@ -35,6 +35,7 @@
       </ul>
     </li>
     <li><a href="#accessibility">Accessibility</a></li>
+    <li><a href="#visual-overview-of-folder-structure">Visual Overview of Folder Structure</a></li>
     <li><a href="#collaboration">Collaboration</a></li>
     <li><a href="#developers">Developers</a></li>
     <li><a href="#licence">Licence</a></li>
@@ -203,6 +204,10 @@ Also serves as a faster & smaller drop-in replacement for the classnames module.
 <br/>
 A simple and powerful JavaScript animation library.
 
+📎 [Link](https://headlessui.com/) headlessui
+<br/>
+Completely unstyled, fully accessible UI components, designed to integrate beautifully with Tailwind CSS.
+
 ### Workround
 
 A way of dealing with a problem or making something work despite the problem, without completely solving it.
@@ -252,6 +257,10 @@ information.
 ## Accessibility
 
 TODO: ...
+
+## Visual Overview of Folder Structure
+
+<img src="src/docs/assets/component-library-v0.1.png" alt="Overview">
 
 ## Collaboration
 
