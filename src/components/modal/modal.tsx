@@ -1,4 +1,4 @@
-import { FC, Fragment, useRef } from 'react';
+import { FC, Fragment, useEffect, useRef } from 'react';
 import { ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
@@ -19,6 +19,15 @@ export const Modal: FC<ModalProps> = ({
     className,
 }) => {
     const initialFocusInputRef = useRef<HTMLInputElement>(null);
+    const initalFocusButtonRef = useRef<HTMLButtonElement>(null);
+
+    console.log(initialFocusInputRef);
+
+    useEffect(() => {
+        if (isOpen) {
+            initialFocusInputRef.current?.focus();
+        }
+    }, [isOpen]);
 
     const modalWidth = clsx(
         'w-full',
@@ -91,6 +100,7 @@ export const Modal: FC<ModalProps> = ({
                                         size={ButtonSize.M}
                                         Icon={IconCancel}
                                         label={buttonLabelSecondary}
+                                        ref={initalFocusButtonRef}
                                     />
 
                                     <Button

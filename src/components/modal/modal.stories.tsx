@@ -67,6 +67,8 @@ export const Default: Story = {
     },
 };
 
+// const initialFocusInputRef = useRef<HTMLInputElement>(null);
+
 export const DefaultModalSmall: Story = {
     render: Template,
     args: {
@@ -77,6 +79,7 @@ export const DefaultModalSmall: Story = {
             <ModalSettingsTemplate
                 formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
                 labelClasses="w-full inline-flex pt-l"
+                // initialFocusInputRef={initialFocusInputRef}
             />
         ),
     },
