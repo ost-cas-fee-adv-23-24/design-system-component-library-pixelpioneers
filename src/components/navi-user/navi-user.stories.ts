@@ -20,11 +20,12 @@ type NaviUserStory = StoryObj<typeof NaviUser>;
 export const Default: NaviUserStory = {
     name: 'Navi User with image',
     args: {
-        avatarAlt: 'It is me',
+        avatarAlt: 'avatar',
         avatarSrc: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
     },
 };
 
 export const NoImage: NaviUserStory = {
     name: 'Navi User without image',
+    args: {},
 };

@@ -13,6 +13,26 @@ const preview: Preview = {
                 date: /Date$/,
             },
         },
+        a11y: {
+            element: '#storybook-root',
+            config: {
+                rules: [
+                    {
+                        id: 'aria-hidden-focus',
+                        selector: 'body *:not([data-a11y-ignore="aria-hidden-focus"])',
+                    },
+                    // Disable color contrast check, since design colors have not enough contrast
+                    {
+                        id: 'color-contrast',
+                        enabled: false,
+                    },
+                ],
+            },
+            // Axe's options parameter
+            options: {},
+            // Optional flag to prevent the automatic check
+            //manual: true,
+        },
     },
 };
 

@@ -20,6 +20,7 @@ const meta: Meta<typeof IconOnlyButton> = {
         Icon: IconMumble,
         disabled: false,
         name: 'icon-only-button',
+        'aria-label': 'mumble-button',
     },
 };
 
@@ -28,7 +29,4 @@ type Story = StoryObj<typeof IconOnlyButton>;
 
 export const IconOnly: Story = {
     name: 'Icon-Only',
-    args: {
-        Icon: IconMumble,
-    },
 };
