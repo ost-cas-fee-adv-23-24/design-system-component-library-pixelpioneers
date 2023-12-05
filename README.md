@@ -1,6 +1,6 @@
 <a name="readme-top"></a>
 
-## Design System Component Library: PixelPioneers 🐥
+## Design System Component Library: PixelPioneers
 
 ![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/3-deploy-storybook.yaml?label=deploy%20storybook)
 ![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/4-release.yaml?label=release%20system%20design%20library)
@@ -12,7 +12,7 @@
 
 <section align="center">
   <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
-    <img src="src/docs/assets/pixelpioneers.png" alt="PixelPioneers" width="100" height="100">
+    <img src="src/docs/assets/mumble-logo.png" alt="PixelPioneers">
   </a>
 
 [Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers) 📚
