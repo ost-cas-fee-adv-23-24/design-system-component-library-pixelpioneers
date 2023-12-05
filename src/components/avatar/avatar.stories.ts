@@ -27,7 +27,7 @@ type AvatarStory = StoryObj<typeof Avatar>;
 export const Default: AvatarStory = {
     name: 'Avatar Default',
     args: {
-        alt: 'It is me',
+        alt: 'donald-duck-avatar',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         size: AvatarSize.S,
     },
@@ -36,7 +36,7 @@ export const Default: AvatarStory = {
 export const ImageSizeS: AvatarStory = {
     name: 'Image S',
     args: {
-        alt: 'It is me',
+        alt: 'donald-duck-avatar',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         size: AvatarSize.S,
     },
@@ -45,7 +45,7 @@ export const ImageSizeS: AvatarStory = {
 export const ImageSizeM: AvatarStory = {
     name: 'Image M',
     args: {
-        alt: 'It is me',
+        alt: 'donald-duck-avatar',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         size: AvatarSize.M,
     },
@@ -54,7 +54,7 @@ export const ImageSizeM: AvatarStory = {
 export const ImageSizeL: AvatarStory = {
     name: 'Image L',
     args: {
-        alt: 'It is me',
+        alt: 'donald-duck-avatar',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         size: AvatarSize.L,
     },
@@ -63,7 +63,7 @@ export const ImageSizeL: AvatarStory = {
 export const ImageSizeXL: AvatarStory = {
     name: 'Image XL',
     args: {
-        alt: 'It is me',
+        alt: 'donald-duck-avatar',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
         size: AvatarSize.XL,
     },
