@@ -20,7 +20,7 @@ type EditAvatarStory = StoryObj<typeof EditAvatar>;
 export const Default: EditAvatarStory = {
     name: 'Edit Mode',
     args: {
-        alt: 'It is me',
+        alt: 'donald-duck-avatar',
         src: 'https://easydrawingguides.com/wp-content/uploads/2019/09/Donald-Duck-10.png',
     },
 };

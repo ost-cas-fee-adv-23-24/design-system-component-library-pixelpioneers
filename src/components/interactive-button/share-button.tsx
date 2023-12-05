@@ -1,4 +1,4 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, useEffect, useRef, useState } from 'react';
 import { ShareButtonProps } from './types';
 import { useCopyToClipboard } from 'react-use';
 import { IconShare, IconSize } from '../../elements';
@@ -14,6 +14,7 @@ export const ShareButton: FC<ShareButtonProps> = ({
     labelShared = 'Link copied',
     ...props
 }) => {
+    const ref = useRef(null);
     const [isCopied, setIsCopied] = useState(false);
     const [, copyToClipboard] = useCopyToClipboard();
 
@@ -33,7 +34,13 @@ export const ShareButton: FC<ShareButtonProps> = ({
         className,
     );
     return (
-        <BaseButton className={shareButtonClasses} onClick={onClick} name={name} {...props}>
+        <BaseButton
+            className={shareButtonClasses}
+            onClick={onClick}
+            name={name}
+            ref={ref}
+            {...props}
+        >
             <IconShare size={IconSize.M} className="self-center" />
             <Label type={LabelType.SPAN} size={LabelSize.M}>
                 {isCopied ? labelShared : label}

@@ -2,7 +2,7 @@ import clsx from 'clsx';
 import { FC } from 'react';
 import { AvatarProps, AvatarSize } from './types';
 
-export const Avatar: FC<AvatarProps> = ({ src, className, alt, size }) => {
+export const Avatar: FC<AvatarProps> = ({ src, className, alt = 'avatar', size }) => {
     const avatarBorderClasses = clsx(
         'flex items-center justify-center',
         'relative',

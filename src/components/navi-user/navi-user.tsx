@@ -20,6 +20,7 @@ export const NaviUser: FC<NaviUserProps> = ({
             'transition-all duration-300 ease-out',
             className,
         )}
+        aria-label={props['aria-label'] || name}
         {...props}
     >
         <Avatar src={avatarSrc} alt={avatarAlt} size={AvatarSize.S} />

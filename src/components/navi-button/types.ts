@@ -1,3 +1,3 @@
 import { ButtonProps } from '../button';
 
-export type NaviButtonProps = Omit<ButtonProps, 'variant' | 'fill'>;
+export type NaviButtonProps = Omit<ButtonProps, 'ref' | 'variant' | 'fill'>;
