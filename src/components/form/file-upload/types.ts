@@ -6,13 +6,7 @@ export type FileUploadProps = {
     labelFileSize?: string;
     labelButton?: string;
     onLoadFile?: (file: File) => void;
-    onSave: () => void;
-    onCancel: () => void;
     Icon: ComponentType<IconProps>;
-    IconActionLeft: ComponentType<IconProps>;
-    IconActionRight: ComponentType<IconProps>;
-    labelCancelButton?: string;
-    labelSaveButton?: string;
     maxFileSizeUpload: number;
 };
 
