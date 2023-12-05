@@ -1,4 +1,4 @@
-import { FC, Fragment } from 'react';
+import { FC, Fragment, useRef } from 'react';
 import { ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
@@ -18,6 +18,9 @@ export const Modal: FC<ModalProps> = ({
     labelCancel,
     className,
 }) => {
+    // const initialFocusInputRef = useRef<HTMLInputElement>(null);
+    const initalFocusButtonRef = useRef<HTMLButtonElement>(null);
+
     const modalWidth = clsx(
         'w-full',
         {
@@ -34,7 +37,9 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog onClose={onCancel}>
+             <Dialog
+                onClose={onCancel}
+            >
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -88,6 +93,7 @@ export const Modal: FC<ModalProps> = ({
                                         size={ButtonSize.M}
                                         Icon={IconCancel}
                                         label={labelCancel}
+                                        ref={initalFocusButtonRef}
                                     />
 
                                     <Button

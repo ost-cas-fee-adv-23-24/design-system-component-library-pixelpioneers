@@ -9,6 +9,7 @@ import { WidthModal } from './types';
 import { FileUpload } from '../form/file-upload/file-upload';
 import { Label, LabelSize } from '../typography';
 import { Input, InputType } from '../form';
+import { ModalSettingsTemplate } from './main/settings/modal-settings-template';
 
 const meta: Meta<typeof Modal> = {
     title: 'Components/Modal',
@@ -65,6 +66,21 @@ export const Default: Story = {
         size: WidthModal.S,
         className: 'w-full flex-row gap-l',
         children: <div>Modal Content</div>,
+    },
+};
+
+export const DefaultModalSmall: Story = {
+    render: Template,
+    args: {
+        title: 'Einstellungen',
+        size: WidthModal.S,
+        className: 'w-full flex-row gap-l',
+        children: (
+            <ModalSettingsTemplate
+                formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
+                labelClasses="w-full inline-flex pt-l"
+            />
+        )
     },
 };
 
