@@ -1,4 +1,4 @@
-import { ComponentType, LegacyRef } from 'react';
+import { ComponentType } from 'react';
 import { IconProps } from '../../elements';
 import { Variant } from '../../utlis';
 import { BaseButtonProps } from '../../base/base-button/types';
@@ -8,7 +8,6 @@ export type ButtonProps = Omit<BaseButtonProps, 'children'> & {
     variant?: Variant;
     size: ButtonSize;
     label?: string;
-    ref?: LegacyRef<HTMLButtonElement | null>;
 };
 
 export enum ButtonSize {

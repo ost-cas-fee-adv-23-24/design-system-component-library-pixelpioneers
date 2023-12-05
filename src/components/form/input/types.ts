@@ -1,9 +1,9 @@
-import { ComponentType, ForwardedRef, InputHTMLAttributes } from 'react';
+import { ComponentType, InputHTMLAttributes, Ref } from 'react';
 import { IconProps } from '../../../elements';
 import { HintVariant } from '../hint';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
-    ref?: ForwardedRef<HTMLInputElement>;
+    ref?: Ref<HTMLInputElement>;
     label: string;
     name: string;
     type: InputType;
