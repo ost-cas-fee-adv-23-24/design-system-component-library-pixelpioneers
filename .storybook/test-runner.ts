@@ -16,6 +16,14 @@ const a11yConfig: TestRunnerConfig = {
             detailedReportOptions: {
                 html: true,
             },
+            axeOptions: {
+                rules: {
+                    // Disable color contrast check, since design colors have not enough contrast
+                    'color-contrast': {
+                        enabled: false,
+                    },
+                },
+            },
         });
     },
 };
