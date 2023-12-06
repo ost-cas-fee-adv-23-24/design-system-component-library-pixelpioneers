@@ -1,7 +1,5 @@
 import { Wording, WordingExtended } from '../../utlis';
 import { BaseButtonProps } from '../../base/base-button/types';
-import { ToggleProps } from 'react-stately';
-import { ButtonProps } from '../button';
 
 type InteractiveButtonProps<T> = Omit<BaseButtonProps, 'children' | 'ref'> & {
     /**
@@ -9,8 +7,6 @@ type InteractiveButtonProps<T> = Omit<BaseButtonProps, 'children' | 'ref'> & {
      */
     label: T;
 };
-
-export type ToggleButtonProps = ToggleProps & Omit<ButtonProps, 'ref' | 'size' | 'label'>;
 
 export type ShareButtonProps = Omit<InteractiveButtonProps<string>, 'onClick'> & {
     /**
