@@ -6,14 +6,22 @@ import { IconEye } from '../../../../elements';
 import clsx from 'clsx';
 
 export const ModalSettingsTemplate: FC<ModalSettingsTemplateProps> = forwardRef(
-    ({ formClasses, labelClasses }, initialFocusInputRef) => {
+    ({ formClasses, labelClasses }, ref) => {
+        console.log('ref', ref);
+
+        // Demo 2
+        // const newRef = useRef(null);
+        // useEffect(() => {
+        //     newRef.current.focus();
+        //     console.log(newRef.current);
+        // });
         return (
             <form className={clsx('w-full', formClasses)}>
                 <Label size={LabelSize.XL} className={labelClasses}>
                     Persönliche Einstellungen
                 </Label>
                 <Input
-                    ref={initialFocusInputRef}
+                    // ref={newRef}
                     onChange={() => {}}
                     placeholder="Name Vorname"
                     value=""

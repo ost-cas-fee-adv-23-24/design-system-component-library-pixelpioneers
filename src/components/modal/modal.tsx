@@ -18,8 +18,11 @@ export const Modal: FC<ModalProps> = ({
     labelCancel,
     className,
 }) => {
-    // const initialFocusInputRef = useRef<HTMLInputElement>(null);
+    const initialFocusInputRef = useRef<HTMLInputElement>(null);
     const initalFocusButtonRef = useRef<HTMLButtonElement>(null);
+
+    // Demo 1
+    // const initalFocusButtonRef = useRef(null);
 
     const modalWidth = clsx(
         'w-full',
@@ -37,9 +40,8 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-             <Dialog
-                onClose={onCancel}
-            >
+            <Dialog initialFocus={initialFocusInputRef} onClose={onCancel}>
+                {/* <Dialog initialFocus={initalFocusButtonRef} onClose={onActionSecondary}> */}
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
