@@ -5,4 +5,6 @@ export type BrandingProps = {
     sizeWidth?: string;
     sizeHeight?: string;
     className?: string;
+    stopColor?: string;
+    offsetStopColor?: string;
 };

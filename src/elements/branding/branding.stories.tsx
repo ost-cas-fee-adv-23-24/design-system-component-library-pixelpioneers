@@ -35,15 +35,15 @@ const render: Story['render'] = () => (
         </section>
 
         <h3>
-            Horizontal (Modify color of title, icon and background) - espacially for Horizontal Logo
-            Mumble only!
+            Horizontal (Modify color of title, icon and background) - espacially for Horizontal
+            only!
         </h3>
         <h5>Example 1</h5>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontal
-                titleClasses="fill-white text-white"
+                titleClasses="fill-white"
                 className="bg-primary-700"
-                iconClasses="fill-white text-white"
+                iconClasses="fill-white"
                 sizeWidth="335"
                 sizeHeight="64"
             />
@@ -53,33 +53,32 @@ const render: Story['render'] = () => (
         <h5>Example 2</h5>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontal
-                titleClasses="fill-primary-700 text-primary-700"
+                titleClasses="fill-primary-700"
                 className="bg-white"
-                iconClasses="fill-primary-700 text-primary-700"
+                iconClasses="fill-primary-700"
                 sizeWidth="335"
                 sizeHeight="64"
             />
         </section>
 
-        <h3>Horizontal</h3>
+        <h3>Horizontal Background as Gradient</h3>
         <h5>Example 3</h5>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontal
                 titleClasses="fill-white"
                 className="bg-gradient-to-r from-tertiary-500 to-primary-500"
-                iconClasses="fill-primary-700 text-primary-700"
+                iconClasses="fill-primary-700"
                 sizeWidth="335"
                 sizeHeight="64"
             />
         </section>
 
-        <h3>Horizontal</h3>
-        <h5>Example 4</h5>
+        <h3>Horizontal Gradient - Text as Gradient</h3>
         <section className="m-xl flex flex-row justify-center">
-            <Branding.LogoMumbleHorizontal
-                titleClasses="fill-tertiary-500"
-                className="text-transparent bg-gradient-30-70 from-tertiary-500 to-primary-500 bg-clip-text"
-                iconClasses="fill-primary-700 text-primary-700"
+            <Branding.LogoMumbleHorizontalGradient
+                stopColor="bg-tertiary-500"
+                offsetStopColor="bg-primary-500"
+                iconClasses="fill-primary-700"
                 sizeWidth="335"
                 sizeHeight="64"
             />
