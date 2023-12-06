@@ -10,7 +10,7 @@ export const Label: FC<LabelProps> = ({
     ...props
 }) => {
     const labelClasses = clsx(
-        'wrap-label font-default font-semibold leading-none',
+        'wrap-label font-default font-semibold leading-none transition-opacity',
         {
             s: 'text-xs',
             m: 'text-sm',

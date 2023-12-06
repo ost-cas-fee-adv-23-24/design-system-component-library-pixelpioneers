@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Tabs } from './tabs';
+import { action } from '@storybook/addon-actions';
 
 const meta: Meta<typeof Tabs> = {
     title: 'Components/Tabs',
@@ -12,8 +13,6 @@ const meta: Meta<typeof Tabs> = {
         },
     },
     tags: ['autodocs'],
-    argTypes: {},
-    args: {},
 };
 
 export default meta;
@@ -21,18 +20,18 @@ type Story = StoryObj<typeof Tabs>;
 
 export const Default: Story = {
     args: {
-        listTabs: [
+        tabs: [
             {
                 label: '🐼 Deine Mumbles',
-                onClick: () => {},
+                onClick: action('tab 1 clicked'),
             },
             {
                 label: 'Deine Likes',
-                onClick: () => {},
+                onClick: action('tab 2 clicked'),
             },
             {
                 label: 'More Tabs',
-                onClick: () => {},
+                onClick: action('tab 3 clicked'),
             },
         ],
     },
@@ -41,14 +40,14 @@ export const Default: Story = {
 export const TwoTabs: Story = {
     name: 'Two Tabs',
     args: {
-        listTabs: [
+        tabs: [
             {
-                label: '🐼 Deine Mumbles',
-                onClick: () => {},
+                label: 'First tab',
+                onClick: action('tab 1 clicked'),
             },
             {
-                label: 'Deine Likes',
-                onClick: () => {},
+                label: 'Second tab',
+                onClick: action('tab 2 clicked'),
             },
         ],
     },
@@ -57,16 +56,16 @@ export const TwoTabs: Story = {
 export const SecondTabsIsActive: Story = {
     name: '2nd Tab is active',
     args: {
-        listTabs: [
+        tabs: [
             {
-                label: '🐼 Deine Mumbles',
-                onClick: () => {},
+                label: 'not active',
+                onClick: action('tab 1 clicked'),
             },
             {
-                label: 'Deine Likes',
-                onClick: () => {},
+                label: 'active',
+                onClick: action('tab 2 clicked'),
             },
         ],
-        isActive: 1,
+        activeTabIndex: 1,
     },
 };

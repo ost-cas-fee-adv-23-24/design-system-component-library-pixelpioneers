@@ -1,80 +1,75 @@
 import { FC, useState } from 'react';
-import { TabsProps } from './types';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { ExtendedSide, TabsProps } from './types';
+import { motion } from 'framer-motion';
+import { Tab } from '@headlessui/react';
 import { Label, LabelSize, LabelType } from '../typography';
 import clsx from 'clsx';
 
-export const Tabs: FC<TabsProps> = ({ listTabs }) => {
-    // TODO: more accessibility in props
-    const [activeItem, setActiveItem] = useState(0);
-    const [hoverItem, setHoverItem] = useState<number | undefined>(undefined);
-    const activeTabMotion = useMotionValue(0);
-    const animateSpring = useSpring(activeTabMotion, { stiffness: 400, damping: 30, mass: 1 });
+export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
+    const [id] = useState(Math.random());
+    const [selectedIndex, setSelectedIndex] = useState(activeTabIndex);
+    const [hoverOnIndex, setHoverOnIndex] = useState<number | undefined>(undefined);
 
     const tabListClasses =
         'flex flex-row justify-between list-none items-center bg-slate-200 p-2xs rounded-s gap-[10px]';
-    const labelClasses = (index: number) =>
+    const tabClasses = (index: number) =>
         clsx(
-            'relative z-10 whitespace-nowrap hover:cursor-pointer',
-            index === activeItem ? 'text-primary-600' : 'text-secondary-600 hover:text-slate-800',
+            'bg-transparent group relative m-0 cursor-pointer rounded-xs border-none px-[13px] py-[10px] leading-none ring-primary-400 focus:outline-none focus:ring-2',
+            index === selectedIndex
+                ? 'text-primary-600'
+                : 'text-secondary-600 hover:text-slate-800',
         );
-    const buttonClasses = clsx(
-        'bg-transparent relative m-0 border-none px-[13px] py-[10px] leading-none outline-none',
-    );
-    const activeTabClasses = (hoverRight: boolean, hoverLeft: boolean) =>
+    const activeTabClasses = (extendedSide: ExtendedSide) =>
         clsx(
             'absolute bottom-0 left-0 right-0 top-0 rounded-xs bg-white',
-            hoverRight && 'w-[calc(100%+10px)]',
-            hoverLeft && 'ml-[-10px] w-[calc(100%+10px)]',
+            {
+                left: 'ml-[-10px] w-[calc(100%+10px)]',
+                right: 'w-[calc(100%+10px)]',
+                none: '',
+            }[extendedSide],
         );
 
     return (
-        <div className="w-full">
-            <ol className={tabListClasses}>
-                {listTabs.map((listTab, index) => {
-                    const isActive = index === activeItem;
-                    const hoverRight = hoverItem !== undefined && hoverItem > activeItem;
-                    const hoverLeft = hoverItem !== undefined && hoverItem < activeItem;
-
+        <Tab.Group
+            selectedIndex={selectedIndex}
+            onChange={(index) => {
+                setSelectedIndex(index);
+                tabs[index].onClick();
+            }}
+        >
+            <Tab.List className={tabListClasses}>
+                {tabs.map((listTab, index) => {
+                    const extendedSide =
+                        hoverOnIndex === undefined || hoverOnIndex === selectedIndex
+                            ? ExtendedSide.NONE
+                            : hoverOnIndex > selectedIndex
+                              ? ExtendedSide.RIGHT
+                              : ExtendedSide.LEFT;
                     return (
-                        <motion.li
-                            whileTap={isActive ? { scale: 0.95 } : { opacity: 0.6 }}
-                            key={listTab.label}
+                        <motion.span
+                            onHoverStart={() => setHoverOnIndex(index)}
+                            onHoverEnd={() => setHoverOnIndex(undefined)}
                         >
-                            <button
-                                onClick={() => {
-                                    setActiveItem(index);
-                                    listTab.onClick();
-                                }}
-                                type="button"
-                                className={buttonClasses}
-                            >
-                                {isActive && (
-                                    <motion.div
-                                        layoutId="segmentedControlActive"
-                                        className={activeTabClasses(hoverRight, hoverLeft)}
-                                        style={{
-                                            transform: `translateX(${animateSpring.get()}px)`,
-                                        }}
+                            <Tab key={index} className={tabClasses(index)}>
+                                <Label
+                                    type={LabelType.SPAN}
+                                    size={LabelSize.L}
+                                    className={'relative z-10 whitespace-nowrap'}
+                                >
+                                    {listTab.label}
+                                </Label>
+                                {index === selectedIndex && (
+                                    <motion.span
+                                        layoutId={`segmentedControlActive-${id}`}
+                                        className={activeTabClasses(extendedSide)}
+                                        aria-hidden={true}
                                     />
                                 )}
-                                <motion.div
-                                    onHoverStart={() => setHoverItem(index)}
-                                    onHoverEnd={() => setHoverItem(undefined)}
-                                >
-                                    <Label
-                                        type={LabelType.SPAN}
-                                        size={LabelSize.L}
-                                        className={labelClasses(index)}
-                                    >
-                                        {listTab.label}
-                                    </Label>
-                                </motion.div>
-                            </button>
-                        </motion.li>
+                            </Tab>
+                        </motion.span>
                     );
                 })}
-            </ol>
-        </div>
+            </Tab.List>
+        </Tab.Group>
     );
 };

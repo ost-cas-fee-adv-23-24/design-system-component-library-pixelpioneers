@@ -1,9 +1,15 @@
 export type TabsProps = {
-    listTabs: ListTab[];
-    isActive: number;
+    tabs: Tab[];
+    activeTabIndex: number;
 };
 
-export type ListTab = {
+export type Tab = {
     label: string;
     onClick: () => void;
 };
+
+export enum ExtendedSide {
+    RIGHT = 'right',
+    LEFT = 'left',
+    NONE = 'none',
+}

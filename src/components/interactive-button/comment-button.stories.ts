@@ -12,6 +12,9 @@ const meta: Meta<typeof CommentButton> = {
         },
     },
     tags: ['autodocs'],
+    argTypes: {
+        onClick: { action: 'clicked' },
+    },
     args: {
         disabled: false,
         name: 'comment-button',
