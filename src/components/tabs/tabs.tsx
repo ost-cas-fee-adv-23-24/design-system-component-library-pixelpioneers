@@ -1,25 +1,27 @@
 import { FC, useState } from 'react';
-import { ExtendedSide, TabsProps } from './types';
+import { TabsProps } from './types';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
 import { Label, LabelSize, LabelType } from '../typography';
 import clsx from 'clsx';
+import { defaultTabsContext } from '../../utlis/context';
 
 export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
-    const [id] = useState(Math.random());
-    const [selectedIndex, setSelectedIndex] = useState(activeTabIndex);
-    const [hoverOnIndex, setHoverOnIndex] = useState<number | undefined>(undefined);
+    const [{ id, selectedIndex, hoverOnIndex }, setState] = useState(
+        defaultTabsContext(activeTabIndex),
+    );
 
     const tabListClasses =
         'flex flex-row justify-between list-none items-center bg-slate-200 p-2xs rounded-s gap-[10px]';
     const tabClasses = (index: number) =>
         clsx(
-            'bg-transparent group relative m-0 cursor-pointer rounded-xs border-none px-[13px] py-[10px] leading-none ring-primary-400 focus:outline-none focus:ring-2',
+            'bg-transparent group relative m-0 cursor-pointer rounded-xs border-none px-[13px] py-[10px] leading-none outline-primary-400',
             index === selectedIndex
                 ? 'text-primary-600'
-                : 'text-secondary-600 hover:text-slate-800',
+                : 'text-secondary-600 hover:text-secondary-800',
+            'disabled:cursor-not-allowed disabled:text-secondary-400',
         );
-    const activeTabClasses = (extendedSide: ExtendedSide) =>
+    const activeTabClasses = (extendedSide: 'left' | 'right' | 'none') =>
         clsx(
             'absolute bottom-0 left-0 right-0 top-0 rounded-xs bg-white',
             {
@@ -33,7 +35,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
         <Tab.Group
             selectedIndex={selectedIndex}
             onChange={(index) => {
-                setSelectedIndex(index);
+                setState((prevState) => ({ ...prevState, selectedIndex: index }));
                 tabs[index].onClick();
             }}
         >
@@ -41,16 +43,25 @@ export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
                 {tabs.map((listTab, index) => {
                     const extendedSide =
                         hoverOnIndex === undefined || hoverOnIndex === selectedIndex
-                            ? ExtendedSide.NONE
+                            ? 'none'
                             : hoverOnIndex > selectedIndex
-                              ? ExtendedSide.RIGHT
-                              : ExtendedSide.LEFT;
+                              ? 'right'
+                              : 'left';
                     return (
                         <motion.span
-                            onHoverStart={() => setHoverOnIndex(index)}
-                            onHoverEnd={() => setHoverOnIndex(undefined)}
+                            key={`${id}-${index}`}
+                            onHoverStart={() =>
+                                setState((prevState) => ({ ...prevState, hoverOnIndex: index }))
+                            }
+                            onHoverEnd={() =>
+                                setState((prevState) => ({ ...prevState, hoverOnIndex: undefined }))
+                            }
                         >
-                            <Tab key={index} className={tabClasses(index)}>
+                            <Tab
+                                key={`tab-${id}-${index}`}
+                                className={tabClasses(index)}
+                                disabled={listTab.disabled}
+                            >
                                 <Label
                                     type={LabelType.SPAN}
                                     size={LabelSize.L}
@@ -60,7 +71,8 @@ export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
                                 </Label>
                                 {index === selectedIndex && (
                                     <motion.span
-                                        layoutId={`segmentedControlActive-${id}`}
+                                        key={`activeTab-${id}-${index}`}
+                                        layoutId={`activeTab-${id}`}
                                         className={activeTabClasses(extendedSide)}
                                         aria-hidden={true}
                                     />

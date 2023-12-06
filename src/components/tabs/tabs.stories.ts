@@ -69,3 +69,20 @@ export const SecondTabsIsActive: Story = {
         activeTabIndex: 1,
     },
 };
+
+export const SecondTabsIsDisabled: Story = {
+    name: '2nd Tab is disabled',
+    args: {
+        tabs: [
+            {
+                label: 'enabled',
+                onClick: action('tab 1 clicked'),
+            },
+            {
+                label: 'disabled',
+                onClick: action('tab 2 clicked'),
+                disabled: true,
+            },
+        ],
+    },
+};

@@ -6,10 +6,11 @@ export type TabsProps = {
 export type Tab = {
     label: string;
     onClick: () => void;
+    disabled?: boolean;
 };
 
-export enum ExtendedSide {
-    RIGHT = 'right',
-    LEFT = 'left',
-    NONE = 'none',
-}
+export type TabsContext = {
+    id: string;
+    selectedIndex: number;
+    hoverOnIndex: number | undefined;
+};
