@@ -22,13 +22,8 @@ export const Modal: FC<ModalProps> = ({
     variant,
     initial,
 }) => {
-    // Initial focus Input
     const initialFocusInputRef = useRef(null);
-    console.log(initialFocusInputRef);
-
-    // Initial focus Button
     const initalFocusButtonRef = useRef(null);
-    console.log(initalFocusButtonRef);
 
     useEffect(() => {
         if (isOpen) {

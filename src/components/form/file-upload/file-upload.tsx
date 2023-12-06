@@ -1,10 +1,12 @@
 import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { defaultFileUploadState, FileUploadProps } from './types';
-import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
+import { Label, LabelSize } from '../../typography';
 import clsx from 'clsx';
 import { IconSize, IconUpload } from '../../../elements';
 import { Button, ButtonSize } from '../../button';
 import { Variant } from '../../../utlis';
+import { Paragraph, ParagraphSize } from '../../typography/paragraph';
+import { Input, InputType } from '../input';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -91,7 +93,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     };
 
     return (
-        <>
+        <div className="flex flex-col gap-s pb-s pt-l">
             <section
                 className={clsx(
                     'flex',
@@ -118,11 +120,11 @@ export const FileUpload: FC<FileUploadProps> = ({
                     }`}
                 />
                 <Label
+                    htmlFor={fileInputId}
                     size={LabelSize.XL}
                     className={`mb-xs ${
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }`}
-                    // TODO: htmlFor
                 >
                     {label}
                 </Label>
@@ -135,15 +137,17 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {labelFileSize}
                 </Paragraph>
             </section>
-            <input
+            <Input
+                label=""
+                name="file"
                 className="hidden"
-                type="file"
+                type={InputType.FILE}
                 ref={inputReference}
                 id={fileInputId}
                 multiple={false}
                 onChange={handleChange}
             />
-            <section className="mb-l mt-s">
+            <section className="mt-s">
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
@@ -155,6 +159,6 @@ export const FileUpload: FC<FileUploadProps> = ({
                     />
                 )}
             </section>
-        </>
+        </div>
     );
 };

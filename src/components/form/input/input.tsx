@@ -36,11 +36,7 @@ export const Input: FC<InputProps> = forwardRef(
 
         return (
             <div className={inputWrapperClasses}>
-                <Label
-                    size={LabelSize.M}
-                    className="text-secondary-700"
-                    htmlFor={id}
-                >
+                <Label size={LabelSize.M} className="text-secondary-700" htmlFor={id}>
                     {label}
                 </Label>
                 <div

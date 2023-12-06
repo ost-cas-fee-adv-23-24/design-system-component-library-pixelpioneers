@@ -1,4 +1,4 @@
-import { ComponentType } from 'react';
+import { ComponentType, Ref } from 'react';
 import { IconProps } from '../../../elements';
 
 export type FileUploadProps = {
@@ -8,6 +8,7 @@ export type FileUploadProps = {
     onLoadFile?: (file: File) => void;
     Icon: ComponentType<IconProps>;
     maxFileSizeUpload: number;
+    ref?: Ref<HTMLInputElement>;
 };
 
 export type FileUploadState = {

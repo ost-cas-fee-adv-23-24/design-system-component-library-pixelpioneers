@@ -70,7 +70,7 @@ export const Default: Story = {
 export const DefaultModalSmallInitialInput: Story = {
     render: Template,
     args: {
-        title: 'Einstellungen - Initial Input',
+        title: 'Initial Input',
         size: WidthModal.S,
         className: 'w-full flex-row gap-l',
         variant: ContentVariant.SETTINGS,
@@ -81,7 +81,7 @@ export const DefaultModalSmallInitialInput: Story = {
 export const DefaultModalSmallInitialButton: Story = {
     render: Template,
     args: {
-        title: 'Einstellungen - Initial Button',
+        title: 'Initial Button',
         size: WidthModal.S,
         className: 'w-full flex-row gap-l',
         variant: ContentVariant.SETTINGS,
@@ -105,7 +105,6 @@ export const ModalFileUpload: Story = {
     args: {
         title: 'Bild hochladen',
         size: WidthModal.M,
-        className: 'flex flex-col gap-s pb-s pt-l',
         children: (
             <FileUpload
                 label="Datei hierhin ziehen..."
