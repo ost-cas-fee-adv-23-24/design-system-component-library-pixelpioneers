@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 html[data-mode='dark'] {
-    @apply bg-slate-800 text-white;
+    @apply bg-secondary-800 text-white;
 }
