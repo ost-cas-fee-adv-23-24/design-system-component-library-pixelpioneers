@@ -12,7 +12,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
     );
 
     const tabListClasses =
-        'flex flex-row justify-between list-none items-center bg-slate-200 p-2xs rounded-s gap-[10px]';
+        'flex flex-row justify-between list-none items-center bg-secondary-200 p-2xs rounded-s gap-[10px]';
     const tabClasses = (index: number) =>
         clsx(
             'bg-transparent group relative m-0 cursor-pointer rounded-xs border-none px-[13px] py-[10px] leading-none outline-primary-400',
