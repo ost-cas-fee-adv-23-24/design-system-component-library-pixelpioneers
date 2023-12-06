@@ -5,11 +5,10 @@ import { Button } from '../button/button';
 import { ButtonSize } from '../button/types';
 import { Variant } from '../../utlis/types';
 import { IconEye, IconMumble, IconUpload } from '../../elements';
-import { WidthModal } from './types';
+import { ContentVariant, InitialElement, WidthModal } from './types';
 import { FileUpload } from '../form/file-upload/file-upload';
 import { Label, LabelSize } from '../typography';
 import { Input, InputType } from '../form';
-import { ModalSettingsTemplate } from './main/settings/modal-settings-template';
 
 const meta: Meta<typeof Modal> = {
     title: 'Components/Modal',
@@ -69,18 +68,25 @@ export const Default: Story = {
     },
 };
 
-export const DefaultModalSmall: Story = {
+export const DefaultModalSmallInitialInput: Story = {
     render: Template,
     args: {
-        title: 'Einstellungen',
+        title: 'Initial Input',
         size: WidthModal.S,
         className: 'w-full flex-row gap-l',
-        children: (
-            <ModalSettingsTemplate
-                formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
-                labelClasses="w-full inline-flex pt-l"
-            />
-        )
+        variant: ContentVariant.SETTINGS,
+        initial: InitialElement.INPUT,
+    },
+};
+
+export const DefaultModalSmallInitialButton: Story = {
+    render: Template,
+    args: {
+        title: 'Einstellungen - Initial Button',
+        size: WidthModal.S,
+        className: 'w-full flex-row gap-l',
+        variant: ContentVariant.SETTINGS,
+        initial: InitialElement.BUTTON,
     },
 };
 
@@ -110,6 +116,7 @@ export const ModalFileUpload: Story = {
                 maxFileSizeUpload={2000}
             />
         ),
+        variant: ContentVariant.UPLOAD,
     },
 };
 

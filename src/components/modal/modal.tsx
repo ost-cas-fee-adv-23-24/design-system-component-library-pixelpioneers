@@ -1,11 +1,13 @@
 import { FC, Fragment, useRef } from 'react';
-import { ModalProps } from './types';
+import { InitialElement, ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
 import { Button, ButtonSize } from '../button';
 import { IconCancel, IconCheckmark, IconSize } from '../../elements';
 import { Heading, HeadingSize } from '../typography';
 import clsx from 'clsx';
+import { ModalSettingsTemplate } from './main/settings/modal-settings-template';
+import { ContentVariant } from './types';
 
 export const Modal: FC<ModalProps> = ({
     isOpen = false,
@@ -17,12 +19,11 @@ export const Modal: FC<ModalProps> = ({
     labelSubmit,
     labelCancel,
     className,
+    variant,
+    initial,
 }) => {
     const initialFocusInputRef = useRef<HTMLInputElement>(null);
     const initalFocusButtonRef = useRef<HTMLButtonElement>(null);
-
-    // Demo 1
-    // const initalFocusButtonRef = useRef(null);
 
     const modalWidth = clsx(
         'w-full',
@@ -40,8 +41,9 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog initialFocus={initialFocusInputRef} onClose={onCancel}>
-                {/* <Dialog initialFocus={initalFocusButtonRef} onClose={onActionSecondary}> */}
+            <Dialog initialFocus={
+                initial === InitialElement.INPUT ? initialFocusInputRef : initalFocusButtonRef
+            } onClose={onCancel}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -84,7 +86,16 @@ export const Modal: FC<ModalProps> = ({
                                     </button>
                                 </header>
 
-                                <main className={mainClasses}>{children}</main>
+                                <main className={mainClasses}>
+                                    {variant === ContentVariant.SETTINGS && (
+                                        <ModalSettingsTemplate
+                                            ref={initialFocusInputRef}
+                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
+                                            labelClasses="w-full inline-flex pt-l"
+                                        />
+                                    )}
+                                    {variant === null || (ContentVariant.UPLOAD && children)}
+                                </main>
 
                                 <footer className={footerClasses}>
                                     <Button
