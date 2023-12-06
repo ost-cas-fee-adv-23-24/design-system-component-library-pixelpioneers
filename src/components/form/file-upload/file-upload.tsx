@@ -1,10 +1,12 @@
 import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { defaultFileUploadState, FileUploadProps } from './types';
-import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
+import { Label, LabelSize } from '../../typography';
 import clsx from 'clsx';
 import { IconSize, IconUpload } from '../../../elements';
 import { Button, ButtonSize } from '../../button';
 import { Variant } from '../../../utlis';
+import { Paragraph, ParagraphSize } from '../../typography/paragraph';
+import { Input, InputType } from '../input';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -135,9 +137,11 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {labelFileSize}
                 </Paragraph>
             </section>
-            <input
+            <Input
+                label=""
+                name="file"
                 className="hidden"
-                type="file"
+                type={InputType.FILE}
                 ref={inputReference}
                 id={fileInputId}
                 multiple={false}

@@ -82,7 +82,7 @@ export const DefaultModalSmallInitialInput: Story = {
 export const DefaultModalSmallInitialButton: Story = {
     render: Template,
     args: {
-        title: 'Einstellungen - Initial Button',
+        title: 'Initial Button',
         size: WidthModal.S,
         className: 'w-full flex-row gap-l',
         variant: ContentVariant.SETTINGS,
