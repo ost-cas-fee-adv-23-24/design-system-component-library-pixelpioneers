@@ -67,8 +67,6 @@ export const Default: Story = {
     },
 };
 
-// const initialFocusInputRef = useRef<HTMLInputElement>(null);
-
 export const DefaultModalSmall: Story = {
     render: Template,
     args: {

@@ -1,7 +1,7 @@
-import { MutableRefObject } from 'react';
+import { Ref } from 'react';
 
 export interface ModalSettingsTemplateProps {
     formClasses: string;
     labelClasses: string;
-    initialFocusInputRef?: MutableRefObject<HTMLInputElement | null>;
+    ref?: Ref<HTMLInputElement>;
 }

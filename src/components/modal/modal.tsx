@@ -18,10 +18,12 @@ export const Modal: FC<ModalProps> = ({
     buttonLabelSecondary,
     className,
 }) => {
-    const initialFocusInputRef = useRef<HTMLInputElement>(null);
-    const initalFocusButtonRef = useRef<HTMLButtonElement>(null);
-
+    const initialFocusInputRef = useRef(null);
     console.log(initialFocusInputRef);
+
+    // Demo 1
+    // const initalFocusButtonRef = useRef(null);
+    // console.log(initalFocusButtonRef);
 
     useEffect(() => {
         if (isOpen) {
@@ -46,6 +48,7 @@ export const Modal: FC<ModalProps> = ({
     return (
         <Transition appear show={isOpen} as={Fragment}>
             <Dialog initialFocus={initialFocusInputRef} onClose={onActionSecondary}>
+                {/* <Dialog initialFocus={initalFocusButtonRef} onClose={onActionSecondary}> */}
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -100,7 +103,7 @@ export const Modal: FC<ModalProps> = ({
                                         size={ButtonSize.M}
                                         Icon={IconCancel}
                                         label={buttonLabelSecondary}
-                                        ref={initalFocusButtonRef}
+                                        // ref={initalFocusButtonRef}
                                     />
 
                                     <Button
