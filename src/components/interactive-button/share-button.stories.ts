@@ -12,7 +12,6 @@ const meta: Meta<typeof ShareButton> = {
         },
     },
     tags: ['autodocs'],
-    argTypes: {},
     args: {
         label: 'Copy Link',
         labelShared: 'Link copied',

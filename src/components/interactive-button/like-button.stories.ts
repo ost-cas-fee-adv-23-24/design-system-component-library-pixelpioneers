@@ -12,6 +12,9 @@ const meta: Meta<typeof LikeButton> = {
         },
     },
     tags: ['autodocs'],
+    argTypes: {
+        onClick: { action: 'clicked' },
+    },
     args: {
         disabled: false,
         name: 'Like-button',
