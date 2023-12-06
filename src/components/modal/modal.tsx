@@ -1,11 +1,13 @@
 import { FC, Fragment, useEffect, useRef } from 'react';
-import { ModalProps } from './types';
+import { InitialElement, ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
 import { Button, ButtonSize } from '../button';
 import { IconCancel, IconCheckmark, IconSize } from '../../elements';
 import { Heading, HeadingSize } from '../typography';
 import clsx from 'clsx';
+import { ModalSettingsTemplate } from './main/settings';
+import { ContentVariant } from './types';
 
 export const Modal: FC<ModalProps> = ({
     isOpen = false,
@@ -17,16 +19,21 @@ export const Modal: FC<ModalProps> = ({
     buttonLabelPrimary,
     buttonLabelSecondary,
     className,
+    variant,
+    initial,
 }) => {
+    // Initial focus Input
     const initialFocusInputRef = useRef(null);
     console.log(initialFocusInputRef);
 
-    // Demo 1
-    // const initalFocusButtonRef = useRef(null);
-    // console.log(initalFocusButtonRef);
+    // Initial focus Button
+    const initalFocusButtonRef = useRef(null);
+    console.log(initalFocusButtonRef);
 
     useEffect(() => {
         if (isOpen) {
+            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+            // @ts-ignore
             initialFocusInputRef.current?.focus();
         }
     }, [isOpen]);
@@ -47,8 +54,12 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog initialFocus={initialFocusInputRef} onClose={onActionSecondary}>
-                {/* <Dialog initialFocus={initalFocusButtonRef} onClose={onActionSecondary}> */}
+            <Dialog
+                initialFocus={
+                    initial === InitialElement.INPUT ? initialFocusInputRef : initalFocusButtonRef
+                }
+                onClose={onActionSecondary}
+            >
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -92,7 +103,16 @@ export const Modal: FC<ModalProps> = ({
                                     </header>
                                 )}
 
-                                <main className={mainClasses}>{children}</main>
+                                <main className={mainClasses}>
+                                    {variant === ContentVariant.SETTINGS && (
+                                        <ModalSettingsTemplate
+                                            ref={initialFocusInputRef}
+                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
+                                            labelClasses="w-full inline-flex pt-l"
+                                        />
+                                    )}
+                                    {variant === null || (ContentVariant.UPLOAD && children)}
+                                </main>
 
                                 <footer className={footerClasses}>
                                     <Button
@@ -103,7 +123,7 @@ export const Modal: FC<ModalProps> = ({
                                         size={ButtonSize.M}
                                         Icon={IconCancel}
                                         label={buttonLabelSecondary}
-                                        // ref={initalFocusButtonRef}
+                                        ref={initalFocusButtonRef}
                                     />
 
                                     <Button

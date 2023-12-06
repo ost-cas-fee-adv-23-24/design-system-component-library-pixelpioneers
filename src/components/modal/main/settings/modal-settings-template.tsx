@@ -7,21 +7,13 @@ import clsx from 'clsx';
 
 export const ModalSettingsTemplate: FC<ModalSettingsTemplateProps> = forwardRef(
     ({ formClasses, labelClasses }, ref) => {
-        console.log('ref', ref);
-
-        // Demo 2
-        // const newRef = useRef(null);
-        // useEffect(() => {
-        //     newRef.current.focus();
-        //     console.log(newRef.current);
-        // });
         return (
             <form className={clsx('w-full', formClasses)}>
                 <Label size={LabelSize.XL} className={labelClasses}>
                     Persönliche Einstellungen
                 </Label>
                 <Input
-                    // ref={newRef}
+                    ref={ref}
                     onChange={() => {}}
                     placeholder="Name Vorname"
                     value=""
