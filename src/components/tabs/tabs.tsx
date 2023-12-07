@@ -1,14 +1,13 @@
 import { FC, useState } from 'react';
-import { TabsProps } from './types';
+import { defaultTabsState, TabsProps } from './types';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
 import { Label, LabelSize, LabelType } from '../typography';
 import clsx from 'clsx';
-import { defaultTabsContext } from '../../utlis/context';
 
 export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
     const [{ id, selectedIndex, hoverOnIndex }, setState] = useState(
-        defaultTabsContext(activeTabIndex),
+        defaultTabsState(activeTabIndex),
     );
 
     const tabListClasses =

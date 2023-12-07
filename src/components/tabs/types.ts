@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid';
+
 export type TabsProps = {
     tabs: Tab[];
     activeTabIndex: number;
@@ -9,8 +11,14 @@ export type Tab = {
     disabled?: boolean;
 };
 
-export type TabsContext = {
+export type TabsState = {
     id: string;
     selectedIndex: number;
     hoverOnIndex: number | undefined;
 };
+
+export const defaultTabsState = (activeTabIndex: number): TabsState => ({
+    id: uuid(),
+    selectedIndex: activeTabIndex,
+    hoverOnIndex: undefined,
+});
