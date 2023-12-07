@@ -58,6 +58,7 @@ module.exports = {
             6: '6px',
         },
         colors: {
+            transparent: 'transparent',
             black: '#000',
             white: '#fff',
             error: '#DC2626',
