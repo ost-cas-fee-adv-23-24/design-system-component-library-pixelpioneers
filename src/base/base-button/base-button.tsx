@@ -7,8 +7,8 @@ export const BaseButton: FC<BaseButtonProps> = forwardRef<HTMLButtonElement, Bas
     ({ className, fill, children, ...props }, ref) => (
         <button
             className={clsx(
-                'flex justify-center',
-                fill && 'w-full',
+                'flex h-fit justify-center',
+                fill ? 'w-full' : 'w-fit',
                 className,
                 'disabled:cursor-not-allowed disabled:bg-secondary-400',
             )}

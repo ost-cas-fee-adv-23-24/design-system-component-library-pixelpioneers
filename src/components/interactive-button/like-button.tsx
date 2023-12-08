@@ -1,9 +1,8 @@
 import { FC, useState } from 'react';
-import { LikeButtonProps } from './types';
+import { defaultLikeState, LikeButtonProps } from './types';
 import { IconHeart, IconHeartFilled, IconSize } from '../../elements';
 import clsx from 'clsx';
 import { generateLabel } from '../../utlis/helpers';
-import { defaultLikeContext } from '../../utlis/context';
 import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
 
@@ -22,7 +21,7 @@ export const LikeButton: FC<LikeButtonProps> = ({
     ...props
 }) => {
     const [{ actualAmount, isLikedNow, justLiked }, setState] = useState(
-        defaultLikeContext(amount, isLiked),
+        defaultLikeState(amount, isLiked),
     );
 
     const hasAnyLike = actualAmount > 0;

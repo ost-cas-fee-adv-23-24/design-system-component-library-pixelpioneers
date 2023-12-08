@@ -1,18 +1,17 @@
 import { FC, useState } from 'react';
-import { TabsProps } from './types';
+import { defaultTabsState, TabsProps } from './types';
 import { motion } from 'framer-motion';
 import { Tab } from '@headlessui/react';
 import { Label, LabelSize, LabelType } from '../typography';
 import clsx from 'clsx';
-import { defaultTabsContext } from '../../utlis/context';
 
 export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
     const [{ id, selectedIndex, hoverOnIndex }, setState] = useState(
-        defaultTabsContext(activeTabIndex),
+        defaultTabsState(activeTabIndex),
     );
 
     const tabListClasses =
-        'flex flex-row justify-between list-none items-center bg-secondary-200 p-2xs rounded-s gap-[10px]';
+        'flex flex-row justify-between list-none items-center bg-secondary-200 p-2xs rounded-s gap-[10px] w-fit h-fit';
     const tabClasses = (index: number) =>
         clsx(
             'bg-transparent group relative m-0 cursor-pointer rounded-xs border-none px-[13px] py-[10px] leading-none outline-primary-400',

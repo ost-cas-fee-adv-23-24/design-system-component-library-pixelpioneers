@@ -10,8 +10,14 @@ export type FileUploadProps = {
     maxFileSizeUpload: number;
 };
 
-export type FileUploadContext = {
+export type FileUploadState = {
     isDragIsOver: boolean;
     isValidFileSize: boolean;
     isValidFileType: boolean;
+};
+
+export const defaultFileUploadState: FileUploadState = {
+    isDragIsOver: false,
+    isValidFileSize: true,
+    isValidFileType: true,
 };

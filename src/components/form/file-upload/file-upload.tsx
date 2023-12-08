@@ -1,14 +1,10 @@
 import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
-import { FileUploadProps } from './types';
-import { LabelSize } from '../../typography/label/types';
-import { Label } from '../../typography/label/label';
+import { defaultFileUploadState, FileUploadProps } from './types';
+import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
 import clsx from 'clsx';
-import { IconSize, IconUpload } from '../../../elements/icons';
-import { Button } from '../../button/button';
-import { ButtonSize } from '../../button/types';
-import { Variant } from '../../../utlis/types';
-import { defaultObserveFileUploadContext } from '../../../utlis/context';
-import { Paragraph, ParagraphSize } from '../../typography/paragraph';
+import { IconSize, IconUpload } from '../../../elements';
+import { Button, ButtonSize } from '../../button';
+import { Variant } from '../../../utlis';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -21,9 +17,8 @@ export const FileUpload: FC<FileUploadProps> = ({
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
 
-    const [{ isDragIsOver, isValidFileSize, isValidFileType }, setState] = useState(
-        defaultObserveFileUploadContext(),
-    );
+    const [{ isDragIsOver, isValidFileSize, isValidFileType }, setState] =
+        useState(defaultFileUploadState);
 
     const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
@@ -109,6 +104,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'text-white',
                     'rounded-s',
                     'border-2 border-secondary-200',
+                    'h-fit w-fit',
                     isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
                 onDragOver={handleDragOver}
@@ -139,7 +135,6 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {labelFileSize}
                 </Paragraph>
             </section>
-            // TODO: use ours (if possible)
             <input
                 className="hidden"
                 type="file"

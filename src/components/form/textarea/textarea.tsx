@@ -7,7 +7,7 @@ export const Textarea: FC<TextareaProps> = ({ className, ...props }) => (
         <textarea
             className={clsx(
                 'placeholder:text-secondary-500',
-                'h-full w-full',
+                'h-[160px] w-full',
                 'bg-secondary-100 text-lg',
                 'transition-all duration-300 ease-in-out',
                 'rounded-s p-s',

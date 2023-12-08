@@ -23,7 +23,7 @@ export const Input: FC<InputProps> = ({
     ...props
 }) => {
     const [isPrivacy, setIsPrivacy] = useState(false);
-    const inputWrapperClasses = 'relative w-full wrap-input';
+    const inputWrapperClasses = 'relative w-full h-fit wrap-input';
     const inputClasses = clsx(
         'pr-10 h-xl w-full rounded-s px-s py-s text-secondary-700 placeholder-secondary-300 focus:outline-2 focus:outline-primary-600',
         className,

@@ -4,6 +4,7 @@ import { IconReply, IconReplyFilled, IconSize } from '../../elements';
 import clsx from 'clsx';
 import { Label, LabelSize, LabelType } from '../typography';
 import { BaseButton } from '../../base/base-button/base-button';
+import { generateLabel } from '../../utlis/helpers';
 
 export const CommentButton: FC<CommentButtonProps> = ({
     name = 'comment-button',
@@ -25,9 +26,7 @@ export const CommentButton: FC<CommentButtonProps> = ({
             : 'fill-secondary-600 duration-350 ease-in-out',
         className,
     );
-    const computedLabel = hasComment
-        ? `${amount} ${amount === 1 ? label.singular : label.plural}`
-        : label.zero;
+    const computedLabel = generateLabel(amount, label);
     const iconClasses = 'self-center';
     return (
         <BaseButton className={commentButtonClasses} name={name} {...props}>
