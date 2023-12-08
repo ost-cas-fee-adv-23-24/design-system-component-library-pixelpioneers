@@ -19,8 +19,8 @@ const meta: Meta<typeof Modal> = {
         size: WidthModal,
     },
     args: {
-        buttonLabelPrimary: 'Save',
-        buttonLabelSecondary: 'Cancel',
+        labelSubmit: 'Save',
+        labelCancel: 'Cancel',
         isOpen: false,
         size: WidthModal.M,
         title: 'Einstellungen',
@@ -48,8 +48,8 @@ const Template: Story['render'] = (args) => {
             />
             <Modal
                 {...args}
-                onActionPrimary={() => setIsOpen(false)}
-                onActionSecondary={() => setIsOpen(false)}
+                onSubmit={() => setIsOpen(false)}
+                onCancel={() => setIsOpen(false)}
                 isOpen={isOpen}
             />
         </>
