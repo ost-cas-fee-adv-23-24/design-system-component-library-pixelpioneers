@@ -30,6 +30,7 @@ export const Input: FC<InputProps> = forwardRef(
         const inputWrapperClasses = 'relative flex flex-col w-full h-fit wrap-input';
         const inputClasses = clsx(
             'pr-10 h-xl w-full rounded-s px-s py-s text-secondary-700 placeholder-secondary-300 focus:outline-2 focus:outline-primary-600',
+            Icon && 'pl-s pr-xl',
             className,
         );
         const iconClasses = 'cursor-pointer absolute flex items-center right-s top-0 h-full';
