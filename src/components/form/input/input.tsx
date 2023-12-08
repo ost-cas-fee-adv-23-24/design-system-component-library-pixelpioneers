@@ -58,17 +58,20 @@ export const Input: FC<InputProps> = forwardRef(
                     />
                     {Icon && (
                         <button
+                            type="button"
                             className={iconClasses}
-                            aria-label={isPrivacy ? 'Hide password' : 'Show password'}
+                            aria-label={
+                                InputType.PASSWORD && isPrivacy ? 'Hide password' : 'Show password'
+                            }
                             onClick={() => setIsPrivacy(!isPrivacy)}
                         >
-                            {Icon &&
-                            type === InputType.PASSWORD &&
-                            isPrivacy &&
-                            !isOnChangeValid ? (
-                                <Icon size={IconSize.M} className="fill-primary-600" />
-                            ) : !isOnChangeValid ? (
-                                <Icon size={IconSize.M} className="fill-secondary-600" />
+                            {Icon && InputType.PASSWORD && !isOnChangeValid ? (
+                                <Icon
+                                    size={IconSize.M}
+                                    className={
+                                        isPrivacy ? 'fill-primary-600' : 'fill-secondary-600'
+                                    }
+                                />
                             ) : (
                                 <Icon size={IconSize.M} className="fill-error" />
                             )}

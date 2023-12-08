@@ -14,10 +14,10 @@ export const Modal: FC<ModalProps> = ({
     title,
     children,
     size,
-    onActionPrimary,
-    onActionSecondary,
-    buttonLabelPrimary,
-    buttonLabelSecondary,
+    onSubmit,
+    onCancel,
+    labelSubmit,
+    labelCancel,
     className,
     variant,
     initial,
@@ -44,7 +44,7 @@ export const Modal: FC<ModalProps> = ({
     const headerClasses = 'py-m px-l bg-primary-600 rounded-tl-s rounded-tr-s flex';
     const mainClasses = clsx('w-full justify-between bg-white px-l pb-l', className);
     const footerClasses =
-        'flex w-full flex-row justify-between gap-l pt-xs p-l rounded-bl-s rounded-br-s bg-white';
+        'flex w-full flex-row justify-between gap-l pt-0 p-l rounded-bl-s rounded-br-s bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
 
     return (
@@ -53,7 +53,7 @@ export const Modal: FC<ModalProps> = ({
                 initialFocus={
                     initial === InitialElement.INPUT ? initialFocusInputRef : initalFocusButtonRef
                 }
-                onClose={onActionSecondary}
+                onClose={onCancel}
             >
                 <Transition.Child
                     as={Fragment}
@@ -91,7 +91,7 @@ export const Modal: FC<ModalProps> = ({
                                         <button
                                             name="Cancel"
                                             className="fill-white hover:cursor-pointer"
-                                            onClick={onActionSecondary}
+                                            onClick={onCancel}
                                         >
                                             <IconCancel size={IconSize.M} />
                                         </button>
@@ -102,7 +102,7 @@ export const Modal: FC<ModalProps> = ({
                                     {variant === ContentVariant.SETTINGS && (
                                         <ModalSettingsTemplate
                                             ref={initialFocusInputRef}
-                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
+                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s mb-s"
                                             labelClasses="w-full inline-flex pt-l"
                                         />
                                     )}
@@ -112,23 +112,23 @@ export const Modal: FC<ModalProps> = ({
                                 <footer className={footerClasses}>
                                     <Button
                                         className={buttonClasses}
-                                        onClick={onActionSecondary}
+                                        onClick={onCancel}
                                         name={'Cancel'}
                                         variant={Variant.SECONDARY}
                                         size={ButtonSize.M}
                                         Icon={IconCancel}
-                                        label={buttonLabelSecondary}
+                                        label={labelCancel}
                                         ref={initalFocusButtonRef}
                                     />
 
                                     <Button
                                         className={buttonClasses}
-                                        onClick={onActionPrimary}
+                                        onClick={onSubmit}
                                         name={'Save'}
                                         variant={Variant.PRIMARY}
                                         size={ButtonSize.M}
                                         Icon={IconCheckmark}
-                                        label={buttonLabelPrimary}
+                                        label={labelSubmit}
                                     />
                                 </footer>
                             </Dialog.Panel>
