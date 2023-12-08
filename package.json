@@ -42,7 +42,13 @@
   "main": "./lib/esm/index.js",
   "types": "./lib/esm/types/index.d.ts",
   "files": [
-    "./lib/**/*"
+    "./lib",
+    "!**/*.stories.js",
+    "!**/*.stories.d.ts",
+    "!**/reportWebVitals.js",
+    "!**/reportWebVitals.d.ts",
+    "!**/setupTests.js",
+    "!**/setupTests.d.ts"
   ],
   "scripts": {
     "build": "npm run clean && npm run build:esm && npm run build:cjs",
