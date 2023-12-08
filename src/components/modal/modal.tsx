@@ -41,9 +41,12 @@ export const Modal: FC<ModalProps> = ({
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog initialFocus={
-                initial === InitialElement.INPUT ? initialFocusInputRef : initalFocusButtonRef
-            } onClose={onCancel}>
+            <Dialog
+                initialFocus={
+                    initial === InitialElement.INPUT ? initialFocusInputRef : initalFocusButtonRef
+                }
+                onClose={onCancel}
+            >
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -90,7 +93,7 @@ export const Modal: FC<ModalProps> = ({
                                     {variant === ContentVariant.SETTINGS && (
                                         <ModalSettingsTemplate
                                             ref={initialFocusInputRef}
-                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s"
+                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s mb-s"
                                             labelClasses="w-full inline-flex pt-l"
                                         />
                                     )}

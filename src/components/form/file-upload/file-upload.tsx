@@ -6,7 +6,6 @@ import { IconSize, IconUpload } from '../../../elements';
 import { Button, ButtonSize } from '../../button';
 import { Variant } from '../../../utlis';
 import { Paragraph, ParagraphSize } from '../../typography/paragraph';
-import { Input, InputType } from '../input';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -137,11 +136,9 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {labelFileSize}
                 </Paragraph>
             </section>
-            <Input
-                label=""
-                name="file"
+            <input
                 className="hidden"
-                type={InputType.FILE}
+                type="file"
                 ref={inputReference}
                 id={fileInputId}
                 multiple={false}
