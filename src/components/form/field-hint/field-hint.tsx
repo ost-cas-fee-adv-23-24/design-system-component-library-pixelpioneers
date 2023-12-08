@@ -7,7 +7,10 @@ export const FieldHint: FC<FieldHintProps> = ({ hintName, hintText, errorText, s
 
     return (
         <div
-            className={clsx('flex justify-between gap-xs text-xs', errorText && 'flex-row-reverse')}
+            className={clsx(
+                'flex h-fit w-fit justify-between gap-xs text-xs',
+                errorText && 'flex-row-reverse',
+            )}
         >
             {hintText && status === TextStatusVariant.HINT && (
                 <span id={`${hintName}-hint`} className="text-secondary-400">

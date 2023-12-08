@@ -8,6 +8,7 @@ export const Avatar: FC<AvatarProps> = ({ src, className, alt = 'avatar', size }
         'relative',
         'rounded-s',
         'group',
+        'h-fit w-fit',
         className,
     );
     const outlineClasses = 'outline outline-secondary-100 outline-[6px]';

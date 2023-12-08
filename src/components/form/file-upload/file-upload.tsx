@@ -104,6 +104,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'text-white',
                     'rounded-s',
                     'border-2 border-secondary-200',
+                    'h-fit w-fit',
                     isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
                 onDragOver={handleDragOver}
@@ -134,7 +135,6 @@ export const FileUpload: FC<FileUploadProps> = ({
                     {labelFileSize}
                 </Paragraph>
             </section>
-            // TODO: use ours (if possible)
             <input
                 className="hidden"
                 type="file"
