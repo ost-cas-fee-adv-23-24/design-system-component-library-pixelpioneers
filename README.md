@@ -256,7 +256,7 @@ information.
 
 ## Visual Overview of Folder Structure
 
-<img src="https://github.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/raw/main/src/docs/assets/component-library-v0.1.png" alt="Overview">
+<img src="https://github.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/raw/main/src/docs/assets/design-system-v0.1.png" alt="Overview">
 
 ## Collaboration
 
