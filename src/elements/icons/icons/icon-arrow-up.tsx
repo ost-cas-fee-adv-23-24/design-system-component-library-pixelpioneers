@@ -13,6 +13,7 @@ export const IconArrowUp: FC<IconProps> = ({ title, className, size = IconSize.M
             fill="none"
             viewBox="0 0 16 16"
             className={iconClasses}
+            aria-hidden={true}
         >
             {title && <title>{title}</title>}
             <g clipPath="url(#a)">

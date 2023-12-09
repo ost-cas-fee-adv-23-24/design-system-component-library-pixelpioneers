@@ -91,19 +91,19 @@ export const FileUpload: FC<FileUploadProps> = ({
     };
 
     return (
-        <>
+        <div className="flex flex-col pb-s pt-l">
             <section
                 className={clsx(
                     'flex',
                     'flex-col',
                     'justify-center',
                     'items-center',
-                    'h-[200px]',
+                    'h-[194px]',
                     'w-full',
                     'p-xs',
                     'text-white',
-                    'rounded-s',
-                    'border-2 border-secondary-200',
+                    'rounded-[12px]',
+                    'border-2 border-dashed border-secondary-200',
                     'h-fit w-fit',
                     isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
@@ -118,18 +118,18 @@ export const FileUpload: FC<FileUploadProps> = ({
                     }`}
                 />
                 <Label
+                    htmlFor={fileInputId}
                     size={LabelSize.XL}
                     className={`mb-xs ${
                         isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
                     }`}
-                    // TODO: htmlFor
                 >
                     {label}
                 </Label>
                 <Paragraph
                     size={ParagraphSize.M}
                     className={
-                        isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
+                        isValidFileType && isValidFileSize ? 'text-secondary-400' : 'text-error'
                     }
                 >
                     {labelFileSize}
@@ -143,7 +143,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                 multiple={false}
                 onChange={handleChange}
             />
-            <section className="mb-l mt-s">
+            <section className="mt-s">
                 {labelButton && (
                     <Button
                         size={ButtonSize.M}
@@ -155,6 +155,6 @@ export const FileUpload: FC<FileUploadProps> = ({
                     />
                 )}
             </section>
-        </>
+        </div>
     );
 };

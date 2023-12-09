@@ -1,4 +1,4 @@
-import { FC, Fragment, useRef } from 'react';
+import { FC, Fragment } from 'react';
 import { ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
@@ -12,31 +12,29 @@ export const Modal: FC<ModalProps> = ({
     title,
     children,
     size,
-    onActionPrimary,
-    onActionSecondary,
-    buttonLabelPrimary,
-    buttonLabelSecondary,
+    onSubmit,
+    onCancel,
+    labelSubmit,
+    labelCancel,
     className,
 }) => {
-    const initialFocusInputRef = useRef<HTMLInputElement>(null);
-
     const modalWidth = clsx(
         'w-full',
         {
-            s: 'md:max-w-[400px]',
-            m: 'md:max-w-[600px]',
+            s: 'md:max-w-[465px]',
+            m: 'md:max-w-[494px]',
         }[size],
     );
     const dialogPanelClasses = 'w-full rounded';
-    const headerClasses = 'py-m px-l bg-primary-600 rounded-tl-s rounded-tr-s flex';
+    const headerClasses = 'py-m px-l bg-primary-600 rounded-t-m flex';
     const mainClasses = clsx('w-full justify-between bg-white px-l pb-l', className);
     const footerClasses =
-        'flex w-full flex-row justify-between gap-l pt-xs p-l rounded-bl-s rounded-br-s bg-white';
+        'flex w-full flex-row justify-between gap-m pt-0 p-l rounded-b-m bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
 
     return (
         <Transition appear show={isOpen} as={Fragment}>
-            <Dialog initialFocus={initialFocusInputRef} onClose={onActionSecondary}>
+            <Dialog onClose={onCancel}>
                 <Transition.Child
                     as={Fragment}
                     enter="ease-out duration-300"
@@ -73,7 +71,8 @@ export const Modal: FC<ModalProps> = ({
                                         <button
                                             name="Cancel"
                                             className="fill-white hover:cursor-pointer"
-                                            onClick={onActionSecondary}
+                                            onClick={onCancel}
+                                            aria-label="close modal"
                                         >
                                             <IconCancel size={IconSize.M} />
                                         </button>
@@ -85,22 +84,22 @@ export const Modal: FC<ModalProps> = ({
                                 <footer className={footerClasses}>
                                     <Button
                                         className={buttonClasses}
-                                        onClick={onActionSecondary}
+                                        onClick={onCancel}
                                         name={'Cancel'}
                                         variant={Variant.SECONDARY}
                                         size={ButtonSize.M}
                                         Icon={IconCancel}
-                                        label={buttonLabelSecondary}
+                                        label={labelCancel}
                                     />
 
                                     <Button
                                         className={buttonClasses}
-                                        onClick={onActionPrimary}
+                                        onClick={onSubmit}
                                         name={'Save'}
                                         variant={Variant.PRIMARY}
                                         size={ButtonSize.M}
                                         Icon={IconCheckmark}
-                                        label={buttonLabelPrimary}
+                                        label={labelSubmit}
                                     />
                                 </footer>
                             </Dialog.Panel>

@@ -8,6 +8,7 @@ export const IconLogout: FC<IconProps> = ({ title, className, size = IconSize.M 
         height={size}
         viewBox="0 0 16 16"
         className={className}
+        aria-hidden={true}
     >
         {title && <title>{title}</title>}
         <g clipPath="url(#a)">

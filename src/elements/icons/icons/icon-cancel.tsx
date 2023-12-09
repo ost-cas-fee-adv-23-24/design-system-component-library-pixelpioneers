@@ -3,6 +3,7 @@ import { type IconProps, IconSize } from '../types';
 
 export const IconCancel: FC<IconProps> = ({ title, className, size = IconSize.M }) => (
     <svg
+        aria-hidden={true}
         width={size}
         height={size}
         viewBox="0 0 16 16"

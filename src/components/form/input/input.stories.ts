@@ -27,6 +27,7 @@ type Story = StoryObj<typeof Input>;
 export const DefaultText: Story = {
     name: 'Type Text with hint',
     args: {
+        id: 'text-hint',
         type: InputType.TEXT,
         name: 'name',
         placeholder: 'Please insert',
@@ -41,6 +42,7 @@ export const DefaultText: Story = {
 export const DefaultTextWithHint: Story = {
     name: 'Type Text',
     args: {
+        id: 'text',
         label: 'Name',
         type: InputType.TEXT,
         name: 'name',
@@ -55,10 +57,11 @@ export const DefaultTextWithHint: Story = {
 export const DefaultTextInvalid: Story = {
     name: 'Type Invalid',
     args: {
+        id: 'text-invalid',
         label: 'Invalid Name',
         type: InputType.TEXT,
         name: 'name',
-        value: 'Nico',
+        defaultValue: 'Nico',
         placeholder: 'Please insert',
         Icon: IconCancel,
         isOnChangeValid: 'Nico not allowed here',
@@ -72,10 +75,11 @@ export const DefaultTextInvalid: Story = {
 export const DefaultTextValid: Story = {
     name: 'Type Valid',
     args: {
+        id: 'text-valid',
         label: 'Valid Name',
         type: InputType.TEXT,
         name: 'name',
-        value: 'Nico',
+        defaultValue: 'Nico',
         placeholder: 'Please insert',
         Icon: IconCancel,
         isOnChangeValid: null,
@@ -89,10 +93,11 @@ export const DefaultTextValid: Story = {
 export const DefaultPassword: Story = {
     name: 'Type Password',
     args: {
+        id: 'password',
         label: 'Password',
         type: InputType.PASSWORD,
         name: 'password',
-        value: 'secret 🤐 🤫',
+        defaultValue: 'secret 🤐 🤫',
         Icon: IconEye,
         placeholder: 'Password is needed',
     },
@@ -101,10 +106,11 @@ export const DefaultPassword: Story = {
 export const DefaultEmail: Story = {
     name: 'Type Email',
     args: {
+        id: 'email',
         label: 'E-Mail',
         type: InputType.EMAIL,
         name: 'email',
-        value: 'nico.lutz@ost.ch',
+        defaultValue: 'nico.lutz@ost.ch',
         placeholder: 'Please insert',
     },
 };

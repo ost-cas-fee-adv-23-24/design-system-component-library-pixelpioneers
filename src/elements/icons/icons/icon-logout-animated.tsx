@@ -8,6 +8,7 @@ export const IconLogoutAnimated: FC<IconProps> = ({ title, className, size = Ico
         height={size}
         viewBox="0 0 16 16"
         className={className}
+        aria-hidden={true}
     >
         {title && <title>{title}</title>}
         <path

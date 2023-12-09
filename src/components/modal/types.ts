@@ -4,11 +4,11 @@ export interface ModalProps {
     isOpen: boolean;
     title: string | null;
     size: WidthModal;
-    onActionPrimary: () => void;
-    onActionSecondary: () => void;
-    buttonLabelPrimary: string;
-    buttonLabelSecondary: string;
-    children: ReactNode | ReactNode[];
+    onSubmit: () => void;
+    onCancel: () => void;
+    labelSubmit: string;
+    labelCancel: string;
+    children: ReactNode;
     className?: string;
 }
 

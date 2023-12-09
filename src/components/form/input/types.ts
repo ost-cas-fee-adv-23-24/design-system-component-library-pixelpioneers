@@ -1,13 +1,14 @@
-import { ComponentType, InputHTMLAttributes, MutableRefObject } from 'react';
+import { ComponentType, InputHTMLAttributes, Ref } from 'react';
 import { IconProps } from '../../../elements';
 import { HintVariant } from '../hint';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
-    ref?: MutableRefObject<HTMLInputElement | null>;
+    ref?: Ref<HTMLInputElement>;
     label: string;
     name: string;
     type: InputType;
     Icon?: ComponentType<IconProps>;
+    iconLabel?: string;
     isOnChangeValid?: string | null;
     hintText?: string;
     errorText?: string | null;
@@ -19,4 +20,5 @@ export enum InputType {
     TEXT = 'text',
     PASSWORD = 'password',
     EMAIL = 'email',
+    FILE = 'file',
 }
