@@ -16,6 +16,7 @@ export const Input: FC<InputProps> = forwardRef(
             onChange,
             type,
             Icon,
+            iconLabel,
             isOnChangeValid = null,
             hintText,
             errorText,
@@ -37,7 +38,12 @@ export const Input: FC<InputProps> = forwardRef(
 
         return (
             <div className={inputWrapperClasses}>
-                <Label size={LabelSize.M} className="text-secondary-700" htmlFor={id}>
+                <Label
+                    id={`label-${id}`}
+                    size={LabelSize.M}
+                    className="text-secondary-700"
+                    htmlFor={id}
+                >
                     {label}
                 </Label>
                 <div
@@ -62,7 +68,11 @@ export const Input: FC<InputProps> = forwardRef(
                             type="button"
                             className={iconClasses}
                             aria-label={
-                                InputType.PASSWORD && isPrivacy ? 'Hide password' : 'Show password'
+                                InputType.PASSWORD
+                                    ? isPrivacy
+                                        ? 'Hide password'
+                                        : 'Show password'
+                                    : iconLabel
                             }
                             onClick={() => setIsPrivacy(!isPrivacy)}
                         >
@@ -80,8 +90,11 @@ export const Input: FC<InputProps> = forwardRef(
                     )}
                 </div>
                 {hintName && status && (hintText || errorText) && (
-                <Hint status={status}>{errorText || hintText}</Hint>
-            )}
-        </div>
-    );
-});
+                    <Hint aria-labelledby={`label-${id}`} status={status}>
+                        {errorText || hintText}
+                    </Hint>
+                )}
+            </div>
+        );
+    },
+);

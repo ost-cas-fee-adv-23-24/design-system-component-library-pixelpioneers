@@ -8,23 +8,11 @@ export interface ModalProps {
     onCancel: () => void;
     labelSubmit: string;
     labelCancel: string;
-    children: ReactNode | ReactNode[];
+    children: ReactNode;
     className?: string;
-    variant?: ContentVariant;
-    initial?: InitialElement;
 }
 
 export enum WidthModal {
     S = 's',
     M = 'm',
-}
-
-export enum ContentVariant {
-    SETTINGS = 'settings',
-    UPLOAD = 'upload',
-}
-
-export enum InitialElement {
-    BUTTON = 'button',
-    INPUT = 'input',
 }

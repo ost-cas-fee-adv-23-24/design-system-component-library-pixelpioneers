@@ -1,11 +1,10 @@
 import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { defaultFileUploadState, FileUploadProps } from './types';
-import { Label, LabelSize } from '../../typography';
+import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
 import clsx from 'clsx';
 import { IconSize, IconUpload } from '../../../elements';
 import { Button, ButtonSize } from '../../button';
 import { Variant } from '../../../utlis';
-import { Paragraph, ParagraphSize } from '../../typography/paragraph';
 
 export const FileUpload: FC<FileUploadProps> = ({
     label = '',
@@ -99,12 +98,12 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'flex-col',
                     'justify-center',
                     'items-center',
-                    'h-[200px]',
+                    'h-[194px]',
                     'w-full',
                     'p-xs',
                     'text-white',
-                    'rounded-s',
-                    'border-2 border-secondary-200',
+                    'rounded-[12px]',
+                    'border-2 border-dashed border-secondary-200',
                     'h-fit w-fit',
                     isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
@@ -130,7 +129,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                 <Paragraph
                     size={ParagraphSize.M}
                     className={
-                        isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
+                        isValidFileType && isValidFileSize ? 'text-secondary-400' : 'text-error'
                     }
                 >
                     {labelFileSize}

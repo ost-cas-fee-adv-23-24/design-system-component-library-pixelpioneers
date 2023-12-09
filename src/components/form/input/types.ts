@@ -8,6 +8,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     name: string;
     type: InputType;
     Icon?: ComponentType<IconProps>;
+    iconLabel?: string;
     isOnChangeValid?: string | null;
     hintText?: string;
     errorText?: string | null;
