@@ -254,10 +254,6 @@ information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## Accessibility
-
-TODO: ...
-
 ## Visual Overview of Folder Structure
 
 <img src="src/docs/assets/component-library-v0.1.png" alt="Overview">
