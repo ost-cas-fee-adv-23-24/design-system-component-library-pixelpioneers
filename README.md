@@ -1,5 +1,3 @@
-<a name="readme-top"></a>
-
 ## Design System Component Library: PixelPioneers
 
 ![](https://img.shields.io/github/actions/workflow/status/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/3-deploy-storybook.yaml?label=deploy%20storybook)
@@ -49,8 +47,6 @@ Design System PixelPioneers is a Storybook with Tailwind integrated based on Rea
 part of the CAS Frontend Engineering Advanced course which expect the result that this library can be installed in the
 Next.js application. In the Next.js application we can re-use components from this library.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Folder Overview
 
 - [**docs**](docs): Introduction and styling in our Design System Component Library
@@ -60,8 +56,6 @@ Next.js application. In the Next.js application we can re-use components from th
 - [**src/elements**](src/elements): Elements
 - [**src/utils**](src/utils): Utils, context and helpers
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ### Pre-requisites
 
 We need the [npm](https://www.npmjs.com/) package manager to install this library.
@@ -69,8 +63,6 @@ We need the [npm](https://www.npmjs.com/) package manager to install this librar
 ```sh
 npm install npm@latest -g
 ```
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Built with
 
@@ -83,8 +75,6 @@ npm install npm@latest -g
 [![HTML5][HTML5]][HTML5-url]
 [![JavaScript][JavaScript]][JavaScript-url]
 [![TypeScript][TypeScript]][TypeScript-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ### Bootstrapped with
 
@@ -131,8 +121,6 @@ content: [
 
 For having more information related this configuration, it can be found
 here: [Install Tailwind CSS with Next.js](https://tailwindcss.com/docs/guides/nextjs).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Technology Stack
 
@@ -215,8 +203,6 @@ A way of dealing with a problem or making something work despite the problem, wi
 > Override TypeScript@5, see also there: [Workaround](https://github.com/facebook/create-react-app/issues/13080)<br/>
 > (We need TS@5 to bundle CJS and ESM)
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Run scripts
 
 `npm run storybook` runs the storybook locally on port [http://localhost:6006](http://localhost:6006).
@@ -252,8 +238,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more
 information.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Visual Overview of Folder Structure
 
 <img src="https://raw.githubusercontent.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/main/src/docs/assets/design-system-v0.1.png" alt="Overview">
@@ -282,8 +266,6 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 4. Push to the Branch `git push origin feature/amazingFeature`
 5. Open a Pull Request
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Developers
 
 👋 Nico Lutz - [write an e-mail to Nico](mailto:nico.lutz@ost.ch) 👨‍💻<br/>
@@ -292,19 +274,9 @@ Don't forget to give the project a star! ⭐️ Thanks! 🙏
 <a href='https://github.com/Nigothazine' spellcheck='false'><img src="https://avatars.githubusercontent.com/u/29041124?v=4" width="50;" alt="Nico"/></a>
 <a href='https://github.com/aceres' spellcheck='false'><img src="https://avatars.githubusercontent.com/u/1326993?v=4" width="50;" alt="André"/></a>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 ## Licence
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-## Roadmap
-
-- Use TS for the file config: `tailwind.config.js` instead
-- https://github.com/prettier/eslint-config-prettier
-- Node.js 20
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
