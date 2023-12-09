@@ -1,4 +1,4 @@
-import { FC, Fragment, useEffect, useRef } from 'react';
+import { FC, Fragment, useRef } from 'react';
 import { InitialElement, ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
@@ -24,14 +24,6 @@ export const Modal: FC<ModalProps> = ({
 }) => {
     const initialFocusInputRef = useRef(null);
     const initalFocusButtonRef = useRef(null);
-
-    useEffect(() => {
-        if (isOpen) {
-            // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-            // @ts-ignore
-            initialFocusInputRef.current?.focus();
-        }
-    }, [isOpen]);
 
     const modalWidth = clsx(
         'w-full',
