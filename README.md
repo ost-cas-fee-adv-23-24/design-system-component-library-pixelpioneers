@@ -12,7 +12,7 @@
 
 <section align="center">
   <a href="https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers">
-    <img src="src/docs/assets/mumble-logo.png" alt="PixelPioneers">
+    <img src="https://raw.githubusercontent.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/main/src/docs/assets/mumble-logo.png" alt="PixelPioneers">
   </a>
 
 [Storybook](https://ost-cas-fee-adv-23-24.github.io/design-system-component-library-pixelpioneers) 📚
@@ -256,7 +256,7 @@ information.
 
 ## Visual Overview of Folder Structure
 
-<img src="src/docs/assets/component-library-v0.1.png" alt="Overview">
+<img src="https://raw.githubusercontent.com/ost-cas-fee-adv-23-24/design-system-component-library-pixelpioneers/main/src/docs/assets/design-system-v0.1.png" alt="Overview">
 
 ## Collaboration
 
