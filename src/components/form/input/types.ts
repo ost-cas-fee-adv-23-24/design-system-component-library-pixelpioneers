@@ -1,6 +1,6 @@
 import { ComponentType, InputHTMLAttributes, MutableRefObject } from 'react';
 import { IconProps } from '../../../elements';
-import { TextStatusVariant } from '../field-hint';
+import { HintVariant } from '../hint';
 
 export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     ref?: MutableRefObject<HTMLInputElement | null>;
@@ -12,7 +12,7 @@ export type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     hintText?: string;
     errorText?: string | null;
     hintName?: string;
-    status?: TextStatusVariant;
+    status?: HintVariant;
 };
 
 export enum InputType {

@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { Input } from './input';
 import { InputType } from './types';
 import { IconCancel, IconEye } from '../../../elements';
-import { TextStatusVariant } from '../field-hint';
+import { HintVariant } from '../hint';
 
 const meta: Meta<typeof Input> = {
     title: 'Components/Form/Input',
@@ -33,7 +33,7 @@ export const DefaultText: Story = {
         label: 'Name',
         hintText: 'Bitte geben Sie Ihre Vorname ein',
         errorText: null,
-        status: TextStatusVariant.HINT,
+        status: HintVariant.HINT,
         hintName: 'name',
     },
 };
@@ -48,7 +48,7 @@ export const DefaultTextWithHint: Story = {
         hintName: 'name',
         hintText: undefined,
         errorText: null,
-        status: TextStatusVariant.HINT,
+        status: HintVariant.HINT,
     },
 };
 
@@ -65,7 +65,7 @@ export const DefaultTextInvalid: Story = {
         hintName: 'name',
         hintText: 'Bitte geben Sie Ihre Vornamen ein',
         errorText: 'Wrong text from server',
-        status: TextStatusVariant.ERROR,
+        status: HintVariant.ERROR,
     },
 };
 
@@ -82,7 +82,7 @@ export const DefaultTextValid: Story = {
         hintName: 'name',
         hintText: 'Bitte geben Sie hier Ihren Vornamen ein',
         errorText: null,
-        status: TextStatusVariant.HINT,
+        status: HintVariant.HINT,
     },
 };
 
