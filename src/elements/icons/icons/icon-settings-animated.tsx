@@ -9,6 +9,7 @@ export const IconSettingsAnimated: FC<IconProps> = ({ title, className, size = I
             height={size}
             viewBox="0 0 16 16"
             className={className}
+            aria-hidden={true}
         >
             {title && <title>{title}</title>}
             <g clipPath="url(#a)">

@@ -3,6 +3,7 @@ import { type IconProps, IconSize } from '../types';
 
 export const IconMumble: FC<IconProps> = ({ title, className, size = IconSize.M }) => (
     <svg
+        aria-hidden={true}
         xmlns="http://www.w3.org/2000/svg"
         width={size}
         height={size}

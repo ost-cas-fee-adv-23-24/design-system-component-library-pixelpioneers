@@ -72,6 +72,7 @@ export const Modal: FC<ModalProps> = ({
                                             name="Cancel"
                                             className="fill-white hover:cursor-pointer"
                                             onClick={onCancel}
+                                            aria-label="close modal"
                                         >
                                             <IconCancel size={IconSize.M} />
                                         </button>
