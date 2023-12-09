@@ -15,10 +15,11 @@ export const NaviButton: FC<NaviButtonProps> = ({
 }) => {
     const buttonClasses = clsx(
         'flex flex-col items-center justify-center',
-        'h-xxl w-xxl',
+        'h-xxl gap-2xs p-xs',
         'hover:cursor-pointer',
         'group rounded-s',
         'group-hover:bg-primary-700',
+        'transition-all duration-300 ease-in-out',
         className,
     );
     const iconClasses = 'self-center fill-white';
@@ -31,7 +32,7 @@ export const NaviButton: FC<NaviButtonProps> = ({
                 </div>
             )}
             {label && (
-                <Label type={LabelType.SPAN} className="pt-2xs" size={LabelSize.S}>
+                <Label type={LabelType.SPAN} size={LabelSize.S}>
                     {label}
                 </Label>
             )}

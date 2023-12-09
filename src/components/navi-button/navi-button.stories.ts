@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { NaviButton } from './navi-button';
-import { IconLogoutAnimated, IconSettingsAnimated } from '../../elements/icons/icons';
+import { IconLogoutAnimated, IconMumble, IconSettingsAnimated } from '../../elements/icons/icons';
 
 const meta: Meta<typeof NaviButton> = {
     title: 'Components/NaviButton',
@@ -22,20 +22,11 @@ const meta: Meta<typeof NaviButton> = {
 export default meta;
 type Story = StoryObj<typeof NaviButton>;
 
-export const DefaultNaviButton: Story = {
-    name: 'NaviButton Default',
-    args: {
-        className: 'bg-primary-600 hover:bg-primary-700 text-white',
-        label: 'Nico',
-        Icon: IconLogoutAnimated,
-    },
-};
-
 export const DefaultNaviButtonLogout: Story = {
     name: 'NaviButton Icon Logout',
     args: {
         className: 'bg-primary-600 hover:bg-primary-700 text-white',
-        label: 'Label',
+        label: 'Logout',
         Icon: IconLogoutAnimated,
     },
 };
@@ -44,7 +35,16 @@ export const DefaultNaviButtonSettings: Story = {
     name: 'NaviButton Icon Settings',
     args: {
         className: 'bg-primary-600 hover:bg-primary-700 text-white',
-        label: 'Label',
+        label: 'Settings',
         Icon: IconSettingsAnimated,
+    },
+};
+
+export const DefaultNaviButton: Story = {
+    name: 'NaviButton Default',
+    args: {
+        className: 'bg-primary-600 hover:bg-primary-700 text-white',
+        label: 'Label',
+        Icon: IconMumble,
     },
 };
