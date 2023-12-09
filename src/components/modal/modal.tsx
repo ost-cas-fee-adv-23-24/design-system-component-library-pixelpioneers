@@ -22,8 +22,8 @@ export const Modal: FC<ModalProps> = ({
     variant,
     initial,
 }) => {
-    const initialFocusInputRef = useRef(null);
-    const initalFocusButtonRef = useRef(null);
+    const initialFocusInputRef = useRef<HTMLInputElement>(null);
+    const initalFocusButtonRef = useRef<HTMLButtonElement>(null);
 
     const modalWidth = clsx(
         'w-full',
