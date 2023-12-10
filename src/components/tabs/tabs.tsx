@@ -14,7 +14,7 @@ export const Tabs: FC<TabsProps> = ({ tabs, activeTabIndex = 0 }) => {
         'flex flex-row justify-between list-none items-center bg-secondary-200 p-2xs rounded-s gap-[10px] w-fit h-fit';
     const tabClasses = (index: number) =>
         clsx(
-            'group relative m-0 cursor-pointer rounded-xs border-none bg-transparent px-[13px] py-[10px] leading-none outline-none',
+            'group relative m-0 cursor-pointer rounded-xs border-none bg-transparent px-[13px] py-[10px] leading-none outline-primary-400',
             index === selectedIndex
                 ? 'text-primary-600'
                 : 'text-secondary-600 hover:text-secondary-800',
