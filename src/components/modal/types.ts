@@ -2,7 +2,7 @@ import { ReactNode } from 'react';
 
 export interface ModalProps {
     isOpen: boolean;
-    title: string | null;
+    title: string;
     size: WidthModal;
     onSubmit: () => void;
     onCancel: () => void;

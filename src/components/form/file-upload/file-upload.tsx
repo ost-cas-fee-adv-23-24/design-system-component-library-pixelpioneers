@@ -91,7 +91,7 @@ export const FileUpload: FC<FileUploadProps> = ({
     };
 
     return (
-        <div className="flex flex-col pb-s pt-l">
+        <div className="flex flex-col pb-s">
             <section
                 className={clsx(
                     'flex',
