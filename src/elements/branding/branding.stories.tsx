@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Branding from './branding';
+import { Heading, HeadingSize, Label, LabelSize, LabelType } from '../../components';
 
 type Story = StoryObj<typeof Branding.LogoMumbleHorizontal>;
 
@@ -20,12 +21,13 @@ export default meta;
 
 const render: Story['render'] = () => (
     <div className="flow flow-row justify-center text-center">
-        <h3>Vertical</h3>
+        <Heading size={HeadingSize.H1}>Branding</Heading>
+        <Label size={LabelSize.L}>Vertical</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleVertical sizeWidth="247" sizeHeight="128" />
         </section>
 
-        <h3>Vertical Unfilled</h3>
+        <Label size={LabelSize.L}>Vertical Unfilled</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleVerticalUnfilled
                 className="bg-primary-700"
@@ -34,11 +36,10 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>
+        <Label size={LabelSize.L} type={LabelType.SPAN}>
             Horizontal (Modify color of title, icon and background) - espacially for Horizontal
             only!
-        </h3>
-        <h5>Example 1</h5>
+        </Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontal
                 titleClasses="fill-white"
@@ -49,8 +50,7 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>Horizontal</h3>
-        <h5>Example 2</h5>
+        <Label size={LabelSize.L}>Horizontal</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontal
                 titleClasses="fill-primary-700"
@@ -61,8 +61,7 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>Horizontal Background as Gradient</h3>
-        <h5>Example 3</h5>
+        <Label size={LabelSize.L}>Horizontal Background as Gradient</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontal
                 titleClasses="fill-white"
@@ -73,7 +72,7 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>Horizontal Gradient - Text as Gradient</h3>
+        <Label size={LabelSize.L}>Horizontal Gradient - Text as Gradient</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontalGradient
                 stopColor="bg-tertiary-500"
@@ -84,7 +83,7 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>Horizontal Unfilled</h3>
+        <Label size={LabelSize.L}>Horizontal Unfilled</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontalUnfilled
                 className="bg-primary-700"
@@ -93,7 +92,7 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>Horizontal Switcher Unfilled</h3>
+        <Label size={LabelSize.L}>Horizontal Switcher Unfilled</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontalSwitcherUnfilled
                 className="bg-primary-700"
@@ -102,27 +101,27 @@ const render: Story['render'] = () => (
             />
         </section>
 
-        <h3>Vertical Gradient</h3>
+        <Label size={LabelSize.L}>Vertical Gradient</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleVerticalGradient sizeWidth="247" sizeHeight="128" />
         </section>
 
-        <h3>Horizontal Gradient</h3>
+        <Label size={LabelSize.L}>Horizontal Gradient</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleHorizontalGradient sizeWidth="335" sizeHeight="64" />
         </section>
 
-        <h3>Logo Icon Gradient</h3>
+        <Label size={LabelSize.L}>Logo Icon Gradient</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoIconGradient sizeWidth="160" sizeHeight="160" />
         </section>
 
-        <h3>Logo Icon White Background</h3>
+        <Label size={LabelSize.L}>Logo Icon White Background</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoIconBackgroundWhite sizeWidth="160" sizeHeight="160" />
         </section>
 
-        <h3>Logo Icon Neutral</h3>
+        <Label size={LabelSize.L}>Logo Icon Neutral</Label>
         <section className="m-xl flex animate-bounce flex-row justify-center">
             <Branding.LogoIconNeutral sizeWidth="64" sizeHeight="64" />
         </section>

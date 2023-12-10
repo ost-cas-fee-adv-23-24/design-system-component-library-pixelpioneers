@@ -27,7 +27,7 @@ export const Modal: FC<ModalProps> = ({
     );
     const dialogPanelClasses = 'w-full rounded';
     const headerClasses = 'py-m px-l bg-primary-600 rounded-t-m flex';
-    const mainClasses = clsx('w-full justify-between bg-white px-l pb-l', className);
+    const mainClasses = clsx('w-full justify-between bg-white p-l', className);
     const footerClasses =
         'flex w-full flex-row justify-between gap-m pt-0 p-l rounded-b-m bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
@@ -63,21 +63,19 @@ export const Modal: FC<ModalProps> = ({
                             leaveTo="opacity-0 scale-95"
                         >
                             <Dialog.Panel className={dialogPanelClasses}>
-                                {title && (
-                                    <header className={headerClasses}>
-                                        <Heading size={HeadingSize.H3} className="grow text-white">
-                                            {title}
-                                        </Heading>
-                                        <button
-                                            name="Cancel"
-                                            className="fill-white hover:cursor-pointer"
-                                            onClick={onCancel}
-                                            aria-label="close modal"
-                                        >
-                                            <IconCancel size={IconSize.M} />
-                                        </button>
-                                    </header>
-                                )}
+                                <header className={headerClasses}>
+                                    <Heading size={HeadingSize.H3} className="grow text-white">
+                                        {title}
+                                    </Heading>
+                                    <button
+                                        name="Cancel"
+                                        className="fill-white hover:cursor-pointer"
+                                        onClick={onCancel}
+                                        aria-label="close modal"
+                                    >
+                                        <IconCancel size={IconSize.M} />
+                                    </button>
+                                </header>
 
                                 <main className={mainClasses}>{children}</main>
 
