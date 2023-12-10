@@ -91,11 +91,7 @@ export const Modal: FC<ModalProps> = ({
 
                                 <main className={mainClasses}>
                                     {variant === ContentVariant.SETTINGS && (
-                                        <ModalSettingsTemplate
-                                            ref={initialFocusInputRef}
-                                            formClasses="[&_.wrap-input]:pb-s [&_.wrap-label]:pb-s mb-s"
-                                            labelClasses="w-full inline-flex pt-l"
-                                        />
+                                        <ModalSettingsTemplate ref={initialFocusInputRef} />
                                     )}
                                     {variant === null || (ContentVariant.UPLOAD && children)}
                                 </main>
