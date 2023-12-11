@@ -37,7 +37,6 @@
     <li><a href="#collaboration">Collaboration</a></li>
     <li><a href="#developers">Developers</a></li>
     <li><a href="#licence">Licence</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
   </ol>
 </details>
 
