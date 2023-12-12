@@ -104,7 +104,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'text-white',
                     'rounded-[12px]',
                     'border-2 border-dashed border-secondary-200',
-                    'h-fit w-fit',
+                    'w-fit',
                     isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
                 onDragOver={handleDragOver}

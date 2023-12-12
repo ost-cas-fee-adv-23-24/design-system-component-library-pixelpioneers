@@ -27,6 +27,7 @@ export const IconLink: FC<IconLinkProps> = ({
             quaternary:
                 'fill-secondary-500 text-secondary-500 hover:fill-secondary-700 hover:text-secondary-700',
         }[variant],
+        'disabled:bg-transparent disabled:fill-secondary-400 disabled:text-secondary-400',
         className,
     );
     const transitionClasses = 'transition-all duration-350 ease-in-out';

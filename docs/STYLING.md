@@ -31,8 +31,7 @@ Tailwind has a layer system that is designed after [ITCSS](https://www.xfive.co/
 
    ```
 
-7. Update snapshot test(s)
-8. Verify that the new icon is shown in Storybook
+7. Verify that the new icon is shown in Storybook
 
 ### Rewrite CSS Classes with [clsx](https://github.com/lukeed/clsx)
 

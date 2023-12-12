@@ -1,7 +1,7 @@
 import { Wording, WordingExtended } from '../../utlis';
 import { BaseButtonProps } from '../../base/base-button/types';
 
-type InteractiveButtonProps<T> = Omit<BaseButtonProps, 'children' | 'ref'> & {
+type InteractiveButtonProps<T> = Omit<BaseButtonProps, 'children' | 'ref' | 'fill'> & {
     /**
      * Label on Button
      */

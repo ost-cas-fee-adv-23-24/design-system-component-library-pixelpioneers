@@ -29,25 +29,24 @@ const render: Story['render'] = () => (
 
         <Label size={LabelSize.L}>Vertical Unfilled</Label>
         <section className="m-xl flex flex-row justify-center">
-            <Branding.LogoMumbleVerticalUnfilled
-                className="bg-primary-700"
-                sizeWidth="247"
-                sizeHeight="128"
-            />
+            <div className="rounded-m bg-primary-700 p-m">
+                <Branding.LogoMumbleVerticalUnfilled sizeWidth="247" sizeHeight="128" />
+            </div>
         </section>
 
         <Label size={LabelSize.L} type={LabelType.SPAN}>
-            Horizontal (Modify color of title, icon and background) - espacially for Horizontal
+            Horizontal (Modify color of title, icon and background) - especially for Horizontal
             only!
         </Label>
         <section className="m-xl flex flex-row justify-center">
-            <Branding.LogoMumbleHorizontal
-                titleClasses="fill-white"
-                className="bg-primary-700"
-                iconClasses="fill-white"
-                sizeWidth="335"
-                sizeHeight="64"
-            />
+            <div className="rounded-m bg-primary-700 p-m">
+                <Branding.LogoMumbleHorizontal
+                    titleClasses="fill-white"
+                    iconClasses="fill-white"
+                    sizeWidth="335"
+                    sizeHeight="64"
+                />
+            </div>
         </section>
 
         <Label size={LabelSize.L}>Horizontal</Label>
@@ -63,13 +62,14 @@ const render: Story['render'] = () => (
 
         <Label size={LabelSize.L}>Horizontal Background as Gradient</Label>
         <section className="m-xl flex flex-row justify-center">
-            <Branding.LogoMumbleHorizontal
-                titleClasses="fill-white"
-                className="bg-gradient-to-r from-tertiary-500 to-primary-500"
-                iconClasses="fill-primary-700"
-                sizeWidth="335"
-                sizeHeight="64"
-            />
+            <div className="rounded-m bg-gradient-to-r from-tertiary-500 to-primary-500 p-m">
+                <Branding.LogoMumbleHorizontal
+                    titleClasses="fill-white"
+                    iconClasses="fill-primary-700"
+                    sizeWidth="335"
+                    sizeHeight="64"
+                />
+            </div>
         </section>
 
         <Label size={LabelSize.L}>Horizontal Gradient - Text as Gradient</Label>
@@ -85,20 +85,16 @@ const render: Story['render'] = () => (
 
         <Label size={LabelSize.L}>Horizontal Unfilled</Label>
         <section className="m-xl flex flex-row justify-center">
-            <Branding.LogoMumbleHorizontalUnfilled
-                className="bg-primary-700"
-                sizeWidth="335"
-                sizeHeight="64"
-            />
+            <div className="rounded-m bg-primary-700 p-m">
+                <Branding.LogoMumbleHorizontalUnfilled sizeWidth="335" sizeHeight="64" />
+            </div>
         </section>
 
         <Label size={LabelSize.L}>Horizontal Switcher Unfilled</Label>
         <section className="m-xl flex flex-row justify-center">
-            <Branding.LogoMumbleHorizontalSwitcherUnfilled
-                className="bg-primary-700"
-                sizeWidth="241"
-                sizeHeight="128"
-            />
+            <div className="rounded-m bg-primary-700 p-m">
+                <Branding.LogoMumbleHorizontalSwitcherUnfilled sizeWidth="241" sizeHeight="128" />
+            </div>
         </section>
 
         <Label size={LabelSize.L}>Vertical Gradient</Label>

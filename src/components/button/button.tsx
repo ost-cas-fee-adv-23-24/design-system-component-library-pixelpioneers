@@ -5,7 +5,6 @@ import { Variant } from '../../utlis';
 import { BaseButton } from '../../base/base-button/base-button';
 import { Label, LabelSize, LabelType } from '../typography';
 import { IconSize } from '../../elements';
-import React from 'react';
 
 export const Button: FC<ButtonProps> = forwardRef(
     ({ variant = Variant.PRIMARY, size, label, Icon, onClick, className, ...props }, ref) => {
@@ -24,6 +23,7 @@ export const Button: FC<ButtonProps> = forwardRef(
                 l: `${label ? 'rounded-s px-m py-s' : 'rounded-full p-s'} gap-base`,
             }[size],
             'transition-all duration-350 ease-in-out active:duration-300',
+            'disabled:bg-secondary-400',
             className,
         );
 
