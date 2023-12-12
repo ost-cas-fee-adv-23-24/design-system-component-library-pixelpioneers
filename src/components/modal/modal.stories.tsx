@@ -15,6 +15,10 @@ const meta: Meta<typeof Modal> = {
     component: Modal,
     parameters: {
         layout: 'centered',
+        design: {
+            type: 'figma',
+            url: 'https://www.figma.com/file/nsXR2h0KwciWpuwKRD58FX/Mumble?node-id=413%3A288&mode=dev',
+        },
     },
     tags: ['autodocs'],
     argTypes: {
@@ -63,7 +67,6 @@ export const Default: Story = {
     args: {
         title: 'Einstellungen',
         size: WidthModal.S,
-        className: 'w-full flex-row gap-l',
         children: <div>Modal Content</div>,
     },
 };
@@ -73,7 +76,6 @@ export const DefaultModalMedium: Story = {
     args: {
         title: 'Einstellungen',
         size: WidthModal.M,
-        className: 'w-full flex-row gap-l',
         children: <div>Modal Content</div>,
     },
 };
