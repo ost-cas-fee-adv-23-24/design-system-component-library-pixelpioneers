@@ -10,7 +10,7 @@ export const BaseButton: FC<BaseButtonProps> = forwardRef<HTMLButtonElement, Bas
                 'flex h-fit justify-center',
                 fill ? 'w-full' : 'w-fit',
                 className,
-                'disabled:cursor-not-allowed disabled:bg-secondary-400',
+                'disabled:cursor-not-allowed',
             )}
             ref={ref}
             {...props}
