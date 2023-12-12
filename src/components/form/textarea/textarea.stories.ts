@@ -29,13 +29,6 @@ export const DefaultText: Story = {
 export const DefaultInitialTextValue: Story = {
     name: 'Textarea with any value',
     args: {
-        value: 'Ich heisse André und wohne in Wädenswil',
-    },
-};
-
-export const TextareaWithLabel: Story = {
-    name: 'Textarea with label',
-    args: {
-        value: '',
+        defaultValue: 'Ich heisse André und wohne in Wädenswil',
     },
 };
