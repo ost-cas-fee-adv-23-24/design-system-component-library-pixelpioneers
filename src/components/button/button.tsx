@@ -1,11 +1,10 @@
-import { FC, forwardRef } from 'react';
+import React, { FC, forwardRef } from 'react';
 import clsx from 'clsx';
 import { ButtonProps } from './types';
 import { Variant } from '../../utlis';
 import { BaseButton } from '../../base/base-button/base-button';
 import { Label, LabelSize, LabelType } from '../typography';
 import { IconSize } from '../../elements';
-import React from 'react';
 
 export const Button: FC<ButtonProps> = forwardRef(
     ({ variant = Variant.PRIMARY, size, label, Icon, onClick, className, ...props }, ref) => {
