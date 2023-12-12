@@ -1,4 +1,4 @@
-import React, { FC, forwardRef } from 'react';
+import { FC, forwardRef } from 'react';
 import clsx from 'clsx';
 import { ButtonProps } from './types';
 import { Variant } from '../../utlis';
