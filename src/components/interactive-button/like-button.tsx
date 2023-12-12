@@ -65,6 +65,7 @@ export const LikeButton: FC<LikeButtonProps> = ({
                 }
             }}
             name={name}
+            aria-pressed={isLikedNow}
             {...props}
         >
             {isLikedNow ? (
