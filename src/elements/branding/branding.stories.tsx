@@ -21,7 +21,7 @@ export default meta;
 
 const render: Story['render'] = () => (
     <div className="flow flow-row justify-center text-center">
-        <Heading size={HeadingSize.H1}>Branding</Heading>
+        <Heading headingLevel={HeadingSize.H1}>Branding</Heading>
         <Label size={LabelSize.L}>Vertical</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleVertical sizeWidth="247" sizeHeight="128" />
