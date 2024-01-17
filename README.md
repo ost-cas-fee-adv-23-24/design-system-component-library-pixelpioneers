@@ -96,6 +96,8 @@ npm pack
 
 In Next.js:
 
+This can be used instead via NPM for checking or whatever too.
+
 ```sh
 npm i -D @ost-cas-fee-adv-23-24/design-system-pixelpioneers@0.0.0-development
 ```
