@@ -14,7 +14,7 @@ const meta: Meta<typeof Heading> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        size: HeadingSize,
+        headingLevel: HeadingSize,
     },
     args: {
         className: 'text-secondary-600',
@@ -26,28 +26,28 @@ type Story = StoryObj<typeof Heading>;
 
 export const Heading1: Story = {
     args: {
-        size: HeadingSize.H1,
+        headingLevel: HeadingSize.H1,
         children: 'Heading 1',
     },
 };
 
 export const Heading2: Story = {
     args: {
-        size: HeadingSize.H2,
+        headingLevel: HeadingSize.H2,
         children: 'Heading 2',
     },
 };
 
 export const Heading3: Story = {
     args: {
-        size: HeadingSize.H3,
+        headingLevel: HeadingSize.H3,
         children: 'Heading 3',
     },
 };
 
 export const Heading4: Story = {
     args: {
-        size: HeadingSize.H4,
+        headingLevel: HeadingSize.H4,
         children: 'Heading 4',
     },
 };
@@ -55,7 +55,7 @@ export const Heading4: Story = {
 export const Heading1Crazy: Story = {
     name: 'Heading in Gradient',
     args: {
-        size: HeadingSize.H1,
+        headingLevel: HeadingSize.H1,
         children: 'Heading as Crazy',
         className:
             'text-transparent bg-clip-text bg-gradient-to-r from-tertiary-500 to-primary-500',

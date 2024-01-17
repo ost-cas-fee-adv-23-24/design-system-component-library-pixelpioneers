@@ -64,7 +64,10 @@ export const Modal: FC<ModalProps> = ({
                         >
                             <Dialog.Panel className={dialogPanelClasses}>
                                 <header className={headerClasses}>
-                                    <Heading size={HeadingSize.H3} className="grow text-white">
+                                    <Heading
+                                        headingLevel={HeadingSize.H3}
+                                        className="grow text-white"
+                                    >
                                         {title}
                                     </Heading>
                                     <button

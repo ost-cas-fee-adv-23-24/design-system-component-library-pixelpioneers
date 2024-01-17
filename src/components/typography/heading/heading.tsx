@@ -1,38 +1,52 @@
 import clsx from 'clsx';
 import { HeadingProps, HeadingSize } from './types';
-import { FC } from 'react';
+import { FC, HTMLAttributes, createElement } from 'react';
 
 export const Heading: FC<HeadingProps> = ({
     children,
-    size,
+    headingLevel,
     className = 'text-inherit',
     ...props
 }) => {
+    const HeadingElement = ({ ...args }: HTMLAttributes<HTMLHeadingElement>) =>
+        createElement(headingLevel, args, children);
     const fontClasses = 'font-default leading-s';
-    switch (size) {
+    switch (headingLevel) {
         case HeadingSize.H1:
             return (
-                <h1 className={clsx(fontClasses, 'text-4xl font-bold', className)} {...props}>
+                <HeadingElement
+                    className={clsx(fontClasses, 'text-4xl font-bold', className)}
+                    {...props}
+                >
                     {children}
-                </h1>
+                </HeadingElement>
             );
         case HeadingSize.H2:
             return (
-                <h2 className={clsx(fontClasses, 'text-3xl font-bold', className)} {...props}>
+                <HeadingElement
+                    className={clsx(fontClasses, 'text-3xl font-bold', className)}
+                    {...props}
+                >
                     {children}
-                </h2>
+                </HeadingElement>
             );
         case HeadingSize.H3:
             return (
-                <h3 className={clsx(fontClasses, 'text-2xl font-semibold', className)} {...props}>
+                <HeadingElement
+                    className={clsx(fontClasses, 'text-2xl font-semibold', className)}
+                    {...props}
+                >
                     {children}
-                </h3>
+                </HeadingElement>
             );
         case HeadingSize.H4:
             return (
-                <h4 className={clsx(fontClasses, 'text-xl font-semibold', className)} {...props}>
+                <HeadingElement
+                    className={clsx(fontClasses, 'text-xl font-semibold', className)}
+                    {...props}
+                >
                     {children}
-                </h4>
+                </HeadingElement>
             );
         default:
             return <></>;
