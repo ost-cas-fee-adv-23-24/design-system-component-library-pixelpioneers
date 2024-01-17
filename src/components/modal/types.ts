@@ -3,7 +3,7 @@ import { ReactNode } from 'react';
 export interface ModalProps {
     isOpen: boolean;
     title: string;
-    size: WidthModal;
+    size: ModalWidth;
     onSubmit: () => void;
     onCancel: () => void;
     labelSubmit: string;
@@ -12,7 +12,7 @@ export interface ModalProps {
     className?: string;
 }
 
-export enum WidthModal {
+export enum ModalWidth {
     S = 's',
     M = 'm',
 }
