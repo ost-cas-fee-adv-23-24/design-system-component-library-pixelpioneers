@@ -42,7 +42,7 @@ export const LikeButton: FC<LikeButtonProps> = ({
         <BaseButton
             className={likeButtonClasses}
             onClick={(e) => {
-                onClick && onClick(e);
+                onClick?.(e);
                 if (!isLikedNow) {
                     /** if object is not liked, like it */
                     setState({
