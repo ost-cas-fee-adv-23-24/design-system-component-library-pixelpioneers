@@ -37,11 +37,12 @@ export type LikeButtonProps = Partial<InteractiveButtonProps<WordingExtended>> &
     amount?: number;
 };
 
-export type LikeState = {
+type LikeState = {
     actualAmount: number;
     isLikedNow: boolean;
     justLiked: boolean;
 };
+
 export const defaultLikeState = (amount: number, isLiked: boolean): LikeState => ({
     actualAmount: amount,
     isLikedNow: isLiked,
