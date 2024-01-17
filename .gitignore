@@ -9,7 +9,7 @@
 /coverage
 
 # npm pack (system design library)
-ost-cas-fee-adv-23-24-design-system-pixelpioneers-0.0.0-development.tgz
+*.tgz
 
 # production
 /build
