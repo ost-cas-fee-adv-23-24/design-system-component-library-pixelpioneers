@@ -17,22 +17,21 @@ export const FileUpload: FC<FileUploadProps> = ({
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
 
-    const [{ isDragIsOver, isValidFileSize, isValidFileType }, setState] =
+    const [{ isDragging, isValidFileSize, isValidFileType }, setState] =
         useState(defaultFileUploadState);
 
     const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        setState((prevState) => ({ ...prevState, isDragIsOver: true }));
+        setState((prevState) => ({ ...prevState, isDragging: true }));
     };
 
     const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        setState((prevState) => ({ ...prevState, isDragIsOver: false }));
+        setState((prevState) => ({ ...prevState, isDragging: false }));
     };
 
     const handleDrop = (event: DragEvent<HTMLDivElement>) => {
-        event.preventDefault();
-        setState((prevState) => ({ ...prevState, isDragIsOver: false }));
+        handleDragLeave(event);
 
         // Fetch the file and check the validation
         const droppedFile = event.dataTransfer.files[0];
@@ -40,7 +39,7 @@ export const FileUpload: FC<FileUploadProps> = ({
         droppedFile && checkFileSize(droppedFile.size);
 
         if (droppedFile && isValidFileType && isValidFileSize) {
-            onLoadFile && onLoadFile(droppedFile);
+            onLoadFile?.(droppedFile);
         }
 
         // Use FileReader to read file content
@@ -67,14 +66,12 @@ export const FileUpload: FC<FileUploadProps> = ({
         event.target.files && checkFileSize(event.target.files[0].size);
 
         if (event.target.files && event.target.files[0] && isValidFileType && isValidFileSize) {
-            onLoadFile && onLoadFile(event.target.files[0]);
+            onLoadFile?.(event.target.files[0]);
         }
     };
 
     const checkFileType = (type: string): void => {
-        if (type === 'image/png') {
-            setState((prevState) => ({ ...prevState, isValidFileType: true }));
-        } else if (type === 'image/jpeg') {
+        if (type === 'image/png' || type === 'image/jpeg') {
             setState((prevState) => ({ ...prevState, isValidFileType: true }));
         } else {
             setState((prevState) => ({ ...prevState, isValidFileType: false }));
@@ -102,7 +99,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'rounded-[12px]',
                     'border-2 border-dashed border-secondary-200',
                     'w-fit',
-                    isDragIsOver ? 'bg-secondary-200' : 'bg-secondary-100',
+                    isDragging ? 'bg-secondary-200' : 'bg-secondary-100',
                 )}
                 onDragOver={handleDragOver}
                 onDragLeave={handleDragLeave}

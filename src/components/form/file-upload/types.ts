@@ -11,14 +11,14 @@ export type FileUploadProps = {
     ref?: Ref<HTMLInputElement>;
 };
 
-export type FileUploadState = {
-    isDragIsOver: boolean;
+type FileUploadState = {
+    isDragging: boolean;
     isValidFileSize: boolean;
     isValidFileType: boolean;
 };
 
 export const defaultFileUploadState: FileUploadState = {
-    isDragIsOver: false,
+    isDragging: false,
     isValidFileSize: true,
     isValidFileType: true,
 };
