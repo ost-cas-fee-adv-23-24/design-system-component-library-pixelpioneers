@@ -46,16 +46,13 @@ export const FileUpload: FC<FileUploadProps> = ({
         // Use FileReader to read file content
         const reader = new FileReader();
 
-        reader.onloadend = () => {
-            console.log(reader.result);
-        };
+        reader.onloadend = () => {};
 
         reader.onerror = () => {
             console.error('There was an issue reading the file.');
         };
 
         reader.readAsDataURL(droppedFile);
-        console.log('reader', reader);
     };
 
     // Fire the input when the Button is clicked
