@@ -1,32 +1,29 @@
 import clsx from 'clsx';
-import { HeadingProps, HeadingSize } from './types';
+import { HeadingProps, HeadingLevel } from './types';
 import { FC, HTMLAttributes, createElement } from 'react';
 
 export const Heading: FC<HeadingProps> = ({
     children,
-    headingLevel,
+    variant = HeadingLevel.H1,
     className = 'text-inherit',
     ...props
 }) => {
-    if (headingLevel && headingLevel === HeadingSize.H1) {
-        className = clsx(className, 'text-4xl font-bold');
-    } else if (headingLevel && headingLevel === HeadingSize.H2) {
-        className = clsx(className, 'text-3xl font-bold');
-    } else if (headingLevel && headingLevel === HeadingSize.H3) {
-        className = clsx(className, 'text-2xl font-bold');
-    } else if (headingLevel && headingLevel === HeadingSize.H4) {
-        className = clsx(className, 'text-xl font-semibold');
-    } else {
-        className = clsx(className, '');
-    }
+    const headingClasses = clsx(
+        className,
+        `font-default leading-s`,
+        {
+            h1: `text-4xl font-bold`,
+            h2: `text-3xl font-bold`,
+            h3: `text-2xl font-semibold`,
+            h4: `text-xl font-semibold`,
+        }[variant],
+    );
 
     const HeadingElement = ({ ...args }: HTMLAttributes<HTMLHeadingElement>) =>
-        createElement(headingLevel, args, children);
-    const fontClasses = 'font-default leading-s';
+        createElement(variant, args, children);
 
-    // eslint-disable-next-line react/forbid-component-props -- HeadingElement is a html element and not a component.
     return (
-        <HeadingElement className={clsx(fontClasses, className)} {...props}>
+        <HeadingElement className={headingClasses} {...props}>
             {children}
         </HeadingElement>
     );
