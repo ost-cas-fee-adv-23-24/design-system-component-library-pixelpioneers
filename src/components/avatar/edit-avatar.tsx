@@ -4,9 +4,9 @@ import { Avatar } from './avatar';
 import { IconEdit } from '../../elements';
 import { IconOnlyButton } from '../icon-only-button';
 
-export const EditAvatar: FC<EditAvatarProps> = ({ src, className, alt = 'avatar', onEdit }) => (
+export const EditAvatar: FC<EditAvatarProps> = ({ src, alt = 'avatar', onEdit }) => (
     <div className="relative h-fit w-fit">
-        <Avatar src={src} alt={alt} size={AvatarSize.XL} className={className} />
+        <Avatar src={src} alt={alt} size={AvatarSize.XL} />
         <IconOnlyButton
             id={`edit-${alt}`}
             name={`edit-${alt}`}

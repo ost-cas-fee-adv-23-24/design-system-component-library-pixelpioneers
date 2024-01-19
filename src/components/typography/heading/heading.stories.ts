@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Heading } from './heading';
-import { HeadingSize } from './types';
+import { HeadingLevel } from './types';
 
 const meta: Meta<typeof Heading> = {
     title: 'Components/Typography/Heading',
@@ -14,7 +14,7 @@ const meta: Meta<typeof Heading> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        size: HeadingSize,
+        variant: HeadingLevel,
     },
     args: {
         className: 'text-secondary-600',
@@ -26,28 +26,28 @@ type Story = StoryObj<typeof Heading>;
 
 export const Heading1: Story = {
     args: {
-        size: HeadingSize.H1,
+        variant: HeadingLevel.H1,
         children: 'Heading 1',
     },
 };
 
 export const Heading2: Story = {
     args: {
-        size: HeadingSize.H2,
+        variant: HeadingLevel.H2,
         children: 'Heading 2',
     },
 };
 
 export const Heading3: Story = {
     args: {
-        size: HeadingSize.H3,
+        variant: HeadingLevel.H3,
         children: 'Heading 3',
     },
 };
 
 export const Heading4: Story = {
     args: {
-        size: HeadingSize.H4,
+        variant: HeadingLevel.H4,
         children: 'Heading 4',
     },
 };
@@ -55,7 +55,7 @@ export const Heading4: Story = {
 export const Heading1Crazy: Story = {
     name: 'Heading in Gradient',
     args: {
-        size: HeadingSize.H1,
+        variant: HeadingLevel.H1,
         children: 'Heading as Crazy',
         className:
             'text-transparent bg-clip-text bg-gradient-to-r from-tertiary-500 to-primary-500',

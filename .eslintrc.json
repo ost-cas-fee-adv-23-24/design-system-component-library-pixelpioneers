@@ -13,7 +13,13 @@
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "react/jsx-uses-react": "error",
-    "react/jsx-uses-vars": "error"
+    "react/jsx-uses-vars": "error",
+    "no-console": [
+      "warn",
+      {
+        "allow": ["clear", "info", "error"]
+      }
+    ]
   },
   "settings": {
     "react": {

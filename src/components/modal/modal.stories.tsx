@@ -5,7 +5,7 @@ import { Button } from '../button/button';
 import { ButtonSize } from '../button/types';
 import { Variant } from '../../utlis/types';
 import { IconEye, IconMumble, IconUpload } from '../../elements';
-import { WidthModal } from './types';
+import { ModalWidth } from './types';
 import { FileUpload } from '../form/file-upload/file-upload';
 import { Label, LabelSize } from '../typography';
 import { Input, InputType } from '../form';
@@ -22,13 +22,13 @@ const meta: Meta<typeof Modal> = {
     },
     tags: ['autodocs'],
     argTypes: {
-        size: WidthModal,
+        size: ModalWidth,
     },
     args: {
         labelSubmit: 'Save',
         labelCancel: 'Cancel',
         isOpen: false,
-        size: WidthModal.M,
+        size: ModalWidth.M,
         title: 'Einstellungen',
     },
 };
@@ -66,7 +66,7 @@ export const Default: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
-        size: WidthModal.S,
+        size: ModalWidth.S,
         children: <div>Modal Content</div>,
     },
 };
@@ -75,7 +75,7 @@ export const DefaultModalMedium: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
-        size: WidthModal.M,
+        size: ModalWidth.M,
         children: <div>Modal Content</div>,
     },
 };
@@ -84,7 +84,7 @@ export const ModalFileUpload: Story = {
     render: Template,
     args: {
         title: 'Bild hochladen',
-        size: WidthModal.M,
+        size: ModalWidth.M,
         labelCancel: 'Abbrechen',
         labelSubmit: 'Speichern',
         children: (
@@ -103,7 +103,7 @@ export const ModalSettings: Story = {
     render: Template,
     args: {
         title: 'Einstellungen',
-        size: WidthModal.M,
+        size: ModalWidth.M,
         labelCancel: 'Abbrechen',
         labelSubmit: 'Speichern',
         children: (

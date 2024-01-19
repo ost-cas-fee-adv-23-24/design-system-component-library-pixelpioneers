@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import * as Branding from './branding';
-import { Heading, HeadingSize, Label, LabelSize, LabelType } from '../../components';
+import { Heading, HeadingLevel, Label, LabelSize, LabelType } from '../../components';
 
 type Story = StoryObj<typeof Branding.LogoMumbleHorizontal>;
 
@@ -21,7 +21,7 @@ export default meta;
 
 const render: Story['render'] = () => (
     <div className="flow flow-row justify-center text-center">
-        <Heading size={HeadingSize.H1}>Branding</Heading>
+        <Heading variant={HeadingLevel.H1}>Branding</Heading>
         <Label size={LabelSize.L}>Vertical</Label>
         <section className="m-xl flex flex-row justify-center">
             <Branding.LogoMumbleVertical sizeWidth="247" sizeHeight="128" />

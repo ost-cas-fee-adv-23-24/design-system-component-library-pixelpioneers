@@ -1,7 +1,6 @@
 {
   "name": "@ost-cas-fee-adv-23-24/design-system-pixelpioneers",
   "version": "0.0.0-development",
-  "private": false,
   "description": "Design System Component Library PixelPioneers",
   "keywords": [
     "Frontend Engineering Advanced 2023 / 2024",

@@ -4,7 +4,7 @@ import { Dialog, Transition } from '@headlessui/react';
 import { Variant } from '../../utlis';
 import { Button, ButtonSize } from '../button';
 import { IconCancel, IconCheckmark, IconSize } from '../../elements';
-import { Heading, HeadingSize } from '../typography';
+import { Heading, HeadingLevel } from '../typography';
 import clsx from 'clsx';
 
 export const Modal: FC<ModalProps> = ({
@@ -64,7 +64,7 @@ export const Modal: FC<ModalProps> = ({
                         >
                             <Dialog.Panel className={dialogPanelClasses}>
                                 <header className={headerClasses}>
-                                    <Heading size={HeadingSize.H3} className="grow text-white">
+                                    <Heading variant={HeadingLevel.H3} className="grow text-white">
                                         {title}
                                     </Heading>
                                     <button

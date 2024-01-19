@@ -1,10 +1,10 @@
 import { HTMLAttributes } from 'react';
 
 export type HeadingProps = HTMLAttributes<HTMLHeadingElement> & {
-    size: HeadingSize;
+    variant: HeadingLevel;
 };
 
-export enum HeadingSize {
+export enum HeadingLevel {
     H1 = 'h1',
     H2 = 'h2',
     H3 = 'h3',

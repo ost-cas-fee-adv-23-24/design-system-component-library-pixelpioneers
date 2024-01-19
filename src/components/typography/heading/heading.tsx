@@ -1,40 +1,30 @@
 import clsx from 'clsx';
-import { HeadingProps, HeadingSize } from './types';
-import { FC } from 'react';
+import { HeadingProps, HeadingLevel } from './types';
+import { FC, HTMLAttributes, createElement } from 'react';
 
 export const Heading: FC<HeadingProps> = ({
     children,
-    size,
+    variant = HeadingLevel.H1,
     className = 'text-inherit',
     ...props
 }) => {
-    const fontClasses = 'font-default leading-s';
-    switch (size) {
-        case HeadingSize.H1:
-            return (
-                <h1 className={clsx(fontClasses, 'text-4xl font-bold', className)} {...props}>
-                    {children}
-                </h1>
-            );
-        case HeadingSize.H2:
-            return (
-                <h2 className={clsx(fontClasses, 'text-3xl font-bold', className)} {...props}>
-                    {children}
-                </h2>
-            );
-        case HeadingSize.H3:
-            return (
-                <h3 className={clsx(fontClasses, 'text-2xl font-semibold', className)} {...props}>
-                    {children}
-                </h3>
-            );
-        case HeadingSize.H4:
-            return (
-                <h4 className={clsx(fontClasses, 'text-xl font-semibold', className)} {...props}>
-                    {children}
-                </h4>
-            );
-        default:
-            return <></>;
-    }
+    const headingClasses = clsx(
+        className,
+        `font-default leading-s`,
+        {
+            h1: `text-4xl font-bold`,
+            h2: `text-3xl font-bold`,
+            h3: `text-2xl font-semibold`,
+            h4: `text-xl font-semibold`,
+        }[variant],
+    );
+
+    const HeadingElement = ({ ...args }: HTMLAttributes<HTMLHeadingElement>) =>
+        createElement(variant, args, children);
+
+    return (
+        <HeadingElement className={headingClasses} {...props}>
+            {children}
+        </HeadingElement>
+    );
 };
