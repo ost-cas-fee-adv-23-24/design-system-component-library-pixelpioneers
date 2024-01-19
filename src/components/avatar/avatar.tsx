@@ -2,14 +2,13 @@ import clsx from 'clsx';
 import { FC } from 'react';
 import { AvatarProps, AvatarSize } from './types';
 
-export const Avatar: FC<AvatarProps> = ({ src, className, alt = 'avatar', size }) => {
+export const Avatar: FC<AvatarProps> = ({ src, alt = 'avatar', size }) => {
     const avatarBorderClasses = clsx(
         'flex items-center justify-center',
         'relative',
         'rounded-s',
         'group',
         'h-fit w-fit',
-        className,
     );
     const outlineClasses = 'outline outline-secondary-100 outline-[6px]';
     const avatarClasses = clsx(
