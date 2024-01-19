@@ -8,47 +8,26 @@ export const Heading: FC<HeadingProps> = ({
     className = 'text-inherit',
     ...props
 }) => {
+    if (headingLevel && headingLevel === HeadingSize.H1) {
+        className = clsx(className, 'text-4xl font-bold');
+    } else if (headingLevel && headingLevel === HeadingSize.H2) {
+        className = clsx(className, 'text-3xl font-bold');
+    } else if (headingLevel && headingLevel === HeadingSize.H3) {
+        className = clsx(className, 'text-2xl font-bold');
+    } else if (headingLevel && headingLevel === HeadingSize.H4) {
+        className = clsx(className, 'text-xl font-semibold');
+    } else {
+        className = clsx(className, '');
+    }
+
     const HeadingElement = ({ ...args }: HTMLAttributes<HTMLHeadingElement>) =>
         createElement(headingLevel, args, children);
     const fontClasses = 'font-default leading-s';
-    switch (headingLevel) {
-        case HeadingSize.H1:
-            return (
-                <HeadingElement
-                    className={clsx(fontClasses, 'text-4xl font-bold', className)}
-                    {...props}
-                >
-                    {children}
-                </HeadingElement>
-            );
-        case HeadingSize.H2:
-            return (
-                <HeadingElement
-                    className={clsx(fontClasses, 'text-3xl font-bold', className)}
-                    {...props}
-                >
-                    {children}
-                </HeadingElement>
-            );
-        case HeadingSize.H3:
-            return (
-                <HeadingElement
-                    className={clsx(fontClasses, 'text-2xl font-semibold', className)}
-                    {...props}
-                >
-                    {children}
-                </HeadingElement>
-            );
-        case HeadingSize.H4:
-            return (
-                <HeadingElement
-                    className={clsx(fontClasses, 'text-xl font-semibold', className)}
-                    {...props}
-                >
-                    {children}
-                </HeadingElement>
-            );
-        default:
-            return <></>;
-    }
+
+    // eslint-disable-next-line react/forbid-component-props -- HeadingElement is a html element and not a component.
+    return (
+        <HeadingElement className={clsx(fontClasses, className)} {...props}>
+            {children}
+        </HeadingElement>
+    );
 };
