@@ -1,3 +1,4 @@
+'use client';
 import { FC, Fragment } from 'react';
 import { ModalProps } from './types';
 import { Dialog, Transition } from '@headlessui/react';

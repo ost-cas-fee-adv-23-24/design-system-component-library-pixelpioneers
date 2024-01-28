@@ -1,3 +1,4 @@
+'use client';
 import { FC, useState } from 'react';
 import { defaultTabsState, TabsProps } from './types';
 import { motion } from 'framer-motion';

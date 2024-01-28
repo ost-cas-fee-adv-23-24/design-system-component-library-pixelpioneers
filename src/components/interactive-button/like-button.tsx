@@ -1,3 +1,4 @@
+'use client';
 import { FC, useState } from 'react';
 import { defaultLikeState, LikeButtonProps } from './types';
 import { IconHeart, IconHeartFilled, IconSize } from '../../elements';
