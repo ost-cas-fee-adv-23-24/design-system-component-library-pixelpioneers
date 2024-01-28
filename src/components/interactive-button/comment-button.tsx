@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 import { CommentButtonProps } from './types';
 import { IconReply, IconReplyFilled, IconSize } from '../../elements';

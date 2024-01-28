@@ -1,3 +1,4 @@
+'use client';
 import { Button, ButtonSize } from '../button';
 import { Variant } from '../../utlis';
 import { FC, forwardRef } from 'react';
