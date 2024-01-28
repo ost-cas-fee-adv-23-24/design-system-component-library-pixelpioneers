@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 import { NaviButtonProps } from './types';
 import clsx from 'clsx';

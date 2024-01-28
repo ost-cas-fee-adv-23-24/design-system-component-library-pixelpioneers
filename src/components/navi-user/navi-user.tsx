@@ -1,3 +1,4 @@
+'use client';
 import { FC } from 'react';
 import { NaviUserProps } from './types';
 import { BaseButton } from '../../base/base-button/base-button';

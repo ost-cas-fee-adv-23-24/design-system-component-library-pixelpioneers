@@ -1,3 +1,4 @@
+'use client';
 import React, { FC } from 'react';
 import { IconLinkProps } from './types';
 import clsx from 'clsx';
