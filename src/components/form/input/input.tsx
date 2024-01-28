@@ -1,3 +1,4 @@
+'use client';
 import { FC, forwardRef, useState } from 'react';
 import { InputProps, InputType } from './types';
 import { Label, LabelSize } from '../../typography';

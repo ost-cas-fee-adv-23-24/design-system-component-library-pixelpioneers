@@ -1,3 +1,4 @@
+'use client';
 import { FC, useEffect, useState } from 'react';
 import { ShareButtonProps } from './types';
 import { useCopyToClipboard } from 'react-use';

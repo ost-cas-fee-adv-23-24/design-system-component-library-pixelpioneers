@@ -1,3 +1,4 @@
+'use client';
 import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { defaultFileUploadState, FileUploadProps } from './types';
 import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
