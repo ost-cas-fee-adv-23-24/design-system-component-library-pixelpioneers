@@ -8,7 +8,6 @@ import { IconSize } from '../../elements';
 
 export const NaviButton: FC<NaviButtonProps> = ({
     onClick,
-    className,
     Icon,
     label,
     name = 'navi-button',
@@ -21,7 +20,7 @@ export const NaviButton: FC<NaviButtonProps> = ({
         'group rounded-s',
         'group-hover:bg-primary-700',
         'transition-all duration-300 ease-in-out',
-        className,
+        'bg-primary-600 text-white hover:bg-primary-700',
     );
     const iconClasses = 'self-center fill-white';
 

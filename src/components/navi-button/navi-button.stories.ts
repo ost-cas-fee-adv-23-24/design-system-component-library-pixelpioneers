@@ -25,7 +25,6 @@ type Story = StoryObj<typeof NaviButton>;
 export const DefaultNaviButtonLogout: Story = {
     name: 'NaviButton Icon Logout',
     args: {
-        className: 'bg-primary-600 hover:bg-primary-700 text-white',
         label: 'Logout',
         Icon: IconLogoutAnimated,
     },
@@ -34,7 +33,6 @@ export const DefaultNaviButtonLogout: Story = {
 export const DefaultNaviButtonSettings: Story = {
     name: 'NaviButton Icon Settings',
     args: {
-        className: 'bg-primary-600 hover:bg-primary-700 text-white',
         label: 'Settings',
         Icon: IconSettingsAnimated,
     },
@@ -43,7 +41,6 @@ export const DefaultNaviButtonSettings: Story = {
 export const DefaultNaviButton: Story = {
     name: 'NaviButton Default',
     args: {
-        className: 'bg-primary-600 hover:bg-primary-700 text-white',
         label: 'Label',
         Icon: IconMumble,
     },
