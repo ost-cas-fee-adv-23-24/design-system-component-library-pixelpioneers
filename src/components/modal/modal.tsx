@@ -46,7 +46,7 @@ export const Modal: FC<ModalProps> = ({
                     leaveTo="opacity-0"
                 >
                     <div
-                        role="backgrop"
+                        role="backdrop"
                         className="fixed inset-0 bg-primary-600/40"
                         aria-hidden="true"
                     />
