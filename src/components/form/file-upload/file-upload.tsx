@@ -38,6 +38,7 @@ export const FileUpload: FC<FileUploadProps> = ({
 
         // Fetch the file and check the validation
         const droppedFile = event.dataTransfer.files[0];
+
         droppedFile && checkFileType(droppedFile.type);
         droppedFile && checkFileSize(droppedFile.size);
 
@@ -48,7 +49,10 @@ export const FileUpload: FC<FileUploadProps> = ({
         // Use FileReader to read file content
         const reader = new FileReader();
 
-        reader.onloadend = () => {};
+        // Show preview image
+        reader.onloadend = () => {
+            setIsImage(reader.result as string);
+        };
 
         reader.onerror = () => {
             console.error('There was an issue reading the file.');
@@ -111,7 +115,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'items-center',
                     'h-[194px]',
                     'w-full',
-                    'p-xs',
+                    isImage ? 'p-0' : 'p-xs',
                     'text-white',
                     'rounded-[12px]',
                     'border-2 border-dashed border-secondary-200',
@@ -157,7 +161,10 @@ export const FileUpload: FC<FileUploadProps> = ({
                 )}
                 {isImage && (
                     <section className="relative flex h-auto w-full flex-row justify-center">
-                        <img className="h-[194px] rounded-s" src={isImage} />
+                        <img
+                            className="rounded-s object-cover md:h-[194px] md:w-[430px]"
+                            src={isImage}
+                        />
                     </section>
                 )}
             </section>

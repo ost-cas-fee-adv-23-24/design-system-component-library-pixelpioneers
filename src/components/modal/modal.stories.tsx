@@ -93,7 +93,7 @@ export const ModalFileUpload: Story = {
                 labelFileSize="JPEG oder PNG, maximal 50 MB"
                 labelButton="... oder Datei auswählen"
                 Icon={IconUpload}
-                maxFileSizeUpload={2000}
+                maxFileSizeUpload={52428800}
             />
         ),
     },
