@@ -6,7 +6,6 @@ import { IconOnlyButton } from '../icon-only-button';
 import clsx from 'clsx';
 
 export const EditAvatar: FC<EditAvatarProps> = ({ src, alt = 'avatar', onEdit, size }) => {
-    console.info(size);
     const editIconSizeClasses = clsx(
         'absolute',
         size === AvatarEditSize.XL ? 'bottom-0 right-0' : 'bottom-[-10px] right-[-10px]',
