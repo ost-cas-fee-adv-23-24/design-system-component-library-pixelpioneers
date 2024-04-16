@@ -1,4 +1,5 @@
 'use client';
+
 import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
 import { defaultFileUploadState, FileUploadProps } from './types';
 import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
@@ -17,6 +18,7 @@ export const FileUpload: FC<FileUploadProps> = ({
 }) => {
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
+    const [isImage, setIsImage] = useState<string | null>();
 
     const [{ isDragging, isValidFileSize, isValidFileType }, setState] =
         useState(defaultFileUploadState);
@@ -36,6 +38,7 @@ export const FileUpload: FC<FileUploadProps> = ({
 
         // Fetch the file and check the validation
         const droppedFile = event.dataTransfer.files[0];
+
         droppedFile && checkFileType(droppedFile.type);
         droppedFile && checkFileSize(droppedFile.size);
 
@@ -46,7 +49,10 @@ export const FileUpload: FC<FileUploadProps> = ({
         // Use FileReader to read file content
         const reader = new FileReader();
 
-        reader.onloadend = () => {};
+        // Show preview image
+        reader.onloadend = () => {
+            setIsImage(reader.result as string);
+        };
 
         reader.onerror = () => {
             console.error('There was an issue reading the file.');
@@ -68,6 +74,20 @@ export const FileUpload: FC<FileUploadProps> = ({
 
         if (event.target.files && event.target.files[0] && isValidFileType && isValidFileSize) {
             onLoadFile?.(event.target.files[0]);
+
+            // Show image as preview
+            const previewImage = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onloadend = () => {
+                setIsImage(reader.result as string);
+            };
+
+            if (previewImage) {
+                reader.readAsDataURL(previewImage);
+            } else {
+                setIsImage(null);
+            }
         }
     };
 
@@ -95,7 +115,7 @@ export const FileUpload: FC<FileUploadProps> = ({
                     'items-center',
                     'h-[194px]',
                     'w-full',
-                    'p-xs',
+                    isImage ? 'p-0' : 'p-xs',
                     'text-white',
                     'rounded-[12px]',
                     'border-2 border-dashed border-secondary-200',
@@ -106,29 +126,47 @@ export const FileUpload: FC<FileUploadProps> = ({
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
             >
-                <IconUpload
-                    size={IconSize.L}
-                    className={`mb-xs ${
-                        isValidFileType && isValidFileSize ? 'fill-secondary-500' : 'fill-error'
-                    }`}
-                />
-                <Label
-                    htmlFor={fileInputId}
-                    size={LabelSize.XL}
-                    className={`mb-xs ${
-                        isValidFileType && isValidFileSize ? 'text-secondary-500' : 'text-error'
-                    }`}
-                >
-                    {label}
-                </Label>
-                <Paragraph
-                    size={ParagraphSize.M}
-                    className={
-                        isValidFileType && isValidFileSize ? 'text-secondary-400' : 'text-error'
-                    }
-                >
-                    {labelFileSize}
-                </Paragraph>
+                {!isImage && (
+                    <>
+                        <IconUpload
+                            size={IconSize.L}
+                            className={`mb-xs ${
+                                isValidFileType && isValidFileSize
+                                    ? 'fill-secondary-500'
+                                    : 'fill-error'
+                            }`}
+                        />
+                        <Label
+                            htmlFor={fileInputId}
+                            size={LabelSize.XL}
+                            className={`mb-xs ${
+                                isValidFileType && isValidFileSize
+                                    ? 'text-secondary-500'
+                                    : 'text-error'
+                            }`}
+                        >
+                            {label}
+                        </Label>
+                        <Paragraph
+                            size={ParagraphSize.M}
+                            className={
+                                isValidFileType && isValidFileSize
+                                    ? 'text-secondary-400'
+                                    : 'text-error'
+                            }
+                        >
+                            {labelFileSize}
+                        </Paragraph>
+                    </>
+                )}
+                {isImage && (
+                    <section className="relative flex h-auto w-full flex-row justify-center">
+                        <img
+                            className="rounded-s object-cover md:h-[194px] md:w-[430px]"
+                            src={isImage}
+                        />
+                    </section>
+                )}
             </section>
             <input
                 className="hidden"

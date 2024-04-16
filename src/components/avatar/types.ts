@@ -1,14 +1,19 @@
 export type AvatarProps = {
     src?: string;
     alt?: string;
-    size: AvatarSize;
+    size: AvatarSize | AvatarEditSize;
 };
 
-export type EditAvatarProps = Omit<AvatarProps, 'size'> & { onEdit: () => void };
+export type EditAvatarProps = AvatarProps & { onEdit: () => void };
 
 export enum AvatarSize {
     S = 's',
     M = 'm',
+    L = 'l',
+    XL = 'xl',
+}
+
+export enum AvatarEditSize {
     L = 'l',
     XL = 'xl',
 }
