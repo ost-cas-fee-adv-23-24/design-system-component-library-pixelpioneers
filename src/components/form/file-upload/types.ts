@@ -10,15 +10,3 @@ export type FileUploadProps = {
     maxFileSizeUpload: number;
     ref?: Ref<HTMLInputElement>;
 };
-
-type FileUploadState = {
-    isDragging: boolean;
-    isValidFileSize: boolean;
-    isValidFileType: boolean;
-};
-
-export const defaultFileUploadState: FileUploadState = {
-    isDragging: false,
-    isValidFileSize: true,
-    isValidFileType: true,
-};

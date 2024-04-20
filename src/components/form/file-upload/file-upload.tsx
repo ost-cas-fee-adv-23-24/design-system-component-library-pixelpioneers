@@ -1,7 +1,7 @@
 'use client';
 
-import { ChangeEvent, DragEvent, FC, useId, useRef, useState } from 'react';
-import { defaultFileUploadState, FileUploadProps } from './types';
+import { ChangeEvent, DragEvent, FC, useCallback, useId, useRef, useState } from 'react';
+import { FileUploadProps } from './types';
 import { Label, LabelSize, Paragraph, ParagraphSize } from '../../typography';
 import clsx from 'clsx';
 import { IconSize, IconUpload } from '../../../elements';
@@ -18,91 +18,79 @@ export const FileUpload: FC<FileUploadProps> = ({
 }) => {
     const fileInputId = useId();
     const inputReference = useRef<HTMLInputElement>(null);
-    const [isImage, setIsImage] = useState<string | null>();
+    const [isImage, setIsImage] = useState<string | undefined>(undefined);
+    const [isPreviewImage, setIsPreviewImage] = useState<File | undefined>(undefined);
+    const [isValid, setIsValid] = useState<boolean | undefined>(true);
+    const [isDragging, setIsDragging] = useState<boolean>(false);
 
-    const [{ isDragging, isValidFileSize, isValidFileType }, setState] =
-        useState(defaultFileUploadState);
+    const validateFile = useCallback(
+        (file: File): boolean => {
+            const isValidType = ['image/png', 'image/jpeg'].includes(file.type);
+            const isValidSize = file.size <= maxFileSizeUpload;
+            return isValidType && isValidSize;
+        },
+        [maxFileSizeUpload],
+    );
 
-    const handleDragOver = (event: DragEvent<HTMLDivElement>) => {
+    const handleDragOver = (event: DragEvent<HTMLDivElement>): boolean => {
         event.preventDefault();
-        setState((prevState) => ({ ...prevState, isDragging: true }));
+        setIsDragging(true);
+        return true;
     };
 
     const handleDragLeave = (event: DragEvent<HTMLDivElement>) => {
         event.preventDefault();
-        setState((prevState) => ({ ...prevState, isDragging: false }));
+        setIsDragging(false);
+        return false;
     };
 
-    const handleDrop = (event: DragEvent<HTMLDivElement>) => {
-        handleDragLeave(event);
+    const handleDrop = useCallback(
+        (event: DragEvent<HTMLDivElement>) => {
+            handleDragLeave(event);
 
-        // Fetch the file and check the validation
-        const droppedFile = event.dataTransfer.files[0];
+            const droppedFile = event.dataTransfer.files[0];
+            if (droppedFile && validateFile(droppedFile)) {
+                onLoadFile?.(droppedFile);
+                setIsPreviewImage(droppedFile);
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setIsImage(reader.result as string);
+                };
+                reader.readAsDataURL(droppedFile);
+                setIsValid(true);
+            } else {
+                setIsPreviewImage(undefined);
+                setIsImage(undefined);
+                setIsValid(false);
+            }
+        },
+        [onLoadFile, validateFile],
+    );
 
-        droppedFile && checkFileType(droppedFile.type);
-        droppedFile && checkFileSize(droppedFile.size);
+    const handleChange = useCallback(
+        (event: ChangeEvent<HTMLInputElement>) => {
+            event.preventDefault();
+            const file = event.target.files?.[0];
+            if (file && validateFile(file)) {
+                onLoadFile?.(file);
+                setIsPreviewImage(file);
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    setIsImage(reader.result as string);
+                };
+                reader.readAsDataURL(file);
+                setIsValid(true);
+            } else {
+                setIsPreviewImage(undefined);
+                setIsImage(undefined);
+                setIsValid(false);
+            }
+        },
+        [onLoadFile, validateFile],
+    );
 
-        if (droppedFile && isValidFileType && isValidFileSize) {
-            onLoadFile?.(droppedFile);
-        }
-
-        // Use FileReader to read file content
-        const reader = new FileReader();
-
-        // Show preview image
-        reader.onloadend = () => {
-            setIsImage(reader.result as string);
-        };
-
-        reader.onerror = () => {
-            console.error('There was an issue reading the file.');
-        };
-
-        reader.readAsDataURL(droppedFile);
-    };
-
-    // Fire the input when the Button is clicked
     const onFileUpload = () => {
         inputReference.current?.click();
-    };
-
-    const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
-        event.preventDefault();
-
-        event.target.files && checkFileType(event.target.files[0].type);
-        event.target.files && checkFileSize(event.target.files[0].size);
-
-        if (event.target.files && event.target.files[0] && isValidFileType && isValidFileSize) {
-            onLoadFile?.(event.target.files[0]);
-
-            // Show image as preview
-            const previewImage = event.target.files[0];
-            const reader = new FileReader();
-
-            reader.onloadend = () => {
-                setIsImage(reader.result as string);
-            };
-
-            if (previewImage) {
-                reader.readAsDataURL(previewImage);
-            } else {
-                setIsImage(null);
-            }
-        }
-    };
-
-    const checkFileType = (type: string): void => {
-        if (type === 'image/png' || type === 'image/jpeg') {
-            setState((prevState) => ({ ...prevState, isValidFileType: true }));
-        } else {
-            setState((prevState) => ({ ...prevState, isValidFileType: false }));
-        }
-    };
-
-    const checkFileSize = (size: number): void => {
-        return size <= maxFileSizeUpload
-            ? setState((prevState) => ({ ...prevState, isValidFileSize: true }))
-            : setState((prevState) => ({ ...prevState, isValidFileSize: false }));
     };
 
     return (
@@ -126,40 +114,28 @@ export const FileUpload: FC<FileUploadProps> = ({
                 onDragLeave={handleDragLeave}
                 onDrop={handleDrop}
             >
-                {!isImage && (
+                {!isPreviewImage && (
                     <>
                         <IconUpload
                             size={IconSize.L}
-                            className={`mb-xs ${
-                                isValidFileType && isValidFileSize
-                                    ? 'fill-secondary-500'
-                                    : 'fill-error'
-                            }`}
+                            className={`mb-xs ${isValid ? 'fill-secondary-500' : 'fill-error'}`}
                         />
                         <Label
                             htmlFor={fileInputId}
                             size={LabelSize.XL}
-                            className={`mb-xs ${
-                                isValidFileType && isValidFileSize
-                                    ? 'text-secondary-500'
-                                    : 'text-error'
-                            }`}
+                            className={`mb-xs ${isValid ? 'text-secondary-500' : 'text-error'}`}
                         >
                             {label}
                         </Label>
                         <Paragraph
                             size={ParagraphSize.M}
-                            className={
-                                isValidFileType && isValidFileSize
-                                    ? 'text-secondary-400'
-                                    : 'text-error'
-                            }
+                            className={isValid ? 'text-secondary-400' : 'text-error'}
                         >
                             {labelFileSize}
                         </Paragraph>
                     </>
                 )}
-                {isImage && (
+                {isPreviewImage && (
                     <section className="relative flex h-auto w-full flex-row justify-center">
                         <img
                             className="rounded-s object-cover md:h-[194px] md:w-[430px]"
