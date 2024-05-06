@@ -1,6 +1,6 @@
 import clsx from 'clsx';
-import { HeadingProps, HeadingLevel } from './types';
-import { FC, HTMLAttributes, createElement } from 'react';
+import { HeadingLevel, HeadingProps } from './types';
+import { createElement, FC, HTMLAttributes } from 'react';
 
 export const Heading: FC<HeadingProps> = ({
     children,
@@ -10,7 +10,7 @@ export const Heading: FC<HeadingProps> = ({
 }) => {
     const headingClasses = clsx(
         className,
-        `font-default leading-s`,
+        `leading-s`,
         {
             h1: `text-4xl font-bold`,
             h2: `text-3xl font-bold`,
