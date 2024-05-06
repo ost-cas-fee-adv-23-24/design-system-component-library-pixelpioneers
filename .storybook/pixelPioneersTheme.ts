@@ -4,7 +4,7 @@ import logoUrl from '../public/logo.svg';
 export const pixelPioneersTheme = create({
     base: 'light',
     // Typography
-    fontBase: '"Open Sans", sans-serif',
+    fontBase: '"Poppins", sans-serif',
     fontCode: 'monospace',
 
     // Brand

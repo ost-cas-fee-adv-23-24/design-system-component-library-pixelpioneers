@@ -1,5 +1,5 @@
 'use client';
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { defaultLikeState, LikeButtonProps } from './types';
 import { IconHeart, IconHeartFilled, IconSize } from '../../elements';
 import clsx from 'clsx';
@@ -24,6 +24,10 @@ export const LikeButton: FC<LikeButtonProps> = ({
     const [{ actualAmount, isLikedNow, justLiked }, setState] = useState(
         defaultLikeState(amount, isLiked),
     );
+
+    useEffect(() => {
+        setState((prevState) => ({ ...prevState, isLikedNow: isLiked, actualAmount: amount }));
+    }, [isLiked, amount]);
 
     const hasAnyLike = actualAmount > 0;
     const computedLabel = justLiked ? label.pastParticiple : generateLabel(actualAmount, label);
