@@ -10,7 +10,7 @@ export const Paragraph: FC<ParagraphProps> = ({
 }) => (
     <p
         className={clsx(
-            'font-medium',
+            'break-words font-medium',
             {
                 m: 'text-base leading-m',
                 l: 'text-xl leading-l',

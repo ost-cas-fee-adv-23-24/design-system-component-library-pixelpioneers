@@ -10,7 +10,7 @@ export const Heading: FC<HeadingProps> = ({
 }) => {
     const headingClasses = clsx(
         className,
-        `leading-s`,
+        `break-words leading-s`,
         {
             h1: `text-4xl font-bold`,
             h2: `text-3xl font-bold`,
