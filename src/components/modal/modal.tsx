@@ -47,12 +47,12 @@ export const Modal: FC<ModalProps> = ({
                 >
                     <div
                         role="backdrop"
-                        className="fixed inset-0 bg-primary-600/40"
+                        className="fixed inset-0 z-20 bg-primary-600/40"
                         aria-hidden="true"
                     />
                 </Transition.Child>
 
-                <div className="p-4 fixed inset-0 flex w-screen items-center justify-center">
+                <div className="p-4 fixed inset-0 z-50 flex w-screen items-center justify-center">
                     <div className={modalWidth}>
                         <Transition.Child
                             as={Fragment}
