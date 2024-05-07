@@ -1,3 +1,5 @@
-import { TextareaHTMLAttributes } from 'react';
+import { Ref, TextareaHTMLAttributes } from 'react';
 
-export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement>;
+export type TextareaProps = TextareaHTMLAttributes<HTMLTextAreaElement> & {
+    ref?: Ref<HTMLTextAreaElement>;
+};
