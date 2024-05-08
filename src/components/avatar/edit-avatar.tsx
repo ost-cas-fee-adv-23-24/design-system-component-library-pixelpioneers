@@ -1,3 +1,5 @@
+'use client';
+
 import { FC } from 'react';
 import { AvatarEditSize, EditAvatarProps } from './types';
 import { Avatar } from './avatar';

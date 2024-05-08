@@ -18,6 +18,7 @@ export const Modal: FC<ModalProps> = ({
     labelSubmit,
     labelCancel,
     className,
+    submitButtonType,
 }) => {
     const modalWidth = clsx(
         'w-full',
@@ -47,12 +48,12 @@ export const Modal: FC<ModalProps> = ({
                 >
                     <div
                         role="backdrop"
-                        className="fixed inset-0 z-20 bg-primary-600/40"
+                        className="fixed inset-0 z-40 bg-primary-600/40"
                         aria-hidden="true"
                     />
                 </Transition.Child>
 
-                <div className="p-4 fixed inset-0 z-50 flex w-screen items-center justify-center">
+                <div className="p-4 fixed inset-0 z-50 flex w-full items-center justify-center">
                     <div className={modalWidth}>
                         <Transition.Child
                             as={Fragment}
@@ -93,6 +94,7 @@ export const Modal: FC<ModalProps> = ({
 
                                     <Button
                                         className={buttonClasses}
+                                        type={submitButtonType}
                                         onClick={onSubmit}
                                         name={'Save'}
                                         variant={Variant.PRIMARY}
