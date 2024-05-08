@@ -10,6 +10,7 @@ export interface ModalProps {
     labelCancel: string;
     children: ReactNode;
     className?: string;
+    submitButtonType?: 'submit' | 'reset' | 'button';
 }
 
 export enum ModalWidth {
