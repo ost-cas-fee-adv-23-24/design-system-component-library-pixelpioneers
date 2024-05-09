@@ -26,6 +26,7 @@ export const Modal: FC<ModalProps> = ({
         {
             s: 'md:max-w-[465px]',
             m: 'md:max-w-[494px]',
+            l: 'md:max-w-[1000px]',
         }[size],
     );
     const dialogPanelClasses = 'w-full rounded';
