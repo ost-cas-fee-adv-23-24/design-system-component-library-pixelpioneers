@@ -38,6 +38,7 @@ export const IconLink: FC<IconLinkProps> = ({
             onClick={onClick}
             className={clsx(buttonClasses, transitionClasses)}
             {...props}
+            suppressHydrationWarning
         >
             <Icon size={IconSize.S} className={'self-center'} />
             <Label type={LabelType.SPAN} size={LabelSize.S}>
