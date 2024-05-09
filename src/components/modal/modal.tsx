@@ -19,6 +19,7 @@ export const Modal: FC<ModalProps> = ({
     labelCancel,
     className,
     submitButtonType,
+    hideActions = false,
 }) => {
     const modalWidth = clsx(
         'w-full',
@@ -29,7 +30,11 @@ export const Modal: FC<ModalProps> = ({
     );
     const dialogPanelClasses = 'w-full rounded';
     const headerClasses = 'py-m px-l bg-primary-600 rounded-t-m flex';
-    const mainClasses = clsx('w-full justify-between bg-white p-l', className);
+    const mainClasses = clsx(
+        'w-full justify-between bg-white p-l',
+        hideActions ? 'rounded-b-m' : '',
+        className,
+    );
     const footerClasses =
         'flex w-full flex-row justify-between gap-m pt-0 p-l rounded-b-m bg-white';
     const buttonClasses = 'hover:cursor-pointer basis-1/2';
@@ -81,28 +86,30 @@ export const Modal: FC<ModalProps> = ({
 
                                 <main className={mainClasses}>{children}</main>
 
-                                <footer className={footerClasses}>
-                                    <Button
-                                        className={buttonClasses}
-                                        onClick={onCancel}
-                                        name={'Cancel'}
-                                        variant={Variant.SECONDARY}
-                                        size={ButtonSize.M}
-                                        Icon={IconCancel}
-                                        label={labelCancel}
-                                    />
+                                {!hideActions && (
+                                    <footer className={footerClasses}>
+                                        <Button
+                                            className={buttonClasses}
+                                            onClick={onCancel}
+                                            name={'Cancel'}
+                                            variant={Variant.SECONDARY}
+                                            size={ButtonSize.M}
+                                            Icon={IconCancel}
+                                            label={labelCancel}
+                                        />
 
-                                    <Button
-                                        className={buttonClasses}
-                                        type={submitButtonType}
-                                        onClick={onSubmit}
-                                        name={'Save'}
-                                        variant={Variant.PRIMARY}
-                                        size={ButtonSize.M}
-                                        Icon={IconCheckmark}
-                                        label={labelSubmit}
-                                    />
-                                </footer>
+                                        <Button
+                                            className={buttonClasses}
+                                            type={submitButtonType}
+                                            onClick={onSubmit}
+                                            name={'Save'}
+                                            variant={Variant.PRIMARY}
+                                            size={ButtonSize.M}
+                                            Icon={IconCheckmark}
+                                            label={labelSubmit}
+                                        />
+                                    </footer>
+                                )}
                             </Dialog.Panel>
                         </Transition.Child>
                     </div>

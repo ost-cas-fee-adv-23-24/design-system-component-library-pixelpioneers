@@ -30,6 +30,8 @@ const meta: Meta<typeof Modal> = {
         isOpen: false,
         size: ModalWidth.M,
         title: 'Einstellungen',
+        submitButtonType: undefined,
+        hideActions: false,
     },
 };
 

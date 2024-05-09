@@ -4,13 +4,14 @@ export interface ModalProps {
     isOpen: boolean;
     title: string;
     size: ModalWidth;
-    onSubmit: () => void;
+    onSubmit?: () => void;
     onCancel: () => void;
-    labelSubmit: string;
-    labelCancel: string;
+    labelSubmit?: string;
+    labelCancel?: string;
     children: ReactNode;
     className?: string;
     submitButtonType?: 'submit' | 'reset' | 'button';
+    hideActions?: boolean;
 }
 
 export enum ModalWidth {
