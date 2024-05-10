@@ -17,4 +17,5 @@ export interface ModalProps {
 export enum ModalWidth {
     S = 's',
     M = 'm',
+    L = 'l',
 }
