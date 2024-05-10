@@ -10,7 +10,7 @@ export const Label: FC<LabelProps> = ({
     ...props
 }) => {
     const labelClasses = clsx(
-        'wrap-label break-words font-semibold leading-none',
+        'wrap-label break-words break-all font-semibold leading-none',
         {
             s: 'text-xs',
             m: 'text-sm',
