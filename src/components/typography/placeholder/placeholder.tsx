@@ -10,7 +10,7 @@ export const Placeholder: FC<PlaceholderProps> = ({
 }) => (
     <span
         className={clsx(
-            'break-words break-all font-semibold leading-none',
+            'break-words font-semibold leading-none',
             {
                 s: 'text-xs',
                 m: 'text-sm',
