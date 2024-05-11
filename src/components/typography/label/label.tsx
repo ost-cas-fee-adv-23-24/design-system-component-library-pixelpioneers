@@ -28,7 +28,7 @@ export const Label: FC<LabelProps> = ({
         );
     } else {
         return (
-            <span className={labelClasses} {...props}>
+            <span className={labelClasses} {...props} suppressHydrationWarning>
                 {children}
             </span>
         );
